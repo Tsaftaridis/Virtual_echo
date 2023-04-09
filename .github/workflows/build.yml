@@ -20,6 +20,7 @@ jobs:
         run: |
           go get github.com/tmedwards/tweego
           export PATH=$PATH:$(go env GOPATH)/bin
+          mkdir dist
           tweego -o testcase.twee dist/index.html
 
       - name: Deploy to Pages
