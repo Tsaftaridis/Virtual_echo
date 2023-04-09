@@ -11,6 +11,8 @@ Test Case
   "zoom": 1
 }
 
+::start
+Start simulator. 
 
 :: Case introduction {"position":"575,200","size":"100,100"}
 Patient comes in with typical anginal pain. What do you do? 
