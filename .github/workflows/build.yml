@@ -21,9 +21,10 @@ jobs:
           go get github.com/tmedwards/tweego
           export PATH=$PATH:$(go env GOPATH)/bin
           tweego testcase.twee -o index.html
+          mv index.html /public
 
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
+          publish_dir: ./public
