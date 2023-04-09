@@ -29,11 +29,11 @@ jobs:
           tweego -o index.html testcase.twee 
           ls
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload index.html
+        uses: actions/upload-artifact@v1
         with:
-          name: index.html
-          path: ./
+          name: index
+          path: ./index.html
           if-no-files-found: error
 
       - name: Deploy to Pages
