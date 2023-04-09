@@ -29,6 +29,14 @@ jobs:
           tweego -o index.html testcase.twee 
           ls
 
+      - name: Upload artifact
+          uses: actions/upload-artifact@v3
+          with:
+          name: ${{ index.html }}
+            path: ${{ runner.temp }}/artifact.tar
+            retention-days: ${{ inputs.retention-days }}
+            if-no-files-found: error
+
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
