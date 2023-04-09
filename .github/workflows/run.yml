@@ -25,6 +25,7 @@ jobs:
           go get github.com/tmedwards/tweego
           export PATH=$PATH:$(go env GOPATH)/bin
           ls
+          echo "running"
           tweego -o index.html testcase.twee 
           ls
 
