@@ -11,7 +11,7 @@ Test Case
   "zoom": 1
 }
 
-::start
+:: Start
 Start simulator. 
 
 :: Case introduction {"position":"575,200","size":"100,100"}
