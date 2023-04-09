@@ -32,11 +32,10 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ inputs.name }}
-        path: ${{ runner.temp }}/artifact.tar
-        retention-days: ${{ inputs.retention-days }}
+        name: index.html
+        path: ./
         if-no-files-found: error
-        
+
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
