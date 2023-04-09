@@ -7,12 +7,9 @@ Test Case
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-
+  "start": "Case introduction",
   "zoom": 1
 }
-
-:: Start
-Start simulator. 
 
 :: Case introduction {"position":"575,200","size":"100,100"}
 Patient comes in with typical anginal pain. What do you do? 
