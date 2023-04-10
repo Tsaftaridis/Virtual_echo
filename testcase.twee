@@ -11,7 +11,7 @@ Patient 1 - Mr. H.F.
   "zoom": 1
 }
 
-:: Case introduction {"position":"575,200","size":"100,100"}
+:: Case introduction 
 Patient is a 65 year-old male with past medical history of hypertension, hyperlipidemia who went to see his cardiologist because of worsened shortness of breath. Patient reports he smokes daily and had an episode of severe chest pain 5 years ago for which he did not follow up on. His BP 90/60, HR 120, FF 24 and sat 90% on RA. What is your next step? 
 [[Physical Exam]]
 [[EKG]]
@@ -20,17 +20,18 @@ Patient is a 65 year-old male with past medical history of hypertension, hyperli
 [[Echo]]
 
 
-:: Physical Exam {"position":"575,325","size":"100,100"}
+:: Physical Exam 
 His physical exam showed an elevated JVD, A third heart sound (S3) is present, blt crackles in both lung fields. There is an hepato-jugular reflux and bilateral pulmonary edema. 
 
 :: EKG {"position":"512.5,450","size":"100,100"}
 His EKG showed sinus tachycardia and an inferior Q wave in the inferior leads. 
-<img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8977569/bin/JOA3-38-263-g003.jpg" width="256" height="256">
+<img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8977569/bin/JOA3-38-263-g003.jpg">
 
-:: Chest X-Ray {"position":"650,450","size":"100,100"}
+:: Chest X-Ray 
 Bilateral pulmonary edema (Insert X-ray)
 
-:: Labs {"position":"775,150","size":"100,100"}
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
+:: Labs 
 Laboratory testing showed an hemoglobin level of 10.3. Renal function, liver function and glucose were normal
 
 :: Echo 
