@@ -1,5 +1,5 @@
 :: StoryTitle
-Test Case
+Patient 1 - Mr. H.F. 
 
 
 :: StoryData
@@ -12,24 +12,26 @@ Test Case
 }
 
 :: Case introduction {"position":"575,200","size":"100,100"}
-Patient comes in with typical anginal pain. What do you do? 
-[[Choice A - Beta blockers]]
-[[Choice B - Alpha blockers]]
-[[Choice C - Nitrates]]
+Patient is a 65 year-old male with past medical history of hypertension, hyperlipidemia who went to see his cardiologist because of worsened shortness of breath. Patient reports he smokes daily and had an episode of severe chest pain 5 years ago for which he did not follow up on. His BP 90/60, HR 120, FF 24 and sat 90% on RA. What is your next step? 
+[[Physical Exam]]
+[[EKG]]
+[[Chest X-Ray]]
+[[Labs]]
+[[Echo]]
 
 
-:: Choice A - Beta blockers {"position":"575,325","size":"100,100"}
-This is a wrong answer.  
+:: Physical Exam {"position":"575,325","size":"100,100"}
+His physical exam showed an elevated JVD, A third heart sound (S3) is present, blt crackles in both lung fields. There is an hepato-jugular reflux and bilateral pulmonary edema. 
 
+:: EKG {"position":"512.5,450","size":"100,100"}
+His EKG showed sinus tachycardia and an inferior Q wave in the inferior leads. 
+<img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8977569/bin/JOA3-38-263-g003.jpg" width="256" height="256">
 
-:: Choice B - Alpha blockers {"position":"512.5,450","size":"100,100"}
-This is another wrong answer. 
+:: Chest X-Ray {"position":"650,450","size":"100,100"}
+Bilateral pulmonary edema (Insert X-ray)
 
+:: Labs {"position":"775,150","size":"100,100"}
+Laboratory testing showed an hemoglobin level of 10.3. Renal function, liver function and glucose were normal
 
-
-:: Choice C - Nitrates {"position":"650,450","size":"100,100"}
-This is a right answer. 
-
-
-:: Untitled Passage {"position":"775,150","size":"100,100"}
-Choice A - Give beta blockers
+:: Echo 
+Left ventricle ejection fraction of 20%. moderate pulmonary hypertension and dilated inferior vena cava
