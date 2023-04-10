@@ -19,67 +19,27 @@ Patient is a 65 year-old male with past medical history of hypertension, hyperli
 [[Labs]]
 [[Echo]]
 
-/* <<print window.hello('nick')>> */
-
-/* Case 1 diagnosis test function. */
-/*  hasVisited("EKG", "Echo") */
-/* Check after each step in diagnosis and go there if the trainee has visited. Both. Use this: */
-/* <<timed 2s>><<goto "Treatment">><</timed>> */
-
-
 :: Physical Exam 
 His physical exam showed an elevated JVD, A third heart sound (S3) is present, blt crackles in both lung fields. There is an hepato-jugular reflux and bilateral pulmonary edema. 
 /* <<if conditional>> … [<<elseif conditional>> …] [<<else>> …] <</if>>  */
-<<if hasVisited("EKG", "Echo")>> diagnosis done <<else>> diagnosis not done <</if>>
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
+<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
 
 :: EKG 
 His EKG showed sinus tachycardia and an inferior Q wave in the inferior leads. 
 <img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8977569/bin/JOA3-38-263-g003.jpg">
-<<if hasVisited("EKG", "Echo")>> diagnosis done <<else>> diagnosis not done <</if>>
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
+<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
 
 :: Chest X-Ray 
 Bilateral pulmonary edema (Insert X-ray)
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
-<<if hasVisited("EKG", "Echo")>> diagnosis done <<else>> diagnosis not done <</if>>
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
+<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
 
 :: Labs 
 Laboratory testing showed an hemoglobin level of 10.3. Renal function, liver function and glucose were normal
-<<if hasVisited("EKG", "Echo")>> diagnosis done <<else>> diagnosis not done <</if>>
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
+<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
 
 :: Echo 
 Left ventricle ejection fraction of 20%. moderate pulmonary hypertension and dilated inferior vena cava
-<<if hasVisited("EKG", "Echo")>> diagnosis done <<else>> diagnosis not done <</if>>
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
+<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
 
 :: Treatment 
-You reached treatment! 
-<<if hasVisited("EKG", "Echo")>> diagnosis done <<else>> diagnosis not done <</if>>
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
