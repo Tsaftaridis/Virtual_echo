@@ -19,10 +19,20 @@ Patient is a 65 year-old male with past medical history of hypertension, hyperli
 [[Labs]]
 [[Echo]]
 
+:: Case stare 
+What is your next step? 
+[[Physical Exam]]
+[[EKG]]
+[[Chest X-Ray]]
+[[Labs]]
+[[Echo]] 
+
+Remember: Patient is a 65 year-old male with past medical history of hypertension, hyperlipidemia who went to see his cardiologist because of worsened shortness of breath. Patient reports he smokes daily and had an episode of severe chest pain 5 years ago for which he did not follow up on. His BP 90/60, HR 120, FF 24 and sat 90% on RA. What is your next step? 
+
 :: Physical Exam 
 His physical exam showed an elevated JVD, A third heart sound (S3) is present, blt crackles in both lung fields. There is an hepato-jugular reflux and bilateral pulmonary edema. 
 /* <<if conditional>> … [<<elseif conditional>> …] [<<else>> …] <</if>>  */
-<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
+<<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case stare]] <</if>>
 
 :: EKG 
 His EKG showed sinus tachycardia and an inferior Q wave in the inferior leads. 
@@ -43,3 +53,30 @@ Left ventricle ejection fraction of 20%. moderate pulmonary hypertension and dil
 <<if hasVisited("EKG", "Echo")>> [[Continue|Treatment]] <<else>> [[Continue|Case introduction]] <</if>>
 
 :: Treatment 
+Nice! It is important to remember to continue with management only after EKG and eco! Now, what would be your choice in treatment?
+[[Furosemide IV]]
+[[Loop diuretic per os|Bad outcome]]
+[[Low dose oxygen|Bad outcome]]
+[[Inotropes|Bad outcome]]
+
+:: Furosemide IV
+(ESC2021 Class I recommendation) 
+Good Outcome! Congestion Relief, Normalization of BP 
+[[Continue|Further management]]
+
+:: Bad outcome 
+Patient decompensated to cardiogenic shock (hypotensive, tachycardic, cold bilateral lower
+extremity edema) and was admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
+[[Continue|Further management]]
+
+:: Further management
+What is your next step? 
+[[Discharge home]]
+[[Hospitalization and monitoring]]
+
+:: Discharge home
+It is advisable to hospitalize and monitor!
+[[Continue|Hospitalization and monitoring]]
+
+:: Hospitalization and monitoring
+End of Case- Follow up with Cardiology for chronic HF management (ACE-I, BB, +- Spironolactone etc.)
