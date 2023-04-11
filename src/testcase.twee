@@ -12,7 +12,7 @@ Patient 1 - Mr. H.F.
 }
 
 :: Case introduction 
-A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 90/60 mmHg, his heart rate is 120, his respiratory rate is 24 and his SpO2 is 90% on room air. 
+A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 90/60 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 90% on room air. 
 
 What is your first step in workup? 
 [[Physical Exam]]
@@ -35,6 +35,7 @@ What is your next step?
 <<if not hasVisited("Chest X-Ray")>> [[Chest X-Ray]] <</if>>
 <<if not hasVisited("Labs")>> [[Labs]] <</if>>
 <<if not hasVisited("Echo")>> [[Echo]] <</if>>
+<<if hasVisited("Physical Exam", "EKG", "Chest X-Ray", "Labs", "Echo")>> [[Continue to treatment|Treatment]] <</if>>
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 90/60, HR 120, FF 24, sat 90% on RA 
 
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually opened. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
@@ -68,7 +69,7 @@ Modality: Chest CXR
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
 
 :: Labs 
-Laboratory testing showed an hemoglobin level of 10.3. Renal function, liver function and glucose were normal
+Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
 <<set $case_1_dx_score -= 1>> 
 [[Case needs further diagnostic evaluation| Case stare]]
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
