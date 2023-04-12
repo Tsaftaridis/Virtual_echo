@@ -1,17 +1,4 @@
-:: StoryTitle
-Patient 1 - Mr. H.F. 
-
-
-:: StoryData
-{
-  "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
-  "format": "SugarCube",
-  "format-version": "2.30.0",
-  "start": "Case introduction",
-  "zoom": 1
-}
-
-:: Case introduction 
+:: Case 1 introduction 
 A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 90/60 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 90% on room air. 
 
 What is your first step in workup? 
@@ -30,11 +17,11 @@ What is your first step in workup?
 :: Case stare 
 What is your next step? 
 /* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam")>> [[Physical Exam]] <</if>>
-<<if not hasVisited("EKG")>> [[EKG]] <</if>>
-<<if not hasVisited("Chest X-Ray")>> [[Chest X-Ray]] <</if>>
-<<if not hasVisited("Labs")>> [[Labs]] <</if>>
-<<if not hasVisited("Echo")>> [[Echo]] <</if>>
+<<if not hasVisited("Physical Exam")>> [[Physical Exam]] <<else>> Physical Exam <</if>>
+<<if not hasVisited("EKG")>> [[EKG]] <<else>> EKG <</if>>
+<<if not hasVisited("Chest X-Ray")>> [[Chest X-Ray]] <<else>> Chest X-ray <</if>>
+<<if not hasVisited("Labs")>> [[Labs]] <<else>> Labs <</if>>
+<<if not hasVisited("Echo")>> [[Echo]] <<else>> Echo <</if>>
 <<if hasVisited("Physical Exam", "EKG", "Chest X-Ray", "Labs", "Echo")>> [[Continue to treatment|Treatment]] <</if>>
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 90/60, HR 120, FF 24, sat 90% on RA 
 
@@ -65,12 +52,11 @@ Modality: Chest CXR
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
 <<set $case_1_dx_score -= 1>> 
-[[I need further diagnostic evaluation| Case stare]]
+[[Case needs further diagnostic evaluation| Case stare]]
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
 
 :: Labs 
 Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
-<<set $case_1_dx_score -= 1>> 
 [[Case needs further diagnostic evaluation| Case stare]]
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
 
@@ -129,6 +115,6 @@ The patient stays in the hospital for further care. You consult the appropriate 
 
 :: End of case 1
 Two days later, the patient is discharged with directions for fluid and salt restrictions, an initial pharmaceutical regimen (ACE-inhibitors, a beta blocker and spironolactone). He is advised to consult a primary care physician for long-term follow-up. 
+[[Waiting Room]]
 
 Congratulations! You just completed the first case! 
-<<print "C1: " + $case_1_dx_score + "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
