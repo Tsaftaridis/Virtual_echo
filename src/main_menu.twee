@@ -16,9 +16,9 @@ Patient list:
 [[Score report]]
 
 /*Define scores before score report */
-<<set $case_1_dx_score to random (1,9)>>
-<<set $case_1_Tx_score to random (1,9)>>
-<<set $case_1_Fu_score to random (1,9)>>
+<<set $case_1_dx_score to random (7,9)>>
+<<set $case_1_Tx_score to random (7,9)>>
+<<set $case_1_Fu_score to random (7,9)>>
 
 :: Score report
 <<print random(1000,9999)+ "-" + $case_1_dx_score + "-" + random(1000,9999)+ "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
