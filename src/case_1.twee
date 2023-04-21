@@ -1,5 +1,5 @@
 :: Case 1 introduction 
-A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 90/60 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 90% on room air. 
+A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
 What is your first step in workup? 
 [[Physical Exam]]
@@ -12,6 +12,7 @@ What is your first step in workup?
 <<set $case_1_dx_score to 0>>
 <<set $case_1_Tx_score to 0>>
 <<set $case_1_Fu_score to 0>>
+<<set $case_1_Echo to 0>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 
@@ -23,7 +24,7 @@ What is your next step?
 <<if not hasVisited("Labs")>> [[Labs]] <<else>> Labs <</if>>
 <<if not hasVisited("Echo")>> [[Echo]] <<else>> Echo <</if>>
 <<if hasVisited("Physical Exam", "EKG", "Chest X-Ray", "Labs", "Echo")>> [[Continue to treatment|Treatment]] <</if>>
-Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 90/60, HR 120, FF 24, sat 90% on RA 
+Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
 
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually opened. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 
@@ -35,7 +36,7 @@ You start a physical examination of the patient. You notice buldging of his neck
 
 :: EKG 
 His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
-<img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8977569/bin/JOA3-38-263-g003.jpg">
+<img src="https://www.researchgate.net/profile/Nqoba-Tsabedze/publication/357381352/figure/fig1/AS:1106110153015297@1640728619580/A-resting-electrocardiogram-showing-a-sinus-tachycardia-and-non-pathological-Q-waves-in.jpg">
 <<set $case_1_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare]]
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
@@ -61,8 +62,28 @@ Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, 
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
 
 :: Echo 
+The chardiac echo is shown below: 
+<img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
+<img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
+<img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
+<img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
+
+What do you think the echo shows? 
+[[Dilated inferior vena cava and severely reduced ejection fraction|HF echo]]
+[[Diffuse hypokinesia and increased left ventricular volume|Wrong Echo]]
+[[Mitral valve prolapse and left atrial dilation|Wrong Echo]]
+
+:: HF echo
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
 <<set $case_1_dx_score += 2>> 
+<<set $case_1_Echo to 1>>
+[[I need further diagnostic evaluation| Case stare]]
+<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+
+:: Wrong Echo 
+The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
+<<set $case_1_dx_score -= 2>> 
+<<set $case_1_Echo to 0>>
 [[I need further diagnostic evaluation| Case stare]]
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
 
@@ -71,7 +92,6 @@ The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderat
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
 <<set $case_1_dx_score -= 1>> 
 [[Continue|Case stare]]
-
 
 :: Treatment 
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
@@ -91,7 +111,7 @@ IV Furosemide is the correct first choice in the treatment of acute decompensate
 [[Continue|Further management]]
 
 :: Bad outcome 
-3 hours later, you are called by the nurse because the patient "doesn't seem to be doing well". His blood pressure is 80/65 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
+3 hours later, you are called by the nurse because the patient "doesn't seem to be doing well". His blood pressure is 110/70 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
 
 He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
 
