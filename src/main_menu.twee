@@ -10,10 +10,15 @@ Echo Cases
   "zoom": 1
 }
 
-:: Waiting Room 
+:: StoryInit
+<<set $history to []>>
+<<set $started to 0>>
+
+:: Waiting Room
 Patient list:
 <<if not hasVisited("Case 1 introduction")>> [[Case 1|Case 1 introduction]] <<else>> Case 1 <</if>>
 [[Score report]]
+
 
 /*Define scores before score report */
 <<set $case_1_dx_score to random (7,9)>>
@@ -22,3 +27,29 @@ Patient list:
 
 :: Score report
 <<print random(1000,9999)+ "-" + $case_1_dx_score + "-" + random(1000,9999)+ "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
+History:
+<<nobr>>
+	<<set _last to $started>>
+	<<for _event range $history>>
+		<br>Passage: <<= _event.passage>>, Seconds: <<= setup.toSeconds(_last, _event.time)>>.
+		<<set _last to _event.time>>
+	<</for>>
+<</nobr>>
+
+:: PassageReady
+/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
+/* Update the time of the previous history record if there is one. */
+<<if $history.length gt 0>>
+	<<set $history.last().time to Date.now()>>
+<<else>>
+	/* Record the time the first passage was shown. */
+	<<set $started to Date.now()>>
+<</if>>
+
+/* Add current passage's history record to the array, unless it has a 'no-history' passage tag. */
+<<if not tags().includes('no-history')>>
+	<<set $history.push({
+		"passage": passage(),
+		"time": 0
+	})>>
+<</if>>

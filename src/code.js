@@ -10,3 +10,12 @@ Config.ui.stowBarInitially = true;
 	return "Hello " + name + ", how are you?";
 }; */ 
 
+setup.toSeconds = function (from, to) {
+	/* Determine the number of milliseconds between the two times. */
+	var milliseconds = from - to;
+
+	/* Convert the milliseconds into whole seconds, trancating any remainding time. */
+	var seconds = Math.abs(Math.trunc(milliseconds / 1000));
+
+	return seconds;
+};
