@@ -6,15 +6,49 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Waiting Room",
+  "start": "Guard",
   "zoom": 1
 }
 
 :: StoryInit
 <<set $history to []>>
 <<set $started to 0>>
+<<set $IDs_allowed to ["Norrisa", "Ioannis", "Nikos", "Stefanos", "Haynes", "Tsaftaridis", "Koulas", "Zafeiropoulos"]>>
+
+:: Guard
+<<set _answer to "">>
+
+Please input a Password to continue.
+<<textbox "_answer" "">>
+
+<<button "Check Password">>
+	<<if _answer is "">>
+		/% They have not supplied an answer. %/
+		<<script>>UI.alert("You did not supply a password!");<</script>>
+	<<else>>
+		/%
+			Remove extra white space from both ends of the answer then
+			convert it to lowercase. %/
+
+		<<set _answer to _answer.trim().toLowerCase()>>
+
+		/%
+			Check if one of the correct answers was supplied,
+			otherwise send them to the Start passage. %/
+
+    <<if $IDs_allowed.includes(_answer)>>
+      <<goto "Waiting Room">>
+      <<set $id = _answer>>
+
+		<<else>>
+			/% Send the Reader to back to the start. %/
+			<<goto "Waiting Room">>
+		<</if>>
+	<</if>>
+<</button>>
 
 :: Waiting Room
+Doctor IDs: <<print $IDs>>
 Patient list:
 <<if not hasVisited("Case 1 introduction")>> [[Case 1|Case 1 introduction]] <<else>> Case 1 <</if>>
 [[Score report]]
@@ -31,7 +65,8 @@ Patient list:
 History:
 <<nobr>>
 	<<set _last to $started>>
-  <<print "{" >>
+  <<print "{ \n $id">>
+
 	<<for _event range $history>>
 		<br> "<<= _event.passage>>": <<= setup.toSeconds(_last, _event.time)>>,
 		<<set _last to _event.time>>
