@@ -27,13 +27,16 @@ Patient list:
 
 :: Score report
 <<print random(1000,9999)+ "-" + $case_1_dx_score + "-" + random(1000,9999)+ "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
+
 History:
 <<nobr>>
 	<<set _last to $started>>
+  <<print "{" >>
 	<<for _event range $history>>
-		<br>Passage: <<= _event.passage>>, Seconds: <<= setup.toSeconds(_last, _event.time)>>.
+		<br> "<<= _event.passage>>": <<= setup.toSeconds(_last, _event.time)>>,
 		<<set _last to _event.time>>
 	<</for>>
+  <<print "\n }" >>
 <</nobr>>
 
 :: PassageReady

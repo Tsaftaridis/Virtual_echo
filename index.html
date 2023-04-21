@@ -290,13 +290,16 @@ Congratulations! You just completed the first case!</tw-passagedata><tw-passaged
 &lt;&lt;set $case_1_dx_score to random (7,9)&gt;&gt;
 &lt;&lt;set $case_1_Tx_score to random (7,9)&gt;&gt;
 &lt;&lt;set $case_1_Fu_score to random (7,9)&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Score report" tags="" position="1225,225" size="100,100">&lt;&lt;print random(1000,9999)+ &quot;-&quot; + $case_1_dx_score + &quot;-&quot; + random(1000,9999)+ &quot;-&quot; + $case_1_Tx_score + &quot;-&quot; + $case_1_Fu_score&gt;&gt;
+
 History:
 &lt;&lt;nobr&gt;&gt;
 	&lt;&lt;set _last to $started&gt;&gt;
+  &lt;&lt;print &quot;{&quot; &gt;&gt;
 	&lt;&lt;for _event range $history&gt;&gt;
-		&lt;br&gt;Passage: &lt;&lt;= _event.passage&gt;&gt;, Seconds: &lt;&lt;= setup.toSeconds(_last, _event.time)&gt;&gt;.
+		&lt;br&gt; &quot;&lt;&lt;= _event.passage&gt;&gt;&quot;: &lt;&lt;= setup.toSeconds(_last, _event.time)&gt;&gt;,
 		&lt;&lt;set _last to _event.time&gt;&gt;
 	&lt;&lt;/for&gt;&gt;
+  &lt;&lt;print &quot;\n }&quot; &gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="PassageReady" tags="" position="100,350" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
 /* Update the time of the previous history record if there is one. */
 &lt;&lt;if $history.length gt 0&gt;&gt;
