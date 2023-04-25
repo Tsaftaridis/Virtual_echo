@@ -38,7 +38,7 @@ You start a physical examination of the patient. Physical exam: Loud S1 heart so
 
 :: EKG 3
 Her EKG showed sinus tachycardia. 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
+<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
 
 127 bpm frequency, PR interval 200 ms, QRS 92 ms, , QTc 459 ms, overload of the left atrium and indirect signs of overload of the right atrium, low-voltage front plane and overload of the right ventricle. 
 <<set $case_3_dx_score += 2>>
@@ -67,12 +67,12 @@ Modality: Chest CXR
 
 :: Echo 3
 The chardiac echo is shown below: 
-<img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-<img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png">
+<img style='width: 100%' src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
+<img style='width: 100%' src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png">
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></iframe>
-<img src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
+<img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
 
 What do you think the echo shows? 
 [[Mitral valve stenosis and left atrial dilation|Wrong Echo 3]]
