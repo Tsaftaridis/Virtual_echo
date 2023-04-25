@@ -13,11 +13,15 @@ Echo Cases
 :: StoryInit
 <<set $history to []>>
 <<set $started to 0>>
-<<set $IDs_allowed to ["Norrisa", "Ioannis", "Nikos", "Stefanos", "Haynes", "Tsaftaridis", "Koulas", "Zafeiropoulos"]>>
+<<set $wrong_password to false>>
+
 
 :: Guard
 <<set _answer to "">>
+<<set $has_access = 0>>
 
+
+<<if $wrong_password>> Wrong Password! <</if>>
 Please input a Password to continue.
 <<textbox "_answer" "">>
 
@@ -29,28 +33,45 @@ Please input a Password to continue.
 		/%
 			Remove extra white space from both ends of the answer then
 			convert it to lowercase. %/
-
 		<<set _answer to _answer.trim().toLowerCase()>>
-
 		/%
 			Check if one of the correct answers was supplied,
 			otherwise send them to the Start passage. %/
-
-    <<if $IDs_allowed.includes(_answer)>>
-      <<goto "Waiting Room">>
-      <<set $id = _answer>>
-
+		<<switch _answer>>
+			<<case "norrisa">>
+				<<set $has_access = 1>>
+			<<case "haynes">>
+				<<set $has_access = 1>>
+			<<case "stefanos">>
+				<<set $has_access = 1>>
+			<<case "zafeiropoulos">>
+				<<set $has_access = 1>>
+			<<case "ioannis">>
+				<<set $has_access = 1>>
+			<<case "koulas">>
+				<<set $has_access = 1>>
+			<<case "tsaftaridis">>
+				<<set $has_access = 1>>
+			<<case "nikolaos">>
+				<<set $has_access = 1>>
+			<<default>>
+				<<set $has_access = 0>>
+		<</switch>>
+    	<<if $has_access>>
+			<<set $id = _answer>>
+     		<<goto "Waiting Room">>
 		<<else>>
 			/% Send the Reader to back to the start. %/
-			<<goto "Waiting Room">>
+			<<set $wrong_password to true>>
+			<<goto "Guard">>
 		<</if>>
 	<</if>>
 <</button>>
 
 :: Waiting Room
-Doctor IDs: <<print $IDs>>
 Patient list:
 <<if not hasVisited("Case 1 introduction")>> [[Case 1|Case 1 introduction]] <<else>> Case 1 <</if>>
+<<if not hasVisited("Case 3 introduction")>> [[Case 3|Case 3 introduction]] <<else>> Case 3 <</if>>
 [[Score report]]
 
 
@@ -59,8 +80,13 @@ Patient list:
 <<set $case_1_Tx_score to random (7,9)>>
 <<set $case_1_Fu_score to random (7,9)>>
 
+<<set $case_3_dx_score to random (7,9)>>
+<<set $case_3_Tx_score to random (7,9)>>
+<<set $case_3_Fu_score to random (7,9)>>
+
 :: Score report
 <<print random(1000,9999)+ "-" + $case_1_dx_score + "-" + random(1000,9999)+ "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
+<<print random(1000,9999)+ "-" + $case_3_dx_score + "-" + random(1000,9999)+ "-" + $case_3_Tx_score + "-" + $case_3_Fu_score>>
 
 History:
 <<nobr>>
