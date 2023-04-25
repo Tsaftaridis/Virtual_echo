@@ -2,11 +2,11 @@
 A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
 What is your first step in workup? 
-[[Physical Exam]]
-[[EKG]]
-[[Chest X-Ray]]
-[[Labs]]
-[[Echo]]
+[[Physical Exam 1|Physical Exam]]
+[[EKG 1|EKG]]
+[[Chest X-Ray 1|X-Ray]]
+[[Labs 1|Labs]]
+[[Echo 1|Echo]]
 
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 <<set $case_1_dx_score to 0>>
@@ -15,33 +15,33 @@ What is your first step in workup?
 <<set $case_1_Echo to 0>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
-:: Case stare 
+:: Case stare 1
 What is your next step? 
 /* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam")>> [[Physical Exam]] <<else>> Physical Exam <</if>>
-<<if not hasVisited("EKG")>> [[EKG]] <<else>> EKG <</if>>
-<<if not hasVisited("Chest X-Ray")>> [[Chest X-Ray]] <<else>> Chest X-ray <</if>>
-<<if not hasVisited("Labs")>> [[Labs]] <<else>> Labs <</if>>
-<<if not hasVisited("Echo")>> [[Echo]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam", "EKG", "Chest X-Ray", "Labs", "Echo")>> [[Continue to treatment|Treatment]] <</if>>
+<<if not hasVisited("Physical Exam 1")>> [[Physical Exam 1|Physical Exam]] <<else>> Physical Exam <</if>>
+<<if not hasVisited("EKG 1")>> [[EKG 1|EKG]] <<else>> EKG <</if>>
+<<if not hasVisited("Chest X-Ray 1")>> [[Chest X-Ray 1|Chest X-Ray]] <<else>> Chest X-ray <</if>>
+<<if not hasVisited("Labs 1")>> [[Labs 1|Labs]] <<else>> Labs <</if>>
+<<if not hasVisited("Echo 1")>> [[Echo 1|Echo]] <<else>> Echo <</if>>
+<<if hasVisited("Physical Exam 1", "EKG 1", "Chest X-Ray 1", "Labs 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <</if>>
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
 
-/* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually opened. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
+/* Start of the workup choices. Trainee must pick "EKG 1" and "Echo 1" before the choice to move to treatment is actually opened. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 
-:: Physical Exam 
+:: Physical Exam 1 
 You start a physical examination of the patient. You notice buldging of his neck veins, a third heart sound, crackling lung sounds. Pressing below the right costal margin makes the vein distension worse. 
-[[Case needs more diagnostic evaluation| Case stare]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+[[Case needs more diagnostic evaluation|Case stare 1]]
+<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 <<set $case_1_dx_score -= 1>>
 
-:: EKG 
+:: EKG 1 
 His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
 <img src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
 <<set $case_1_dx_score += 2>>
-[[Case needs further diagnostic evaluation| Case stare]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+[[Case needs further diagnostic evaluation| Case stare 1]]
+<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
-:: Chest X-Ray 
+:: Chest X-Ray 1 
 40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
 
 Name: H.F. 
@@ -53,15 +53,15 @@ Modality: Chest CXR
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
 <<set $case_1_dx_score -= 1>> 
-[[Case needs further diagnostic evaluation| Case stare]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+[[Case needs further diagnostic evaluation| Case stare 1]]
+<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
-:: Labs 
+:: Labs 1 
 Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
-[[Case needs further diagnostic evaluation| Case stare]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+[[Case needs further diagnostic evaluation| Case stare 1]]
+<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
-:: Echo 
+:: Echo 1 
 The chardiac echo is shown below: 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
@@ -69,72 +69,73 @@ The chardiac echo is shown below:
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
 
 What do you think the echo shows? 
-[[Dilated inferior vena cava and severely reduced ejection fraction|HF echo]]
-[[Diffuse hypokinesia and increased left ventricular volume|Wrong Echo]]
-[[Mitral valve prolapse and left atrial dilation|Wrong Echo]]
+[[Dilated inferior vena cava and severely reduced ejection fraction|HF echo 1]]
+[[Diffuse hypokinesia and increased left ventricular volume|Wrong Echo 1]]
+[[Mitral valve prolapse and left atrial dilation|Wrong Echo 1]]
 
-:: HF echo
+:: HF echo 1
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
 <<set $case_1_dx_score += 2>> 
 <<set $case_1_Echo to 1>>
-[[I need further diagnostic evaluation| Case stare]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+[[I need further diagnostic evaluation| Case stare 1]]
+<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
-:: Wrong Echo 
+:: Wrong Echo 1
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
 <<set $case_1_dx_score -= 2>> 
 <<set $case_1_Echo to 0>>
-[[I need further diagnostic evaluation| Case stare]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
+[[I need further diagnostic evaluation| Case stare 1]]
+<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
 /* Reprimand and return to diagnostic evaluation. */
-:: Not done Dx yet
+:: Not done Dx yet 1 
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
 <<set $case_1_dx_score -= 1>> 
-[[Continue|Case stare]]
+[[Continue|Case stare 1]]
 
-:: Treatment 
+:: Treatment 1 
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 
 The head nurse asks you which the best treatment option for this patient would be: 
-[[Furosemide IV]]
-[[Loop diuretic per os|Bad outcome]]
-[[Low dose oxygen|Bad outcome]]
-[[Inotropes|Bad outcome]]
+[[Furosemide IV 1]]
+[[Loop diuretic per os|Bad outcome 1]]
+[[Low dose oxygen|Bad outcome 1]]
+[[Inotropes|Bad outcome 1]]
 
-:: Furosemide IV
+:: Furosemide IV 1
 After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he "doesn't feel bloated anymore". His blood pressure has normalized. 
 
 IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure (ESC2021 Class I recommendation). 
 <<set $case_1_Tx_score += 5 >>
 
-[[Continue|Further management]]
+[[Continue|Further management 1]]
 
-:: Bad outcome 
+:: Bad outcome 1
 3 hours later, you are called by the nurse because the patient "doesn't seem to be doing well". His blood pressure is 110/70 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
 
 He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
 
 After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
-[[Continue|Further management]]
+[[Continue|Further management 1]]
 
-:: Further management
+:: Further management 1
 The attending asks you what you think the next step in managing this patient should be. 
 
-[[Discharge home]]
+[[Discharge home 1]]
 [[Hospitalization and monitoring]]
 
-:: Discharge home
+:: Discharge home 1
 According to the guidelines, it is advisable to hospitalize and monitor the patient! 
 [[Continue|Hospitalization and monitoring]]
 
-:: Hospitalization and monitoring
+:: Hospitalization and monitoring 1
 The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.  (ACE-I, BB, +- Spironolactone etc.) 
 <<set $case_1_Fu_score += 5 >>
 [[Continue|End of case 1]]
 
 :: End of case 1
 Two days later, the patient is discharged with directions for fluid and salt restrictions, an initial pharmaceutical regimen (ACE-inhibitors, a beta blocker and spironolactone). He is advised to consult a primary care physician for long-term follow-up. 
-[[Waiting Room]]
 
 Congratulations! You just completed the first case! 
+
+[[Waiting Room]]
