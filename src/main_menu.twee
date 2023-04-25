@@ -17,14 +17,13 @@ Echo Cases
 
 
 :: Guard
-<<set _answer to "">>
-<<set $has_access = 0>>
-
-
-<<if $wrong_password>> Wrong Password! <</if>>
+<<silently>>
+	<<set _answer to "">>
+	<<set $has_access = 0>>
+	<<if $wrong_password>> Wrong Password! <</if>>
+<</silently>>
 Please input a Password to continue.
 <<textbox "_answer" "">>
-
 <<button "Check Password">>
 	<<if _answer is "">>
 		/% They have not supplied an answer. %/
@@ -75,8 +74,7 @@ Patient list:
 <<if not hasVisited("Case 3 introduction")>> [[Case 3|Case 3 introduction]] <<else>> Case 3 <</if>>
 <<if not hasVisited("Case 4 introduction")>> [[Case 4|Case 4 introduction]] <<else>> Case 4 <</if>>
 [[Score report]]
-
-
+<<silently>>
 /*Define scores before score report */
 <<set $case_1_dx_score to random (7,9)>>
 <<set $case_1_Tx_score to random (7,9)>>
@@ -93,6 +91,7 @@ Patient list:
 <<set $case_4_dx_score to random (7,9)>>
 <<set $case_4_Tx_score to random (7,9)>>
 <<set $case_4_Fu_score to random (7,9)>>
+<</silently>>
 
 :: Score report
 <<print random(1000,9999)+ "-" + $case_1_dx_score + "-" + random(1000,9999)+ "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
