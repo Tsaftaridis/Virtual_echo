@@ -191,11 +191,11 @@ setup.toSeconds = function (from, to) {
 };</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
 What is your first step in workup? 
-[[Physical Exam 1|Physical Exam]]
-[[EKG 1|EKG]]
-[[Chest X-Ray 1|X-Ray]]
-[[Labs 1|Labs]]
-[[Echo 1|Echo]]
+[[Physical Exam|Physical Exam 1]]
+[[EKG|EKG 1]]
+[[Chest X-Ray|Chest X-Ray 1]]
+[[Labs|Labs 1]]
+[[Echo|Echo 1]]
 
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 &lt;&lt;set $case_1_dx_score to 0&gt;&gt;
@@ -205,11 +205,11 @@ What is your first step in workup?
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="2" name="Case stare 1" tags="" position="225,100" size="100,100">What is your next step? 
 /* Show each choice if it hasn&#39;t been visited before. */
-&lt;&lt;if not hasVisited(&quot;Physical Exam 1&quot;)&gt;&gt; [[Physical Exam 1|Physical Exam]] &lt;&lt;else&gt;&gt; Physical Exam &lt;&lt;/if&gt;&gt;
-&lt;&lt;if not hasVisited(&quot;EKG 1&quot;)&gt;&gt; [[EKG 1|EKG]] &lt;&lt;else&gt;&gt; EKG &lt;&lt;/if&gt;&gt;
-&lt;&lt;if not hasVisited(&quot;Chest X-Ray 1&quot;)&gt;&gt; [[Chest X-Ray 1|Chest X-Ray]] &lt;&lt;else&gt;&gt; Chest X-ray &lt;&lt;/if&gt;&gt;
-&lt;&lt;if not hasVisited(&quot;Labs 1&quot;)&gt;&gt; [[Labs 1|Labs]] &lt;&lt;else&gt;&gt; Labs &lt;&lt;/if&gt;&gt;
-&lt;&lt;if not hasVisited(&quot;Echo 1&quot;)&gt;&gt; [[Echo 1|Echo]] &lt;&lt;else&gt;&gt; Echo &lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;Physical Exam 1&quot;)&gt;&gt; [[Physical Exam|Physical Exam 1]] &lt;&lt;else&gt;&gt; Physical Exam &lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;EKG 1&quot;)&gt;&gt; [[EKG|EKG 1]] &lt;&lt;else&gt;&gt; EKG &lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;Chest X-Ray 1&quot;)&gt;&gt; [[Chest X-Ray|Chest X-Ray 1]] &lt;&lt;else&gt;&gt; Chest X-ray &lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;Labs 1&quot;)&gt;&gt; [[Labs|Labs 1]] &lt;&lt;else&gt;&gt; Labs &lt;&lt;/if&gt;&gt;
+&lt;&lt;if not hasVisited(&quot;Echo 1&quot;)&gt;&gt; [[Echo|Echo 1]] &lt;&lt;else&gt;&gt; Echo &lt;&lt;/if&gt;&gt;
 &lt;&lt;if hasVisited(&quot;Physical Exam 1&quot;, &quot;EKG 1&quot;, &quot;Chest X-Ray 1&quot;, &quot;Labs 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;/if&gt;&gt;
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
 
@@ -217,7 +217,7 @@ Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, 
 [[Case needs more diagnostic evaluation|Case stare 1]]
 &lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $case_1_dx_score -= 1&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="EKG 1" tags="" position="475,100" size="100,100">His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
-&lt;img src=&quot;https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png&quot;&gt;
 &lt;&lt;set $case_1_dx_score += 2&gt;&gt;
 [[Case needs further diagnostic evaluation| Case stare 1]]
 &lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Chest X-Ray 1" tags="" position="600,100" size="100,100">40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
@@ -258,7 +258,7 @@ What do you think the echo shows?
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="11" name="Treatment 1" tags="" position="100,225" size="100,100">Remember, a cardiac echo and an EKG are required diagnostic steps. 
 
 The head nurse asks you which the best treatment option for this patient would be: 
-[[Furosemide IV 1]]
+[[Furosemide IV|Furosemide IV 1]]
 [[Loop diuretic per os|Bad outcome 1]]
 [[Low dose oxygen|Bad outcome 1]]
 [[Inotropes|Bad outcome 1]]</tw-passagedata><tw-passagedata pid="12" name="Furosemide IV 1" tags="" position="225,225" size="100,100">After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he &quot;doesn&#39;t feel bloated anymore&quot;. His blood pressure has normalized. 
@@ -273,9 +273,9 @@ He is admitted to the intensive care unit for further monitoring for heart failu
 After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
 [[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="14" name="Further management 1" tags="" position="475,225" size="100,100">The attending asks you what you think the next step in managing this patient should be. 
 
-[[Discharge home 1]]
-[[Hospitalization and monitoring]]</tw-passagedata><tw-passagedata pid="15" name="Discharge home 1" tags="" position="600,225" size="100,100">According to the guidelines, it is advisable to hospitalize and monitor the patient! 
-[[Continue|Hospitalization and monitoring]]</tw-passagedata><tw-passagedata pid="16" name="Hospitalization and monitoring 1" tags="" position="725,225" size="100,100">The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.  (ACE-I, BB, +- Spironolactone etc.) 
+[[Discharge Home|Discharge home 1]]
+[[Hospitalization and monitoring|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="15" name="Discharge home 1" tags="" position="600,225" size="100,100">According to the guidelines, it is advisable to hospitalize and monitor the patient! 
+[[Continue|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Hospitalization and monitoring 1" tags="" position="725,225" size="100,100">The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.  (ACE-I, BB, +- Spironolactone etc.) 
 &lt;&lt;set $case_1_Fu_score += 5 &gt;&gt;
 [[Continue|End of case 1]]</tw-passagedata><tw-passagedata pid="17" name="End of case 1" tags="" position="850,225" size="100,100">Two days later, the patient is discharged with directions for fluid and salt restrictions, an initial pharmaceutical regimen (ACE-inhibitors, a beta blocker and spironolactone). He is advised to consult a primary care physician for long-term follow-up. 
 
@@ -310,14 +310,14 @@ Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, 
 
 /* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="20" name="Physical Exam 3" tags="" position="1225,225" size="100,100">You start a physical examination of the patient. Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
 [[Case needs more diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG&quot;, &quot;Echo&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $case_3_dx_score -= 1&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="EKG 3" tags="" position="100,350" size="100,100">Her EKG showed sinus tachycardia. 
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg&quot;&gt;
 
 127 bpm frequency, PR interval 200 ms, QRS 92 ms, , QTc 459 ms, overload of the left atrium and indirect signs of overload of the right atrium, low-voltage front plane and overload of the right ventricle. 
 &lt;&lt;set $case_3_dx_score += 2&gt;&gt;
 [[Case needs further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG&quot;, &quot;Echo&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Chest X-Ray 3" tags="" position="225,350" size="100,100">40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Chest X-Ray 3" tags="" position="225,350" size="100,100">40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
 
 Name: M.S. 
 Age: 50 
@@ -326,12 +326,12 @@ Modality: Chest CXR
 
  CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg&quot;&gt;
 &lt;&lt;set $case_3_dx_score -= 1&gt;&gt; 
 [[Case needs further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG&quot;, &quot;Echo&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Labs 3" tags="" position="350,350" size="100,100">// TODO 
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Labs 3" tags="" position="350,350" size="100,100">// TODO 
 [[Case needs further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG&quot;, &quot;Echo&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Echo 3" tags="" position="475,350" size="100,100">The chardiac echo is shown below: 
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Echo 3" tags="" position="475,350" size="100,100">The chardiac echo is shown below: 
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png&quot;&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
@@ -350,7 +350,7 @@ What do you think the echo shows?
 &lt;&lt;set $case_3_dx_score -= 2&gt;&gt; 
 &lt;&lt;set $case_3_Echo to 0&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG&quot;, &quot;Echo&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
 
 /* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="27" name="Not done Dx yet 3" tags="" position="850,350" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
 &lt;&lt;set $case_3_dx_score -= 1&gt;&gt; 
@@ -455,7 +455,8 @@ History:
 		&lt;&lt;set _last to _event.time&gt;&gt;
 	&lt;&lt;/for&gt;&gt;
   &lt;&lt;print &quot;\n }&quot; &gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="PassageReady" tags="" position="1100,475" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
+&lt;&lt;/nobr&gt;&gt;
+[[Waiting Room]]</tw-passagedata><tw-passagedata pid="39" name="PassageReady" tags="" position="1100,475" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
 /* Update the time of the previous history record if there is one. */
 &lt;&lt;if $history.length gt 0&gt;&gt;
 	&lt;&lt;set $history.last().time to Date.now()&gt;&gt;

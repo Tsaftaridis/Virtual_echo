@@ -33,7 +33,7 @@ Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, 
 :: Physical Exam 3
 You start a physical examination of the patient. Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
 [[Case needs more diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 <<set $case_3_dx_score -= 1>>
 
 :: EKG 3
@@ -43,7 +43,7 @@ Her EKG showed sinus tachycardia.
 127 bpm frequency, PR interval 200 ms, QRS 92 ms, , QTc 459 ms, overload of the left atrium and indirect signs of overload of the right atrium, low-voltage front plane and overload of the right ventricle. 
 <<set $case_3_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 :: Chest X-Ray 3
 40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
@@ -55,15 +55,15 @@ Modality: Chest CXR
 
  CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg">
+<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg">
 <<set $case_3_dx_score -= 1>> 
 [[Case needs further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 :: Labs 3
 // TODO 
 [[Case needs further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 :: Echo 3
 The chardiac echo is shown below: 
@@ -91,7 +91,7 @@ mitral valve presented thickened cusps with commissural fusion and reduced openi
 <<set $case_3_dx_score -= 2>> 
 <<set $case_3_Echo to 0>>
 [[I need further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3

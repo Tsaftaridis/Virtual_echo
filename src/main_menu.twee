@@ -99,6 +99,7 @@ History:
 	<</for>>
   <<print "\n }" >>
 <</nobr>>
+[[Waiting Room]]
 
 :: PassageReady
 /* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
