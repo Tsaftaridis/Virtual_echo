@@ -71,7 +71,9 @@ Please input a Password to continue.
 :: Waiting Room
 Patient list:
 <<if not hasVisited("Case 1 introduction")>> [[Case 1|Case 1 introduction]] <<else>> Case 1 <</if>>
+<<if not hasVisited("Case 2 introduction")>> [[Case 2|Case 2 introduction]] <<else>> Case 2 <</if>>
 <<if not hasVisited("Case 3 introduction")>> [[Case 3|Case 3 introduction]] <<else>> Case 3 <</if>>
+<<if not hasVisited("Case 4 introduction")>> [[Case 4|Case 4 introduction]] <<else>> Case 4 <</if>>
 [[Score report]]
 
 
@@ -80,13 +82,23 @@ Patient list:
 <<set $case_1_Tx_score to random (7,9)>>
 <<set $case_1_Fu_score to random (7,9)>>
 
+<<set $case_2_dx_score to random (7,9)>>
+<<set $case_2_Tx_score to random (7,9)>>
+<<set $case_2_Fu_score to random (7,9)>>
+
 <<set $case_3_dx_score to random (7,9)>>
 <<set $case_3_Tx_score to random (7,9)>>
 <<set $case_3_Fu_score to random (7,9)>>
 
+<<set $case_4_dx_score to random (7,9)>>
+<<set $case_4_Tx_score to random (7,9)>>
+<<set $case_4_Fu_score to random (7,9)>>
+
 :: Score report
 <<print random(1000,9999)+ "-" + $case_1_dx_score + "-" + random(1000,9999)+ "-" + $case_1_Tx_score + "-" + $case_1_Fu_score>>
+<<print random(1000,9999)+ "-" + $case_2_dx_score + "-" + random(1000,9999)+ "-" + $case_2_Tx_score + "-" + $case_2_Fu_score>>
 <<print random(1000,9999)+ "-" + $case_3_dx_score + "-" + random(1000,9999)+ "-" + $case_3_Tx_score + "-" + $case_3_Fu_score>>
+<<print random(1000,9999)+ "-" + $case_4_dx_score + "-" + random(1000,9999)+ "-" + $case_4_Tx_score + "-" + $case_4_Fu_score>>
 
 History:
 <<nobr>>
