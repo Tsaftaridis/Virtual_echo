@@ -36,7 +36,7 @@ You start a physical examination of the patient. You notice buldging of his neck
 
 :: EKG 
 His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
-<img src="https://www.researchgate.net/profile/Nqoba-Tsabedze/publication/357381352/figure/fig1/AS:1106110153015297@1640728619580/A-resting-electrocardiogram-showing-a-sinus-tachycardia-and-non-pathological-Q-waves-in.jpg">
+<img src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
 <<set $case_1_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare]]
 <<if hasVisited("EKG", "Echo")>> [[Continue to treatment|Treatment]] <<else>> [[Continue to treatment|Not done Dx yet]] <</if>>
