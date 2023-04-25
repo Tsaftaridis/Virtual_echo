@@ -282,10 +282,12 @@ After 5 days in the intensive care unit, his ejection fraction improves and he i
 Congratulations! You just completed the first case! 
 
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="18" name="Case 2 introduction" tags="" position="975,225" size="100,100">//TODO
-[[Waiting Room]]</tw-passagedata><tw-passagedata pid="19" name="Case 3 introduction" tags="" position="1100,225" size="100,100">A 50-year-old female patient (&quot;M.S.&quot;) presented in the ED with low-grade fever, cough, fatigue and dyspnea on moderate exertion for several months which became worse in the month before ED visit. Her past medical history included arterial hypertension. 
-Vitals: BP 140/90mmHg, HR 92 bpm, T: 99.8, SpO2 = 94%.
+[[Waiting Room]]</tw-passagedata><tw-passagedata pid="19" name="Case 3 introduction" tags="" position="1100,225" size="100,100">A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
+/% Hint left heart failure more. %/
+She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
+Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
 
-What is your first step in workup? 
+What is your first step in management? 
 [[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
 [[Chest X-Ray|Chest X-Ray 3]]
@@ -309,7 +311,15 @@ What is your first step in workup?
 &lt;&lt;if hasVisited(&quot;Physical Exam 3&quot;, &quot;EKG 3&quot;, &quot;Chest X-Ray 3&quot;, &quot;Labs 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;/if&gt;&gt;
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
 
-/* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="21" name="Physical Exam 3" tags="" position="100,350" size="100,100">You start a physical examination of the patient. Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
+/* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="21" name="Physical Exam 3" tags="" position="100,350" size="100,100">You start a physical examination of the patient. 
+
+ &lt;audio controls&gt;
+  &lt;source src=&quot;https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt; 
+
+Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
+
 [[Case needs more diagnostic evaluation| Case stare 3]]
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $case_3_dx_score -= 1&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="EKG 3" tags="" position="225,350" size="100,100">Her EKG showed sinus tachycardia. 

@@ -1,8 +1,11 @@
 :: Case 3 introduction 
-A 50-year-old female patient ("M.S.") presented in the ED with low-grade fever, cough, fatigue and dyspnea on moderate exertion for several months which became worse in the month before ED visit. Her past medical history included arterial hypertension. 
-Vitals: BP 140/90mmHg, HR 92 bpm, T: 99.8, SpO2 = 94%.
 
-What is your first step in workup? 
+A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
+/% Hint left heart failure more. %/
+She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
+Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
+
+What is your first step in management? 
 [[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
 [[Chest X-Ray|Chest X-Ray 3]]
@@ -31,7 +34,15 @@ Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, 
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 
 :: Physical Exam 3
-You start a physical examination of the patient. Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
+You start a physical examination of the patient. 
+
+ <audio controls>
+  <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
+
 [[Case needs more diagnostic evaluation| Case stare 3]]
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 <<set $case_3_dx_score -= 1>>
