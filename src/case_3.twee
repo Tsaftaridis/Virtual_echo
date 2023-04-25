@@ -67,8 +67,8 @@ Modality: Chest CXR
 
 :: Echo 3
 The chardiac echo is shown below: 
-<img style='width: 100%' src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-<img style='width: 100%' src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png">
+<img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
+<img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png">
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></iframe>
