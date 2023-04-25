@@ -333,8 +333,8 @@ Modality: Chest CXR
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Labs 3" tags="" position="475,350" size="100,100">// TODO 
 [[Case needs further diagnostic evaluation| Case stare 3]]
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Echo 3" tags="" position="600,350" size="100,100">The chardiac echo is shown below: 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png&quot;&gt;
+&lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
+&lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png&quot;&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
@@ -382,14 +382,13 @@ Congratulations! You just completed the third case!
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="36" name="Case 4 introduction" tags="" position="725,475" size="100,100">//TODO
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="37" name="StoryInit" tags="" position="850,475" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
-&lt;&lt;set $wrong_password to false&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Guard" tags="" position="975,475" size="100,100">&lt;&lt;set _answer to &quot;&quot;&gt;&gt;
-&lt;&lt;set $has_access = 0&gt;&gt;
-
-
-&lt;&lt;if $wrong_password&gt;&gt; Wrong Password! &lt;&lt;/if&gt;&gt;
+&lt;&lt;set $wrong_password to false&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Guard" tags="" position="975,475" size="100,100">&lt;&lt;silently&gt;&gt;
+	&lt;&lt;set _answer to &quot;&quot;&gt;&gt;
+	&lt;&lt;set $has_access = 0&gt;&gt;
+	&lt;&lt;if $wrong_password&gt;&gt; Wrong Password! &lt;&lt;/if&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
 Please input a Password to continue.
 &lt;&lt;textbox &quot;_answer&quot; &quot;&quot;&gt;&gt;
-
 &lt;&lt;button &quot;Check Password&quot;&gt;&gt;
 	&lt;&lt;if _answer is &quot;&quot;&gt;&gt;
 		/% They have not supplied an answer. %/
@@ -437,8 +436,7 @@ Please input a Password to continue.
 &lt;&lt;if not hasVisited(&quot;Case 3 introduction&quot;)&gt;&gt; [[Case 3|Case 3 introduction]] &lt;&lt;else&gt;&gt; Case 3 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Case 4 introduction&quot;)&gt;&gt; [[Case 4|Case 4 introduction]] &lt;&lt;else&gt;&gt; Case 4 &lt;&lt;/if&gt;&gt;
 [[Score report]]
-
-
+&lt;&lt;silently&gt;&gt;
 /*Define scores before score report */
 &lt;&lt;set $case_1_dx_score to random (7,9)&gt;&gt;
 &lt;&lt;set $case_1_Tx_score to random (7,9)&gt;&gt;
@@ -454,7 +452,8 @@ Please input a Password to continue.
 
 &lt;&lt;set $case_4_dx_score to random (7,9)&gt;&gt;
 &lt;&lt;set $case_4_Tx_score to random (7,9)&gt;&gt;
-&lt;&lt;set $case_4_Fu_score to random (7,9)&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Score report" tags="" position="1225,475" size="100,100">&lt;&lt;print random(1000,9999)+ &quot;-&quot; + $case_1_dx_score + &quot;-&quot; + random(1000,9999)+ &quot;-&quot; + $case_1_Tx_score + &quot;-&quot; + $case_1_Fu_score&gt;&gt;
+&lt;&lt;set $case_4_Fu_score to random (7,9)&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Score report" tags="" position="1225,475" size="100,100">&lt;&lt;print random(1000,9999)+ &quot;-&quot; + $case_1_dx_score + &quot;-&quot; + random(1000,9999)+ &quot;-&quot; + $case_1_Tx_score + &quot;-&quot; + $case_1_Fu_score&gt;&gt;
 &lt;&lt;print random(1000,9999)+ &quot;-&quot; + $case_2_dx_score + &quot;-&quot; + random(1000,9999)+ &quot;-&quot; + $case_2_Tx_score + &quot;-&quot; + $case_2_Fu_score&gt;&gt;
 &lt;&lt;print random(1000,9999)+ &quot;-&quot; + $case_3_dx_score + &quot;-&quot; + random(1000,9999)+ &quot;-&quot; + $case_3_Tx_score + &quot;-&quot; + $case_3_Fu_score&gt;&gt;
 &lt;&lt;print random(1000,9999)+ &quot;-&quot; + $case_4_dx_score + &quot;-&quot; + random(1000,9999)+ &quot;-&quot; + $case_4_Tx_score + &quot;-&quot; + $case_4_Fu_score&gt;&gt;
