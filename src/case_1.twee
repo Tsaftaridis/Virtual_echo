@@ -2,11 +2,11 @@
 A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
 What is your first step in workup? 
-[[Physical Exam 1|Physical Exam]]
-[[EKG 1|EKG]]
-[[Chest X-Ray 1|X-Ray]]
-[[Labs 1|Labs]]
-[[Echo 1|Echo]]
+[[Physical Exam|Physical Exam 1]]
+[[EKG|EKG 1]]
+[[Chest X-Ray|Chest X-Ray 1]]
+[[Labs|Labs 1]]
+[[Echo|Echo 1]]
 
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 <<set $case_1_dx_score to 0>>
@@ -18,11 +18,11 @@ What is your first step in workup?
 :: Case stare 1
 What is your next step? 
 /* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam 1")>> [[Physical Exam 1|Physical Exam]] <<else>> Physical Exam <</if>>
-<<if not hasVisited("EKG 1")>> [[EKG 1|EKG]] <<else>> EKG <</if>>
-<<if not hasVisited("Chest X-Ray 1")>> [[Chest X-Ray 1|Chest X-Ray]] <<else>> Chest X-ray <</if>>
-<<if not hasVisited("Labs 1")>> [[Labs 1|Labs]] <<else>> Labs <</if>>
-<<if not hasVisited("Echo 1")>> [[Echo 1|Echo]] <<else>> Echo <</if>>
+<<if not hasVisited("Physical Exam 1")>> [[Physical Exam|Physical Exam 1]] <<else>> Physical Exam <</if>>
+<<if not hasVisited("EKG 1")>> [[EKG|EKG 1]] <<else>> EKG <</if>>
+<<if not hasVisited("Chest X-Ray 1")>> [[Chest X-Ray|Chest X-Ray 1]] <<else>> Chest X-ray <</if>>
+<<if not hasVisited("Labs 1")>> [[Labs|Labs 1]] <<else>> Labs <</if>>
+<<if not hasVisited("Echo 1")>> [[Echo|Echo 1]] <<else>> Echo <</if>>
 <<if hasVisited("Physical Exam 1", "EKG 1", "Chest X-Ray 1", "Labs 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <</if>>
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
 
@@ -36,7 +36,7 @@ You start a physical examination of the patient. You notice buldging of his neck
 
 :: EKG 1 
 His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
-<img src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
+<img style='width: 100%' src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
 <<set $case_1_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare 1]]
 <<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
@@ -97,7 +97,7 @@ The attending cardiologist tells you that you need some more diagnostic steps be
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 
 The head nurse asks you which the best treatment option for this patient would be: 
-[[Furosemide IV 1]]
+[[Furosemide IV|Furosemide IV 1]]
 [[Loop diuretic per os|Bad outcome 1]]
 [[Low dose oxygen|Bad outcome 1]]
 [[Inotropes|Bad outcome 1]]
@@ -121,12 +121,12 @@ After 5 days in the intensive care unit, his ejection fraction improves and he i
 :: Further management 1
 The attending asks you what you think the next step in managing this patient should be. 
 
-[[Discharge home 1]]
-[[Hospitalization and monitoring]]
+[[Discharge Home|Discharge home 1]]
+[[Hospitalization and monitoring|Hospitalization and monitoring 1]]
 
 :: Discharge home 1
 According to the guidelines, it is advisable to hospitalize and monitor the patient! 
-[[Continue|Hospitalization and monitoring]]
+[[Continue|Hospitalization and monitoring 1]]
 
 :: Hospitalization and monitoring 1
 The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.  (ACE-I, BB, +- Spironolactone etc.) 
