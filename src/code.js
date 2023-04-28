@@ -1,8 +1,9 @@
 window.setup = window.setup || {};
 
-/* Disable history controls to stop users from affecting the scores. */
-Config.history.controls = false; 
+/* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
+/* Config.history.controls = false; */
 
+/* Hide sidebar initially. */ 
 Config.ui.stowBarInitially = true;
 
 /* hello world */ 

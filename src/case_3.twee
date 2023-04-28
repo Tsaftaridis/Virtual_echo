@@ -1,11 +1,12 @@
 :: Case 3 introduction 
 
 A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
+
 /% Hint left heart failure more. %/
 She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
 Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
 
-What is your first step in management? 
+What is your first step in management?  
 [[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
 [[Chest X-Ray|Chest X-Ray 3]]
@@ -29,7 +30,10 @@ What is your next step?
 <<if not hasVisited("Labs 3")>> [[Labs|Labs 3]] <<else>> Labs <</if>>
 <<if not hasVisited("Echo 3")>> [[Echo|Echo 3]] <<else>> Echo <</if>>
 <<if hasVisited("Physical Exam 3", "EKG 3", "Chest X-Ray 3", "Labs 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <</if>>
-Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
+Notes: 50 year-old female. C/o cough, fatigue, dyspnea on mild exertion, gradually worsening for 2 months and coughing at night. BP 140/90mmHg, HR 92 bpm, Temperature 37.7 degrees Celcius, SpO2  94% on room air. 
+
+She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
+Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
 
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 
@@ -41,64 +45,63 @@ You start a physical examination of the patient.
 Your browser does not support the audio element.
 </audio> 
 
-Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
+Physical exam: The cardiac auscultation findings can be heard above. On pulmonary auscultation you hear 3+ crackles in the lower lung fields; The abdominal exam is normal; There is mild lower extremity edema and the pulse is normal. 
 
 [[Case needs more diagnostic evaluation| Case stare 3]]
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 <<set $case_3_dx_score -= 1>>
 
 :: EKG 3
-Her EKG showed sinus tachycardia. 
 <img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
 
-127 bpm frequency, PR interval 200 ms, QRS 92 ms, , QTc 459 ms, overload of the left atrium and indirect signs of overload of the right atrium, low-voltage front plane and overload of the right ventricle. 
 <<set $case_3_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare 3]]
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 :: Chest X-Ray 3
-40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
+40 minutes later, the nurse hands you the following film: 
+<img style='width: 100%' src="https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg">
 
-Name: M.S. 
-Age: 50 
-Gender: Female 
-Modality: Chest CXR 
-
- CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
-
-<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg">
 <<set $case_3_dx_score -= 1>> 
+[[I need to see the radiologist report|radiologist 3]]
 [[Case needs further diagnostic evaluation| Case stare 3]]
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
+:: radiologist 3
+Mild pulmonary edema. Slight atrial enlargement. 
+
+<<set $case_3_dx_score -= 1>> 
+[[Continue|Case stare 3]]
+
+
 :: Labs 3
-// TODO 
+Hg level of 12 mg/dL. Otherwise normal. 
+
 [[Case needs further diagnostic evaluation| Case stare 3]]
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 :: Echo 3
 The chardiac echo is shown below: 
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-<img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png">
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></iframe>
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
 
 What do you think the echo shows? 
-[[Mitral valve stenosis and left atrial dilation|Wrong Echo 3]]
-[[Dilated LA, anterior mitral leaflet doming in mitral stenosis,|HF echo 3]]
+[[Mitral valve regurgitation and left atrial dilation|Wrong Echo 3]]
+[[Dilated LA, anterior mitral leaflet doming consistent with mitral stenosis,|HF echo 3]]
 [[Bicuspid aortic valve, aortic stenosis|Wrong Echo 3]]
 
 :: HF echo 3
-mitral valve presented thickened cusps with commissural fusion and reduced opening, compatible with a severely compromised rheumatic condition, and there was significant valve insufficiency. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve showed discrete signs of fibrocalcification without functional alterations; the tricuspid valve had severe insufficiency. Pulmonary artery systolic pressure was estimated at 50 mmHg
+Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 <<set $case_3_dx_score += 2>> 
 <<set $case_3_Echo to 1>>
 [[I need further diagnostic evaluation| Case stare 3]]
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
 
 :: Wrong Echo 3
-mitral valve presented thickened cusps with commissural fusion and reduced opening, compatible with a severely compromised rheumatic condition, and there was significant valve insufficiency. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve showed discrete signs of fibrocalcification without functional alterations; the tricuspid valve had severe insufficiency. Pulmonary artery systolic pressure was estimated at 50 mmHg
+Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 <<set $case_3_dx_score -= 2>> 
 <<set $case_3_Echo to 0>>
 [[I need further diagnostic evaluation| Case stare 3]]
@@ -113,46 +116,56 @@ The attending cardiologist tells you that you need some more diagnostic steps be
 :: Treatment 3
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 
-Which would the best treatment option for this patient be? 
-[[furosemide 40 mg, digoxin 0,25 mg and acetylsalicylic acid 100 mg daily|Guideline treatment 3]]
-[[Loop diuretic per os|Bad outcome 3]]
-[[Low dose oxygen|Bad outcome 3]]
-[[Inotropes|Bad outcome 3]]
+<<set $diuretics_3 to false>>
+<<set $penicillin_3 to false>>
+<<set $beta_blocker_3 to false>>
+<<set $inotropes_3 to false>>
+<<set $fluids_3 to false>>
+
+Pick which of the following drugs you think would be included in the appropreate treatment. 
+Diuretics <<checkbox "$diuretics_3" false true>>
+Inotropes -2 <<checkbox "$inotropes_3" false true>>
+Penicillin +2 <<checkbox "$penicillin_3" false true>>
+Beta blocker +2 <<checkbox "$beta_blocker_3" false true>>
+Fluids -3 <<checkbox "$fluids_3" false true>>
+
+[[Continue|Guideline treatment 3]]
 
 :: Guideline treatment 3
-After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he "doesn't feel bloated anymore". His blood pressure has normalized. 
-
-IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure (ESC2021 Class I recommendation). 
-<<set $case_3_Tx_score += 5 >>
-
-[[Continue|Further management 3]]
-
-:: Bad outcome 3
-// TODO scoring of the case 
+<<silently>>
+    <<if $diuretics_3>>  $case_3_Tx_score += 3 <</if>>
+    <<if $penicillin_3>>  $case_3_Tx_score += 2 <</if>>
+    <<if $beta_blocker_3>>  $case_3_Tx_score += 3 <</if>>
+    <<if $inotropes_3>>  $case_3_Tx_score -= 2 <</if>>
+    <<if $fluids_3>>  $case_3_Tx_score -= 3 <</if>>
+<</silently>>
+After consulting with the attending physician, the patient is started on diuretics, penicillin and a beta blocker. Inotropes and IV fluids are not indicated and may harm the patient. 
 [[Continue|Further management 3]]
 
 :: Further management 3
 The attending asks you what you think the next step in managing this patient should be. 
-
 [[Discharge home|Discharge home 3]]
-[[Hospitalization and monitoring|Hospitalization and monitoring 3]]
-[[Mitral valve intervention|Mitral valve intervention 3]]
+[[Keep in the hospital for further management|Mitral valve intervention 3]]
 
 :: Discharge home 3
-According to the guidelines, it is advisable to plan a mitral valve intervention! 
+According to the guidelines, the patient needs to stay in the hospital for something important! 
+<<set $case_3_Fu_score -= 3 >>
 [[Continue|Mitral valve intervention 3]]
-
-:: Hospitalization and monitoring 3
-Something else is necessary for this patient: 
-[[Dischage home|Discharge home 3]]
-[[Mitral valve intervention|Mitral valve intervention 3]]
-<<set $case_3_Fu_score -= 1 >>
 
 :: Mitral valve intervention 3
 You contact the interventional unit in your hospital and arrange for the patient to receive a mitral valve intervention. 
 <<set $case_3_Fu_score += 2 >>
 
 Congratulations! You just completed the third case! 
+
+The diagnostic approach to suspected underlying cardiac disease should involve a thorough history and complete physical examination, since the symptoms are generally non-specific (cough, dyspnea, fatigue). 
+
+The cardiac echo can aid in the diagnostic evaluation, showing left atrial dilation and pulmonary hypertension. The EKG also has an important role to play in establishing the diagnosis. 
+
+The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent rheumatic fever recurrence, and a beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient. 
+
+In general, evaluation and management by a cardiologist is strongly advised in cases of mitral stenosis, since the treatment guidelines tend to be complicated. 
+
+The next step in managing this patient is to refer her for a mitral valve intervention, as severe mitral stenosis is a potentially life-threatening condition that requires urgent treatment. 
+
 [[Waiting Room]]
-
-

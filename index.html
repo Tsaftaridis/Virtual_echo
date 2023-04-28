@@ -170,9 +170,10 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
     background-color: white;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
-/* Disable history controls to stop users from affecting the scores. */
-Config.history.controls = false; 
+/* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
+/* Config.history.controls = false; */
 
+/* Hide sidebar initially. */ 
 Config.ui.stowBarInitially = true;
 
 /* hello world */ 
@@ -215,12 +216,12 @@ Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, 
 
 /* Start of the workup choices. Trainee must pick &quot;EKG 1&quot; and &quot;Echo 1&quot; before the choice to move to treatment is actually opened. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="3" name="Physical Exam 1" tags="" position="350,100" size="100,100">You start a physical examination of the patient. You notice buldging of his neck veins, a third heart sound, crackling lung sounds. Pressing below the right costal margin makes the vein distension worse. 
 [[Case needs more diagnostic evaluation|Case stare 1]]
-&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;
+&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $case_1_dx_score -= 1&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="EKG 1" tags="" position="475,100" size="100,100">His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png&quot;&gt;
 &lt;&lt;set $case_1_dx_score += 2&gt;&gt;
 [[Case needs further diagnostic evaluation| Case stare 1]]
-&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Chest X-Ray 1" tags="" position="600,100" size="100,100">40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
+&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Chest X-Ray 1" tags="" position="600,100" size="100,100">40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
 
 Name: H.F. 
 Age: 65 
@@ -232,9 +233,9 @@ Modality: Chest CXR
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg&quot;&gt;
 &lt;&lt;set $case_1_dx_score -= 1&gt;&gt; 
 [[Case needs further diagnostic evaluation| Case stare 1]]
-&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Labs 1" tags="" position="725,100" size="100,100">Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
+&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Labs 1" tags="" position="725,100" size="100,100">Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
 [[Case needs further diagnostic evaluation| Case stare 1]]
-&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Echo 1" tags="" position="850,100" size="100,100">The chardiac echo is shown below: 
+&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Echo 1" tags="" position="850,100" size="100,100">The cardiac echo is shown below: 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt;
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w&quot;&gt;
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w&quot;&gt;
@@ -242,52 +243,65 @@ Modality: Chest CXR
 
 What do you think the echo shows? 
 [[Dilated inferior vena cava and severely reduced ejection fraction|HF echo 1]]
-[[Diffuse hypokinesia and increased left ventricular volume|Wrong Echo 1]]
+[[Preserved ejection fraction and collapsable dilated inferior vena cava|Wrong Echo 1]]
 [[Mitral valve prolapse and left atrial dilation|Wrong Echo 1]]</tw-passagedata><tw-passagedata pid="8" name="HF echo 1" tags="" position="975,100" size="100,100">The cardiac echo report reads: &quot;Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava.&quot;
 &lt;&lt;set $case_1_dx_score += 2&gt;&gt; 
 &lt;&lt;set $case_1_Echo to 1&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 1]]
-&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Wrong Echo 1" tags="" position="1100,100" size="100,100">The cardiac echo report reads: &quot;Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava.&quot;
+&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Wrong Echo 1" tags="" position="1100,100" size="100,100">The cardiac echo report reads: &quot;Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava.&quot;
 &lt;&lt;set $case_1_dx_score -= 2&gt;&gt; 
 &lt;&lt;set $case_1_Echo to 0&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 1]]
-&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;
+&lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;
 
-/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="10" name="Not done Dx yet 1" tags="" position="1225,100" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-&lt;&lt;set $case_1_dx_score -= 1&gt;&gt; 
-[[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="11" name="Treatment 1" tags="" position="100,225" size="100,100">Remember, a cardiac echo and an EKG are required diagnostic steps. 
+/* Reprimand and return to diagnostic evaluation. Don&#39;t need to remove points here, you can see if they got here through the history later. */</tw-passagedata><tw-passagedata pid="10" name="Not done Dx yet 1" tags="" position="1225,100" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+[[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="11" name="Treatment 1" tags="" position="100,225" size="100,100">Remember, a physical examination is important when first approaching a patient. After that, a cardiac echo and an EKG are required diagnostic steps before moving on to treatment in this patient. 
 
-The head nurse asks you which the best treatment option for this patient would be: 
+The head nurse asks you which of the following the best starting treatment option for this patient would be: 
 [[Furosemide IV|Furosemide IV 1]]
 [[Loop diuretic per os|Bad outcome 1]]
-[[Low dose oxygen|Bad outcome 1]]
+[[1.5 L intravenous fluids and 10mg metoprolol|Very bad outcome 1]]
 [[Inotropes|Bad outcome 1]]</tw-passagedata><tw-passagedata pid="12" name="Furosemide IV 1" tags="" position="225,225" size="100,100">After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he &quot;doesn&#39;t feel bloated anymore&quot;. His blood pressure has normalized. 
 
-IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure (ESC2021 Class I recommendation). 
-&lt;&lt;set $case_1_Tx_score += 5 &gt;&gt;
-
-[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="13" name="Bad outcome 1" tags="" position="350,225" size="100,100">3 hours later, you are called by the nurse because the patient &quot;doesn&#39;t seem to be doing well&quot;. His blood pressure is 110/70 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
+IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure, according to the guidelines. 
+&lt;&lt;set $case_1_Tx_score += 4 &gt;&gt;
+[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="13" name="Bad outcome 1" tags="" position="350,225" size="100,100">The patient improves over the next few days, though slowly. While staying hospitalized, he complains of shortness of breath for the next five days, though his peripheral edema seems to be improving slowly. 
+On the 6th day he is finally symptom-free. 
+&lt;&lt;set $case_1_Tx_score += 3 &gt;&gt;
+[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="14" name="Very bad outcome 1" tags="" position="475,225" size="100,100">3 hours later, you are called by the nurse because the patient &quot;doesn&#39;t seem to be doing well&quot;. His blood pressure is 110/70 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
 
 He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
 
 After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
-[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="14" name="Further management 1" tags="" position="475,225" size="100,100">The attending asks you what you think the next step in managing this patient should be. 
+&lt;&lt;set $case_1_Tx_score -= 4 &gt;&gt;
+[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="15" name="Further management 1" tags="" position="600,225" size="100,100">You examine the patient and have a conversation with them about their symptoms. They report they are feeling better. The edema is gone, the lung sounds are normal, while a repeat cardiac echo shows the following findings: 
 
-[[Discharge Home|Discharge home 1]]
-[[Hospitalization and monitoring|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="15" name="Discharge home 1" tags="" position="600,225" size="100,100">According to the guidelines, it is advisable to hospitalize and monitor the patient! 
-[[Continue|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Hospitalization and monitoring 1" tags="" position="725,225" size="100,100">The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.  (ACE-I, BB, +- Spironolactone etc.) 
-&lt;&lt;set $case_1_Fu_score += 5 &gt;&gt;
-[[Continue|End of case 1]]</tw-passagedata><tw-passagedata pid="17" name="End of case 1" tags="" position="850,225" size="100,100">Two days later, the patient is discharged with directions for fluid and salt restrictions, an initial pharmaceutical regimen (ACE-inhibitors, a beta blocker and spironolactone). He is advised to consult a primary care physician for long-term follow-up. 
+The attending asks you what you think the next step in managing this patient should be. 
 
-Congratulations! You just completed the first case! 
+[[Discharge Home on oral diuretics|Discharge home 1]]
+[[Keep in the hospital for further management|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Discharge home 1" tags="" position="725,225" size="100,100">According to the guidelines (//ADD LINK), it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
+&lt;&lt;set $case_1_Fu_score -= 5 &gt;&gt;
+[[Continue|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="17" name="Hospitalization and monitoring 1" tags="" position="850,225" size="100,100">The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.
 
-[[Waiting Room]]</tw-passagedata><tw-passagedata pid="18" name="Case 2 introduction" tags="" position="975,225" size="100,100">//TODO
-[[Waiting Room]]</tw-passagedata><tw-passagedata pid="19" name="Case 3 introduction" tags="" position="1100,225" size="100,100">A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
+He is started on an ACE-inhibitor, a beta-blocker, spironolactone and furosemide per os. They are also given directions on how to take the medication at home and help towards finding a primary care physician for long-term follow-up. 
+&lt;&lt;set $case_1_Fu_score += 3 &gt;&gt;
+[[Continue|End of case 1]]</tw-passagedata><tw-passagedata pid="18" name="End of case 1" tags="" position="975,225" size="100,100">Congratulations! You have completed the first case! 
+
+The main points in managing heart failure are the following: 
+
+After a physical exam, an EKG and a cardiac echo are necessary for the full assessment of suspected heart failure. A chest x-ray is not very useful, as it does not give us any actionable information. 
+The best first step in management is to give intravenous furosemide. Furosemide per os will not hurt the patient, but would not be the ideal treatment. In contrast, beta blockers and IV fluids should be avoided in acute decompensated heart failure, because the can worsen the patient&#39;s condition and increase intensive care admissions. 
+After initial stabilization, the patients need to be put on long-term heart failure treatment before leaving the hospital. This ensures that they are adequately treated, given the danger that they will be lost to follow-up due to difficulties accessing care. An early discharge or inadequate treatment (e.g. oral diuretics only) could lead to worse outcomes. 
+
+You can learn more about heart failure management by reading the [[2021 European Society of Cardiology Guidelines|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
+[[See the next patient|Waiting Room]]</tw-passagedata><tw-passagedata pid="19" name="Case 2 introduction" tags="" position="1100,225" size="100,100">//TODO
+[[Waiting Room]]</tw-passagedata><tw-passagedata pid="20" name="Case 3 introduction" tags="" position="1225,225" size="100,100">A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
+
 /% Hint left heart failure more. %/
 She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
 Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
 
-What is your first step in management? 
+What is your first step in management?  
 [[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
 [[Chest X-Ray|Chest X-Ray 3]]
@@ -300,7 +314,7 @@ What is your first step in management?
 &lt;&lt;set $case_3_Fu_score to 0&gt;&gt;
 &lt;&lt;set $case_3_Echo to 0&gt;&gt;
 
-/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="20" name="Case stare 3" tags="" position="1225,225" size="100,100">What is your next step? 
+/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="21" name="Case stare 3" tags="" position="100,350" size="100,100">What is your next step? 
 
 /* Show each choice if it hasn&#39;t been visited before. */
 &lt;&lt;if not hasVisited(&quot;Physical Exam 3&quot;)&gt;&gt; [[Physical Exam|Physical Exam 3]] &lt;&lt;else&gt;&gt; Physical Exam &lt;&lt;/if&gt;&gt;
@@ -309,86 +323,102 @@ What is your first step in management?
 &lt;&lt;if not hasVisited(&quot;Labs 3&quot;)&gt;&gt; [[Labs|Labs 3]] &lt;&lt;else&gt;&gt; Labs &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Echo 3&quot;)&gt;&gt; [[Echo|Echo 3]] &lt;&lt;else&gt;&gt; Echo &lt;&lt;/if&gt;&gt;
 &lt;&lt;if hasVisited(&quot;Physical Exam 3&quot;, &quot;EKG 3&quot;, &quot;Chest X-Ray 3&quot;, &quot;Labs 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;/if&gt;&gt;
-Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
+Notes: 50 year-old female. C/o cough, fatigue, dyspnea on mild exertion, gradually worsening for 2 months and coughing at night. BP 140/90mmHg, HR 92 bpm, Temperature 37.7 degrees Celcius, SpO2  94% on room air. 
 
-/* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="21" name="Physical Exam 3" tags="" position="100,350" size="100,100">You start a physical examination of the patient. 
+She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
+Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
+
+/* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="22" name="Physical Exam 3" tags="" position="225,350" size="100,100">You start a physical examination of the patient. 
 
  &lt;audio controls&gt;
   &lt;source src=&quot;https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 Your browser does not support the audio element.
 &lt;/audio&gt; 
 
-Physical exam: Loud S1 heart sound, an opening snap, and a diastolic rumble, best heard at the apex. Pulmonary auscultation resulted normal; Abdomen exam resulted normal; there was no edema in the lower limbs and pulse palpation was normal. 
+Physical exam: The cardiac auscultation findings can be heard above. On pulmonary auscultation you hear 3+ crackles in the lower lung fields; The abdominal exam is normal; There is mild lower extremity edema and the pulse is normal. 
 
 [[Case needs more diagnostic evaluation| Case stare 3]]
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
-&lt;&lt;set $case_3_dx_score -= 1&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="EKG 3" tags="" position="225,350" size="100,100">Her EKG showed sinus tachycardia. 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg&quot;&gt;
+&lt;&lt;set $case_3_dx_score -= 1&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="EKG 3" tags="" position="350,350" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg&quot;&gt;
 
-127 bpm frequency, PR interval 200 ms, QRS 92 ms, , QTc 459 ms, overload of the left atrium and indirect signs of overload of the right atrium, low-voltage front plane and overload of the right ventricle. 
 &lt;&lt;set $case_3_dx_score += 2&gt;&gt;
 [[Case needs further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Chest X-Ray 3" tags="" position="350,350" size="100,100">40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Chest X-Ray 3" tags="" position="475,350" size="100,100">40 minutes later, the nurse hands you the following film: 
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg&quot;&gt;
 
-Name: M.S. 
-Age: 50 
-Gender: Female 
-Modality: Chest CXR 
-
- CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
-
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg&quot;&gt;
 &lt;&lt;set $case_3_dx_score -= 1&gt;&gt; 
+[[I need to see the radiologist report|radiologist 3]]
 [[Case needs further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Labs 3" tags="" position="475,350" size="100,100">// TODO 
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="radiologist 3" tags="" position="600,350" size="100,100">Mild pulmonary edema. Slight atrial enlargement. 
+
+&lt;&lt;set $case_3_dx_score -= 1&gt;&gt; 
+[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="26" name="Labs 3" tags="" position="725,350" size="100,100">Hg level of 12 mg/dL. Otherwise normal. 
+
 [[Case needs further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Echo 3" tags="" position="600,350" size="100,100">The chardiac echo is shown below: 
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Echo 3" tags="" position="850,350" size="100,100">The chardiac echo is shown below: 
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
-&lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18c.png&quot;&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png&quot;&gt;
 
 What do you think the echo shows? 
-[[Mitral valve stenosis and left atrial dilation|Wrong Echo 3]]
-[[Dilated LA, anterior mitral leaflet doming in mitral stenosis,|HF echo 3]]
-[[Bicuspid aortic valve, aortic stenosis|Wrong Echo 3]]</tw-passagedata><tw-passagedata pid="26" name="HF echo 3" tags="" position="725,350" size="100,100">mitral valve presented thickened cusps with commissural fusion and reduced opening, compatible with a severely compromised rheumatic condition, and there was significant valve insufficiency. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve showed discrete signs of fibrocalcification without functional alterations; the tricuspid valve had severe insufficiency. Pulmonary artery systolic pressure was estimated at 50 mmHg
+[[Mitral valve regurgitation and left atrial dilation|Wrong Echo 3]]
+[[Dilated LA, anterior mitral leaflet doming consistent with mitral stenosis,|HF echo 3]]
+[[Bicuspid aortic valve, aortic stenosis|Wrong Echo 3]]</tw-passagedata><tw-passagedata pid="28" name="HF echo 3" tags="" position="975,350" size="100,100">Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 &lt;&lt;set $case_3_dx_score += 2&gt;&gt; 
 &lt;&lt;set $case_3_Echo to 1&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 3]]
-&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Wrong Echo 3" tags="" position="850,350" size="100,100">mitral valve presented thickened cusps with commissural fusion and reduced opening, compatible with a severely compromised rheumatic condition, and there was significant valve insufficiency. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve showed discrete signs of fibrocalcification without functional alterations; the tricuspid valve had severe insufficiency. Pulmonary artery systolic pressure was estimated at 50 mmHg
+&lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Wrong Echo 3" tags="" position="1100,350" size="100,100">Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 &lt;&lt;set $case_3_dx_score -= 2&gt;&gt; 
 &lt;&lt;set $case_3_Echo to 0&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 3]]
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
 
-/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="28" name="Not done Dx yet 3" tags="" position="975,350" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="30" name="Not done Dx yet 3" tags="" position="1225,350" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
 &lt;&lt;set $case_3_dx_score -= 1&gt;&gt; 
-[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="29" name="Treatment 3" tags="" position="1100,350" size="100,100">Remember, a cardiac echo and an EKG are required diagnostic steps. 
+[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="31" name="Treatment 3" tags="" position="100,475" size="100,100">Remember, a cardiac echo and an EKG are required diagnostic steps. 
 
-Which would the best treatment option for this patient be? 
-[[furosemide 40 mg, digoxin 0,25 mg and acetylsalicylic acid 100 mg daily|Guideline treatment 3]]
-[[Loop diuretic per os|Bad outcome 3]]
-[[Low dose oxygen|Bad outcome 3]]
-[[Inotropes|Bad outcome 3]]</tw-passagedata><tw-passagedata pid="30" name="Guideline treatment 3" tags="" position="1225,350" size="100,100">After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he &quot;doesn&#39;t feel bloated anymore&quot;. His blood pressure has normalized. 
+&lt;&lt;set $diuretics_3 to false&gt;&gt;
+&lt;&lt;set $penicillin_3 to false&gt;&gt;
+&lt;&lt;set $beta_blocker_3 to false&gt;&gt;
+&lt;&lt;set $inotropes_3 to false&gt;&gt;
+&lt;&lt;set $fluids_3 to false&gt;&gt;
 
-IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure (ESC2021 Class I recommendation). 
-&lt;&lt;set $case_3_Tx_score += 5 &gt;&gt;
+Pick which of the following drugs you think would be included in the appropreate treatment. 
+Diuretics &lt;&lt;checkbox &quot;$diuretics_3&quot; false true&gt;&gt;
+Inotropes -2 &lt;&lt;checkbox &quot;$inotropes_3&quot; false true&gt;&gt;
+Penicillin +2 &lt;&lt;checkbox &quot;$penicillin_3&quot; false true&gt;&gt;
+Beta blocker +2 &lt;&lt;checkbox &quot;$beta_blocker_3&quot; false true&gt;&gt;
+Fluids -3 &lt;&lt;checkbox &quot;$fluids_3&quot; false true&gt;&gt;
 
-[[Continue|Further management 3]]</tw-passagedata><tw-passagedata pid="31" name="Bad outcome 3" tags="" position="100,475" size="100,100">// TODO scoring of the case 
-[[Continue|Further management 3]]</tw-passagedata><tw-passagedata pid="32" name="Further management 3" tags="" position="225,475" size="100,100">The attending asks you what you think the next step in managing this patient should be. 
-
+[[Continue|Guideline treatment 3]]</tw-passagedata><tw-passagedata pid="32" name="Guideline treatment 3" tags="" position="225,475" size="100,100">&lt;&lt;silently&gt;&gt;
+    &lt;&lt;if $diuretics_3&gt;&gt;  $case_3_Tx_score += 3 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $penicillin_3&gt;&gt;  $case_3_Tx_score += 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $beta_blocker_3&gt;&gt;  $case_3_Tx_score += 3 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $inotropes_3&gt;&gt;  $case_3_Tx_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $fluids_3&gt;&gt;  $case_3_Tx_score -= 3 &lt;&lt;/if&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+After consulting with the attending physician, the patient is started on diuretics, penicillin and a beta blocker. Inotropes and IV fluids are not indicated and may harm the patient. 
+[[Continue|Further management 3]]</tw-passagedata><tw-passagedata pid="33" name="Further management 3" tags="" position="350,475" size="100,100">The attending asks you what you think the next step in managing this patient should be. 
 [[Discharge home|Discharge home 3]]
-[[Hospitalization and monitoring|Hospitalization and monitoring 3]]
-[[Mitral valve intervention|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="33" name="Discharge home 3" tags="" position="350,475" size="100,100">According to the guidelines, it is advisable to plan a mitral valve intervention! 
-[[Continue|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="34" name="Hospitalization and monitoring 3" tags="" position="475,475" size="100,100">Something else is necessary for this patient: 
-[[Dischage home|Discharge home 3]]
-[[Mitral valve intervention|Mitral valve intervention 3]]
-&lt;&lt;set $case_3_Fu_score -= 1 &gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Mitral valve intervention 3" tags="" position="600,475" size="100,100">You contact the interventional unit in your hospital and arrange for the patient to receive a mitral valve intervention. 
+[[Keep in the hospital for further management|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="34" name="Discharge home 3" tags="" position="475,475" size="100,100">According to the guidelines, the patient needs to stay in the hospital for something important! 
+&lt;&lt;set $case_3_Fu_score -= 3 &gt;&gt;
+[[Continue|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="35" name="Mitral valve intervention 3" tags="" position="600,475" size="100,100">You contact the interventional unit in your hospital and arrange for the patient to receive a mitral valve intervention. 
 &lt;&lt;set $case_3_Fu_score += 2 &gt;&gt;
 
 Congratulations! You just completed the third case! 
+
+The diagnostic approach to suspected underlying cardiac disease should involve a thorough history and complete physical examination, since the symptoms are generally non-specific (cough, dyspnea, fatigue). 
+
+The cardiac echo can aid in the diagnostic evaluation, showing left atrial dilation and pulmonary hypertension. The EKG also has an important role to play in establishing the diagnosis. 
+
+The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent rheumatic fever recurrence, and a beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient. 
+
+In general, evaluation and management by a cardiologist is strongly advised in cases of mitral stenosis, since the treatment guidelines tend to be complicated. 
+
+The next step in managing this patient is to refer her for a mitral valve intervention, as severe mitral stenosis is a potentially life-threatening condition that requires urgent treatment. 
+
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="36" name="Case 4 introduction" tags="" position="725,475" size="100,100">//TODO
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="37" name="StoryInit" tags="" position="850,475" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
