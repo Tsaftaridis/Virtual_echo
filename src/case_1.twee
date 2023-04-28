@@ -31,7 +31,7 @@ Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, 
 :: Physical Exam 1 
 You start a physical examination of the patient. You notice buldging of his neck veins, a third heart sound, crackling lung sounds. Pressing below the right costal margin makes the vein distension worse. 
 [[Case needs more diagnostic evaluation|Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 <<set $case_1_dx_score -= 1>>
 
 :: EKG 1 
@@ -39,7 +39,7 @@ His EKG showed sinus tachycardia and a Q waves in the inferior leads.
 <img style='width: 100%' src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
 <<set $case_1_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
 :: Chest X-Ray 1 
 40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
@@ -54,15 +54,15 @@ Modality: Chest CXR
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
 <<set $case_1_dx_score -= 1>> 
 [[Case needs further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
 :: Labs 1 
 Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
 [[Case needs further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
 :: Echo 1 
-The chardiac echo is shown below: 
+The cardiac echo is shown below: 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
@@ -70,7 +70,7 @@ The chardiac echo is shown below:
 
 What do you think the echo shows? 
 [[Dilated inferior vena cava and severely reduced ejection fraction|HF echo 1]]
-[[Diffuse hypokinesia and increased left ventricular volume|Wrong Echo 1]]
+[[Preserved ejection fraction and collapsable dilated inferior vena cava|Wrong Echo 1]]
 [[Mitral valve prolapse and left atrial dilation|Wrong Echo 1]]
 
 :: HF echo 1
@@ -78,64 +78,79 @@ The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderat
 <<set $case_1_dx_score += 2>> 
 <<set $case_1_Echo to 1>>
 [[I need further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
 :: Wrong Echo 1
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
 <<set $case_1_dx_score -= 2>> 
 <<set $case_1_Echo to 0>>
 [[I need further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
-/* Reprimand and return to diagnostic evaluation. */
+/* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
 :: Not done Dx yet 1 
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-<<set $case_1_dx_score -= 1>> 
 [[Continue|Case stare 1]]
 
 :: Treatment 1 
-Remember, a cardiac echo and an EKG are required diagnostic steps. 
+Remember, a physical examination is important when first approaching a patient. After that, a cardiac echo and an EKG are required diagnostic steps before moving on to treatment in this patient. 
 
-The head nurse asks you which the best treatment option for this patient would be: 
+The head nurse asks you which of the following the best starting treatment option for this patient would be: 
 [[Furosemide IV|Furosemide IV 1]]
 [[Loop diuretic per os|Bad outcome 1]]
-[[Low dose oxygen|Bad outcome 1]]
+[[1.5 L intravenous fluids and 10mg metoprolol|Very bad outcome 1]]
 [[Inotropes|Bad outcome 1]]
 
 :: Furosemide IV 1
 After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he "doesn't feel bloated anymore". His blood pressure has normalized. 
 
-IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure (ESC2021 Class I recommendation). 
-<<set $case_1_Tx_score += 5 >>
-
+IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure, according to the guidelines. 
+<<set $case_1_Tx_score += 4 >>
 [[Continue|Further management 1]]
 
 :: Bad outcome 1
+The patient improves over the next few days, though slowly. While staying hospitalized, he complains of shortness of breath for the next five days, though his peripheral edema seems to be improving slowly. 
+On the 6th day he is finally symptom-free. 
+<<set $case_1_Tx_score += 3 >>
+[[Continue|Further management 1]]
+
+:: Very bad outcome 1
 3 hours later, you are called by the nurse because the patient "doesn't seem to be doing well". His blood pressure is 110/70 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
 
 He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
 
 After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
+<<set $case_1_Tx_score -= 4 >>
 [[Continue|Further management 1]]
 
 :: Further management 1
+You examine the patient and have a conversation with them about their symptoms. They report they are feeling better. The edema is gone, the lung sounds are normal, while a repeat cardiac echo shows the following findings: 
+
 The attending asks you what you think the next step in managing this patient should be. 
 
-[[Discharge Home|Discharge home 1]]
-[[Hospitalization and monitoring|Hospitalization and monitoring 1]]
+[[Discharge Home on oral diuretics|Discharge home 1]]
+[[Keep in the hospital for further management|Hospitalization and monitoring 1]]
 
 :: Discharge home 1
-According to the guidelines, it is advisable to hospitalize and monitor the patient! 
+According to the guidelines (//ADD LINK), it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
+<<set $case_1_Fu_score -= 5 >>
 [[Continue|Hospitalization and monitoring 1]]
 
 :: Hospitalization and monitoring 1
-The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.  (ACE-I, BB, +- Spironolactone etc.) 
-<<set $case_1_Fu_score += 5 >>
+The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.
+
+He is started on an ACE-inhibitor, a beta-blocker, spironolactone and furosemide per os. They are also given directions on how to take the medication at home and help towards finding a primary care physician for long-term follow-up. 
+<<set $case_1_Fu_score += 3 >>
 [[Continue|End of case 1]]
 
 :: End of case 1
-Two days later, the patient is discharged with directions for fluid and salt restrictions, an initial pharmaceutical regimen (ACE-inhibitors, a beta blocker and spironolactone). He is advised to consult a primary care physician for long-term follow-up. 
+Congratulations! You have completed the first case! 
 
-Congratulations! You just completed the first case! 
+The main points in managing heart failure are the following: 
 
-[[Waiting Room]]
+After a physical exam, an EKG and a cardiac echo are necessary for the full assessment of suspected heart failure. A chest x-ray is not very useful, as it does not give us any actionable information. 
+The best first step in management is to give intravenous furosemide. Furosemide per os will not hurt the patient, but would not be the ideal treatment. In contrast, beta blockers and IV fluids should be avoided in acute decompensated heart failure, because the can worsen the patient's condition and increase intensive care admissions. 
+After initial stabilization, the patients need to be put on long-term heart failure treatment before leaving the hospital. This ensures that they are adequately treated, given the danger that they will be lost to follow-up due to difficulties accessing care. An early discharge or inadequate treatment (e.g. oral diuretics only) could lead to worse outcomes. 
+
+You can learn more about heart failure management by reading the [[2021 European Society of Cardiology Guidelines|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
+[[See the next patient|Waiting Room]]
