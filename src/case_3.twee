@@ -124,10 +124,10 @@ Remember, a cardiac echo and an EKG are required diagnostic steps.
 
 Pick which of the following drugs you think would be included in the appropreate treatment. 
 Diuretics <<checkbox "$diuretics_3" false true>>
-Inotropes -2 <<checkbox "$inotropes_3" false true>>
-Penicillin +2 <<checkbox "$penicillin_3" false true>>
-Beta blocker +2 <<checkbox "$beta_blocker_3" false true>>
-Fluids -3 <<checkbox "$fluids_3" false true>>
+Inotropes <<checkbox "$inotropes_3" false true>>
+Penicillin <<checkbox "$penicillin_3" false true>>
+Beta blocker <<checkbox "$beta_blocker_3" false true>>
+Fluids <<checkbox "$fluids_3" false true>>
 
 [[Continue|Guideline treatment 3]]
 
