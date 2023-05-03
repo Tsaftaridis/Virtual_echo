@@ -1,3 +1,179 @@
 :: Case 4 introduction
-//TODO
+A 34 year-old lady is referred to your intensive care unit. She had a cough and dyspnea which developed on the 15th day after the delivery of her third child. A month prior to delivery she started feeling weak with dyspnea and hypertension but declined treatment for hypertension and the dyspnea symptoms were not investigated further. Vitals: BP 90/60 mmHg, HR 120 bpm. 
+
+What are your next steps? 
+
+//TODO: add icu entry, add a preliminary treatment step if needed, repeat echo, repeat chest x-ray 
+
+[[Physical Exam|Physical Exam 4]]
+[[EKG|EKG 4]]
+[[Chest X-Ray|Chest X-Ray 4]]
+[[Labs|Labs 4]]
+[[Echo|Echo 4]]
+
+/* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
+<<set $case_4_dx_score to 0>>
+<<set $case_4_Tx_score to 0>>
+<<set $case_4_Fu_score to 0>>
+<<set $case_4_Echo to 0>>
+
+/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
+:: Case stare 4
+What is your next step? 
+
+/* Show each choice if it hasn't been visited before. */
+<<if not hasVisited("Physical Exam 4")>> [[Physical Exam|Physical Exam 4]] <<else>> Physical Exam <</if>>
+<<if not hasVisited("EKG 4")>> [[EKG|EKG 4]] <<else>> EKG <</if>>
+<<if not hasVisited("Chest X-Ray 4")>> [[Chest X-Ray|Chest X-Ray 4]] <<else>> Chest X-ray <</if>>
+<<if not hasVisited("Labs 4")>> [[Labs|Labs 4]] <<else>> Labs <</if>>
+<<if not hasVisited("Echo 4")>> [[Echo|Echo 4]] <<else>> Echo <</if>>
+<<if hasVisited("Physical Exam 4", "EKG 4", "Chest X-Ray 4", "Labs 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <</if>>
+Notes: TODO 
+Vitals: TODO 
+
+/* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
+
+:: Physical Exam 4 
+You start a physical exam on the patient. 
+
+Heart auscultation at the apex, left decubitus position. 
+<audio controls>
+  <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/05_S3_Gallop_Apex.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+Physical exam: The cardiac auscultation findings can be heard above. 
+
+On pulmonary auscultation you hear rales; The abdominal exam is normal; 
+
+[[Case needs more diagnostic evaluation| Case stare 4]]
+<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+<<set $case_4_dx_score -= 1>>
+
+:: EKG 4
+/% Diffuse T-wave inversion. %/
+<img style='width: 100%' src="https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg">
+
+<<set $case_4_dx_score += 2>>
+[[Case needs further diagnostic evaluation| Case stare 4]]
+<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+
+:: Chest X-Ray 4
+Some time later, the nurse hands you the following film: 
+//TODO 
+The chest x-ray on admission showed acute pulmonary edema with bilateral pleural effusion 
+<img style='width: 100%' src="https://prod-images-static.radiopaedia.org/multiple_choice_questions/420/bat-wings-pulmonary-oedema_big_gallery.jpeg">
+
+<<set $case_4_dx_score -= 1>> 
+[[I need to see the radiologist report|radiologist 4]]
+[[Case needs further diagnostic evaluation| Case stare 4]]
+<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+
+:: Labs 4
+// TODO review labs
+White cell count was 6700, Hb 9.8, C reactive protein 0.21, BNP 689 pg/ml (normal value < 100 pg/ml). The thyroid hormone profile was normal. Serological tests for the usual viral agents responsible for myocarditis were negative. 
+
+[[Case needs further diagnostic evaluation| Case stare 4]]
+<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+
+:: Echo 4
+The chardiac echo is shown below: 
+//TODO add images
+<img src="">
+<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+
+What do you think the echo shows?
+//TODO correct choices for echo 
+[[Mitral valve regurgitation and left atrial dilation|Wrong Echo 4]]
+[[Dilated LA, anterior mitral leaflet doming consistent with mitral stenosis,|Correct echo 4]]
+[[Bicuspid aortic valve, aortic stenosis|Wrong Echo 4]]
+
+:: Correct echo 4
+//TODO reword text 
+Echocardiography showed the presence of a severely impaired left ventricular systolic function with EF of 30%, fractional shortening of 11% along with severe mitral regurgitation and moderate tricuspid regurgitation. Right and left ventricles appeared severely enlarged and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
+<<set $case_4_dx_score += 2>> 
+<<set $case_4_Echo to 1>>
+[[I need further diagnostic evaluation| Case stare 3]]
+<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+
+:: Wrong Echo 4
+// TODO replace text with reworded version
+Echocardiography showed the presence of a severely impaired left ventricular systolic function with EF of 30%, fractional shortening of 11% along with severe mitral regurgitation and moderate tricuspid regurgitation. 
+<<set $case_4_dx_score -= 2>> 
+<<set $case_4_Echo to 0>>
+[[I need further diagnostic evaluation| Case stare 4]]
+<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+
+/* Reprimand and return to diagnostic evaluation. */
+:: Not done Dx yet 4
+//TODO is this necessary? 
+The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+<<set $case_3_dx_score -= 1>> 
+[[Continue|Case stare 4]]
+
+:: Treatment 4
+// TODO first and second steps in treatment 
+Remember, a cardiac echo and an EKG are required diagnostic steps. 
+
+<<set $diuretics_4 to false>>
+<<set $penicillin_4 to false>>
+<<set $beta_blocker_4 to false>>
+<<set $inotropes_4 to false>>
+<<set $fluids_4 to false>>
+
+Pick which of the following drugs you think would be included in the appropreate treatment. 
+Diuretics <<checkbox "$diuretics_4" false true>>
+Inotropes <<checkbox "$inotropes_4" false true>>
+Penicillin <<checkbox "$penicillin_4" false true>>
+Beta blocker <<checkbox "$beta_blocker_4" false true>>
+Fluids <<checkbox "$fluids_4" false true>>
+
+[[Continue|Guideline treatment 4]]
+
+:: Guideline treatment 4
+<<silently>>
+    <<if $diuretics_4>>  $case_4_Tx_score += 3 <</if>>
+    <<if $penicillin_4>>  $case_4_Tx_score += 2 <</if>>
+    <<if $beta_blocker_4>>  $case_4_Tx_score += 3 <</if>>
+    <<if $inotropes_4>>  $case_4_Tx_score -= 2 <</if>>
+    <<if $fluids_4>>  $case_4_Tx_score -= 3 <</if>>
+<</silently>>
+// TODO final treatment  
+[[Continue|Further management 4]]
+
+:: Deterioration 4 
+Unfortunately, the patient's condition worsened and she had to be rushed to the ICU. 
+
+[[Continue|ICU 4]]
+
+:: ICU 4 
+What do you think the best medical therapy would include? 
+
+//TODO - Drugs and scoring. 
+
+:: Further management 4
+//TODO Choices and scoring 
+The attending asks you what you think the next step in managing this patient should be. 
+[[Discharge home|Discharge home 4]]
+[[Keep in the hospital for further management|Mitral valve intervention 4]]
+
+:: Discharge home 4
+//TODO Text 
+<<set $case_4_Fu_score -= 3 >>
+[[Continue|Mitral valve intervention 4]]
+
+:: Mitral valve intervention 4
+<<set $case_4_Fu_score += 2 >>
+//TODO Review text. 
+Postpartum cardiomyopathy (PPCM) should be considered in patients presenting with dyspnea and heart failure symptoms after delivery.
+Delayed treatment of hypertension and failure to investigate dyspnea symptoms may increase the risk of PPCM. 
+Acute pulmonary edema with bilateral pleural effusion may be a presenting feature of PPCM.
+Echocardiography is an important diagnostic tool for identifying severe left ventricular systolic dysfunction, mitral regurgitation, and tricuspid regurgitation in PPCM patients.
+Saline infusion can be used to correct hypotension and improve perfusion while monitoring for any evidence of fluid overload.
+Beta-blockers and ACE inhibitors can be cautiously initiated in patients with low systolic blood pressure.
+Thromboprophylaxis should be considered in patients with PPCM due to the increased risk of thromboembolism associated with the enlarged left ventricle and severe dysfunction.
+Iron supplementation may be recommended in patients with PPCM with low hemoglobin levels.
+Close follow-up with echocardiography and BNP monitoring can help in assessing treatment response and guiding management decisions.
+PPCM prognosis can improve with appropriate treatment, as evidenced by the improvement in left ventricular dimensions and function and a decrease in BNP levels in the provided case report.
+
 [[Waiting Room]]
