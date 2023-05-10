@@ -16,18 +16,26 @@ Her father and mother both have hypertension that presented in their 50s. There 
 <</silently>>
 
 What do you think the differential diagnosis should include? 
+<<checkbox "$ddx_2_CAD" false true>> Coronary Artery Disease
+<<checkbox "$ddx_2_HTeCM" false true>> Hypertensive Cardiomyopathy
+<<checkbox "$ddx_2_PICM" false true>> Pharmacogenic/Infective Cardiomyopathy
+<<checkbox "$ddx_2_AST" false true>> Aortic stenosis 
+<<checkbox "$ddx_2_SAP" false true>> Sleep Apnea  
+ <<checkbox "$ddx_2_HTrCM" false true>> Hypertrophic Cardiomyopathy (Genetic)
+[[Continue|Workup 2]]
+
+:: Workup 2
 <<silently>>
-    <<if $ddx_2_CAD>> $ddx_2_score += 1 <</if>> Coronary Artery Disease
-    <<if $ddx_2_HTeCM>> $ddx_2_score += 1 <</if>> Hypertrophic Cardiomyopathy (Genetic)
+    <<if $ddx_2_CAD>> $ddx_2_score += 1 <</if>> 
+    <<if $ddx_2_HTeCM>> $ddx_2_score += 1 <</if>> 
     <<if $ddx_2_PICM>> $ddx_2_score += 1 <</if>> 
     <<if $ddx_2_AST>> $ddx_2_score -= 1 <</if>>
     <<if $ddx_2_SAP>> $ddx_2_score -= 1 <</if>>
     <<if $ddx_2_HTrCM>> $ddx_2_score -= 1 <</if>>
 <</silently>>
- 
-[[Continue|Workup 2]]
 
-:: Workup 2
+What is the first step in workup? 
+
 [[Physical Exam|Physical Exam 2]]
 [[EKG|EKG 2]]
 [[Chest X-Ray|CXR 2]]
@@ -50,5 +58,70 @@ Vitals: TODO
 :: CXR 2 
 <img style='width: 100%' src"https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
 
+[[I need to see the radiologist report|Radiologist 2]]
+[[Case needs further diagnostic evaluation| Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
+:: Radiologist 2
+ CXR reveals cardiomegaly, sings of vascular redistribution and pulmonary edema.  Correlate clinically. 
+[[Continue|Case stare 2]]
+
+:: Labs 2 
+//TODO 
+    * Basic metabolic panel - sodium, potassium, calcium, blood urea nitrogen, creatinine
+    * Lipid Panel
+    * CBC
+    * Urinalysis with consideration for checking the urine protein albumin ratio
+    * TSH especially in the setting of atrial fibrillation 
+[[Case needs further diagnostic evaluation| Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
+:: Echo 2
+The chardiac echo is shown below: 
+//TODO add images
+<img src="">
+<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+
+What do you think the echo shows?
+[[1...|Very Wrong Echo 2]]
+[[2...|Correct echo 2]]
+[[3...|Wrong Echo 2]]
+
+Why did this patient's heart change like this? 
+//TODO Multiple Choice for pathophys testing. 
+
+:: Correct echo 2
+//TODO     * A transthoracic echocardiogram (TTE) showed concentric LVH with a mildly reduced systolic function. 
+    * The thickness of both the inter ventricular septum and the posterior wall was 19 mm 
+    * There were no signs of outflow tract obstruction 
+    * The right ventricle was severely dilated. 42 mm with normal systolic function. Right ventricular systolic pressure was estimated 63 mmHg. Furthermore, biatrial enlargement was seen; left and right atrial dimension, respectively, 50 and 46 mm. There was no significant valvular dysfunction. Medications for hypertensive cardiomyopathy were started.
+
+
+<<set $case_2_dx_score += 2>> 
+<<set $case_2_Echo to 1>>
+[[I need further diagnostic evaluation| Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
+:: Wrong Echo 4
+// TODO COPY correct info from previous block
+
+<<set $case_2_dx_score -= 2>> 
+<<set $case_2_Echo to 0>>
+[[I need further diagnostic evaluation| Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
+/* Reprimand and return to diagnostic evaluation. */
+:: Not done Dx yet 2
+The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+<<set $case_2_dx_score -= 1>> 
+[[Continue|Case stare 2]]
+
 :: Treatment 2
+//TODO * [Treatment]
+    * [Inotropes]
+    * [Fluids]
+    * [Low dose oxygen]
+    * [Beta blockers]
+    * [Diuretics]
+
 //TODO 
