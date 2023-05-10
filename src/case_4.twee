@@ -1,9 +1,7 @@
 :: Case 4 introduction
-A 34 year-old lady is referred to your intensive care unit. She had a cough and dyspnea which developed on the 15th day after the delivery of her third child. A month prior to delivery she started feeling weak with dyspnea and hypertension but declined treatment for hypertension and the dyspnea symptoms were not investigated further. Vitals: BP 90/60 mmHg, HR 120 bpm. 
+A 34 year-old lady presents to the hospital. She had a cough and dyspnea which developed on the 15th day after the delivery of her third child. A month prior to delivery she started feeling weak with dyspnea, but declined treatment for hypertension and the dyspnea symptoms were not investigated further. She is afebrile, her white count is 7.500 and her blood pressure is 90/60 mmHg. Her heart rate is 120 bpm. 
 
 What are your next steps? 
-
-//TODO: add icu entry, add a preliminary treatment step if needed, repeat echo, repeat chest x-ray 
 
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
@@ -35,6 +33,8 @@ Vitals: TODO
 
 :: Physical Exam 4 
 You start a physical exam on the patient. 
+
+You notic that the veins in her neck are bulding and her feet are swollen. She says that her belly feels heavy. It looks distended and by tapping on the sides of her abdomen you notice that there is delayed transmission of the taps to the other side. 
 
 Heart auscultation at the apex, left decubitus position. 
 <audio controls>
@@ -70,8 +70,12 @@ The chest x-ray on admission showed acute pulmonary edema with bilateral pleural
 <<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
 
 :: Labs 4
-// TODO review labs
-White cell count was 6700, Hb 9.8, C reactive protein 0.21, BNP 689 pg/ml (normal value < 100 pg/ml). The thyroid hormone profile was normal. Serological tests for the usual viral agents responsible for myocarditis were negative. 
+While in the emergency department, you draw some blood and send it to the lab. A few hours later the following values come back: 
+
+White cell count: 6700, 
+Hb 9.8, 
+C reactive protein 0.21, 
+Serological tests for the usual viral agents responsible for myocarditis were negative. 
 
 [[Case needs further diagnostic evaluation| Case stare 4]]
 <<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
