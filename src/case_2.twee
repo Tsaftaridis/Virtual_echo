@@ -1,5 +1,54 @@
 :: Case 2 introduction
+A 39 year old woman presents to the emergency department with severe shortness of breath and nausea. She has had these symptoms for two months but they recently worsened a lot. 
+At the age of 15 a single BP measurement showed elevated BP, 150/90 mmHg, but no follow-up was done. 
+She is on oral contraceptive therapy. 
+Her father and mother both have hypertension that presented in their 50s. There are no other heart problems in the family. 
 
+/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
+<<silently>>
+    <<set $ddx_2_CAD to false>>
+    <<set $ddx_2_HTeCM to false>> 
+    <<set $ddx_2_PICM to false>> 
+    <<set $ddx_2_AST to false>> 
+    <<set $ddx_2_SAP to false>> 
+    <<set $ddx_2_HTrCM to false>>
+    <<set $ddx_2_score = 0>>
+<</silently>>
 
+What do you think the differential diagnosis should include? 
+<<silently>>
+    <<if $ddx_2_CAD>> $ddx_2_score += 1 <</if>> Coronary Artery Disease
+    <<if $ddx_2_HTeCM>> $ddx_2_score += 1 <</if>> Hypertrophic Cardiomyopathy (Genetic)
+    <<if $ddx_2_PICM>> $ddx_2_score += 1 <</if>> 
+    <<if $ddx_2_AST>> $ddx_2_score -= 1 <</if>>
+    <<if $ddx_2_SAP>> $ddx_2_score -= 1 <</if>>
+    <<if $ddx_2_HTrCM>> $ddx_2_score -= 1 <</if>>
+<</silently>>
+ 
+[[Continue|Workup 2]]
 
-[[Waiting Room]]
+:: Workup 2
+[[Physical Exam|Physical Exam 2]]
+[[EKG|EKG 2]]
+[[Chest X-Ray|CXR 2]]
+[[Labs|Labs 2]]
+[[Echo|Echo 2]]
+
+:: Case Stare 2
+What is your next step? 
+
+/* Show each choice if it hasn't been visited before. */
+<<if not hasVisited("Physical Exam 2")>> [[Physical Exam|Physical Exam 2]] <<else>> Physical Exam <</if>>
+<<if not hasVisited("EKG 2")>> [[EKG|EKG 2]] <<else>> EKG <</if>>
+<<if not hasVisited("CXR 2")>> [[Chest X-Ray|CXR 2]] <<else>> Chest X-ray <</if>>
+<<if not hasVisited("Labs 2")>> [[Labs|Labs 2]] <<else>> Labs <</if>>
+<<if not hasVisited("Echo 2")>> [[Echo|Echo 2]] <<else>> Echo <</if>>
+<<if hasVisited("Physical Exam 2", "EKG 2", "Chest X-Ray 2", "Labs 2", "Echo 2")>> [[Continue"|Treatment 2]] <</if>>
+Notes: TODO 
+Vitals: TODO 
+
+:: CXR 2 
+<img style='width: 100%' src"https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
+
+:: Treatment 2
+//TODO 
