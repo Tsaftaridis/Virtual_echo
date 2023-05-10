@@ -149,16 +149,24 @@ Treatment in this patient with peripartum cardiomyopathy aims to control the sym
 [[Continue|Further management 4]]
 
 :: Deterioration 4
-Unfortunately, the patient's condition worsened and she had to be rushed to the ICU. 
+The next day, the nurse calls you because the patient has been complaining of worsening shortness of breath. She also reports that the patient has had minimal urine output.
+
+You check on the patient and notice that she produced about 309 mL of urine in the last 24 hours. She is breathing rapidly and the pulse oximeter reads 87%.  
+You decide to admit the patient in the ICU. 
 
 [[Continue|ICU 4]]
 
 :: ICU 4 
+The Labs for the patient after she enters the ICU show: lactate 5.4 mg/dL, ALT = 123 mg/dL, AST 140 mg/dL. Her thyroid function tests are normal, while her BNP is 689 pg/ml. 
+
 What do you think the best medical therapy would include? 
 
-//TODO - Drugs and scoring. 
 //TODO - LABS in ICU BNP 689 pg/ml (normal value < 100 pg/ml). Furthermore, the thyroid hormone profile was normal, while serological tests for the usual viral agents responsible for myocarditis were negative. 
 
+  * Oxygen alone 
+    * Oxygen and inotropes 
+    * High dose diuretics IV 
+    * Oxygen, inotropes, high dose diuretics 
 :: Further management 4
 //TODO Choices and scoring 
 The attending asks you what you think the next step in managing this patient should be. 
