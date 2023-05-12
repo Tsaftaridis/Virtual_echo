@@ -4,6 +4,8 @@ At the age of 15 a single BP measurement showed elevated BP, 150/90 mmHg, but no
 She is on oral contraceptive therapy. 
 Her father and mother both have hypertension that presented in their 50s. There are no other heart problems in the family. 
 
+On presentation her blood pressure is 280/140 mmHg in the right arm with a regular pulse of 120 bpm. The respiratory rate was 21 breaths/min with oxygen saturation //TODO between 85 and 99% on room air. 
+
 /% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 <<silently>>
     <<set $ddx_2_CAD to false>>
@@ -13,8 +15,12 @@ Her father and mother both have hypertension that presented in their 50s. There 
     <<set $ddx_2_SAP to false>> 
     <<set $ddx_2_HTrCM to false>>
     <<set $ddx_2_score = 0>>
+    /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
+    <<set $case_2_dx_score to 0>>
+    <<set $case_2_Tx_score to 0>>
+    <<set $case_2_Fu_score to 0>>
+    <<set $case_2_Echo to 0>>
 <</silently>>
-
 What do you think the differential diagnosis should include? 
 <<checkbox "$ddx_2_CAD" false true>> Coronary Artery Disease
 <<checkbox "$ddx_2_HTeCM" false true>> Hypertensive Cardiomyopathy
@@ -35,14 +41,14 @@ What do you think the differential diagnosis should include?
 <</silently>>
 
 What is the first step in workup? 
-
 [[Physical Exam|Physical Exam 2]]
 [[EKG|EKG 2]]
 [[Chest X-Ray|CXR 2]]
 [[Labs|Labs 2]]
 [[Echo|Echo 2]]
+[[Consults|Consults ask 2]]
 
-:: Case Stare 2
+:: Case stare 2
 What is your next step? 
 
 /* Show each choice if it hasn't been visited before. */
@@ -51,12 +57,43 @@ What is your next step?
 <<if not hasVisited("CXR 2")>> [[Chest X-Ray|CXR 2]] <<else>> Chest X-ray <</if>>
 <<if not hasVisited("Labs 2")>> [[Labs|Labs 2]] <<else>> Labs <</if>>
 <<if not hasVisited("Echo 2")>> [[Echo|Echo 2]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam 2", "EKG 2", "Chest X-Ray 2", "Labs 2", "Echo 2")>> [[Continue"|Treatment 2]] <</if>>
-Notes: TODO 
-Vitals: TODO 
+<<if not hasVisited("Consults ask 2")>> [[Consults|Consults ask 2]] <<else>> Consults <</if>> 
+<<if hasVisited("Physical Exam 2", "EKG 2", "CXR 2", "Labs 2", "Echo 2", "Consults ask 2")>> [[Continue|Treatment 2]] <</if>>
+Notes: 39 year old woman complains of shortness of breath and nausea for 2 months, recently worsened. History of elevated blood pressure without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.  
+
+:: Consults ask 2
+Which specialties would you like to consult? 
+<<silently>>
+    <<set $consult_ophth_2 to false>>
+    <<set $consult_obgyn_2 to false>>
+    <<set $consult_pulm_2 to false>>
+<</silently>>
+
+<<checkbox "$consult_ophth_2" false true>> Ophthalmology
+<<checkbox "$consult_obgyn_2" false true>> Obstetrics and Gynecology 
+<<checkbox "$consult_pulm_2" false true>> Pulmonology 
+[[Continue|Consults results 2]]
+
+:: Consults results 2
+<<if not $consult_ophth_2>> Patient definitely needed an ophthalmology consult, as per your attending. <<set $case_2_dx_score -=2>> <<else>> <<set $case_2_dx_score +=2>><</if>>
+<<if $consult_obgyn_2 or $consult_pulm_2>> OBGYN or Pulmonology consults are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
+
+* Ophthalmology did a fundoscopy that shoed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. 
+Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
+//TODO add image of fundoscopy 
+<img style='width: 100%' src="">
+
+[[Case needs more diagnostic evaluation|Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
+:: Physical Exam 2
+Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the second left intercostal space and faint bibasilar rales. No peripheral edema was noted and the liver edge was not palpable. 
+<<set $case_2_dx_score += 1>>
+[[Case needs more diagnostic evaluation|Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
 :: CXR 2 
-<img style='width: 100%' src"https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
+<img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
 
 [[I need to see the radiologist report|Radiologist 2]]
 [[Case needs further diagnostic evaluation| Case stare 2]]
@@ -67,6 +104,11 @@ Vitals: TODO
 [[Continue|Case stare 2]]
 
 :: Labs 2 
+    * Laboratory testing showed a heamoglobin level of 11.5. 
+    * Troponin I level was normal. 
+    * Kidney function is altered with Cr. of 2.3. 
+    * Plasma renin activity, aldosterone levels and thyroid-stimulating hormone levels were normal on the day of admission. 
+    * Urine did not show microalbuminuria. 
 //TODO 
     * Basic metabolic panel - sodium, potassium, calcium, blood urea nitrogen, creatinine
     * Lipid Panel
@@ -76,33 +118,57 @@ Vitals: TODO
 [[Case needs further diagnostic evaluation| Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
+:: EKG 2
+//TODO  
+<img style='width: 100%' src="">
+<<set $case_2_dx_score += 2>>
+[[Case needs further diagnostic evaluation| Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
 :: Echo 2
 The chardiac echo is shown below: 
 //TODO add images
 <img src="">
 <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
 
-What do you think the echo shows?
-[[1...|Very Wrong Echo 2]]
+Why did this patient's heart change like this? 
+// TODO multiple choice for pathophys testing
+<<silently>>
+<<set $test to false>>
+<</silently>>
+<<checkbox "$test" false true>> IV Lasix  
+<<silently>>
+    <<if $>>  $test += 2 <</if>>
+<</silently>>
+
+How would you describe the echo?
+[[1...|Wrong Echo 2]]
 [[2...|Correct echo 2]]
 [[3...|Wrong Echo 2]]
 
-Why did this patient's heart change like this? 
-//TODO Multiple Choice for pathophys testing. 
-
 :: Correct echo 2
+
+// TODO scoring for pathophys 
+<<silently>>
+    <<if $>>  $score += 2 <</if>>
+<</silently>>
+
 //TODO     * A transthoracic echocardiogram (TTE) showed concentric LVH with a mildly reduced systolic function. 
     * The thickness of both the inter ventricular septum and the posterior wall was 19 mm 
     * There were no signs of outflow tract obstruction 
-    * The right ventricle was severely dilated. 42 mm with normal systolic function. Right ventricular systolic pressure was estimated 63 mmHg. Furthermore, biatrial enlargement was seen; left and right atrial dimension, respectively, 50 and 46 mm. There was no significant valvular dysfunction. Medications for hypertensive cardiomyopathy were started.
-
+    * The right ventricle was severely dilated. 42 mm with normal systolic function. Right ventricular systolic pressure was estimated 63 mmHg. Furthermore, biatrial enlargement was seen; left and right atrial dimension, respectively, 50 and 46 mm. There was no significant valvular dysfunction. Medications for hypertensive cardiomyopathy were started. 
 
 <<set $case_2_dx_score += 2>> 
 <<set $case_2_Echo to 1>>
 [[I need further diagnostic evaluation| Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
-:: Wrong Echo 4
+:: Wrong Echo 2
+//TODO scoring for pathophys 
+<<silently>>
+    <<if $>>  $score += 2 <</if>>
+<</silently>>
+
 // TODO COPY correct info from previous block
 
 <<set $case_2_dx_score -= 2>> 
@@ -117,11 +183,61 @@ The attending cardiologist tells you that you need some more diagnostic steps be
 [[Continue|Case stare 2]]
 
 :: Treatment 2
-//TODO * [Treatment]
-    * [Inotropes]
-    * [Fluids]
-    * [Low dose oxygen]
-    * [Beta blockers]
-    * [Diuretics]
+Remember, a cardiac echo and an EKG are required diagnostic steps. 
+<<silently>>
+<<set $diuretics_2 to false>>
+<</silently>>
+Pick which of the following drugs you think would be included in the appropreate treatment. 
+<<checkbox "$diuretics_2" false true>> IV Lasix 
 
-//TODO 
+[[Continue|Guideline treatment 2]]
+
+:: Guideline treatment 2 
+<<silently>>
+    <<if $diuretics_2>>  $case_2_Tx_score += 2 <</if>>
+<</silently>>
+
+        * Thiazide diuretics, especially chlorthalidone are first line for hypertension - diuretics are necessary for patients with resistant hypertensive disease 
+        * Ace-Inhibitors, ARBs are first line in pts with diabetes or CKD 
+        * CCBs 
+        * Beta-blockers are not a recommendation unless heart failure, ischemic heart disease, a-fib 
+        * Vasodilators such as hydralazine should only be added as fourth agent 
+        * “Diuretics, calcium channel blockers, and renin-angiotensin blockers exhibit synergistic effects allowing for better blood pressure control.”
+
+//TODO Treatment Score Logic
+[[Continue|Good outcome 2]]
+[[Continue|Bad outcome 2]]
+
+:: Good outcome 2
+// TODO patient improved 
+[[Further management 2]]
+
+:: Bad outcome 2 
+// TODO patient deteriorated 
+[[Further management 2]]
+
+:: Further management 2 
+    * Pts with stage 2 should be started on two agents and reassessed in 30 days. Use different drug classes. 
+    * Look into other risk factors: hyperlipidemia, alcohol use, smoking, drug use, comorbidities such as CKD and pulmonary disease. Measure HbA1c. Also ask about sleep apnea, obesity, alcohol, medications 
+    * Complications arise late and patients are otherwise asymptomatic. 
+        * LVH > ischemia, SOB in decamp heart failure, fib as palpitations, stroke, dizziness, syncope, sudden cardiac death. 
+    * What would you consult the patient to be careful about? Who else should he consult? 
+        * Goal-directed therapy for heart failure 
+        * Automatic blood pressure cuffs. 
+    * A hypertensive medication exerts 75% of its maximal effect at only 50% of the max dose. So in patients whose blood pressure remains substantially elevated after hypertensive will benefit more from adding on another class of medication rather than maxing out the dose.
+
+    [[Continue|Case 2 conclusion]]
+
+    :: Case 2 conclusion 
+        * Hypertensive heart disease  = changes in heart muscle due to hypertension. 
+    * Hypertension > LVH > increased morbidity and mortality
+    * HHD can be accompanied by heart failure, and specifically systolic, diastolic or combined. 
+    * Other complications are acute coronary syndrome and sudden cardiac death. 
+    * Current treatment is treating the underlying hypertension because LVH doesn’t benefit directly from pharmacotherapy as far as we know now. 
+    * Blood pressure classification: 
+        * Normal <120/80 
+        * Elevated <130/90 
+        * Stage 1 Htn <139/90
+        * Stage 2 Htn >=140/90
+    * EKG is the recommendation for initial evaluation of hypertensive heart disease - it may demonstrate ventricular hypertrophy, left axis deviation, or conduction abnormalities
+    * EKGs have high specificity (75 to 95%) but low sensitivity (25 to 61%)[6] for the detection of cardiovascular disease
