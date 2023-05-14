@@ -237,6 +237,8 @@ Leave blank if she must keep taking both medications.
 [[Continue|Case conclusion 4]]
 
 :: Case conclusion 4 
+
+Congratulations! You have completed case 4! 
 /% Evaluate answers to the attending physician. %/
 <<silently>>
     <<if $q_stop_beta_4>>  $case_4_Fu_score -= 2 <</if>>
@@ -247,29 +249,19 @@ Leave blank if she must keep taking both medications.
     <<if $p_stop_none_4>> $case_4_Fu_score -= 4 <</if>>
 <</silently>>
 
-Postpartum cardiomyopathy (PPCM) should be considered in patients presenting with dyspnea and heart failure symptoms after delivery.
-Delayed treatment of hypertension and failure to investigate dyspnea symptoms may increase the risk of PPCM. 
-Acute pulmonary edema with bilateral pleural effusion may be a presenting feature of PPCM.
-Echocardiography is an important diagnostic tool for identifying severe left ventricular systolic dysfunction, mitral regurgitation, and tricuspid regurgitation in PPCM patients.
-Saline infusion can be used to correct hypotension and improve perfusion while monitoring for any evidence of fluid overload.
-Beta-blockers and ACE inhibitors can be cautiously initiated in patients with low systolic blood pressure.
+Postpartum cardiomyopathy (PPCM) should be considered in patients who present with dyspnea and heart failure symptoms after delivery.
+
+While it is important to start with a physical examination and an EKG, echocardiography is an important diagnostic tool for identifying severe left ventricular systolic dysfunction, mitral regurgitation, and tricuspid regurgitation in these patients.
+
+Diuretics may be used to treat pulmonary edema, but should be used with caution in pregnant patients due to the risk of placental hypoperfusion and fetal electrolyte abnormalities. Cardiac resynchronization therapy may also be an option for patients who do not respond to medical therapy alone
+
+Treatment for stable PPCM may include the cautious use of selective beta-blockers and angiotensin converting enzyme inhibitors and ARBs, as well as saline infusion to correct hypotension and improve perfusion. Thromboprophylaxis and iron supplementation can also be considered. Beta blockers and dixogin can be used if needed. Novel anti-heart failure medications, such as sacubitril/valsartan, may also improve heart failure symptoms in pregnancy-related cardiomyopathies. ACE inhibitors and ARBs are contraindicated during pregnancy but not breastfeeding. Direct renin inhibitors, angiotensin receptor-neprylisin inhibitors, spironolactone and eplerenone are also contraindicated during pregnancy. Enalapril, captopril, and benazepril are safe in lactating patients. Cardiac resynchronization therapy has also shown to improve ejection fraction and outcomes when medical therapy alone is ineffective.
+
 Thromboprophylaxis should be considered in patients with PPCM due to the increased risk of thromboembolism associated with the enlarged left ventricle and severe dysfunction.
+
 Iron supplementation may be recommended in patients with PPCM with low hemoglobin levels.
+
 Close follow-up with echocardiography and BNP monitoring can help in assessing treatment response and guiding management decisions.
-PPCM prognosis can improve with appropriate treatment, as evidenced by the improvement in left ventricular dimensions and function and a decrease in BNP levels in the provided case report.
 
-Here you can review the cardiovascular medication guidelines for pregnant, postpartum and lactating patients. 
-https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy#:~:text=Enalapril,%20captopril,%20and%20benazepril%20can%20be%20safely%20considered%20during%20lactation.
-Beta blockers and dixogix can be used if needed. 
-Diuretics can be used to treat pulmonary edema, but they may pose dangers of placental hypoperfusion and fetal electrolyte abnormalities if they are excessive. 
-Angiotensin-converting enzyme inhibitors (ACE inhibitors), angiotensin receptor blockers (ARBs), direct renin inhibitors, angiotensin receptor-neprylisin inhibitors, spironolactone and eplerenone are contraindicated during pregnancy. 
-Enalapril, captopril, and benazepril are safe in lactating patients.
-
-Selective beta blockers and angiotensin converting enzyme inhibitors are commonly used and help to lower mortality. However, the second class (ACE inhibitors) are contraindicated during pregnancy. 
-
-Cardiac resynchronization therapy has also shown to improve ejection fraction and outcomes when medical therapy alone is ineffective. 
-
-"Novel anti-heart failure medications, such as sacubitril/valsartan have been reported to improve heart failure symptoms in pregnancy-related cardiomyopathies."
- 
-Beta 1 selective blockers and ACEIs are the most commonly used drugs and have shown to lower the mortality. However, an ACEI is contraindicated in pregnant patients. 
+You can review the cardiovascular medication guidelines for pregnant, postpartum and lactating patients here: Cardiovascular Disease Medication During Pregnancy - American College of Cardiology
 [[Waiting Room]]
