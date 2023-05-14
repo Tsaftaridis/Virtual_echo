@@ -1,33 +1,16 @@
 :: Case 2 introduction
 A 39 year old woman presents to the emergency department with severe shortness of breath and nausea. She has had these symptoms for two months but they recently worsened a lot. 
 At the age of 15 a single BP measurement showed elevated BP, 150/90 mmHg, but no follow-up was done. 
-She is on oral contraceptive therapy. 
+She is on oral contraceptive therapy, plus metformin and insulin for her diabetes. Her BMI is 29.3. 
 Her father and mother both have hypertension that presented in their 50s. There are no other heart problems in the family. 
 
-On presentation her blood pressure is 280/140 mmHg in the right arm with a regular pulse of 120 bpm. The respiratory rate was 21 breaths/min with oxygen saturation //TODO between 85 and 99% on room air. 
+On presentation her blood pressure is 200/100 mmHg in the right arm with a regular pulse of 120 bpm. The respiratory rate was 21 breaths/min with an SpO2 of 93% on room air. Her temperature was 36.2 degrees Celcius. 
 
-/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
-<<silently>>
-    <<set $ddx_2_CAD to false>>
-    <<set $ddx_2_HTeCM to false>> 
-    <<set $ddx_2_PICM to false>> 
-    <<set $ddx_2_AST to false>> 
-    <<set $ddx_2_SAP to false>> 
-    <<set $ddx_2_HTrCM to false>>
-    <<set $ddx_2_score = 0>>
-    /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
-    <<set $case_2_dx_score to 0>>
-    <<set $case_2_Tx_score to 0>>
-    <<set $case_2_Fu_score to 0>>
-    <<set $case_2_Echo to 0>>
-<</silently>>
-What do you think the differential diagnosis should include? 
-<<checkbox "$ddx_2_CAD" false true>> Coronary Artery Disease
-<<checkbox "$ddx_2_HTeCM" false true>> Hypertensive Cardiomyopathy
-<<checkbox "$ddx_2_PICM" false true>> Pharmacogenic/Infective Cardiomyopathy
-<<checkbox "$ddx_2_AST" false true>> Aortic stenosis 
-<<checkbox "$ddx_2_SAP" false true>> Sleep Apnea  
- <<checkbox "$ddx_2_HTrCM" false true>> Hypertrophic Cardiomyopathy (Genetic)
+<<set $case_2_dx_score to 0>>
+<<set $case_2_Tx_score to 0>>
+<<set $case_2_Fu_score to 0>>
+<<set $case_2_Echo to 0>>
+
 [[Continue|Workup 2]]
 
 :: Workup 2
@@ -46,7 +29,6 @@ What is the first step in workup?
 [[Chest X-Ray|CXR 2]]
 [[Labs|Labs 2]]
 [[Echo|Echo 2]]
-[[Consults|Consults ask 2]]
 
 :: Case stare 2
 What is your next step? 
@@ -61,36 +43,36 @@ What is your next step?
 <<if hasVisited("Physical Exam 2", "EKG 2", "CXR 2", "Labs 2", "Echo 2", "Consults ask 2")>> [[Continue|Treatment 2]] <</if>>
 Notes: 39 year old woman complains of shortness of breath and nausea for 2 months, recently worsened. History of elevated blood pressure without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.  
 
-:: Consults ask 2
-Which specialties would you like to consult? 
-<<silently>>
-    <<set $consult_ophth_2 to false>>
-    <<set $consult_obgyn_2 to false>>
-    <<set $consult_pulm_2 to false>>
-<</silently>>
-
-<<checkbox "$consult_ophth_2" false true>> Ophthalmology
-<<checkbox "$consult_obgyn_2" false true>> Obstetrics and Gynecology 
-<<checkbox "$consult_pulm_2" false true>> Pulmonology 
-[[Continue|Consults results 2]]
-
-:: Consults results 2
-<<if not $consult_ophth_2>> Patient definitely needed an ophthalmology consult, as per your attending. <<set $case_2_dx_score -=2>> <<else>> <<set $case_2_dx_score +=2>><</if>>
-<<if $consult_obgyn_2 or $consult_pulm_2>> OBGYN or Pulmonology consults are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
-
-* Ophthalmology did a fundoscopy that shoed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. 
-Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
-//TODO add image of fundoscopy 
-<img style='width: 100%' src="">
-
-[[Case needs more diagnostic evaluation|Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
 :: Physical Exam 2
 Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the second left intercostal space and faint bibasilar rales. No peripheral edema was noted and the liver edge was not palpable. 
-<<set $case_2_dx_score += 1>>
+
+Which of the following would you think is worth pursuing?  
+<<silently>>
+    <<set $case_2_fundoscopy to false>>
+    <<set $case_2_orthostatics to false>>
+    <<set $case_2_dix_hallpike to false>>
+    <<set $case_2_kernig_brudzinsky to false>>
+    <<set $case_2_dx_score += 1>>
+<</silently>>
+
+<<checkbox "$case_2_fundoscopy" false true>> Fundoscopy 
+<<checkbox "$case_2_orthostatics" false true>> Orthostatics
+<<checkbox "$case_2_dix_hallpike" false true>> Dix-Hallpike Maneuver
+<<checkbox "$case_2_kernig_brudzinsky" false true>> Kerning and Brudzinsky tests 
+
+[[Continue| Consults results 2]]
+
+:: Consults results 2
+<<if not $case_2_fundoscopy>> Patient definitely needed a fundoscopy, to check for hypertensive retinopathy. <<set $case_2_dx_score -=2>> <<else>> <<set $case_2_dx_score +=2>><</if>>
+<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> The other tests are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
+
+A fundoscopy that shoed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
+
+
 [[Case needs more diagnostic evaluation|Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
 
 :: CXR 2 
 <img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
@@ -104,17 +86,21 @@ Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the
 [[Continue|Case stare 2]]
 
 :: Labs 2 
-    * Laboratory testing showed a heamoglobin level of 11.5. 
-    * Troponin I level was normal. 
-    * Kidney function is altered with Cr. of 2.3. 
-    * Plasma renin activity, aldosterone levels and thyroid-stimulating hormone levels were normal on the day of admission. 
-    * Urine did not show microalbuminuria. 
-//TODO 
-    * Basic metabolic panel - sodium, potassium, calcium, blood urea nitrogen, creatinine
-    * Lipid Panel
-    * CBC
-    * Urinalysis with consideration for checking the urine protein albumin ratio
-    * TSH especially in the setting of atrial fibrillation 
+
+Laboratory testing showed a heamoglobin level of 11.5 g/dL
+Serum Creatinine: 0.9 mg/dL 
+Serum sodium: 140 mEq/L 
+Serum potassium: 4 mEq/L 
+Serum calcium (total)/(ionized): 9/5.1 mg/dL
+RBCs: 6.700/ml
+WBCs: 7.540/ml 
+Platelets: 225000/ml 
+Neutrophils: 50%
+Eosinophils: 4%
+Basophils: 4%
+Lymphocytes: 36%
+Monocytes: 6% 
+
 [[Case needs further diagnostic evaluation| Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
@@ -126,55 +112,44 @@ Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the
 <<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
 :: Echo 2
-The chardiac echo is shown below: 
-//TODO add images
+The chardiac echo is shown below and the septum measures 1.3 cm.  
 <img src="">
-<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4" frameborder="0" allowfullscreen></iframe>
 
-Why did this patient's heart change like this? 
-// TODO multiple choice for pathophys testing
+
 <<silently>>
-<<set $test to false>>
-<</silently>>
-<<checkbox "$test" false true>> IV Lasix  
-<<silently>>
-    <<if $>>  $test += 2 <</if>>
+    <<set $ddx_2_CAD to false>>
+    <<set $ddx_2_HTeCM to false>> 
+    <<set $ddx_2_PICM to false>> 
+    <<set $ddx_2_AST to false>> 
+    <<set $ddx_2_SAP to false>> 
+    <<set $ddx_2_HTrCM to false>>
+    <<set $ddx_2_score = 0>>
 <</silently>>
 
 How would you describe the echo?
-[[1...|Wrong Echo 2]]
-[[2...|Correct echo 2]]
-[[3...|Wrong Echo 2]]
+[[Dilated cardiomyopathy|Wrong Echo 2]]
+[[Aortic stenosis|Wrong Echo 2]]
+[[Severe left ventricular hypertrophy|Correct echo 2]]
+[[Rheumatic heart disease|Wrong Echo 2]]
 
 :: Correct echo 2
-
-// TODO scoring for pathophys 
-<<silently>>
-    <<if $>>  $score += 2 <</if>>
-<</silently>>
-
-//TODO     * A transthoracic echocardiogram (TTE) showed concentric LVH with a mildly reduced systolic function. 
-    * The thickness of both the inter ventricular septum and the posterior wall was 19 mm 
-    * There were no signs of outflow tract obstruction 
-    * The right ventricle was severely dilated. 42 mm with normal systolic function. Right ventricular systolic pressure was estimated 63 mmHg. Furthermore, biatrial enlargement was seen; left and right atrial dimension, respectively, 50 and 46 mm. There was no significant valvular dysfunction. Medications for hypertensive cardiomyopathy were started. 
+/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
+A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejection fraction. The thickness of both the inter ventricular septum and the posterior wall was 13 mm. There were no signs of outflow tract obstruction. There was no significant valvular dysfunction. Mild left atrial enlargement was noted. 
 
 <<set $case_2_dx_score += 2>> 
 <<set $case_2_Echo to 1>>
-[[I need further diagnostic evaluation| Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
+[[Continue|Diagnosis 2]]
 
 :: Wrong Echo 2
-//TODO scoring for pathophys 
-<<silently>>
-    <<if $>>  $score += 2 <</if>>
-<</silently>>
-
-// TODO COPY correct info from previous block
+A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejection fraction. The thickness of both the inter ventricular septum and the posterior wall was 13 mm. There were no signs of outflow tract obstruction. There was no significant valvular dysfunction. Mild left atrial enlargement was noted. 
 
 <<set $case_2_dx_score -= 2>> 
 <<set $case_2_Echo to 0>>
-[[I need further diagnostic evaluation| Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+[[Continue|Diagnosis 2]]
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2
@@ -182,63 +157,84 @@ The attending cardiologist tells you that you need some more diagnostic steps be
 <<set $case_2_dx_score -= 1>> 
 [[Continue|Case stare 2]]
 
+:: Diagnosis 2 
+What do you think the correct diagnosis is? 
+<<checkbox "$ddx_2_CAD" false true>> Coronary Artery Disease
+<<checkbox "$ddx_2_HTeCM" false true>> Hypertensive Cardiomyopathy
+<<checkbox "$ddx_2_PICM" false true>> Pharmacogenic/Infective Cardiomyopathy
+<<checkbox "$ddx_2_AST" false true>> Aortic stenosis 
+<<checkbox "$ddx_2_SAP" false true>> Sleep Apnea  
+<<checkbox "$ddx_2_HTrCM" false true>> Hypertrophic Cardiomyopathy (Genetic) 
+
+[[I need further diagnostic evaluation| Case stare 2]]
+<<if hasVisited("EKG 2", "Echo 2")>> [[Continue|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
 :: Treatment 2
+/% Increase score by two only if correct answer given. Otherwise don't remove points.%/
+<<if $ddx_2_HTeCM>> $case_2_dx_score += 2 <</if>>
+
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 <<silently>>
-<<set $diuretics_2 to false>>
+    <<set $inotropes_2 to false>>
+    <<set $diuretics_2 to false>>
+    <<set $metoprolol_2 to false>>
+    <<set $digoxin_2 to false>>
+    <<set $ace_arb_2 to false>>
+    <<set $amlodipine_2 to false>>
 <</silently>>
 Pick which of the following drugs you think would be included in the appropreate treatment. 
+<<checkbox "$inotropes_2" false true>> Inotropes
 <<checkbox "$diuretics_2" false true>> IV Lasix 
+<<checkbox "$metoprolol_2" false true>> Metoprolol 
+<<checkbox "$digoxin_2" false true>> Digoxin 
+<<checkbox "$ace_arb_2" false true>> Angiotensin converting enzyme inhibitor or Angiotensin receptor blocker 
+<<checkbox "$amlodipine_2" false true>> Amlodipine 
 
 [[Continue|Guideline treatment 2]]
 
 :: Guideline treatment 2 
 <<silently>>
+    <<if $inotropes_2>>  $case_2_Tx_score -= 4 <</if>>
     <<if $diuretics_2>>  $case_2_Tx_score += 2 <</if>>
+    <<if $metoprolol_2>>  $case_2_Tx_score += 1 <</if>>
+    <<if $digoxin_2>>  $case_2_Tx_score -= 2 <</if>>
+    <<if $ace_arb_2>>  $case_2_Tx_score += 4 <</if>>
+    <<if $amlodipine_2>>  $case_2_Tx_score +=2 <</if>>
 <</silently>>
 
-        * Thiazide diuretics, especially chlorthalidone are first line for hypertension - diuretics are necessary for patients with resistant hypertensive disease 
-        * Ace-Inhibitors, ARBs are first line in pts with diabetes or CKD 
-        * CCBs 
-        * Beta-blockers are not a recommendation unless heart failure, ischemic heart disease, a-fib 
-        * Vasodilators such as hydralazine should only be added as fourth agent 
-        * “Diuretics, calcium channel blockers, and renin-angiotensin blockers exhibit synergistic effects allowing for better blood pressure control.”
+Thiazide diuretics, especially chlorthalidone are first line for hypertension - diuretics are necessary for patients with resistant hypertensive disease 
+Ace-Inhibitors, ARBs are first line in pts with diabetes or chronic kidney disease.  
+CCBs 
+Beta-blockers are not a recommendation unless there is coexistent heart failure, ischemic heart disease or atrial fibrillation. 
+Vasodilators such as hydralazine should only be added as fourth agent 
+Diuretics, calcium channel blockers, and renin-angiotensin blockers exhibit synergistic effects allowing for better blood pressure control. 
 
-//TODO Treatment Score Logic
-[[Continue|Good outcome 2]]
-[[Continue|Bad outcome 2]]
+Since this patient is diabetic and overweight, ACE-inhibitors or ARBS are the choice of drug treatment for her. If the patient was not diabetic, a calcium channel blocker, such as amlodipine, would have been the better choice, since this drug does not necessiate close monitoring of serum potassium, creatinine and blood pressure, in contrast to ACE-inhibitors and ARBs. 
 
-:: Good outcome 2
-// TODO patient improved 
-[[Further management 2]]
+[[Continue|Outcome 2]]
 
-:: Bad outcome 2 
-// TODO patient deteriorated 
-[[Further management 2]]
+:: Outcome 2
+Hypertensive heart disease (HHD) refers to the changes in heart muscle due to hypertension. 
 
-:: Further management 2 
-    * Pts with stage 2 should be started on two agents and reassessed in 30 days. Use different drug classes. 
-    * Look into other risk factors: hyperlipidemia, alcohol use, smoking, drug use, comorbidities such as CKD and pulmonary disease. Measure HbA1c. Also ask about sleep apnea, obesity, alcohol, medications 
-    * Complications arise late and patients are otherwise asymptomatic. 
-        * LVH > ischemia, SOB in decamp heart failure, fib as palpitations, stroke, dizziness, syncope, sudden cardiac death. 
-    * What would you consult the patient to be careful about? Who else should he consult? 
-        * Goal-directed therapy for heart failure 
-        * Automatic blood pressure cuffs. 
-    * A hypertensive medication exerts 75% of its maximal effect at only 50% of the max dose. So in patients whose blood pressure remains substantially elevated after hypertensive will benefit more from adding on another class of medication rather than maxing out the dose.
-[[Continue|Case 2 conclusion]]
+Blood pressure classification: 
+        * Normal: <120/80 
+        * Elevated: <130/90 
+        * Stage 1 Hypertension: <139/90
+        * Stage 2 Hypertension: >=140/90
 
-:: Case 2 conclusion 
-        * Hypertensive heart disease  = changes in heart muscle due to hypertension. 
-    * Hypertension > LVH > increased morbidity and mortality
-    * HHD can be accompanied by heart failure, and specifically systolic, diastolic or combined. 
-    * Other complications are acute coronary syndrome and sudden cardiac death. 
-    * Current treatment is treating the underlying hypertension because LVH doesn’t benefit directly from pharmacotherapy as far as we know now. 
-    * Blood pressure classification: 
-        * Normal <120/80 
-        * Elevated <130/90 
-        * Stage 1 Htn <139/90
-        * Stage 2 Htn >=140/90
-    * EKG is the recommendation for initial evaluation of hypertensive heart disease - it may demonstrate ventricular hypertrophy, left axis deviation, or conduction abnormalities
-    * EKGs have high specificity (75 to 95%) but low sensitivity (25 to 61%)[6] for the detection of cardiovascular disease
+Patients with stage 2 hypertension should be started on two agents from different drug classes and reassessed in 30 days. Additionally, other risk factors, including hyperlipidemia, alcohol use, smoking, and comorbidities such as chronic kidney disease and pulmonary disease, should be evaluated, while screening for sleep apnea, alcohol use disorder and metabolic syndrome. The assessment should include the measurement of HbA1c. 
 
+Patients with HHD are usually asymptomatic, and complications arise late in the disease course. The most common complications of HHD are left ventricular hypertrophy (LVH), heart failure, acute coronary syndrome, and sudden cardiac death. LVH, in particular, is associated with increased morbidity and mortality, as it can lead to decompensated heart failure, atrial fibrillation, stroke, or sudden cardiac death. 
+
+EKG is recommended for the initial evaluation of HHD, as it may demonstrate ventricular hypertrophy, left axis deviation, or conduction abnormalities. However, its sensitivity for detecting cardiovascular disease is low, ranging from 25 to 61%.
+
+Treatment of HHD focuses on controlling hypertension, as LVH doesn’t benefit directly from pharmacotherapy. Patients with HHD should follow goal-directed therapy for heart failure and use automatic blood pressure cuffs for at-home monitoring. 
+
+A hypertensive medication exerts 75% of its maximal effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains substantially elevated after the initiation of one hypertensive medication, adding another class of medication rather than increasing the dose may be more effective.
+
+Treatment algorithm for hypertension
+<img style='width: 100%' src="https://imgbox.com/9sBtQzqV">
+
+[[Guidelines on hypertensino treatment|https://academic.oup.com/view-large/186438663]]
+[[Statpearls book chapter on hypertensive heart disease|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
 [[Waiting Room]]
