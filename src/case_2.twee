@@ -39,10 +39,8 @@ What is your next step?
 <<if not hasVisited("CXR 2")>> [[Chest X-Ray|CXR 2]] <<else>> Chest X-ray <</if>>
 <<if not hasVisited("Labs 2")>> [[Labs|Labs 2]] <<else>> Labs <</if>>
 <<if not hasVisited("Echo 2")>> [[Echo|Echo 2]] <<else>> Echo <</if>>
-<<if not hasVisited("Consults ask 2")>> [[Consults|Consults ask 2]] <<else>> Consults <</if>> 
 <<if hasVisited("Physical Exam 2", "EKG 2", "CXR 2", "Labs 2", "Echo 2", "Consults ask 2")>> [[Continue|Treatment 2]] <</if>>
 Notes: 39 year old woman complains of shortness of breath and nausea for 2 months, recently worsened. History of elevated blood pressure without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.  
-
 
 :: Physical Exam 2
 Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the second left intercostal space and faint bibasilar rales. No peripheral edema was noted and the liver edge was not palpable. 
@@ -65,7 +63,7 @@ Which of the following would you think is worth pursuing?
 
 :: Consults results 2
 <<if not $case_2_fundoscopy>> Patient definitely needed a fundoscopy, to check for hypertensive retinopathy. <<set $case_2_dx_score -=2>> <<else>> <<set $case_2_dx_score +=2>><</if>>
-<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> The other tests are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
+<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
 
 A fundoscopy that shoed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
 
@@ -217,10 +215,10 @@ Since this patient is diabetic and overweight, ACE-inhibitors or ARBS are the ch
 Hypertensive heart disease (HHD) refers to the changes in heart muscle due to hypertension. 
 
 Blood pressure classification: 
-        * Normal: <120/80 
-        * Elevated: <130/90 
-        * Stage 1 Hypertension: <139/90
-        * Stage 2 Hypertension: >=140/90
+    * Normal: <120/80 
+    * Elevated: <130/90 
+    * Stage 1 Hypertension: <139/90
+    * Stage 2 Hypertension: >=140/90
 
 Patients with stage 2 hypertension should be started on two agents from different drug classes and reassessed in 30 days. Additionally, other risk factors, including hyperlipidemia, alcohol use, smoking, and comorbidities such as chronic kidney disease and pulmonary disease, should be evaluated, while screening for sleep apnea, alcohol use disorder and metabolic syndrome. The assessment should include the measurement of HbA1c. 
 
@@ -232,9 +230,9 @@ Treatment of HHD focuses on controlling hypertension, as LVH doesn’t benefit d
 
 A hypertensive medication exerts 75% of its maximal effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains substantially elevated after the initiation of one hypertensive medication, adding another class of medication rather than increasing the dose may be more effective.
 
-Treatment algorithm for hypertension
+Treatment algorithm for hypertension: 
 <img style='width: 100%' src="https://imgbox.com/9sBtQzqV">
 
-[[Guidelines on hypertensino treatment|https://academic.oup.com/view-large/186438663]]
+[[Guidelines on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart disease|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
 [[Waiting Room]]

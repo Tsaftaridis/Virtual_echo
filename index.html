@@ -328,7 +328,6 @@ What is the first step in workup?
 &lt;&lt;if not hasVisited(&quot;CXR 2&quot;)&gt;&gt; [[Chest X-Ray|CXR 2]] &lt;&lt;else&gt;&gt; Chest X-ray &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Labs 2&quot;)&gt;&gt; [[Labs|Labs 2]] &lt;&lt;else&gt;&gt; Labs &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Echo 2&quot;)&gt;&gt; [[Echo|Echo 2]] &lt;&lt;else&gt;&gt; Echo &lt;&lt;/if&gt;&gt;
-&lt;&lt;if not hasVisited(&quot;Consults ask 2&quot;)&gt;&gt; [[Consults|Consults ask 2]] &lt;&lt;else&gt;&gt; Consults &lt;&lt;/if&gt;&gt; 
 &lt;&lt;if hasVisited(&quot;Physical Exam 2&quot;, &quot;EKG 2&quot;, &quot;CXR 2&quot;, &quot;Labs 2&quot;, &quot;Echo 2&quot;, &quot;Consults ask 2&quot;)&gt;&gt; [[Continue|Treatment 2]] &lt;&lt;/if&gt;&gt;
 Notes: 39 year old woman complains of shortness of breath and nausea for 2 months, recently worsened. History of elevated blood pressure without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.</tw-passagedata><tw-passagedata pid="22" name="Physical Exam 2" tags="" position="225,350" size="100,100">Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the second left intercostal space and faint bibasilar rales. No peripheral edema was noted and the liver edge was not palpable. 
 
@@ -347,7 +346,7 @@ Which of the following would you think is worth pursuing?
 &lt;&lt;checkbox &quot;$case_2_kernig_brudzinsky&quot; false true&gt;&gt; Kerning and Brudzinsky tests 
 
 [[Continue| Consults results 2]]</tw-passagedata><tw-passagedata pid="23" name="Consults results 2" tags="" position="350,350" size="100,100">&lt;&lt;if not $case_2_fundoscopy&gt;&gt; Patient definitely needed a fundoscopy, to check for hypertensive retinopathy. &lt;&lt;set $case_2_dx_score -=2&gt;&gt; &lt;&lt;else&gt;&gt; &lt;&lt;set $case_2_dx_score +=2&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky&gt;&gt; The other tests are not necessary at this time. &lt;&lt;set $case_2_dx_score -=1&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky&gt;&gt; Aside from fundoscopy, the other tests are not necessary at this time. &lt;&lt;set $case_2_dx_score -=1&gt;&gt; &lt;&lt;/if&gt;&gt;
 
 A fundoscopy that shoed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
 
@@ -462,10 +461,10 @@ Since this patient is diabetic and overweight, ACE-inhibitors or ARBS are the ch
 [[Continue|Outcome 2]]</tw-passagedata><tw-passagedata pid="35" name="Outcome 2" tags="" position="600,475" size="100,100">Hypertensive heart disease (HHD) refers to the changes in heart muscle due to hypertension. 
 
 Blood pressure classification: 
-        * Normal: &lt;120/80 
-        * Elevated: &lt;130/90 
-        * Stage 1 Hypertension: &lt;139/90
-        * Stage 2 Hypertension: &gt;=140/90
+    * Normal: &lt;120/80 
+    * Elevated: &lt;130/90 
+    * Stage 1 Hypertension: &lt;139/90
+    * Stage 2 Hypertension: &gt;=140/90
 
 Patients with stage 2 hypertension should be started on two agents from different drug classes and reassessed in 30 days. Additionally, other risk factors, including hyperlipidemia, alcohol use, smoking, and comorbidities such as chronic kidney disease and pulmonary disease, should be evaluated, while screening for sleep apnea, alcohol use disorder and metabolic syndrome. The assessment should include the measurement of HbA1c. 
 
@@ -477,10 +476,10 @@ Treatment of HHD focuses on controlling hypertension, as LVH doesn’t benefit d
 
 A hypertensive medication exerts 75% of its maximal effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains substantially elevated after the initiation of one hypertensive medication, adding another class of medication rather than increasing the dose may be more effective.
 
-Treatment algorithm for hypertension
+Treatment algorithm for hypertension: 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://imgbox.com/9sBtQzqV&quot;&gt;
 
-[[Guidelines on hypertensino treatment|https://academic.oup.com/view-large/186438663]]
+[[Guidelines on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart disease|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="36" name="Case 3 introduction" tags="" position="725,475" size="100,100">A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
 
