@@ -79,7 +79,7 @@ Patient list:
 <!-- Make sure you don't change the form action-->
 <form action="https://api.staticforms.xyz/submit" method="post">
 	<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> <!-- sent to my old email -->
-	<textarea hidden name="message"> 
+	<textarea name="message"> 
 		<<nobr>>
 			<<silently>>
 				<<set _last to $started>>
