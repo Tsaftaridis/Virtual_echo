@@ -6,21 +6,11 @@ Her father and mother both have hypertension that presented in their 50s. There 
 
 On presentation her blood pressure is 200/100 mmHg in the right arm with a regular pulse of 120 bpm. The respiratory rate was 21 breaths/min with an SpO2 of 93% on room air. Her temperature was 36.2 degrees Celcius. 
 
+<<silently>>
 <<set $case_2_dx_score to 0>>
 <<set $case_2_Tx_score to 0>>
 <<set $case_2_Fu_score to 0>>
 <<set $case_2_Echo to 0>>
-
-[[Continue|Workup 2]]
-
-:: Workup 2
-<<silently>>
-    <<if $ddx_2_CAD>> $ddx_2_score += 1 <</if>> 
-    <<if $ddx_2_HTeCM>> $ddx_2_score += 1 <</if>> 
-    <<if $ddx_2_PICM>> $ddx_2_score += 1 <</if>> 
-    <<if $ddx_2_AST>> $ddx_2_score -= 1 <</if>>
-    <<if $ddx_2_SAP>> $ddx_2_score -= 1 <</if>>
-    <<if $ddx_2_HTrCM>> $ddx_2_score -= 1 <</if>>
 <</silently>>
 
 What is the first step in workup? 
@@ -39,7 +29,7 @@ What is your next step?
 <<if not hasVisited("CXR 2")>> [[Chest X-Ray|CXR 2]] <<else>> Chest X-ray <</if>>
 <<if not hasVisited("Labs 2")>> [[Labs|Labs 2]] <<else>> Labs <</if>>
 <<if not hasVisited("Echo 2")>> [[Echo|Echo 2]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam 2", "EKG 2", "CXR 2", "Labs 2", "Echo 2", "Consults ask 2")>> [[Continue|Treatment 2]] <</if>>
+<<if hasVisited("Physical Exam 2", "EKG 2", "CXR 2", "Labs 2", "Echo 2")>> [[Continue|Treatment 2]] <</if>>
 Notes: 39 year old woman complains of shortness of breath and nausea for 2 months, recently worsened. History of elevated blood pressure without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.  
 
 :: Physical Exam 2
@@ -103,8 +93,7 @@ Monocytes: 6%
 <<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
 :: EKG 2
-//TODO  
-<img style='width: 100%' src="">
+<img style='width: 100%' src="https://www.wikidoc.org/index.php/File:LVH_6.jpg">
 <<set $case_2_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
