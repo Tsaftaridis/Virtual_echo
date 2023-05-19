@@ -20,3 +20,4 @@ setup.toSeconds = function (from, to) {
 
 	return seconds;
 };
+
