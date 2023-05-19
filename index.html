@@ -856,27 +856,24 @@ Please input a Password to continue.
 [[Score report]]</tw-passagedata><tw-passagedata pid="77" name="Score report" tags="" position="850,975" size="100,100">&lt;!-- Make sure you don&#39;t change the form action--&gt;
 &lt;form action=&quot;https://api.staticforms.xyz/submit&quot; method=&quot;post&quot;&gt;
 	&lt;input type=&quot;hidden&quot; name=&quot;accessKey&quot; value=&quot;970627d4-986b-49a4-a379-77ab002c7a03&quot;&gt; &lt;!-- sent to my old email --&gt;
-	&lt;textarea hidden name=&quot;message&quot;&gt; 
+	&lt;textarea hidden name=&quot;message&quot;&gt;
+		&lt;&lt;set _last to $started&gt;&gt;
 		&lt;&lt;nobr&gt;&gt;
-			&lt;&lt;silently&gt;&gt;
-				&lt;&lt;set _last to $started&gt;&gt;
 				&lt;&lt;print &quot;{ \n $id&quot;&gt;&gt;
 				&lt;&lt;for _event range $history&gt;&gt;
-					&lt;br&gt; &quot;&lt;&lt;= _event.passage&gt;&gt;&quot;: &lt;&lt;= setup.toSeconds(_last, _event.time)&gt;&gt;,
+					&lt;br&gt; &quot;&lt;&lt;= _event.passage&gt;&gt;&quot;: &lt;&lt;= setup.toSeconds(_last, _event.time)&gt;&gt;
 					&lt;&lt;set _last to _event.time&gt;&gt;
 				&lt;&lt;/for&gt;&gt;
 				&lt;&lt;print &quot;\n }&quot; &gt;&gt;
-				&lt;&lt;print $case_1_dx_score + $case_1_Tx_score + $case_1_Fu_score&gt;&gt;
-				&lt;&lt;print $case_2_dx_score + $case_2_Tx_score + $case_2_Fu_score&gt;&gt;
-				&lt;&lt;print $case_3_dx_score + $case_3_Tx_score + $case_3_Fu_score&gt;&gt;
-				&lt;&lt;print $case_4_dx_score + $case_4_Tx_score + $case_4_Fu_score&gt;&gt;
-			&lt;&lt;/silently&gt;
-		&lt;&lt;/nobr&gt;&gt; 
+		&lt;&lt;/nobr&gt;&gt;
+		&lt;&lt;print $case_1_dx_score + $case_1_Tx_score + $case_1_Fu_score&gt;&gt;
+		&lt;&lt;print $case_2_dx_score + $case_2_Tx_score + $case_2_Fu_score&gt;&gt;
+		&lt;&lt;print $case_3_dx_score + $case_3_Tx_score + $case_3_Fu_score&gt;&gt;
+		&lt;&lt;print $case_4_dx_score + $case_4_Tx_score + $case_4_Fu_score&gt;&gt; 
 	&lt;/textarea&gt; 
 	&lt;!-- If you want form to redirect to a specific url after submission --&gt;
-	&lt;input style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+	&lt;input style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit Score&quot; /&gt;
 &lt;/form&gt;
-
 [[Waiting Room]]</tw-passagedata><tw-passagedata pid="78" name="PassageReady" tags="" position="975,975" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
 /* Update the time of the previous history record if there is one. */
 &lt;&lt;if $history.length gt 0&gt;&gt;
