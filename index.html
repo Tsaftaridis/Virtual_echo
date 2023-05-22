@@ -853,28 +853,182 @@ Please input a Password to continue.
 &lt;&lt;if not hasVisited(&quot;Case 2 introduction&quot;)&gt;&gt; [[Case 2|Case 2 introduction]] &lt;&lt;else&gt;&gt; Case 2 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Case 3 introduction&quot;)&gt;&gt; [[Case 3|Case 3 introduction]] &lt;&lt;else&gt;&gt; Case 3 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Case 4 introduction&quot;)&gt;&gt; [[Case 4|Case 4 introduction]] &lt;&lt;else&gt;&gt; Case 4 &lt;&lt;/if&gt;&gt;
-[[Score report]]</tw-passagedata><tw-passagedata pid="77" name="Score report" tags="" position="850,975" size="100,100">&lt;!-- Make sure you don&#39;t change the form action--&gt;
+&lt;&lt;if hasVisited(&quot;Case 1 introduction&quot;) and hasVisited(&quot;Case 2 introduction&quot;) and hasVisited(&quot;Case 3 introduction&quot;) and hasVisited(&quot;Case 4 introduction&quot;)&gt;&gt; [[Usability Survey]] &lt;&lt;/if&gt;&gt;
+[[Usability Survey]]</tw-passagedata><tw-passagedata pid="77" name="Usability Survey" tags="" position="850,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
+
+A. I think that I would like to use this system frequently
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+B. I found the system unnecessarily complex
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+C. I thought the system was easy to use
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+D. I think that I would need the support of a technical person to be able to use this system
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+E. I found the various functions in this system were well integrated
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+F. I thought there was too much inconsistency in this system
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+G. I would imagine that most people would learn to use this system very quickly
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+H. I found the system very cumbersome to use
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+I. I felt very confident using the system
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+J. I needed to learn a lot of things before I could get going with this system
+&lt;&lt;nobr&gt;&gt;
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 1 autocheck&gt;&gt; 1 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 2 autocheck&gt;&gt; 2 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 3 autocheck&gt;&gt; 3 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 4 autocheck&gt;&gt; 4 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 5 autocheck&gt;&gt; 5 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 6 autocheck&gt;&gt; 6 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 7 autocheck&gt;&gt; 7 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 8 autocheck&gt;&gt; 8 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 9 autocheck&gt;&gt; 9 &lt;/label&gt; 
+	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 10 autocheck&gt;&gt; 10 &lt;/label&gt; 
+&lt;&lt;/nobr&gt;&gt;
+
+[[Continue|Score report]]</tw-passagedata><tw-passagedata pid="78" name="Score report" tags="" position="975,975" size="100,100">Congratulations! Please submit the results to finish! 
+&lt;!-- Make sure you don&#39;t change the form action--&gt;
 &lt;form action=&quot;https://api.staticforms.xyz/submit&quot; method=&quot;post&quot;&gt;
 	&lt;input type=&quot;hidden&quot; name=&quot;accessKey&quot; value=&quot;970627d4-986b-49a4-a379-77ab002c7a03&quot;&gt; &lt;!-- sent to my old email --&gt;
 	&lt;textarea hidden name=&quot;message&quot;&gt;
 		&lt;&lt;set _last to $started&gt;&gt;
 		&lt;&lt;nobr&gt;&gt;
 				&lt;&lt;print &quot;{ \n $id&quot;&gt;&gt;
+				&lt;&lt;print &quot;, &quot;&gt;&gt;
 				&lt;&lt;for _event range $history&gt;&gt;
 					&lt;br&gt; &quot;&lt;&lt;= _event.passage&gt;&gt;&quot;: &lt;&lt;= setup.toSeconds(_last, _event.time)&gt;&gt;
 					&lt;&lt;set _last to _event.time&gt;&gt;
 				&lt;&lt;/for&gt;&gt;
-				&lt;&lt;print &quot;\n }&quot; &gt;&gt;
+		
 		&lt;&lt;/nobr&gt;&gt;
-		&lt;&lt;print $case_1_dx_score + $case_1_Tx_score + $case_1_Fu_score&gt;&gt;
-		&lt;&lt;print $case_2_dx_score + $case_2_Tx_score + $case_2_Fu_score&gt;&gt;
-		&lt;&lt;print $case_3_dx_score + $case_3_Tx_score + $case_3_Fu_score&gt;&gt;
-		&lt;&lt;print $case_4_dx_score + $case_4_Tx_score + $case_4_Fu_score&gt;&gt; 
+		&lt;&lt;print $case_1_dx_score&gt;&gt; 
+		&lt;&lt;print $case_1_Tx_score&gt;&gt; 
+		&lt;&lt;print $case_1_Fu_score&gt;&gt;
+		&lt;&lt;print $case_2_dx_score&gt;&gt;
+		&lt;&lt;print $case_2_Tx_score&gt;&gt;
+		&lt;&lt;print $case_2_Fu_score&gt;&gt;
+		&lt;&lt;print $case_3_dx_score&gt;&gt; 
+		&lt;&lt;print $case_3_Tx_score&gt;&gt; 
+		&lt;&lt;print $case_3_Fu_score&gt;&gt;
+		&lt;&lt;print $case_4_dx_score&gt;&gt; 
+		&lt;&lt;print $case_4_Tx_score&gt;&gt; 
+		&lt;&lt;print $case_4_Fu_score&gt;&gt; 
+		&lt;&lt;print $usability&gt;&gt;
 	&lt;/textarea&gt; 
 	&lt;!-- If you want form to redirect to a specific url after submission --&gt;
-	&lt;input style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit Score&quot; /&gt;
+	&lt;input style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit Score and Finish&quot; /&gt;
 &lt;/form&gt;
-[[Waiting Room]]</tw-passagedata><tw-passagedata pid="78" name="PassageReady" tags="" position="975,975" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
+[[Waiting Room]]</tw-passagedata><tw-passagedata pid="79" name="PassageReady" tags="" position="1100,975" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
 /* Update the time of the previous history record if there is one. */
 &lt;&lt;if $history.length gt 0&gt;&gt;
 	&lt;&lt;set $history.last().time to Date.now()&gt;&gt;
