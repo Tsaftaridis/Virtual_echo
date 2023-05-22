@@ -1,19 +1,20 @@
 :: StoryTitle
 Echo Cases
 
+:: StoryInit
+<<set $history to []>>
+<<set $started to 0>>
+<<set $wrong_password to false>>
+
 :: StoryData
 {
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Waiting Room",
+  "start": "Guard",
   "zoom": 1
 }
 
-:: StoryInit
-<<set $history to []>>
-<<set $started to 0>>
-<<set $wrong_password to false>>
 
 :: Guard
 <<silently>>
@@ -36,21 +37,9 @@ Please input a Password to continue.
 			Check if one of the correct answers was supplied,
 			otherwise send them to the Start passage. %/
 		<<switch _answer>>
-			<<case "norrisa">>
+			<<case "testuser1">>
 				<<set $has_access = 1>>
-			<<case "haynes">>
-				<<set $has_access = 1>>
-			<<case "stefanos">>
-				<<set $has_access = 1>>
-			<<case "zafeiropoulos">>
-				<<set $has_access = 1>>
-			<<case "ioannis">>
-				<<set $has_access = 1>>
-			<<case "koulas">>
-				<<set $has_access = 1>>
-			<<case "tsaftaridis">>
-				<<set $has_access = 1>>
-			<<case "nikolaos">>
+			<<case "testuser2">>
 				<<set $has_access = 1>>
 			<<default>>
 				<<set $has_access = 0>>
@@ -73,6 +62,7 @@ Patient list:
 <<if not hasVisited("Case 3 introduction")>> [[Case 3|Case 3 introduction]] <<else>> Case 3 <</if>>
 <<if not hasVisited("Case 4 introduction")>> [[Case 4|Case 4 introduction]] <<else>> Case 4 <</if>>
 <<if hasVisited("Case 1 introduction") and hasVisited("Case 2 introduction") and hasVisited("Case 3 introduction") and hasVisited("Case 4 introduction")>> You have completed the cases! Please take the short usability survey before finishing. [[Usability Survey]] <</if>>
+[[Usability Survey]]
 
 :: Usability Survey
 <<set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]>>
