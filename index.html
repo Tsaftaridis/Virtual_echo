@@ -853,8 +853,7 @@ Please input a Password to continue.
 &lt;&lt;if not hasVisited(&quot;Case 2 introduction&quot;)&gt;&gt; [[Case 2|Case 2 introduction]] &lt;&lt;else&gt;&gt; Case 2 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Case 3 introduction&quot;)&gt;&gt; [[Case 3|Case 3 introduction]] &lt;&lt;else&gt;&gt; Case 3 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Case 4 introduction&quot;)&gt;&gt; [[Case 4|Case 4 introduction]] &lt;&lt;else&gt;&gt; Case 4 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if hasVisited(&quot;Case 1 introduction&quot;) and hasVisited(&quot;Case 2 introduction&quot;) and hasVisited(&quot;Case 3 introduction&quot;) and hasVisited(&quot;Case 4 introduction&quot;)&gt;&gt; [[Usability Survey]] &lt;&lt;/if&gt;&gt;
-[[Usability Survey]]</tw-passagedata><tw-passagedata pid="77" name="Usability Survey" tags="" position="850,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
+&lt;&lt;if hasVisited(&quot;Case 1 introduction&quot;) and hasVisited(&quot;Case 2 introduction&quot;) and hasVisited(&quot;Case 3 introduction&quot;) and hasVisited(&quot;Case 4 introduction&quot;)&gt;&gt; You have completed the cases! Please take the short usability survey before finishing. [[Usability Survey]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="Usability Survey" tags="" position="850,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
 A. I think that I would like to use this system frequently
 &lt;&lt;nobr&gt;&gt;
@@ -1004,11 +1003,12 @@ J. I needed to learn a lot of things before I could get going with this system
 		&lt;&lt;set _last to $started&gt;&gt;
 		&lt;&lt;nobr&gt;&gt;
 				&lt;&lt;print &quot;{ \n $id&quot;&gt;&gt;
+				&lt;&lt;print &quot;, &quot;&gt;&gt;
 				&lt;&lt;for _event range $history&gt;&gt;
 					&lt;br&gt; &quot;&lt;&lt;= _event.passage&gt;&gt;&quot;: &lt;&lt;= setup.toSeconds(_last, _event.time)&gt;&gt;
 					&lt;&lt;set _last to _event.time&gt;&gt;
 				&lt;&lt;/for&gt;&gt;
-				&lt;&lt;print &quot;\n }&quot; &gt;&gt;
+		
 		&lt;&lt;/nobr&gt;&gt;
 		&lt;&lt;print $case_1_dx_score&gt;&gt; 
 		&lt;&lt;print $case_1_Tx_score&gt;&gt; 
@@ -1026,8 +1026,7 @@ J. I needed to learn a lot of things before I could get going with this system
 	&lt;/textarea&gt; 
 	&lt;!-- If you want form to redirect to a specific url after submission --&gt;
 	&lt;input style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit Score and Finish&quot; /&gt;
-&lt;/form&gt;
-[[Waiting Room]]</tw-passagedata><tw-passagedata pid="79" name="PassageReady" tags="" position="1100,975" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
+&lt;/form&gt;</tw-passagedata><tw-passagedata pid="79" name="PassageReady" tags="" position="1100,975" size="100,100">/* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
 /* Update the time of the previous history record if there is one. */
 &lt;&lt;if $history.length gt 0&gt;&gt;
 	&lt;&lt;set $history.last().time to Date.now()&gt;&gt;

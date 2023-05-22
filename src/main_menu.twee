@@ -72,8 +72,7 @@ Patient list:
 <<if not hasVisited("Case 2 introduction")>> [[Case 2|Case 2 introduction]] <<else>> Case 2 <</if>>
 <<if not hasVisited("Case 3 introduction")>> [[Case 3|Case 3 introduction]] <<else>> Case 3 <</if>>
 <<if not hasVisited("Case 4 introduction")>> [[Case 4|Case 4 introduction]] <<else>> Case 4 <</if>>
-<<if hasVisited("Case 1 introduction") and hasVisited("Case 2 introduction") and hasVisited("Case 3 introduction") and hasVisited("Case 4 introduction")>> [[Usability Survey]] <</if>>
-[[Usability Survey]]
+<<if hasVisited("Case 1 introduction") and hasVisited("Case 2 introduction") and hasVisited("Case 3 introduction") and hasVisited("Case 4 introduction")>> You have completed the cases! Please take the short usability survey before finishing. [[Usability Survey]] <</if>>
 
 :: Usability Survey
 <<set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]>>
@@ -253,7 +252,6 @@ Congratulations! Please submit the results to finish!
 	<!-- If you want form to redirect to a specific url after submission -->
 	<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" />
 </form>
-[[Waiting Room]]
 
 :: PassageReady
 /* Note: time is measured in the number of milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
