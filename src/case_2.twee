@@ -55,7 +55,7 @@ Which of the following would you think is worth pursuing?
 <<if not $case_2_fundoscopy>> Patient definitely needed a fundoscopy, to check for hypertensive retinopathy. <<set $case_2_dx_score -=2>> <<else>> <<set $case_2_dx_score +=2>><</if>>
 <<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
 
-A fundoscopy that shoed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
+A fundoscopy that showed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
 
 
 [[Case needs more diagnostic evaluation|Case stare 2]]
@@ -224,4 +224,4 @@ Treatment algorithm for hypertension:
 
 [[Guidelines on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart disease|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
-[[Waiting Room]]
+[[See the next patient|Case 3 introduction]]
