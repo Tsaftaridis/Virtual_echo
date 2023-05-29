@@ -1,6 +1,8 @@
 :: Case 1 introduction 
 A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn">
+
 What is your first step in workup? 
 [[Physical Exam|Physical Exam 1]]
 [[EKG|EKG 1]]
@@ -58,6 +60,8 @@ Modality: Chest CXR
 
 :: Labs 1 
 Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
+
 [[Case needs further diagnostic evaluation| Case stare 1]]
 <<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
@@ -75,6 +79,8 @@ What do you think the echo shows?
 
 :: HF echo 1
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
+
 <<set $case_1_dx_score += 2>> 
 <<set $case_1_Echo to 1>>
 [[I need further diagnostic evaluation| Case stare 1]]
@@ -82,6 +88,7 @@ The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderat
 
 :: Wrong Echo 1
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 <<set $case_1_dx_score -= 2>> 
 <<set $case_1_Echo to 0>>
 [[I need further diagnostic evaluation| Case stare 1]]
@@ -89,7 +96,9 @@ The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderat
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
 :: Not done Dx yet 1 
+
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 [[Continue|Case stare 1]]
 
 :: Treatment 1 
@@ -119,6 +128,8 @@ On the 6th day he is finally symptom-free.
 
 He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZCGoOne7gjb9cVeeQ5SV?pid=ImgGn&rs=1">
+
 After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
 <<set $case_1_Tx_score -= 4 >>
 [[Continue|Further management 1]]
@@ -144,6 +155,8 @@ He is started on an ACE-inhibitor, a beta-blocker, spironolactone and furosemide
 [[Continue|End of case 1]]
 
 :: End of case 1
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.QMlLg0S0P5J4GJQhjdAU?pid=ImgGn">
+
 Congratulations! You have completed the first case! 
 
 The main points in managing heart failure are the following: 
