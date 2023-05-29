@@ -186,8 +186,6 @@ setup.toSeconds = function (from, to) {
 	return seconds;
 };</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn&quot;&gt;
-
 What is your first step in workup? 
 [[Physical Exam|Physical Exam 1]]
 [[EKG|EKG 1]]
@@ -231,8 +229,6 @@ Modality: Chest CXR
 &lt;&lt;set $case_1_dx_score -= 1&gt;&gt; 
 [[Case needs further diagnostic evaluation| Case stare 1]]
 &lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Labs 1" tags="" position="725,100" size="100,100">Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn&quot;&gt;
-
 [[Case needs further diagnostic evaluation| Case stare 1]]
 &lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Echo 1" tags="" position="850,100" size="100,100">The cardiac echo is shown below: 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt;
@@ -244,20 +240,16 @@ What do you think the echo shows?
 [[Dilated inferior vena cava and severely reduced ejection fraction|HF echo 1]]
 [[Preserved ejection fraction and collapsable dilated inferior vena cava|Wrong Echo 1]]
 [[Mitral valve prolapse and left atrial dilation|Wrong Echo 1]]</tw-passagedata><tw-passagedata pid="8" name="HF echo 1" tags="" position="975,100" size="100,100">The cardiac echo report reads: &quot;Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava.&quot;
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn&quot;&gt;
-
 &lt;&lt;set $case_1_dx_score += 2&gt;&gt; 
 &lt;&lt;set $case_1_Echo to 1&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 1]]
 &lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Wrong Echo 1" tags="" position="1100,100" size="100,100">The cardiac echo report reads: &quot;Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava.&quot;
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn&quot;&gt;
 &lt;&lt;set $case_1_dx_score -= 2&gt;&gt; 
 &lt;&lt;set $case_1_Echo to 0&gt;&gt;
 [[I need further diagnostic evaluation| Case stare 1]]
 &lt;&lt;if hasVisited(&quot;EKG 1&quot;, &quot;Echo 1&quot;, &quot;Physical Exam 1&quot;)&gt;&gt; [[Continue to treatment|Treatment 1]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 1]] &lt;&lt;/if&gt;&gt;
 
 /* Reprimand and return to diagnostic evaluation. Don&#39;t need to remove points here, you can see if they got here through the history later. */</tw-passagedata><tw-passagedata pid="10" name="Not done Dx yet 1" tags="" position="1225,100" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="11" name="Treatment 1" tags="" position="100,225" size="100,100">Remember, a physical examination is important when first approaching a patient. After that, a cardiac echo and an EKG are required diagnostic steps before moving on to treatment in this patient. 
 
 The head nurse asks you which of the following the best starting treatment option for this patient would be: 
@@ -275,8 +267,6 @@ On the 6th day he is finally symptom-free.
 
 He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.ZCGoOne7gjb9cVeeQ5SV?pid=ImgGn&amp;rs=1&quot;&gt;
-
 After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
 &lt;&lt;set $case_1_Tx_score -= 4 &gt;&gt;
 [[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="15" name="Further management 1" tags="" position="600,225" size="100,100">You examine the patient and have a conversation with them about their symptoms. They report they are feeling better. The edema is gone, the lung sounds are normal, while a repeat cardiac echo shows the following findings: 
@@ -284,15 +274,13 @@ After 5 days in the intensive care unit, his ejection fraction improves and he i
 The attending asks you what you think the next step in managing this patient should be. 
 
 [[Discharge Home on oral diuretics|Discharge home 1]]
-[[Keep in the hospital for further management|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Discharge home 1" tags="" position="725,225" size="100,100">According to the guidelines, it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
+[[Keep in the hospital for further management|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Discharge home 1" tags="" position="725,225" size="100,100">According to the guidelines (//ADD LINK), it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
 &lt;&lt;set $case_1_Fu_score -= 5 &gt;&gt;
 [[Continue|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="17" name="Hospitalization and monitoring 1" tags="" position="850,225" size="100,100">The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.
 
 He is started on an ACE-inhibitor, a beta-blocker, spironolactone and furosemide per os. They are also given directions on how to take the medication at home and help towards finding a primary care physician for long-term follow-up. 
 &lt;&lt;set $case_1_Fu_score += 3 &gt;&gt;
-[[Continue|End of case 1]]</tw-passagedata><tw-passagedata pid="18" name="End of case 1" tags="" position="975,225" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.QMlLg0S0P5J4GJQhjdAU?pid=ImgGn&quot;&gt;
-
-Congratulations! You have completed the first case! 
+[[Continue|End of case 1]]</tw-passagedata><tw-passagedata pid="18" name="End of case 1" tags="" position="975,225" size="100,100">Congratulations! You have completed the first case! 
 
 The main points in managing heart failure are the following: 
 
@@ -350,6 +338,7 @@ Which of the following would you think is worth pursuing?
 
 A fundoscopy that showed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
 
+
 [[Case needs more diagnostic evaluation|Case stare 2]]
 &lt;&lt;if hasVisited(&quot;EKG 2&quot;, &quot;Echo 2&quot;, &quot;Physical Exam 2&quot;)&gt;&gt; [[Continue to treatment|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="CXR 2" tags="" position="350,350" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg&quot;&gt;
 
@@ -371,7 +360,7 @@ Lymphocytes: 36%
 Monocytes: 6% 
 
 [[Case needs further diagnostic evaluation| Case stare 2]]
-&lt;&lt;if hasVisited(&quot;EKG 2&quot;, &quot;Echo 2&quot;)&gt;&gt; [[Continue to treatment|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="EKG 2" tags="" position="725,350" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.wikidoc.org/images/f/f8/LVH_6.jpg&quot;&gt;
+&lt;&lt;if hasVisited(&quot;EKG 2&quot;, &quot;Echo 2&quot;)&gt;&gt; [[Continue to treatment|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="EKG 2" tags="" position="725,350" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.wikidoc.org/index.php/File:LVH_6.jpg&quot;&gt;
 &lt;&lt;set $case_2_dx_score += 2&gt;&gt;
 [[Case needs further diagnostic evaluation| Case stare 2]]
 &lt;&lt;if hasVisited(&quot;EKG 2&quot;, &quot;Echo 2&quot;, &quot;Physical Exam 2&quot;)&gt;&gt; [[Continue to treatment|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Echo 2" tags="" position="850,350" size="100,100">The chardiac echo is shown below and the septum measures 1.3 cm.  
@@ -419,7 +408,7 @@ A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejec
 
 [[I need further diagnostic evaluation| Case stare 2]]
 &lt;&lt;if hasVisited(&quot;EKG 2&quot;, &quot;Echo 2&quot;)&gt;&gt; [[Continue|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="Treatment 2" tags="" position="225,475" size="100,100">/% Increase score by two only if correct answer given. Otherwise don&#39;t remove points.%/
-&lt;&lt;if $ddx_2_HTeCM&gt;&gt; &lt;&lt;set $case_2_dx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $ddx_2_HTeCM&gt;&gt; $case_2_dx_score += 2 &lt;&lt;/if&gt;&gt;
 
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 &lt;&lt;silently&gt;&gt;
@@ -439,12 +428,12 @@ Pick which of the following drugs you think would be included in the appropreate
 &lt;&lt;checkbox &quot;$amlodipine_2&quot; false true&gt;&gt; Amlodipine 
 
 [[Continue|Guideline treatment 2]]</tw-passagedata><tw-passagedata pid="33" name="Guideline treatment 2" tags="" position="350,475" size="100,100">&lt;&lt;silently&gt;&gt;
-    &lt;&lt;if $inotropes_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $diuretics_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $metoprolol_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 1&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $digoxin_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $ace_arb_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $amlodipine_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score +=2&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $inotropes_2&gt;&gt;  $case_2_Tx_score -= 4 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $diuretics_2&gt;&gt;  $case_2_Tx_score += 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $metoprolol_2&gt;&gt;  $case_2_Tx_score += 1 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $digoxin_2&gt;&gt;  $case_2_Tx_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $ace_arb_2&gt;&gt;  $case_2_Tx_score += 4 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $amlodipine_2&gt;&gt;  $case_2_Tx_score +=2 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
 Thiazide diuretics, especially chlorthalidone are first line for hypertension - diuretics are necessary for patients with resistant hypertensive disease 
@@ -475,7 +464,7 @@ Treatment of HHD focuses on controlling hypertension, as LVH doesn’t benefit d
 A hypertensive medication exerts 75% of its maximal effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains substantially elevated after the initiation of one hypertensive medication, adding another class of medication rather than increasing the dose may be more effective.
 
 Treatment algorithm for hypertension: 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://imgbox.com/9sBtQzqV&quot;&gt;
 
 [[Guidelines on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart disease|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
@@ -576,11 +565,11 @@ Beta blocker &lt;&lt;checkbox &quot;$beta_blocker_3&quot; false true&gt;&gt;
 Fluids &lt;&lt;checkbox &quot;$fluids_3&quot; false true&gt;&gt;
 
 [[Continue|Guideline treatment 3]]</tw-passagedata><tw-passagedata pid="47" name="Guideline treatment 3" tags="" position="850,600" size="100,100">&lt;&lt;silently&gt;&gt;
-    &lt;&lt;if $diuretics_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score += 3&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $penicillin_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $beta_blocker_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score += 3&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $inotropes_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $fluids_3&gt;&gt; &lt;&lt;set $case_3_Tx_score -= 3&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $diuretics_3&gt;&gt;  $case_3_Tx_score += 3 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $penicillin_3&gt;&gt;  $case_3_Tx_score += 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $beta_blocker_3&gt;&gt;  $case_3_Tx_score += 3 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $inotropes_3&gt;&gt;  $case_3_Tx_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $fluids_3&gt;&gt;  $case_3_Tx_score -= 3 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 After consulting with the attending physician, the patient is started on diuretics, penicillin and a beta blocker. Inotropes and IV fluids are not indicated and may harm the patient. 
 [[Continue|Further management 3]]</tw-passagedata><tw-passagedata pid="48" name="Further management 3" tags="" position="975,600" size="100,100">The attending asks you what you think the next step in managing this patient should be. 
@@ -706,10 +695,10 @@ Pick which of the following drugs you think would be included in the appropreate
 &lt;&lt;checkbox &quot;$beta_blocker_4&quot; false true&gt;&gt; Beta blocker 
 
 [[Continue|Guideline treatment 4]]</tw-passagedata><tw-passagedata pid="64" name="Guideline treatment 4" tags="" position="475,850" size="100,100">&lt;&lt;silently&gt;&gt;
-    &lt;&lt;if $diuretics_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $antihypertensives_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $beta_blocker_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $albuterol_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $diuretics_4&gt;&gt;  $case_4_Tx_score += 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $antihypertensives_4&gt;&gt;  $case_4_Tx_score -= 4 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $beta_blocker_4&gt;&gt;  $case_4_Tx_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $albuterol_4&gt;&gt;  $case_4_Tx_score -= 4 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 Treatment in this patient with peripartum cardiomyopathy aims to control the symptoms of heart failure. In the acute setting diuresis is the mainstay of treatment. Furosemide, bumetanide or hydrochlorothiazide can be used for pulmonary edema, but excessive dosing carries the risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
 [[Continue|Deterioration 4]]</tw-passagedata><tw-passagedata pid="65" name="Deterioration 4" tags="" position="600,850" size="100,100">The next day, the nurse calls you because the patient has been complaining of worsening shortness of breath. She also reports that the patient has had minimal urine output. Her blood pressure is very low. 
@@ -729,7 +718,7 @@ What do you think the best medical therapy would include?
 [[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="69" name="Further management 4" tags="" position="1100,850" size="100,100">The patient is leaves the ICU and is moved to the floor for further management. There, she is put on appropriate heart failure treatment, including a beta blocker and an ACE-inhibitor/ARB. Later on she is discharged an instructed to come back for a repeat echo 6 months later. 
 
 [[Continue|Repeat echo 4]]</tw-passagedata><tw-passagedata pid="70" name="Repeat echo 4" tags="" position="1225,850" size="100,100">The repeat echo is shown below: 
-//TODO 
+//TODO stef
 [[Continue|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="71" name="Patient Questions 4" tags="" position="100,975" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $stop_beta_4 to false&gt;&gt;
 &lt;&lt;set $stop_ACE_4 to false&gt;&gt;
@@ -753,10 +742,10 @@ Leave blank if she should keep taking both.
 
 [[Continue|Attending questions 4]]</tw-passagedata><tw-passagedata pid="72" name="Attending questions 4" tags="" position="225,975" size="100,100">/% Evaluate answers to patient questions. %/
 &lt;&lt;silently&gt;&gt;
-    &lt;&lt;if $stop_beta_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $b_stop_beta_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $b_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $stop_beta_4&gt;&gt;  $case_4_Fu_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $stop_ACE_4&gt;&gt;  $case_4_Fu_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $b_stop_beta_4&gt;&gt;  $case_4_Fu_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $b_stop_ACE_4&gt;&gt;  $case_4_Fu_score -= 2 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
 The attending also decides to test your knowledge: &quot;Let&#39;s say this patient complained of symptoms indicative of hypotensive episodes. What would you suggest?&quot;
@@ -779,12 +768,12 @@ Leave blank if she must keep taking both medications.
 [[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="73" name="Case conclusion 4" tags="" position="350,975" size="100,100">Congratulations! You have completed case 4! 
 /% Evaluate answers to the attending physician. %/
 &lt;&lt;silently&gt;&gt;
-    &lt;&lt;if $q_stop_beta_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $q_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $q_stop_none_4&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $p_stop_beta_4&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $p_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score += 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $p_stop_none_4&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $q_stop_beta_4&gt;&gt;  $case_4_Fu_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $q_stop_ACE_4&gt;&gt;  $case_4_Fu_score += 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $q_stop_none_4&gt;&gt; $case_4_Fu_score -= 4 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $p_stop_beta_4&gt;&gt;  $case_4_Fu_score -= 2 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $p_stop_ACE_4&gt;&gt;  $case_4_Fu_score += 4 &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $p_stop_none_4&gt;&gt; $case_4_Fu_score -= 4 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
 Postpartum cardiomyopathy (PPCM) should be considered in patients who present with dyspnea and heart failure symptoms after delivery.
@@ -801,7 +790,7 @@ Iron supplementation may be recommended in patients with PPCM with low hemoglobi
 
 Close follow-up with echocardiography and BNP monitoring can help in assessing treatment response and guiding management decisions.
 
-You can review the cardiovascular medication guidelines for pregnant, postpartum and lactating patients here: [[Cardiovascular Disease Medication During Pregnancy - American College of Cardiology|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
+You can review the cardiovascular medication guidelines for pregnant, postpartum and lactating patients here: Cardiovascular Disease Medication During Pregnancy - American College of Cardiology
 
 [[Continue|Finish]]</tw-passagedata><tw-passagedata pid="74" name="Finish" tags="" position="475,975" size="100,100">Congratulations! You finished all the cases! 
 
@@ -864,7 +853,7 @@ Please input a Password to continue.
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Waiting Room" tags="" position="975,975" size="100,100">Welcome to gmenecho! This is a virtual patient learning tool to help us evaluate the efficacy of the training program you partake in. There are four patient cases. After you are done with those, there will be a short survey before you submit your results for review. 
 Please begin when ready. This should take about half an hour. 
-[[Start the first case|Case 1 introduction]]</tw-passagedata><tw-passagedata pid="79" name="Usability Survey" tags="" position="1100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
+Patient 1: [[Start|Case 1 introduction]]</tw-passagedata><tw-passagedata pid="79" name="Usability Survey" tags="" position="1100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
 A. I think that I would like to use this learning tool frequently.
 &lt;&lt;nobr&gt;&gt;
