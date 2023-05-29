@@ -132,7 +132,7 @@ The attending asks you what you think the next step in managing this patient sho
 [[Keep in the hospital for further management|Hospitalization and monitoring 1]]
 
 :: Discharge home 1
-According to the guidelines (//ADD LINK), it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
+According to the guidelines, it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
 <<set $case_1_Fu_score -= 5 >>
 [[Continue|Hospitalization and monitoring 1]]
 

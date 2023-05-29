@@ -57,10 +57,8 @@ Which of the following would you think is worth pursuing?
 
 A fundoscopy that showed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
 
-
 [[Case needs more diagnostic evaluation|Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
-
 
 :: CXR 2 
 <img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
@@ -74,7 +72,6 @@ A fundoscopy that showed AV narrowing and nicking, cotton wool spots, exudate an
 [[Continue|Case stare 2]]
 
 :: Labs 2 
-
 Laboratory testing showed a heamoglobin level of 11.5 g/dL
 Serum Creatinine: 0.9 mg/dL 
 Serum sodium: 140 mEq/L 
@@ -93,7 +90,7 @@ Monocytes: 6%
 <<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
 
 :: EKG 2
-<img style='width: 100%' src="https://www.wikidoc.org/index.php/File:LVH_6.jpg">
+<img style='width: 100%' src="https://www.wikidoc.org/images/f/f8/LVH_6.jpg">
 <<set $case_2_dx_score += 2>>
 [[Case needs further diagnostic evaluation| Case stare 2]]
 <<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
@@ -158,7 +155,7 @@ What do you think the correct diagnosis is?
 
 :: Treatment 2
 /% Increase score by two only if correct answer given. Otherwise don't remove points.%/
-<<if $ddx_2_HTeCM>> $case_2_dx_score += 2 <</if>>
+<<if $ddx_2_HTeCM>> <<set $case_2_dx_score += 2>> <</if>>
 
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 <<silently>>
@@ -181,12 +178,12 @@ Pick which of the following drugs you think would be included in the appropreate
 
 :: Guideline treatment 2 
 <<silently>>
-    <<if $inotropes_2>>  $case_2_Tx_score -= 4 <</if>>
-    <<if $diuretics_2>>  $case_2_Tx_score += 2 <</if>>
-    <<if $metoprolol_2>>  $case_2_Tx_score += 1 <</if>>
-    <<if $digoxin_2>>  $case_2_Tx_score -= 2 <</if>>
-    <<if $ace_arb_2>>  $case_2_Tx_score += 4 <</if>>
-    <<if $amlodipine_2>>  $case_2_Tx_score +=2 <</if>>
+    <<if $inotropes_2>>  <<set $case_2_Tx_score -= 4>> <</if>>
+    <<if $diuretics_2>>  <<set $case_2_Tx_score += 2>> <</if>>
+    <<if $metoprolol_2>>  <<set $case_2_Tx_score += 1>> <</if>>
+    <<if $digoxin_2>>  <<set $case_2_Tx_score -= 2>> <</if>>
+    <<if $ace_arb_2>>  <<set $case_2_Tx_score += 4>> <</if>>
+    <<if $amlodipine_2>>  <<set $case_2_Tx_score +=2>> <</if>>
 <</silently>>
 
 Thiazide diuretics, especially chlorthalidone are first line for hypertension - diuretics are necessary for patients with resistant hypertensive disease 
@@ -220,7 +217,7 @@ Treatment of HHD focuses on controlling hypertension, as LVH doesn’t benefit d
 A hypertensive medication exerts 75% of its maximal effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains substantially elevated after the initiation of one hypertensive medication, adding another class of medication rather than increasing the dose may be more effective.
 
 Treatment algorithm for hypertension: 
-<img style='width: 100%' src="https://imgbox.com/9sBtQzqV">
+<img style='width: 100%' src="https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg">
 
 [[Guidelines on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart disease|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]

@@ -140,10 +140,10 @@ Pick which of the following drugs you think would be included in the appropreate
 
 :: Guideline treatment 4
 <<silently>>
-    <<if $diuretics_4>>  $case_4_Tx_score += 2 <</if>>
-    <<if $antihypertensives_4>>  $case_4_Tx_score -= 4 <</if>>
-    <<if $beta_blocker_4>>  $case_4_Tx_score -= 2 <</if>>
-    <<if $albuterol_4>>  $case_4_Tx_score -= 4 <</if>>
+    <<if $diuretics_4>>  <<set $case_4_Tx_score += 2>> <</if>>
+    <<if $antihypertensives_4>>  <<set $case_4_Tx_score -= 4>> <</if>>
+    <<if $beta_blocker_4>>  <<set $case_4_Tx_score -= 2>> <</if>>
+    <<if $albuterol_4>>  <<set $case_4_Tx_score -= 4>> <</if>>
 <</silently>>
 Treatment in this patient with peripartum cardiomyopathy aims to control the symptoms of heart failure. In the acute setting diuresis is the mainstay of treatment. Furosemide, bumetanide or hydrochlorothiazide can be used for pulmonary edema, but excessive dosing carries the risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
 [[Continue|Deterioration 4]]
@@ -181,7 +181,7 @@ The patient is leaves the ICU and is moved to the floor for further management. 
 
 :: Repeat echo 4
 The repeat echo is shown below: 
-//TODO stef
+//TODO 
 [[Continue|Patient Questions 4]]
 
 :: Patient Questions 4 
@@ -211,10 +211,10 @@ Leave blank if she should keep taking both.
 :: Attending questions 4
 /% Evaluate answers to patient questions. %/
 <<silently>>
-    <<if $stop_beta_4>>  $case_4_Fu_score -= 2 <</if>>
-    <<if $stop_ACE_4>>  $case_4_Fu_score -= 2 <</if>>
-    <<if $b_stop_beta_4>>  $case_4_Fu_score -= 2 <</if>>
-    <<if $b_stop_ACE_4>>  $case_4_Fu_score -= 2 <</if>>
+    <<if $stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
+    <<if $stop_ACE_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
+    <<if $b_stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
+    <<if $b_stop_ACE_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
 <</silently>>
 
 The attending also decides to test your knowledge: "Let's say this patient complained of symptoms indicative of hypotensive episodes. What would you suggest?"
@@ -241,12 +241,12 @@ Leave blank if she must keep taking both medications.
 Congratulations! You have completed case 4! 
 /% Evaluate answers to the attending physician. %/
 <<silently>>
-    <<if $q_stop_beta_4>>  $case_4_Fu_score -= 2 <</if>>
-    <<if $q_stop_ACE_4>>  $case_4_Fu_score += 2 <</if>>
-    <<if $q_stop_none_4>> $case_4_Fu_score -= 4 <</if>>
-    <<if $p_stop_beta_4>>  $case_4_Fu_score -= 2 <</if>>
-    <<if $p_stop_ACE_4>>  $case_4_Fu_score += 4 <</if>>
-    <<if $p_stop_none_4>> $case_4_Fu_score -= 4 <</if>>
+    <<if $q_stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
+    <<if $q_stop_ACE_4>>  <<set $case_4_Fu_score += 2>> <</if>>
+    <<if $q_stop_none_4>> <<set $case_4_Fu_score -= 4>> <</if>>
+    <<if $p_stop_beta_4>> <<set $case_4_Fu_score -= 2>> <</if>>
+    <<if $p_stop_ACE_4>>  <<set $case_4_Fu_score += 4>> <</if>>
+    <<if $p_stop_none_4>> <<set $case_4_Fu_score -= 4>> <</if>>
 <</silently>>
 
 Postpartum cardiomyopathy (PPCM) should be considered in patients who present with dyspnea and heart failure symptoms after delivery.
@@ -263,7 +263,7 @@ Iron supplementation may be recommended in patients with PPCM with low hemoglobi
 
 Close follow-up with echocardiography and BNP monitoring can help in assessing treatment response and guiding management decisions.
 
-You can review the cardiovascular medication guidelines for pregnant, postpartum and lactating patients here: Cardiovascular Disease Medication During Pregnancy - American College of Cardiology
+You can review the cardiovascular medication guidelines for pregnant, postpartum and lactating patients here: [[Cardiovascular Disease Medication During Pregnancy - American College of Cardiology|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
 [[Continue|Finish]]
 

@@ -132,11 +132,11 @@ Fluids <<checkbox "$fluids_3" false true>>
 
 :: Guideline treatment 3
 <<silently>>
-    <<if $diuretics_3>>  $case_3_Tx_score += 3 <</if>>
-    <<if $penicillin_3>>  $case_3_Tx_score += 2 <</if>>
-    <<if $beta_blocker_3>>  $case_3_Tx_score += 3 <</if>>
-    <<if $inotropes_3>>  $case_3_Tx_score -= 2 <</if>>
-    <<if $fluids_3>>  $case_3_Tx_score -= 3 <</if>>
+    <<if $diuretics_3>>  <<set $case_3_Tx_score += 3>> <</if>>
+    <<if $penicillin_3>>  <<set $case_3_Tx_score += 2>> <</if>>
+    <<if $beta_blocker_3>>  <<set $case_3_Tx_score += 3>> <</if>>
+    <<if $inotropes_3>>  <<set $case_3_Tx_score -= 2>> <</if>>
+    <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
 After consulting with the attending physician, the patient is started on diuretics, penicillin and a beta blocker. Inotropes and IV fluids are not indicated and may harm the patient. 
 [[Continue|Further management 3]]
