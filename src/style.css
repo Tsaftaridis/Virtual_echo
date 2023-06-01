@@ -34,11 +34,6 @@ body {
     text-align: center;
 }
 
-/*TODO uncomment line in final version*/
-/* #menu-item-restart {
-	display: none;
-}*/
-
 #menu li a {
 	color: black;
 }
@@ -67,7 +62,11 @@ body {
 #ui-dialog-body {
     background-color: white;
 }
-/*
+
 #menu-item-restart {
 	display: none;
-} */
+} 
+
+#menu-item-saves {
+    display:none;
+}
