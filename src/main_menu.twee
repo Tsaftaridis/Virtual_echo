@@ -7,6 +7,7 @@ Echo Cases
 <<set $wrong_password to false>>
 <<set $case_1_dx_score to 0>>
 <<set $case_1_Tx_score to 0>>
+<<set $submitted to 0>>
 
 :: StoryData
 {
@@ -176,48 +177,50 @@ J. I needed to learn a lot of things before I could get going with this learning
 :: Score report
 Please press the submit button, and then restart if anyone else wants to use the same device. Thank you! 
 
-<!-- Make sure you don't change the form action-->
-<form action="https://api.staticforms.xyz/submit" method="post">
-	<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> <!-- sent to my old email -->
-	<textarea hidden name="message">
-		<<set _last to $started>>
-		<<nobr>>
-				<<print "$id,">>
-				<<for _event range $history>>
-					"<<= _event.passage>>", <<= setup.toSeconds(_last, _event.time)>>, 
-					<<set _last to _event.time>>
-				<</for>>
-		<</nobr>>
-		<<nobr>>
-		"dx1", <<print $case_1_dx_score>>, 
-		"tx1", <<print $case_1_Tx_score>>, 
-		"Fu1", <<print $case_1_Fu_score>>, 
-		"Echo1", <<print $case_1_Echo>>, 
-		"dx2", <<print $case_2_dx_score>>, 
-		"Tx2", <<print $case_2_Tx_score>>, 
-		"Fu2", <<print $case_2_Fu_score>>, 
-		"Fundoscopy2", <<print $case_2_fundoscopy>>, 
-		"Echo2", <<print $case_2_Echo>>, 
-		"dx3", <<print $case_3_dx_score>>, 
-		"Tx3", <<print $case_3_Tx_score>>, 
-		"Fu3", <<print $case_3_Fu_score>>, 
-		"Echo3", <<print $case_3_Echo>>, 
-		"dx4", <<print $case_4_dx_score>>, 
-		"Tx4", <<print $case_4_Tx_score>>, 
-		"Fu4", <<print $case_4_Fu_score>>, 
-		"Echo4", <<print $case_4_Echo>>, 
-		"usability", <<print $usability>>
-		<</nobr>>
-	</textarea> 
-	<input type="hidden" name="redirectTo" value="https://gmenecho.com/">
-	<input id="mySubmit" onclick = "myFunction()" style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /> 
-	<script> 
-		function myFunction(){
-			var x = document.getElementById("mySubmit");
-			x.style.display = "none";
-		}
-	</script>
+<<if not $submitted>>
+	<!-- Make sure you don't change the form action-->
+	<form onsubmit="form_submitted" action="https://api.staticforms.xyz/submit" method="post">
+		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> <!-- sent to my old email -->
+		<textarea hidden name="message">
+			<<set _last to $started>>
+			<<nobr>>
+					<<print "$id,">>
+					<<for _event range $history>>
+						"<<= _event.passage>>", <<= setup.toSeconds(_last, _event.time)>>, 
+						<<set _last to _event.time>>
+					<</for>>
+			<</nobr>>
+			<<nobr>>
+			"dx1", <<print $case_1_dx_score>>, 
+			"tx1", <<print $case_1_Tx_score>>, 
+			"Fu1", <<print $case_1_Fu_score>>, 
+			"Echo1", <<print $case_1_Echo>>, 
+			"dx2", <<print $case_2_dx_score>>, 
+			"Tx2", <<print $case_2_Tx_score>>, 
+			"Fu2", <<print $case_2_Fu_score>>, 
+			"Fundoscopy2", <<print $case_2_fundoscopy>>, 
+			"Echo2", <<print $case_2_Echo>>, 
+			"dx3", <<print $case_3_dx_score>>, 
+			"Tx3", <<print $case_3_Tx_score>>, 
+			"Fu3", <<print $case_3_Fu_score>>, 
+			"Echo3", <<print $case_3_Echo>>, 
+			"dx4", <<print $case_4_dx_score>>, 
+			"Tx4", <<print $case_4_Tx_score>>, 
+			"Fu4", <<print $case_4_Fu_score>>, 
+			"Echo4", <<print $case_4_Echo>>, 
+			"usability", <<print $usability>>
+			<</nobr>>
+		</textarea> 
+		<script> 
+			function form_submitted() {
+				State.variables.submitted = true;
+			}
+		</script>
+		<input type="hidden" name="redirectTo" value="https://gmenecho.com/">
+		<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /> 
+	</form>
+<<else>>
+Thank you for submitting the form!
+<</if>>
 
-</form>
-
-<<button "Restart game">><<script>>UI.restart();<</script>><</button>>
+<<button "Restart game">><<script>>UI.restart();<</script>><</button>> 
