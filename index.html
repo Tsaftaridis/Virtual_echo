@@ -965,7 +965,6 @@ J. I needed to learn a lot of things before I could get going with this learning
 &lt;&lt;/nobr&gt;&gt;
 
 [[Continue|Score report]]</tw-passagedata><tw-passagedata pid="80" name="Score report" tags="" position="1225,975" size="100,100">Please press the submit button, and then restart if anyone else wants to use the same device. Thank you! 
-&lt;&lt;set $submitted to false&gt;&gt;
 
 &lt;!-- Make sure you don&#39;t change the form action--&gt;
 &lt;form action=&quot;https://api.staticforms.xyz/submit&quot; method=&quot;post&quot;&gt;
@@ -1000,8 +999,15 @@ J. I needed to learn a lot of things before I could get going with this learning
 		&quot;usability&quot;, &lt;&lt;print $usability&gt;&gt;
 		&lt;&lt;/nobr&gt;&gt;
 	&lt;/textarea&gt; 
- 	&lt;input type=&quot;hidden&quot; name=&quot;redirectTo&quot; value=&quot;https://gmenecho.com/&quot;&gt;
-	&lt;&lt;if not $submitted&gt;&gt; &lt;input style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit Score and Finish&quot; /&gt;&lt;&lt;else&gt;&gt; Form submitted! &lt;&lt;/if&gt;&gt;
+ 	&lt;!--  input type=&quot;hidden&quot; name=&quot;redirectTo&quot; value=&quot;https://gmenecho.com/&quot;&gt; --&gt;
+	&lt;input id=&quot;mySubmit&quot; onclick = &quot;myFunction()&quot; style=&quot;background-color:powderblue; color:black&quot; type=&quot;submit&quot; value=&quot;Submit Score and Finish&quot; /&gt; 
+	&lt;script&gt; 
+		function myFunction(){
+			var x = document.getElementById(&quot;mySubmit&quot;);
+			x.style.display = &quot;none&quot;;
+		}
+	&lt;/script&gt;
+
 &lt;/form&gt;
 
 &lt;&lt;button &quot;Restart game&quot;&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata></tw-storydata>
