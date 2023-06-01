@@ -180,7 +180,7 @@ J. I needed to learn a lot of things before I could get going with this learning
 Please press the submit button, and then restart if anyone else wants to use the same device. Thank you! 
 	<!-- Make sure you don't change the form action-->
 <div id="first">
-	<form onsubmit="State.variables.submitted = 1;" action="https://api.staticforms.xyz/submit" method="post">
+	<form onsubmit="state.display('submitted', this);" action="https://api.staticforms.xyz/submit" method="post">
 		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> <!-- sent to my old email -->
 		<textarea hidden name="message">
 			<<set _last to $started>>
@@ -217,5 +217,5 @@ Please press the submit button, and then restart if anyone else wants to use the
 	</form>
 </div>
 
-<<print $submitted>>
+:: submitted
 <<button "Restart">><<script>>UI.restart();<</script>><</button>> 
