@@ -15,3 +15,9 @@ setup.toSeconds = function (from, to) {
 
 	return seconds;
 };
+
+function form_submitted() {
+	State.variables.submitted = 1;
+}
+
+window.form_submitted = form_submitted; 
