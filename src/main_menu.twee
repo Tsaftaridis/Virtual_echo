@@ -14,7 +14,7 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Interim",
+  "start": "Score report",
   "zoom": 1
 }
 
@@ -171,17 +171,14 @@ J. I needed to learn a lot of things before I could get going with this learning
 	<label><<radiobutton "$usability[9]" 4 autocheck>> 4 Agree </label> 
 	<label><<radiobutton "$usability[9]" 5 autocheck>> 5 Completely agree </label> 
 <</nobr>>
-[[Continue|Interim]]
-
-:: Interim 
-[[Score report]]
+[[Continue|Score report]]
 
 :: Score report
-Please press the submit button, and then restart if anyone else wants to use the same device. Thank you! 
-	<!-- Make sure you don't change the form action action="https://api.staticforms.xyz/submit"-->
+Please submit your results and then restart if anyone else wants to use the same device. Thank you! 
+<!-- Make sure you don't change the form action-->
 <div id="first">
-	<form onsubmit="Engine.restart();" action="https://gmenecho.com" method="post">
-		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> <!-- sent to my old email -->
+	<form onsubmit="document.getElementById('first').style.display = 'none'; document.getElementById('second').style.display = 'block'" action="https://api.staticforms.xyz/submit" method="post" target="_blank">
+		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> 
 		<textarea hidden name="message">
 			<<set _last to $started>>
 			<<nobr>>
@@ -212,7 +209,11 @@ Please press the submit button, and then restart if anyone else wants to use the
 			"usability", <<print $usability>>
 			<</nobr>>
 		</textarea> 
-		<input type="hidden" name="redirectTo" value="https://gmenecho.com/"> 
 		<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /> 
 	</form>
 </div>
+<div id="second" style="display:none">
+	Form Submitted! 
+</div>
+
+<<button 'Restart'>> <<script>> UI.restart(); <</script>> <</button>>
