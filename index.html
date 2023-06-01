@@ -171,7 +171,13 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 #menu-item-saves {
     display:none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+}
+
+video {
+    /* override other styles to make responsive */
+    width: 100%    !important;
+    height: auto   !important;
+  }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
 Config.history.controls = false; 
@@ -384,10 +390,9 @@ Monocytes: 6%
 &lt;&lt;set $case_2_dx_score += 2&gt;&gt;
 [[Case needs further diagnostic evaluation| Case stare 2]]
 &lt;&lt;if hasVisited(&quot;EKG 2&quot;, &quot;Echo 2&quot;, &quot;Physical Exam 2&quot;)&gt;&gt; [[Continue to treatment|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Echo 2" tags="" position="850,350" size="100,100">The chardiac echo is shown below and the septum measures 1.3 cm.  
-&lt;img src=&quot;&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 
 
 &lt;&lt;silently&gt;&gt;
@@ -510,7 +515,8 @@ What is your first step in management?
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="36" name="Case stare 3" tags="" position="725,475" size="100,100">What is your next step? 
 
 /* Show each choice if it hasn&#39;t been visited before. */
-&lt;&lt;if not hasVisited(&quot;Physical Exam 3&quot;)&gt;&gt; [[Physical Exam|Physical Exam 3]] &lt;&lt;else&gt;&gt; Physical Exam &lt;&lt;/if&gt;&gt;
+You can&#39;t revisit exams you have done. 
+&lt;&lt;if not hasVisited(&quot;Physical Exam 3&quot;)&gt;&gt; [[Physical Exam|Physical Exam 3]] &lt;&lt;else&gt;&gt; Physical Exam  &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;EKG 3&quot;)&gt;&gt; [[EKG|EKG 3]] &lt;&lt;else&gt;&gt; EKG &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Chest X-Ray 3&quot;)&gt;&gt; [[Chest X-Ray|Chest X-Ray 3]] &lt;&lt;else&gt;&gt; Chest X-ray &lt;&lt;/if&gt;&gt;
 &lt;&lt;if not hasVisited(&quot;Labs 3&quot;)&gt;&gt; [[Labs|Labs 3]] &lt;&lt;else&gt;&gt; Labs &lt;&lt;/if&gt;&gt;
@@ -549,9 +555,12 @@ Physical exam: The cardiac auscultation findings can be heard above. On pulmonar
 [[Case needs further diagnostic evaluation| Case stare 3]]
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;)&gt;&gt; [[Continue to treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Echo 3" tags="" position="225,600" size="100,100">The chardiac echo is shown below: 
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+
+&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+
+&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png&quot;&gt;
 
 What do you think the echo shows? 
@@ -675,9 +684,9 @@ Creatinine 2.1 mg/dL
 
 [[Case needs further diagnostic evaluation| Case stare 4]]
 &lt;&lt;if hasVisited(&quot;EKG 4&quot;, &quot;Echo 4&quot;)&gt;&gt; [[Continue to treatment|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="Echo 4" tags="" position="975,725" size="100,100">The chardiac echo is shown below: 
-//TODO add images
-&lt;img src=&quot;&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://twitter.com/i/status/1484596495672299525&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg&quot;&gt;
 
 What do you think the echo shows?
 [[large pericardial effusion and tamponade|Very Wrong Echo 4]]
@@ -882,93 +891,75 @@ Please begin when ready. This should take about half an hour.
 [[Start the first case|Case 1 introduction]]</tw-passagedata><tw-passagedata pid="79" name="Usability Survey" tags="" position="1100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
 A. I think that I would like to use this learning tool frequently.
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
-B. I found the learning tool unnecessarily complex. 
-&lt;&lt;nobr&gt;&gt;
+
+B. I found this learning tool unnecessarily complex. 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[1]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
 C. I thought the learning tool was easy to use. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[2]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
 D. I think that I would need the support of a technical person to be able to use this learning tool. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[3]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
-E. I found the various functions in this learning tool were well integrated. 
-&lt;&lt;nobr&gt;&gt;
+E. I found the various functions in this learning tool were well integrated.
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[4]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
+
 F. I thought there was too much inconsistency in this learning tool. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[5]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
 G. I would imagine that most people would learn to use this learning tool very quickly. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[6]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
 H. I found the learning tool very cumbersome to use. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[7]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
 I. I felt very confident using the learning tool. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[8]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 
 J. I needed to learn a lot of things before I could get going with this learning tool. 
-&lt;&lt;nobr&gt;&gt;
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 1 autocheck&gt;&gt; 1 Completely disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 2 autocheck&gt;&gt; 2 Disagree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 3 autocheck&gt;&gt; 3 Neutral &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 4 autocheck&gt;&gt; 4 Agree &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 5 autocheck&gt;&gt; 5 Completely agree &lt;/label&gt; 
-&lt;&lt;/nobr&gt;&gt;
 [[Continue|Score report]]</tw-passagedata><tw-passagedata pid="80" name="Score report" tags="" position="1225,975" size="100,100">Please submit your results and then restart if anyone else wants to use the same device. Thank you! 
 &lt;!-- Make sure you don&#39;t change the form action--&gt;
 &lt;div id=&quot;first&quot;&gt;

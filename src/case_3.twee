@@ -24,7 +24,8 @@ What is your first step in management?
 What is your next step? 
 
 /* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam 3")>> [[Physical Exam|Physical Exam 3]] <<else>> Physical Exam <</if>>
+You can't revisit exams you have done. 
+<<if not hasVisited("Physical Exam 3")>> [[Physical Exam|Physical Exam 3]] <<else>> Physical Exam  <</if>>
 <<if not hasVisited("EKG 3")>> [[EKG|EKG 3]] <<else>> EKG <</if>>
 <<if not hasVisited("Chest X-Ray 3")>> [[Chest X-Ray|Chest X-Ray 3]] <<else>> Chest X-ray <</if>>
 <<if not hasVisited("Labs 3")>> [[Labs|Labs 3]] <<else>> Labs <</if>>
@@ -82,9 +83,12 @@ Hg level of 12 mg/dL. Otherwise normal.
 :: Echo 3
 The chardiac echo is shown below: 
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-<iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></iframe>
+<video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></video>
+
+<video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></video>
+
+<video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></video>
+
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
 
 What do you think the echo shows? 

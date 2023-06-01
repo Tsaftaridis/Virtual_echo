@@ -70,3 +70,9 @@ body {
 #menu-item-saves {
     display:none;
 }
+
+video {
+    /* override other styles to make responsive */
+    width: 100%    !important;
+    height: auto   !important;
+  }
