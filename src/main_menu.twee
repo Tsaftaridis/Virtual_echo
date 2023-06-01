@@ -7,14 +7,13 @@ Echo Cases
 <<set $wrong_password to false>>
 <<set $case_1_dx_score to 0>>
 <<set $case_1_Tx_score to 0>>
-<<set $submitted to 0>>
 
 :: StoryData
 {
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Score report",
+  "start": "Interim",
   "zoom": 1
 }
 
@@ -171,15 +170,16 @@ J. I needed to learn a lot of things before I could get going with this learning
 	<label><<radiobutton "$usability[9]" 4 autocheck>> 4 Agree </label> 
 	<label><<radiobutton "$usability[9]" 5 autocheck>> 5 Completely agree </label> 
 <</nobr>>
+[[Continue|Interim]]
 
-[[Continue|Score report]]
+:: Interim 
+[[Score report]]
 
 :: Score report
 Please press the submit button, and then restart if anyone else wants to use the same device. Thank you! 
-
-<<if not $submitted>>
 	<!-- Make sure you don't change the form action-->
-	<form onsubmit="form_submitted" action="https://api.staticforms.xyz/submit" method="post">
+<div id="first">
+	<form onsubmit="document.getElementById('first').style.display = 'none';" action="https://api.staticforms.xyz/submit" method="post">
 		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> <!-- sent to my old email -->
 		<textarea hidden name="message">
 			<<set _last to $started>>
@@ -211,16 +211,9 @@ Please press the submit button, and then restart if anyone else wants to use the
 			"usability", <<print $usability>>
 			<</nobr>>
 		</textarea> 
-		<script> 
-			function form_submitted() {
-				State.variables.submitted = true;
-			}
-		</script>
 		<input type="hidden" name="redirectTo" value="https://gmenecho.com/">
 		<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /> 
 	</form>
-<<else>>
-Thank you for submitting the form!
-<</if>>
+</div>
 
-<<button "Restart game">><<script>>UI.restart();<</script>><</button>> 
+<<button "Restart">><<script>>UI.restart();<</script>><</button>> 
