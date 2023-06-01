@@ -13,7 +13,7 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Waiting Room",
+  "start": "Score report",
   "zoom": 1
 }
 
@@ -175,6 +175,7 @@ J. I needed to learn a lot of things before I could get going with this learning
 
 :: Score report
 Please press the submit button, and then restart if anyone else wants to use the same device. Thank you! 
+<<set $submitted to false>>
 
 <!-- Make sure you don't change the form action-->
 <form action="https://api.staticforms.xyz/submit" method="post">
@@ -210,7 +211,7 @@ Please press the submit button, and then restart if anyone else wants to use the
 		<</nobr>>
 	</textarea> 
  	<input type="hidden" name="redirectTo" value="https://gmenecho.com/">
-	<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" />
+	<<if not $submitted>> <input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /><<else>> Form submitted! <</if>>
 </form>
 
 <<button "Restart game">><<script>>UI.restart();<</script>><</button>>
