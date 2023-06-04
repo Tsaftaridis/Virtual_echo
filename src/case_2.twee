@@ -6,12 +6,9 @@ Her father and mother both have hypertension that presented in their 50s. There 
 
 On presentation her blood pressure is 200/100 mmHg in the right arm with a regular pulse of 120 bpm. The respiratory rate was 21 breaths/min with an SpO2 of 93% on room air. Her temperature was 36.2 degrees Celcius. 
 
-<<silently>>
-<<set $case_2_dx_score to 0>>
-<<set $case_2_Tx_score to 0>>
-<<set $case_2_Fu_score to 0>>
-<<set $case_2_Echo to 0>>
-<</silently>>
+<<silently>> <<set $case_2_Tx_score to 0>> <<set $case_2_Fu_score to 0>> <<set $case_2_Echo to 0>>  <</silently>>
+/* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
+<<set $diagnostics_2 to [0, 0, 0, 0, 0, 0]>>
 
 What is the first step in workup? 
 [[Physical Exam|Physical Exam 2]]
@@ -23,26 +20,20 @@ What is the first step in workup?
 :: Case stare 2
 What is your next step? 
 
-/* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam 2")>> [[Physical Exam|Physical Exam 2]] <<else>> Physical Exam <</if>>
-<<if not hasVisited("EKG 2")>> [[EKG|EKG 2]] <<else>> EKG <</if>>
-<<if not hasVisited("CXR 2")>> [[Chest X-Ray|CXR 2]] <<else>> Chest X-ray <</if>>
-<<if not hasVisited("Labs 2")>> [[Labs|Labs 2]] <<else>> Labs <</if>>
-<<if not hasVisited("Echo 2")>> [[Echo|Echo 2]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam 2", "EKG 2", "CXR 2", "Labs 2", "Echo 2")>> [[Continue|Treatment 2]] <</if>>
+[[Physical Exam|Physical Exam 2]]
+[[EKG|EKG 2]]
+[[Chest X-Ray|CXR 2]]
+[[Labs|Labs 2]]
+[[Echo|Echo 2]]
+<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+
 Notes: 39 year old woman complains of shortness of breath and nausea for 2 months, recently worsened. History of elevated blood pressure without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.  
 
 :: Physical Exam 2
 Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the second left intercostal space and faint bibasilar rales. No peripheral edema was noted and the liver edge was not palpable. 
 
-Which of the following would you think is worth pursuing?  
-<<silently>>
-    <<set $case_2_fundoscopy to false>>
-    <<set $case_2_orthostatics to false>>
-    <<set $case_2_dix_hallpike to false>>
-    <<set $case_2_kernig_brudzinsky to false>>
-    <<set $case_2_dx_score += 1>>
-<</silently>>
+Which of the following would you think is worth doing?  
+<<silently>> <<set $case_2_fundoscopy to false>> <<set $case_2_orthostatics to false>> <<set $case_2_dix_hallpike to false>> <<set $case_2_kernig_brudzinsky to false>> <<set $diagnostics_2[0] to 1>> <</silently>>
 
 <<checkbox "$case_2_fundoscopy" false true>> Fundoscopy 
 <<checkbox "$case_2_orthostatics" false true>> Orthostatics
@@ -52,26 +43,26 @@ Which of the following would you think is worth pursuing?
 [[Continue| Consults results 2]]
 
 :: Consults results 2
-<<if not $case_2_fundoscopy>> Patient definitely needed a fundoscopy, to check for hypertensive retinopathy. <<set $case_2_dx_score -=2>> <<else>> <<set $case_2_dx_score +=2>><</if>>
-<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <<set $case_2_dx_score -=1>> <</if>>
+<<if not $case_2_fundoscopy>> Patient definitely needed a fundoscopy, to check for hypertensive retinopathy.<</if>>
+<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <</if>>
 
-A fundoscopy that showed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
+The fundoscopy showed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
 
-[[Case needs more diagnostic evaluation|Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+[[Continue|Case stare 2]]
 
 :: CXR 2 
 <img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
+<<set $diagnostics_2[1] to 1>>
 
 [[I need to see the radiologist report|Radiologist 2]]
-[[Case needs further diagnostic evaluation| Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+[[Do another examination|Case stare 2]]
 
 :: Radiologist 2
  CXR reveals cardiomegaly, sings of vascular redistribution and pulmonary edema.  Correlate clinically. 
 [[Continue|Case stare 2]]
 
 :: Labs 2 
+<<set $diagnostics_2[2] to 1>>
 Laboratory testing showed a heamoglobin level of 11.5 g/dL
 Serum Creatinine: 0.9 mg/dL 
 Serum sodium: 140 mEq/L 
@@ -86,31 +77,22 @@ Basophils: 4%
 Lymphocytes: 36%
 Monocytes: 6% 
 
-[[Case needs further diagnostic evaluation| Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+[[Continue|Case stare 2]]
 
 :: EKG 2
+<<set $diagnostics_2[3] to 1>>
 <img style='width: 100%' src="https://www.wikidoc.org/images/f/f8/LVH_6.jpg">
-<<set $case_2_dx_score += 2>>
-[[Case needs further diagnostic evaluation| Case stare 2]]
-<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue to treatment|Treatment 2]] <<else>> [[Continue to treatment|Not done Dx yet 2]] <</if>>
+[[Continue|Case stare 2]]
 
 :: Echo 2
+<<set $diagnostics_2[4] to 1>>
 The chardiac echo is shown below and the septum measures 1.3 cm.  
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4" frameborder="0" allowfullscreen></video>
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4" frameborder="0" allowfullscreen></video>
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4" frameborder="0" allowfullscreen></video>
 
-
-<<silently>>
-    <<set $ddx_2_CAD to false>>
-    <<set $ddx_2_HTeCM to false>> 
-    <<set $ddx_2_PICM to false>> 
-    <<set $ddx_2_AST to false>> 
-    <<set $ddx_2_SAP to false>> 
-    <<set $ddx_2_HTrCM to false>>
-    <<set $ddx_2_score = 0>>
-<</silently>>
+/* Echo diagnosis choices. */
+<<silently>><<set $ddx_2_CAD to false>><<set $ddx_2_HTeCM to false>><<set $ddx_2_PICM to false>><<set $ddx_2_AST to false>><<set $ddx_2_SAP to false>><<set $ddx_2_HTrCM to false>><<set $ddx_2_score = 0>><</silently>>
 
 How would you describe the echo?
 [[Dilated cardiomyopathy|Wrong Echo 2]]
@@ -137,7 +119,8 @@ A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejec
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-<<set $case_2_dx_score -= 1>> 
+<<set $diagnostics_2[5] += 1>>
+
 [[Continue|Case stare 2]]
 
 :: Diagnosis 2 

@@ -1,8 +1,12 @@
 :: Case 1 introduction 
-A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
+A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath, but despite some medication changes it has not resolved. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn">
 
+/* Diagnostic choices booleans. */
+<<silently>> <<set $physical_exam_1 to false>> <<set $EKG_1 to false>> <<set $CXR_1 to false>> <<set $Labs_1 to false>> <<set $Echo_1 to false>> <<set $reprimand_1 to 0>> <</silently>>
+
+/* First part is displayed, second part is the passage name. */
 What is your first step in workup? 
 [[Physical Exam|Physical Exam 1]]
 [[EKG|EKG 1]]
@@ -10,38 +14,42 @@ What is your first step in workup?
 [[Labs|Labs 1]]
 [[Echo|Echo 1]]
 
-/* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
-<<set $case_1_dx_score to 0>>
-<<set $case_1_Tx_score to 0>>
-<<set $case_1_Fu_score to 0>>
-<<set $case_1_Echo to 0>>
+/* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
+<<silently>>
+    <<set $case_1_Tx_score to 0>>
+    <<set $case_1_Fu_score to 0>>
+    <<set $case_1_Echo to 0>>
+<</silently>>
 
-/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
+/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */
 :: Case stare 1
 What is your next step? 
-/* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam 1")>> [[Physical Exam|Physical Exam 1]] <<else>> Physical Exam <</if>>
-<<if not hasVisited("EKG 1")>> [[EKG|EKG 1]] <<else>> EKG <</if>>
-<<if not hasVisited("Chest X-Ray 1")>> [[Chest X-Ray|Chest X-Ray 1]] <<else>> Chest X-ray <</if>>
-<<if not hasVisited("Labs 1")>> [[Labs|Labs 1]] <<else>> Labs <</if>>
-<<if not hasVisited("Echo 1")>> [[Echo|Echo 1]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam 1", "EKG 1", "Chest X-Ray 1", "Labs 1", "Echo 1")>> [[Continue to treatment|Treatment 1]] <</if>>
+
+[[Physical Exam|Physical Exam 1]]
+[[EKG|EKG 1]]
+[[Chest X-Ray|Chest X-Ray 1]]
+[[Labs|Labs 1]]
+[[Echo|Echo 1]]
+/* If the correct workup has been done, move on to treatment. Otherwise reprimand. */
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+
+
 Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
 
-/* Start of the workup choices. Trainee must pick "EKG 1" and "Echo 1" before the choice to move to treatment is actually opened. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
-
+/* Start of the workup choices code.*/
 :: Physical Exam 1 
 You start a physical examination of the patient. You notice buldging of his neck veins, a third heart sound, crackling lung sounds. Pressing below the right costal margin makes the vein distension worse. 
-[[Case needs more diagnostic evaluation|Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
-<<set $case_1_dx_score -= 1>>
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.0cQhitmVDNPrEFUpfOiG?pid=ImgGn">
+
+/* Keep track for scoring purposes later. */
+<<set $physical_exam_1 to true>>
+[[Continue|Case stare 1]]
 
 :: EKG 1 
 His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
 <img style='width: 100%' src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
-<<set $case_1_dx_score += 2>>
-[[Case needs further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<set $EKG_1 to true>>
+[[Continue|Case stare 1]]
 
 :: Chest X-Ray 1 
 40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
@@ -51,19 +59,19 @@ Age: 65
 Gender: Male 
 Modality: Chest CXR 
 
- CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
+CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
+<<set $CXR_1 to true>>
+<img style='width:100' src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
-<<set $case_1_dx_score -= 1>> 
-[[Case needs further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+[[Continue|Case stare 1]]
 
 :: Labs 1 
-Laboratory testing showed an Hg level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 
-[[Case needs further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+Laboratory testing showed a Hb level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
+<<set $Labs_1 to true>>
+
+[[Continue|Case stare 1]]
 
 :: Echo 1 
 The cardiac echo is shown below: 
@@ -73,36 +81,29 @@ The cardiac echo is shown below:
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
 
 What do you think the echo shows? 
-[[Dilated inferior vena cava and severely reduced ejection fraction|HF echo 1]]
-[[Preserved ejection fraction and collapsable dilated inferior vena cava|Wrong Echo 1]]
-[[Mitral valve prolapse and left atrial dilation|Wrong Echo 1]]
+<label><<radiobutton "$case_1_Echo" 1 autocheck>> Dilated inferior vena cava and severely reduced ejection fraction </label>
+<label><<radiobutton "$case_1_Echo" 0 autocheck>> Preserved ejection fraction and collapsable dilated inferior vena cava </label> 
+<label><<radiobutton "$case_1_Echo" 0 autocheck>> Mitral valve prolapse and left atrial dilation </label>
 
-:: HF echo 1
+[[Continue|Echo results 1]]
+
+:: Echo results 1
 The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 
-<<set $case_1_dx_score += 2>> 
-<<set $case_1_Echo to 1>>
-[[I need further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
-
-:: Wrong Echo 1
-The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
-<<set $case_1_dx_score -= 2>> 
-<<set $case_1_Echo to 0>>
-[[I need further diagnostic evaluation| Case stare 1]]
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+[[Continue|Case stare 1]]
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
 :: Not done Dx yet 1 
-
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+<<set $reprimand_2 += 1>>
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 [[Continue|Case stare 1]]
 
 :: Treatment 1 
 Remember, a physical examination is important when first approaching a patient. After that, a cardiac echo and an EKG are required diagnostic steps before moving on to treatment in this patient. 
+
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.frL6vSaxNaetRJfhLhQt?pid=ImgGn">
 
 The head nurse asks you which of the following the best starting treatment option for this patient would be: 
 [[Furosemide IV|Furosemide IV 1]]
@@ -120,6 +121,7 @@ IV Furosemide is the correct first choice in the treatment of acute decompensate
 :: Bad outcome 1
 The patient improves over the next few days, though slowly. While staying hospitalized, he complains of shortness of breath for the next five days, though his peripheral edema seems to be improving slowly. 
 On the 6th day he is finally symptom-free. 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.X6JIXmdBt0K_GY8_8GVG?pid=ImgGn">
 <<set $case_1_Tx_score += 3 >>
 [[Continue|Further management 1]]
 

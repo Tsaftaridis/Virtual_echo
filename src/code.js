@@ -21,3 +21,5 @@ function form_submitted() {
 }
 
 window.form_submitted = form_submitted; 
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
