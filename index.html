@@ -648,6 +648,8 @@ The next step in managing this patient is to refer her for a mitral valve interv
 
 What are your next steps? 
 
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.xp7PeYBOUWNsecu6cNJD?pid=ImgGn&quot;&gt;
+
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
 [[Chest X-Ray|Chest X-Ray 4]]
@@ -661,6 +663,7 @@ What are your next steps?
 &lt;&lt;set $case_4_Echo to 0&gt;&gt;
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="51" name="Case stare 4" tags="" position="100,725" size="100,100">What is your next step? 
+&lt;img src=“https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn”&gt;
 
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
@@ -717,25 +720,27 @@ What do you think the echo shows?
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg&quot;&gt;
 
 &lt;&lt;set $diagnostics_4[4] to 1&gt;&gt;
-[[I need further diagnostic evaluation| Case stare 4]]
-&lt;&lt;if hasVisited(&quot;EKG 4&quot;, &quot;Echo 4&quot;)&gt;&gt; [[Continue to treatment|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="Wrong Echo 4" tags="" position="1100,725" size="100,100">Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
+[[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="59" name="Wrong Echo 4" tags="" position="1100,725" size="100,100">Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
+
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.uHYUIpYklHthf.RgHX7.?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
 &lt;&lt;set $diagnostics_4[4] to 0&gt;&gt;
-[[I need further diagnostic evaluation| Case stare 4]]
-&lt;&lt;if hasVisited(&quot;EKG 4&quot;, &quot;Echo 4&quot;)&gt;&gt; [[Continue to treatment|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continue to treatment|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="Very Wrong Echo 4" tags="" position="1225,725" size="100,100">Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
+[[Continue| Case stare 4]]</tw-passagedata><tw-passagedata pid="60" name="Very Wrong Echo 4" tags="" position="1225,725" size="100,100">Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
+
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.uHYUIpYklHthf.RgHX7.?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
 &lt;&lt;set $diagnostics_4[4] to -1&gt;&gt;
 [[Continue| Case stare 4]]
 
 /* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="61" name="Not done Dx yet 4" tags="" position="100,850" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 &lt;&lt;set $diagnostics_4[5] += 1&gt;&gt;
 [[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="62" name="Treatment 4" tags="" position="225,850" size="100,100">Remember, a cardiac echo and an EKG are required diagnostic steps. 
 &lt;&lt;silently&gt;&gt;
-&lt;&lt;set $diuretics_4 to false&gt;&gt;
-&lt;&lt;set $antihypertensives_4 to false&gt;&gt;
-&lt;&lt;set $beta_blocker_4 to false&gt;&gt;
-&lt;&lt;set $albuterol_4 to false&gt;&gt;
+    &lt;&lt;set $diuretics_4 to false&gt;&gt;
+    &lt;&lt;set $antihypertensives_4 to false&gt;&gt;
+    &lt;&lt;set $beta_blocker_4 to false&gt;&gt;
+    &lt;&lt;set $albuterol_4 to false&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
 Pick which of the following drugs you think would be included in the appropreate treatment. 
@@ -756,6 +761,8 @@ Treatment in this patient with peripartum cardiomyopathy aims to control the sym
 You check on the patient and notice that she produced about 309 mL of urine in the last 24 hours. She is breathing rapidly and the pulse oximeter reads 87%.  
 You decide to admit the patient in the ICU. 
 
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.1ole1s2_WpfGS3Aq5p0N?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
+
 [[Continue|ICU 4]]</tw-passagedata><tw-passagedata pid="65" name="ICU 4" tags="" position="600,850" size="100,100">The Labs for the patient after she enters the ICU show: lactate 5.4 mg/dL, ALT = 123 mg/dL, AST 140 mg/dL. Her thyroid function tests are normal, while her BNP is 689 pg/ml. 
 
 What do you think the best medical therapy would include? 
@@ -767,11 +774,15 @@ What do you think the best medical therapy would include?
 [[Continue|Improvement 4]]</tw-passagedata><tw-passagedata pid="67" name="Improvement 4" tags="" position="850,850" size="100,100">The treatment seems to be working as intended! In the next 48 hours, the patient pees out about 5L of urine and her symptoms improve rapidly. Serum creatinine has normalized to 0.9 mg/dL, while her blood pressure has improved and is now 110/80 mmHg. Her serum lactate is 0.9 mg/dL. After two more days, her liver function tests are also normal. The pulse oximeter reads 100% on high dose oxygen. You decide to discontinue the pressors and the high flow oxygen therapy.
 [[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="68" name="Further management 4" tags="" position="975,850" size="100,100">The patient is leaves the ICU and is moved to the floor for further management. There, she is put on appropriate heart failure treatment, including a beta blocker and an ACE-inhibitor/ARB. Later on she is discharged an instructed to come back for a repeat echo 6 months later. 
 
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
+
 [[Continue|Repeat echo 4]]</tw-passagedata><tw-passagedata pid="69" name="Repeat echo 4" tags="" position="1100,850" size="100,100">The repeat echo is shown below: 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1533340755751-28DSIIEOY3LCLELVB8FQ/parasternal+long+axis+normal.gif?format=500w&quot;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1515544100377-BDN6UHGVSAYQOGJO3PT8/ezgif.com-optimize+%286%29.gif?format=500w &quot;&gt;
 
-[[Continue|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="70" name="Patient Questions 4" tags="" position="1225,850" size="100,100">&lt;&lt;silently&gt;&gt;
+[[Continue|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="70" name="Patient Questions 4" tags="" position="1225,850" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
+
+&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $stop_beta_4 to false&gt;&gt;
 &lt;&lt;set $stop_ACE_4 to false&gt;&gt;
 &lt;&lt;set $b_stop_beta_4 to false&gt;&gt;
@@ -800,6 +811,8 @@ Leave blank if she should keep taking both.
     &lt;&lt;if $b_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.0gOcVorZ6fnCkJInRLye?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
+
 The attending also decides to test your knowledge: &quot;Let&#39;s say this patient complained of symptoms indicative of hypotensive episodes. What would you suggest?&quot;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;set $q_stop_beta_4 to false&gt;&gt;
@@ -827,6 +840,8 @@ Leave blank if she must keep taking both medications.
     &lt;&lt;if $p_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score += 4&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $p_stop_none_4&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
+
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.lAZOeFLxqw.eix_38xjd?pid=ImgGn&quot;&gt;
 
 Postpartum cardiomyopathy (PPCM) should be considered in patients who present with dyspnea and heart failure symptoms after delivery.
 

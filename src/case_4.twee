@@ -3,6 +3,8 @@ A 34 year-old lady presents to the hospital. She had a cough and dyspnea which d
 
 What are your next steps? 
 
+<img src="https://th.bing.com/th/id/OIG.xp7PeYBOUWNsecu6cNJD?pid=ImgGn">
+
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
 [[Chest X-Ray|Chest X-Ray 4]]
@@ -18,6 +20,7 @@ What are your next steps?
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 4
 What is your next step? 
+<img src=“https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn”>
 
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
@@ -94,18 +97,21 @@ Echocardiography showed the presence of a severely impaired left ventricular sys
 <img style='width: 100%' src="https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg">
 
 <<set $diagnostics_4[4] to 1>>
-[[I need further diagnostic evaluation| Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+[[Continue|Case stare 4]]
+
 
 :: Wrong Echo 4
 Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
 
+<img src="https://th.bing.com/th/id/OIG.uHYUIpYklHthf.RgHX7.?pid=ImgGn&w=1024&h=1024&rs=1">
+
 <<set $diagnostics_4[4] to 0>>
-[[I need further diagnostic evaluation| Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+[[Continue| Case stare 4]]
 
 :: Very Wrong Echo 4
 Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
+
+<img src="https://th.bing.com/th/id/OIG.uHYUIpYklHthf.RgHX7.?pid=ImgGn&w=1024&h=1024&rs=1">
 
 <<set $diagnostics_4[4] to -1>>
 [[Continue| Case stare 4]]
@@ -113,17 +119,17 @@ Echocardiography showed the presence of a severely impaired left ventricular sys
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<img src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 <<set $diagnostics_4[5] += 1>>
 [[Continue|Case stare 4]]
 
 :: Treatment 4
 Remember, a cardiac echo and an EKG are required diagnostic steps. 
 <<silently>>
-<<set $diuretics_4 to false>>
-<<set $antihypertensives_4 to false>>
-<<set $beta_blocker_4 to false>>
-<<set $albuterol_4 to false>>
+    <<set $diuretics_4 to false>>
+    <<set $antihypertensives_4 to false>>
+    <<set $beta_blocker_4 to false>>
+    <<set $albuterol_4 to false>>
 <</silently>>
 
 Pick which of the following drugs you think would be included in the appropreate treatment. 
@@ -150,6 +156,8 @@ The next day, the nurse calls you because the patient has been complaining of wo
 You check on the patient and notice that she produced about 309 mL of urine in the last 24 hours. She is breathing rapidly and the pulse oximeter reads 87%.  
 You decide to admit the patient in the ICU. 
 
+<img src="https://th.bing.com/th/id/OIG.1ole1s2_WpfGS3Aq5p0N?pid=ImgGn&w=1024&h=1024&rs=1">
+
 [[Continue|ICU 4]]
 
 :: ICU 4 
@@ -173,6 +181,8 @@ The treatment seems to be working as intended! In the next 48 hours, the patient
 :: Further management 4
 The patient is leaves the ICU and is moved to the floor for further management. There, she is put on appropriate heart failure treatment, including a beta blocker and an ACE-inhibitor/ARB. Later on she is discharged an instructed to come back for a repeat echo 6 months later. 
 
+<img src="https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&w=1024&h=1024&rs=1">
+
 [[Continue|Repeat echo 4]]
 
 :: Repeat echo 4
@@ -183,6 +193,9 @@ The repeat echo is shown below:
 [[Continue|Patient Questions 4]]
 
 :: Patient Questions 4 
+
+<img src="https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&w=1024&h=1024&rs=1">
+
 <<silently>>
 <<set $stop_beta_4 to false>>
 <<set $stop_ACE_4 to false>>
@@ -215,6 +228,8 @@ Leave blank if she should keep taking both.
     <<if $b_stop_ACE_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
 <</silently>>
 
+<img src="https://th.bing.com/th/id/OIG.0gOcVorZ6fnCkJInRLye?pid=ImgGn&w=1024&h=1024&rs=1">
+
 The attending also decides to test your knowledge: "Let's say this patient complained of symptoms indicative of hypotensive episodes. What would you suggest?"
 <<silently>>
 <<set $q_stop_beta_4 to false>>
@@ -245,6 +260,8 @@ Congratulations! You have completed case 4!
     <<if $p_stop_ACE_4>>  <<set $case_4_Fu_score += 4>> <</if>>
     <<if $p_stop_none_4>> <<set $case_4_Fu_score -= 4>> <</if>>
 <</silently>>
+
+<img src="https://th.bing.com/th/id/OIG.lAZOeFLxqw.eix_38xjd?pid=ImgGn">
 
 Postpartum cardiomyopathy (PPCM) should be considered in patients who present with dyspnea and heart failure symptoms after delivery.
 
