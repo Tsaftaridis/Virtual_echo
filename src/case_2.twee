@@ -4,6 +4,8 @@ At the age of 15 a single BP measurement showed elevated BP, 150/90 mmHg, but no
 She is on oral contraceptive therapy, plus metformin and insulin for her diabetes. Her BMI is 29.3. 
 Her father and mother both have hypertension that presented in their 50s. There are no other heart problems in the family. 
 
+<img src="https://th.bing.com/th/id/OIG.crb5tn2O9NJw_0yRun8t?pid=ImgGn">
+
 On presentation her blood pressure is 200/100 mmHg in the right arm with a regular pulse of 120 bpm. The respiratory rate was 21 breaths/min with an SpO2 of 93% on room air. Her temperature was 36.2 degrees Celcius. 
 
 What is the first step in workup? 
@@ -54,6 +56,8 @@ Auscultation revealed a grade 2/6 systolic ejection murmur with a maximum at the
 :: Consults results 2
 <<if not $case_2_fundoscopy>> Patient definitely needed a fundoscopy, to check for hypertensive retinopathy.<</if>>
 
+<img src="https://th.bing.com/th/id/OIG.NDGdptd6Z4uhFTMLobRS?pid=ImgGn">
+
 <<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <</if>>
 
 The fundoscopy showed AV narrowing and nicking, cotton wool spots, exudate and haemorrhage and papilledema. Furthermore, she was diagnosed with grade 4 hypertensive retinopathy in her left eye, grade 3 in her right eye.  
@@ -68,10 +72,16 @@ The fundoscopy showed AV narrowing and nicking, cotton wool spots, exudate and h
 
 :: Radiologist 2
  CXR reveals cardiomegaly, sings of vascular redistribution and pulmonary edema.  Correlate clinically. 
+
+<img src="https://th.bing.com/th/id/OIG.kqTDMVNgBItNj5Wjx6_1?pid=ImgGn">
+
 [[Continue|Case stare 2]]
 
 :: Labs 2 
 <<set $diagnostics_2[2] to 1>>
+
+<img src="https://th.bing.com/th/id/OIG.3qMMfG7hebIEwBjWJrgj?pid=ImgGn">
+
 Laboratory testing showed a heamoglobin level of 11.5 g/dL
 Serum Creatinine: 0.9 mg/dL 
 Serum sodium: 140 mEq/L 
@@ -117,12 +127,16 @@ How would you describe the echo?
 [[Rheumatic heart disease|Wrong Echo 2]]
 
 :: Correct echo 2
+<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+
 /% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejection fraction. The thickness of both the inter ventricular septum and the posterior wall was 13 mm. There were no signs of outflow tract obstruction. There was no significant valvular dysfunction. Mild left atrial enlargement was noted. 
 <<set $diagnostics_2[4] to 1>>
 [[Continue|Diagnosis 2]]
 
 :: Wrong Echo 2
+<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+
 A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejection fraction. The thickness of both the inter ventricular septum and the posterior wall was 13 mm. There were no signs of outflow tract obstruction. There was no significant valvular dysfunction. Mild left atrial enlargement was noted. 
 <<set $diagnostics_2[4] to 0>>
 [[Continue|Diagnosis 2]]
@@ -157,6 +171,8 @@ Remember, a cardiac echo and an EKG are required diagnostic steps.
     <<set $amlodipine_2 to false>>
 <</silently>>
 Pick which of the following drugs you think would be included in the appropreate treatment. 
+
+<img src="https://th.bing.com/th/id/OIG.W9iaLRJkSOWUwe2Wgsfa?pid=ImgGn">
 <<checkbox "$inotropes_2" false true>> Inotropes
 <<checkbox "$diuretics_2" false true>> IV Lasix 
 <<checkbox "$metoprolol_2" false true>> Metoprolol 
@@ -186,6 +202,8 @@ Since this patient is diabetic and overweight, ACE-inhibitors or ARBS are the ch
 [[Continue|Outcome 2]]
 
 :: Outcome 2
+<img src="https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&w=1024&h=1024&rs=1">
+
 Hypertensive heart disease (HHD) refers to the changes in heart muscle due to hypertension. 
 
 Blood pressure classification: 
