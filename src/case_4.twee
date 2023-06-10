@@ -9,8 +9,8 @@ What are your next steps?
 [[Labs|Labs 4]]
 [[Echo|Echo 4]]
 
-/* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
-<<set $case_4_dx_score to 0>>
+/* Scoring variables start at 0. Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
+<<set $diagnostics_4 to [0, 0, 0, 0, 0, 0]>>
 <<set $case_4_Tx_score to 0>>
 <<set $case_4_Fu_score to 0>>
 <<set $case_4_Echo to 0>>
@@ -19,21 +19,23 @@ What are your next steps?
 :: Case stare 4
 What is your next step? 
 
-/* Show each choice if it hasn't been visited before. */
-<<if not hasVisited("Physical Exam 4")>> [[Physical Exam|Physical Exam 4]] <<else>> Physical Exam <</if>>
-<<if not hasVisited("EKG 4")>> [[EKG|EKG 4]] <<else>> EKG <</if>>
-<<if not hasVisited("Chest X-Ray 4")>> [[Chest X-Ray|Chest X-Ray 4]] <<else>> Chest X-ray <</if>>
-<<if not hasVisited("Labs 4")>> [[Labs|Labs 4]] <<else>> Labs <</if>>
-<<if not hasVisited("Echo 4")>> [[Echo|Echo 4]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam 4", "EKG 4", "Chest X-Ray 4", "Labs 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <</if>>
+[[Physical Exam|Physical Exam 4]]
+[[EKG|EKG 4]]
+[[Chest X-Ray|Chest X-Ray 4]]
+[[Labs|Labs 4]]
+[[Echo|Echo 4]]
+[[Continue to treatment|Treatment 4]]
+<<if hasVisited("EKG 4", "Echo 4", "Physical Exam 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+
 Notes: 34 year old woman, 15 days postpartum. Complains of dyspnea that started one month prior to delivery, no interventions until now. WBC normal, afebrile, BP 90/60 mmHg, HR 120 bpm, previously healthy. 
 
-/* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
-
+/* Diagnostic choices start. */
 :: Physical Exam 4 
 You start a physical exam on the patient. 
 
-You notic that the veins in her neck are bulding and her feet are swollen. She says that her belly feels heavy. It looks distended and by tapping on the sides of her abdomen you notice that there is delayed transmission of the taps to the other side. 
+<<set $diagnostics_4[0] to 1>> 
+
+You notice that the veins in her neck are buldging and her feet are swollen. She says that her belly feels heavy. It looks distended and by tapping on the sides of her abdomen you notice that there is delayed transmission of the taps to the other side. 
 
 Heart auscultation at the apex, left decubitus position. 
 <audio controls>
@@ -41,36 +43,23 @@ Heart auscultation at the apex, left decubitus position.
 Your browser does not support the audio element.
 </audio> 
 
-Physical exam: The cardiac auscultation findings can be heard above. 
+On pulmonary auscultation you hear rales; The abdominal exam is normal. 
 
-On pulmonary auscultation you hear rales; The abdominal exam is normal; 
-
-[[Case needs more diagnostic evaluation| Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
-<<set $case_4_dx_score -= 1>>
-
-:: EKG 4
-/% Diffuse T-wave inversion. %/
-<img style='width: 100%' src="https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg">
-
-<<set $case_4_dx_score += 2>>
-[[Case needs further diagnostic evaluation|Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+[[Continue| Case stare 4]]
 
 :: Chest X-Ray 4
 Some time later, the nurse hands you the following film: 
 <img style='width: 100%' src="https://prod-images-static.radiopaedia.org/multiple_choice_questions/420/bat-wings-pulmonary-oedema_big_gallery.jpeg">
-
+<<set $diagnostics_4[1] to 1>>
 [[I need to see the radiologist report|Radiologist 4]]
-[[Case needs further diagnostic evaluation| Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+[[Continue| Case stare 4]]
 
 :: Radiologist 4
-<<set $case_4_dx_score -= 1>> 
 The chest x-ray on admission showed acute pulmonary edema with bilateral pleural effusion. 
 [[Continue|Case stare 4]]
 
 :: Labs 4
+<<set $diagnostics_4[2] to 1>>
 While in the emergency department, you draw some blood and send it to the lab. A few hours later the following values come back: 
 
 White cell count: 6700/ml 
@@ -78,8 +67,14 @@ Hb 9.8 g/dL
 C reactive protein 0.21 mg/dL 
 Creatinine 2.1 mg/dL 
 
-[[Case needs further diagnostic evaluation| Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+[[Continue|Case stare 4]]
+
+:: EKG 4
+/% Diffuse T-wave inversion. %/
+<<set $diagnostics_4[3] to 1>>
+<img style='width: 100%' src="https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg">
+
+[[Continue|Case stare 4]]
 
 :: Echo 4
 The chardiac echo is shown below: 
@@ -98,31 +93,28 @@ Echocardiography showed the presence of a severely impaired left ventricular sys
 <img style='width: 100%' src="https://twitter.com/i/status/1484596495672299525">
 <img style='width: 100%' src="https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg">
 
-<<set $case_4_dx_score += 2>> 
-<<set $case_4_Echo to 1>>
+<<set $diagnostics_4[4] to 1>>
 [[I need further diagnostic evaluation| Case stare 4]]
 <<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
 
 :: Wrong Echo 4
 Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
 
-<<set $case_4_dx_score -= 2>> 
-<<set $case_4_Echo to 0>>
+<<set $diagnostics_4[4] to 0>>
 [[I need further diagnostic evaluation| Case stare 4]]
 <<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
 
 :: Very Wrong Echo 4
 Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
 
-<<set $case_4_dx_score -= 4>> 
-<<set $case_4_Echo to 0>>
-[[I need further diagnostic evaluation| Case stare 4]]
-<<if hasVisited("EKG 4", "Echo 4")>> [[Continue to treatment|Treatment 4]] <<else>> [[Continue to treatment|Not done Dx yet 4]] <</if>>
+<<set $diagnostics_4[4] to -1>>
+[[Continue| Case stare 4]]
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-<<set $case_3_dx_score -= 1>> 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<<set $diagnostics_4[5] += 1>>
 [[Continue|Case stare 4]]
 
 :: Treatment 4
@@ -133,6 +125,7 @@ Remember, a cardiac echo and an EKG are required diagnostic steps.
 <<set $beta_blocker_4 to false>>
 <<set $albuterol_4 to false>>
 <</silently>>
+
 Pick which of the following drugs you think would be included in the appropreate treatment. 
 <<checkbox "$diuretics_4" false true>> IV Lasix 
 <<checkbox "$albuterol_4" false true>> Inhaled albuterol
@@ -259,7 +252,7 @@ While it is important to start with a physical examination and an EKG, echocardi
 
 Diuretics may be used to treat pulmonary edema, but should be used with caution in pregnant patients due to the risk of placental hypoperfusion and fetal electrolyte abnormalities. Cardiac resynchronization therapy may also be an option for patients who do not respond to medical therapy alone
 
-Treatment for stable PPCM may include the cautious use of selective beta-blockers and angiotensin converting enzyme inhibitors and ARBs, as well as saline infusion to correct hypotension and improve perfusion. Thromboprophylaxis and iron supplementation can also be considered. Beta blockers and dixogin can be used if needed. Novel anti-heart failure medications, such as sacubitril/valsartan, may also improve heart failure symptoms in pregnancy-related cardiomyopathies. ACE inhibitors and ARBs are contraindicated during pregnancy but not breastfeeding. Direct renin inhibitors, angiotensin receptor-neprylisin inhibitors, spironolactone and eplerenone are also contraindicated during pregnancy. Enalapril, captopril, and benazepril are safe in lactating patients. Cardiac resynchronization therapy has also shown to improve ejection fraction and outcomes when medical therapy alone is ineffective.
+Treatment for stable PPCM may include the cautious use of selective beta-blockers and angiotensin converting enzyme inhibitors and ARBs, as well as saline infusion to correct hypotension and improve perfusion. Thromboprophylaxis and iron supplementation can also be considered. Beta blockers and dixogin can be used if needed. Novel anti-heart failure medications, such as sacubitril/valsartan, may also improve heart failure symptoms in pregnancy-related cardiomyopathies. ACE inhibitors and ARBs are contraindicated during pregnancy. During breastfeeding, data is more scarce, but captopril and enalapril are currently recommended. Direct renin inhibitors, angiotensin receptor-neprylisin inhibitors, spironolactone and eplerenone are also contraindicated during pregnancy. Enalapril, captopril, and benazepril are safe in lactating patients. Cardiac resynchronization therapy has also shown to improve ejection fraction and outcomes when medical therapy alone is ineffective.
 
 Thromboprophylaxis should be considered in patients with PPCM due to the increased risk of thromboembolism associated with the enlarged left ventricle and severe dysfunction.
 
