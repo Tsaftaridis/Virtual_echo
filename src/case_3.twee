@@ -14,23 +14,25 @@ What is your first step in management?
 [[Echo|Echo 3]]
 
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
-<<set $case_3_dx_score to 0>>
 <<set $case_3_Tx_score to 0>>
 <<set $case_3_Fu_score to 0>>
 <<set $case_3_Echo to 0>>
+/* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
+<<set $diagnostics_3 to [0, 0, 0, 0, 0, 0]>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 3
 What is your next step? 
 
 /* Show each choice if it hasn't been visited before. */
-You can't revisit exams you have done. 
-<<if not hasVisited("Physical Exam 3")>> [[Physical Exam|Physical Exam 3]] <<else>> Physical Exam  <</if>>
-<<if not hasVisited("EKG 3")>> [[EKG|EKG 3]] <<else>> EKG <</if>>
-<<if not hasVisited("Chest X-Ray 3")>> [[Chest X-Ray|Chest X-Ray 3]] <<else>> Chest X-ray <</if>>
-<<if not hasVisited("Labs 3")>> [[Labs|Labs 3]] <<else>> Labs <</if>>
-<<if not hasVisited("Echo 3")>> [[Echo|Echo 3]] <<else>> Echo <</if>>
-<<if hasVisited("Physical Exam 3", "EKG 3", "Chest X-Ray 3", "Labs 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <</if>>
+
+[[Physical Exam|Physical Exam 3]] 
+[[EKG|EKG 3]]
+[[Chest X-Ray|Chest X-Ray 3]]
+[[Labs|Labs 3]]
+[[Echo|Echo 3]]
+<<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+
 Notes: 50 year-old female. C/o cough, fatigue, dyspnea on mild exertion, gradually worsening for 2 months and coughing at night. BP 140/90mmHg, HR 92 bpm, Temperature 37.7 degrees Celcius, SpO2  94% on room air. 
 
 She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
@@ -38,7 +40,9 @@ Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room ai
 
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 
+/* This is where the dagnostics start. */
 :: Physical Exam 3
+<<set $diagnostics_3[0] to 1>> 
 You start a physical examination of the patient. 
  <audio controls>
   <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3" type="audio/mpeg">
@@ -47,40 +51,32 @@ Your browser does not support the audio element.
 
 Physical exam: The cardiac auscultation findings can be heard above. On pulmonary auscultation you hear 3+ crackles in the lower lung fields; The abdominal exam is normal; There is mild lower extremity edema and the pulse is normal. 
 
-[[Case needs more diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
-<<set $case_3_dx_score -= 1>>
-
-:: EKG 3
-<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
-
-<<set $case_3_dx_score += 2>>
-[[Case needs further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+[[Continue|Case stare 3]]
 
 :: Chest X-Ray 3
+<<set $diagnostics_3[1]>>
 40 minutes later, the nurse hands you the following film: 
 <img style='width: 100%' src="https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg">
 
-<<set $case_3_dx_score -= 1>> 
 [[I need to see the radiologist report|radiologist 3]]
-[[Case needs further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+[[Continue| Case stare 3]]
 
 :: radiologist 3
 Mild pulmonary edema. Slight atrial enlargement. 
-
-<<set $case_3_dx_score -= 1>> 
 [[Continue|Case stare 3]]
 
-
 :: Labs 3
+<<set diagnostics_3[2] to 1>>
 Hg level of 12 mg/dL. Otherwise normal. 
+[[Continue|Case stare 3]]
 
-[[Case needs further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+:: EKG 3
+<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
+<<set $diagnostics_3[3]>>
+[[Continue| Case stare 3]]
 
 :: Echo 3
+<<set $diagnostics_3[4] to 1>>
 The chardiac echo is shown below: 
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></video>
@@ -98,22 +94,21 @@ What do you think the echo shows?
 
 :: HF echo 3
 Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
-<<set $case_3_dx_score += 2>> 
-<<set $case_3_Echo to 1>>
-[[I need further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+
+<<set $diagnostics_3[4] to 1>>
+[[Continue| Case stare 3]]
 
 :: Wrong Echo 3
 Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
-<<set $case_3_dx_score -= 2>> 
-<<set $case_3_Echo to 0>>
-[[I need further diagnostic evaluation| Case stare 3]]
-<<if hasVisited("EKG 3", "Echo 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+<<set $diagnostics_3[4] to 0>>
+[[Continue| Case stare 3]]
+
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
-<<set $case_3_dx_score -= 1>> 
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<<set $diagnostics_3[5] += 1>>
 [[Continue|Case stare 3]]
 
 :: Treatment 3
@@ -125,7 +120,7 @@ Remember, a cardiac echo and an EKG are required diagnostic steps.
 <<set $inotropes_3 to false>>
 <<set $fluids_3 to false>>
 
-Pick which of the following drugs you think would be included in the appropreate treatment. 
+Pick which of the following drugs you think would be included in the appropriate treatment. 
 Diuretics <<checkbox "$diuretics_3" false true>>
 Inotropes <<checkbox "$inotropes_3" false true>>
 Penicillin <<checkbox "$penicillin_3" false true>>
@@ -142,6 +137,7 @@ Fluids <<checkbox "$fluids_3" false true>>
     <<if $inotropes_3>>  <<set $case_3_Tx_score -= 2>> <</if>>
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
+
 After consulting with the attending physician, the patient is started on diuretics, penicillin and a beta blocker. Inotropes and IV fluids are not indicated and may harm the patient. 
 [[Continue|Further management 3]]
 
