@@ -177,7 +177,12 @@ video {
     /* override other styles to make responsive */
     width: 100%    !important;
     height: auto   !important;
-  }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+  }
+
+img {
+    width: 100% !important;
+    height: auto !important;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
 Config.history.controls = false; 
@@ -565,8 +570,8 @@ Physical exam: The cardiac auscultation findings can be heard above. On pulmonar
 [[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="38" name="radiologist 3" tags="" position="975,475" size="100,100">Mild pulmonary edema. Slight atrial enlargement. 
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.DRFK5kCiRpW5p9RzvcLC?pid=ImgGn&quot;&gt;
-[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="39" name="Labs 3" tags="" position="1100,475" size="100,100">&lt;&lt;set diagnostics_3[2] to 1&gt;&gt;
-Hg level of 12 mg/dL. Otherwise normal. 
+[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="39" name="Labs 3" tags="" position="1100,475" size="100,100">&lt;&lt;set $diagnostics_3[2] to 1&gt;&gt;
+Hb level of 12 mg/dL. Otherwise normal. 
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn&quot;&gt;
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="40" name="EKG 3" tags="" position="1225,475" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg&quot;&gt;
@@ -1056,7 +1061,8 @@ J. I needed to learn a lot of things before I could get going with this learning
 	&lt;/form&gt;
 &lt;/div&gt;
 &lt;div id=&quot;second&quot; style=&quot;display:none&quot;&gt;
-	Form Submitted! 
+	Thank you! If the new tab is still loading, please wait. You should see: message	&quot;Email Sent&quot;, success	true.
+	At that point, you can close that tab.  
 &lt;/div&gt;
 
 &lt;&lt;button &#39;Restart&#39;&gt;&gt; &lt;&lt;script&gt;&gt; UI.restart(); &lt;&lt;/script&gt;&gt; &lt;&lt;/button&gt;&gt;</tw-passagedata></tw-storydata>
