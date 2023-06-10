@@ -68,8 +68,8 @@ Mild pulmonary edema. Slight atrial enlargement.
 [[Continue|Case stare 3]]
 
 :: Labs 3
-<<set diagnostics_3[2] to 1>>
-Hg level of 12 mg/dL. Otherwise normal. 
+<<set $diagnostics_3[2] to 1>>
+Hb level of 12 mg/dL. Otherwise normal. 
 
 <img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 [[Continue|Case stare 3]]

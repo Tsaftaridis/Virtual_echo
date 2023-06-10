@@ -219,7 +219,8 @@ Please submit your results and then restart if anyone else wants to use the same
 	</form>
 </div>
 <div id="second" style="display:none">
-	Form Submitted! 
+	Thank you! If the new tab is still loading, please wait. You should see: message	"Email Sent", success	true.
+	At that point, you can close that tab.  
 </div>
 
 <<button 'Restart'>> <<script>> UI.restart(); <</script>> <</button>>
