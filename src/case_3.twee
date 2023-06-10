@@ -5,7 +5,7 @@ A 50-year-old female patient enters the examination room in the emergency depart
 /% Hint left heart failure more. %/
 She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
 Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
-
+<img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
 What is your first step in management?  
 [[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
@@ -63,11 +63,15 @@ Physical exam: The cardiac auscultation findings can be heard above. On pulmonar
 
 :: radiologist 3
 Mild pulmonary edema. Slight atrial enlargement. 
+
+<img src="https://th.bing.com/th/id/OIG.DRFK5kCiRpW5p9RzvcLC?pid=ImgGn">
 [[Continue|Case stare 3]]
 
 :: Labs 3
 <<set diagnostics_3[2] to 1>>
 Hg level of 12 mg/dL. Otherwise normal. 
+
+<img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 [[Continue|Case stare 3]]
 
 :: EKG 3
@@ -96,11 +100,14 @@ What do you think the echo shows?
 Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 
 <<set $diagnostics_3[4] to 1>>
+
+<img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 [[Continue| Case stare 3]]
 
 :: Wrong Echo 3
 Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 <<set $diagnostics_3[4] to 0>>
+<img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 [[Continue| Case stare 3]]
 
 
@@ -153,6 +160,8 @@ According to the guidelines, the patient needs to stay in the hospital for somet
 
 :: Mitral valve intervention 3
 You contact the interventional unit in your hospital and arrange for the patient to receive a mitral valve intervention. 
+
+<img src="https://th.bing.com/th/id/OIG.nbUfv1DrBpzJQ_JYgHwi?pid=ImgGn">
 <<set $case_3_Fu_score += 2 >>
 
 Congratulations! You just completed the third case! 
