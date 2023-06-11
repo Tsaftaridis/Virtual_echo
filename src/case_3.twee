@@ -1,17 +1,18 @@
 :: Case 3 introduction 
 
-A 50-year-old female patient enters the examination room in the emergency department. She complains of coughing, fatigue and dyspnea when walking to her place of work, which is located around 2km from her house. This has been happening for a few months and getting gradually worse. A doctor in the past has told her that she has high blood pressure. 
+Stéphanie est une femme de 50 ans qui habite Tabarre et qui vient à l'hôpital en disant qu'elle a a eu l'impression d'étouffer pendant la nuit à cause de la toux ("li te pèdi souf li") et ne peut pas dormir sans 2 oreillers ("paka kouche tet ba") pendant au moins deux semaines.
 
-/% Hint left heart failure more. %/
-She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
-Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
+Stéphanie a essayé de masser ses jambes chaque fois qu'elles étaient enflées sans succès. Elle dit avoir même demandé à un hougan de l'aider à mieux respirer car elle fait selon elle une “opwesyon)
+
+Après avoir essayé tout ce qu'elle pouvait, sa meilleure amie l'a convaincue de venir à l'hôpital au cas où il y aurait des médicaments qui pourraient l'aider.
+
 <img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
-What is your first step in management?  
-[[Physical Exam|Physical Exam 3]]
+Quelle est votre première étape dans le bilan?  
+[[Examen physique|Physical Exam 3]]
 [[EKG|EKG 3]]
-[[Chest X-Ray|Chest X-Ray 3]]
-[[Labs|Labs 3]]
-[[Echo|Echo 3]]
+[[Radiographie pulmonaire|Chest X-Ray 3]]
+[[Laboratoires|Labs 3]]
+[[Écho|Echo 3]]
 
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 <<set $case_3_Tx_score to 0>>
@@ -22,66 +23,62 @@ What is your first step in management?
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 3
-What is your next step? 
+Quelle est votre prochaine étape?
 
 /* Show each choice if it hasn't been visited before. */
 
-[[Physical Exam|Physical Exam 3]] 
+[[Examen physique|Physical Exam 3]] 
 [[EKG|EKG 3]]
-[[Chest X-Ray|Chest X-Ray 3]]
-[[Labs|Labs 3]]
-[[Echo|Echo 3]]
-<<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continue to treatment|Treatment 3]] <<else>> [[Continue to treatment|Not done Dx yet 3]] <</if>>
+[[Radiographie pulmonaire|Chest X-Ray 3]]
+[[Laboratoires|Labs 3]]
+[[Écho|Echo 3]]
+<<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continuer le traitement|Treatment 3]] <<else>> [[Continuer le traitement|Not done Dx yet 3]] <</if>>
 
-Notes: 50 year-old female. C/o cough, fatigue, dyspnea on mild exertion, gradually worsening for 2 months and coughing at night. BP 140/90mmHg, HR 92 bpm, Temperature 37.7 degrees Celcius, SpO2  94% on room air. 
-
-She has also been coughing consistently 2-3 days per week at night, which has bothered her sleep. 
-Vitals: BP 140/90mmHg, HR 92 bpm, T: 37.7 degrees Celcius, SpO2 = 94% on room air. 
+Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s'aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l'air ambiant.
 
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 
 /* This is where the dagnostics start. */
 :: Physical Exam 3
 <<set $diagnostics_3[0] to 1>> 
-You start a physical examination of the patient. 
+Vous commencez un examen physique du patient.
  <audio controls>
   <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio> 
 
-Physical exam: The cardiac auscultation findings can be heard above. On pulmonary auscultation you hear 3+ crackles in the lower lung fields; The abdominal exam is normal; There is mild lower extremity edema and the pulse is normal. 
+Examen physique:  les résultats de l'auscultation cardiaque peuvent être entendus ci-dessus. À l'auscultation pulmonaire, vous entendez des crépitements plus important aux deux bases ; L'examen abdominal est normal ; Il existe un léger œdème des membres inférieurs et le pouls est normal. 
 
-[[Continue|Case stare 3]]
+[[Continuer|Case stare 3]]
 
 :: Chest X-Ray 3
 <<set $diagnostics_3[1]>>
-40 minutes later, the nurse hands you the following film: 
+40 minutes plus tard, l'infirmière vous remet le film radiographique suivant:
 <img style='width: 100%' src="https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg">
 
-[[I need to see the radiologist report|radiologist 3]]
-[[Continue| Case stare 3]]
+[[J'ai besoin de voir le rapport du radiologue|radiologist 3]]
+[[Continuer| Case stare 3]]
 
 :: radiologist 3
-Mild pulmonary edema. Slight atrial enlargement. 
+Œdème pulmonaire léger. Léger élargissement auriculaire.
 
 <img src="https://th.bing.com/th/id/OIG.DRFK5kCiRpW5p9RzvcLC?pid=ImgGn">
-[[Continue|Case stare 3]]
+[[Continuer|Case stare 3]]
 
 :: Labs 3
 <<set $diagnostics_3[2] to 1>>
-Hb level of 12 mg/dL. Otherwise normal. 
-
+Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est normal.
 <img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
-[[Continue|Case stare 3]]
+[[Continuer|Case stare 3]]
 
 :: EKG 3
 <img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
 <<set $diagnostics_3[3]>>
-[[Continue| Case stare 3]]
+[[Continuer| Case stare 3]]
 
 :: Echo 3
 <<set $diagnostics_3[4] to 1>>
-The chardiac echo is shown below: 
+L'écho cardiaque est illustré ci-dessous:
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></video>
 
@@ -91,24 +88,24 @@ The chardiac echo is shown below:
 
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
 
-What do you think the echo shows? 
-[[Mitral valve regurgitation and left atrial dilation|Wrong Echo 3]]
-[[Dilated LA, anterior mitral leaflet doming consistent with mitral stenosis,|HF echo 3]]
-[[Bicuspid aortic valve, aortic stenosis|Wrong Echo 3]]
+Que pensez-vous que l'écho montre?
+[[Régurgitation mitrale et dilatation auriculaire gauche|Wrong Echo 3]]
+[[Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale|HF echo 3]]
+[[Valve aortique bicuspide, sténose aortique|Wrong Echo 3]]
 
 :: HF echo 3
-Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
+La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l'oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l'artère pulmonaire était estimée à 50 mmHg.
 
 <<set $diagnostics_3[4] to 1>>
 
 <img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
-[[Continue| Case stare 3]]
+[[Continuer| Case stare 3]]
 
 :: Wrong Echo 3
 Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
 <<set $diagnostics_3[4] to 0>>
 <img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
-[[Continue| Case stare 3]]
+[[Continuer| Case stare 3]]
 
 
 /* Reprimand and return to diagnostic evaluation. */
@@ -116,25 +113,24 @@ Mitral valve presented thickened cusps with commissural fusion and reduced openi
 The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 <<set $diagnostics_3[5] += 1>>
-[[Continue|Case stare 3]]
+[[Continuer|Case stare 3]]
 
 :: Treatment 3
-Remember, a cardiac echo and an EKG are required diagnostic steps. 
-
+N'oubliez pas qu'un écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
 <<set $diuretics_3 to false>>
 <<set $penicillin_3 to false>>
 <<set $beta_blocker_3 to false>>
 <<set $inotropes_3 to false>>
 <<set $fluids_3 to false>>
 
-Pick which of the following drugs you think would be included in the appropriate treatment. 
-Diuretics <<checkbox "$diuretics_3" false true>>
-Inotropes <<checkbox "$inotropes_3" false true>>
-Penicillin <<checkbox "$penicillin_3" false true>>
-Beta blocker <<checkbox "$beta_blocker_3" false true>>
-Fluids <<checkbox "$fluids_3" false true>>
+Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie du traitement approprié.
+<<checkbox "$diuretics_3" false true>> Diurétiques
+<<checkbox "$inotropes_3" false true>> Inotropes
+<<checkbox "$penicillin_3" false true>> Pénicilline
+<<checkbox "$beta_blocker_3" false true>> Bêta-bloquants
+<<checkbox "$fluids_3" false true>> Fluides
 
-[[Continue|Guideline treatment 3]]
+[[Continuer|Guideline treatment 3]]
 
 :: Guideline treatment 3
 <<silently>>
@@ -145,35 +141,37 @@ Fluids <<checkbox "$fluids_3" false true>>
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
 
-After consulting with the attending physician, the patient is started on diuretics, penicillin and a beta blocker. Inotropes and IV fluids are not indicated and may harm the patient. 
-[[Continue|Further management 3]]
+Après consultation avec le médecin de service, Stéphanie est mise sous diurétiques, pénicilline et bêtabloquant. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.
+[[Continuer|Further management 3]]
 
 :: Further management 3
-The attending asks you what you think the next step in managing this patient should be. 
-[[Discharge home|Discharge home 3]]
-[[Keep in the hospital for further management|Mitral valve intervention 3]]
+Le MDS vous demande quelle devrait être, selon vous, la prochaine étape de la prise en charge de ce patient.
+[[Sortie à domicile sous diurétiques oraux|Discharge home 3]]
+[[Garder à l'hôpital pour une prise en charge ultérieure|Mitral valve intervention 3]]
 
 :: Discharge home 3
-According to the guidelines, the patient needs to stay in the hospital for something important! 
+Selon les directives, le patient doit rester à l'hôpital jusqu'à ce qu'un plan thérapeutique clair soit en place!
 <<set $case_3_Fu_score -= 3 >>
-[[Continue|Mitral valve intervention 3]]
+[[Continuer|Mitral valve intervention 3]]
 
 :: Mitral valve intervention 3
-You contact the interventional unit in your hospital and arrange for the patient to receive a mitral valve intervention. 
+ Compte tenu de la découverte d'une sténose mitrale, une consultation avec le cardiologue doit être organisée pour une éventuelle intervention.
 
 <img src="https://th.bing.com/th/id/OIG.nbUfv1DrBpzJQ_JYgHwi?pid=ImgGn">
 <<set $case_3_Fu_score += 2 >>
 
-Congratulations! You just completed the third case! 
+Un mois plus tard, Stéphanie vient pour une visite de suivi pour renouveler les ordonnances de ses médicaments. Elle vous dit que le gonflement de ses jambes s'est beaucoup amélioré et qu'elle dort mieux la nuit. Elle vous remercie pour votre aide !
 
-The diagnostic approach to suspected underlying cardiac disease should involve a thorough history and complete physical examination, since the symptoms are generally non-specific (cough, dyspnea, fatigue). 
+Toutes nos félicitations! Vous venez de terminer le troisième cas !
 
-The cardiac echo can aid in the diagnostic evaluation, showing left atrial dilation and pulmonary hypertension. The EKG also has an important role to play in establishing the diagnosis. 
+L'approche diagnostique d'une maladie cardiaque sous-jacente suspectée doit impliquer une anamnèse approfondie et un examen physique complet, car les symptômes sont généralement non spécifiques (toux, dyspnée, fatigue).
 
-The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent rheumatic fever recurrence, and a beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient. 
+L'écho cardiaque peut aider à l'évaluation diagnostique, montrant une dilatation auriculaire gauche, une hypertension pulmonaire et un bombage du feuillet antérieur mitral. L'électrocardiogramme a également un rôle important à jouer dans l'établissement du diagnostic.
 
-In general, evaluation and management by a cardiologist is strongly advised in cases of mitral stenosis, since the treatment guidelines tend to be complicated. 
+Le traitement approprié pour ce patient comprend des diurétiques pour gérer l'œdème pulmonaire, de la pénicilline pour prévenir la récidive du rhumatisme articulaire aigu et des bêta-bloquants. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.
 
-The next step in managing this patient is to refer her for a mitral valve intervention, as severe mitral stenosis is a potentially life-threatening condition that requires urgent treatment. 
+En général, l'évaluation et la prise en charge par un cardiologue sont fortement conseillées en cas de sténose mitrale, car les directives de traitement ont tendance à être compliquées.
 
-[[See the next patient|Case 4 introduction]]
+La prochaine étape de la prise en charge de cette patiente consiste à la référer pour une intervention sur la valve mitrale, car une sténose mitrale sévère est une affection potentiellement mortelle qui nécessite un traitement urgent.
+
+[[Voir le prochain patient|Case 4 introduction]]

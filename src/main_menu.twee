@@ -40,11 +40,11 @@ Echo Cases
 <<silently>>
 	<<set _answer to "">>
 	<<set $has_access = 0>>
-	<<if $wrong_password>> Wrong Password! <</if>>
+	<<if $wrong_password>> Mauvais mot de passe! <</if>>
 <</silently>>
-Please input a Password to continue.
+Veuillez saisir un mot de passe pour continuer.
 <<textbox "_answer" "">>
-<<button "Check Password">>
+<<button "Vérifier le mot de passe">>
 	<<if _answer is "">>
 		/% They have not supplied an answer. %/
 		<<script>>UI.alert("You did not supply a password!");<</script>>
@@ -76,87 +76,87 @@ Please input a Password to continue.
 <</button>>
 
 :: Waiting Room
-Welcome to gmenecho! This is a virtual patient learning tool to help us evaluate the efficacy of the training program you partake in. There are four patient cases. After you are done with those, there will be a short survey before you submit your results for review. 
-Please begin when ready. This should take about half an hour. 
-[[Start the first case|Case 1 introduction]]
+Bienvenue à gmenecho ! Il s'agit d'un outil d'apprentissage virtuel pour les patients qui nous aide à évaluer l'efficacité du programme de formation auquel vous participez. Il y a quatre cas de patients. Une fois que vous avez terminé avec ceux-ci, il y aura un court sondage avant de soumettre vos résultats pour examen.
+Veuillez commencer lorsque vous êtes prêt. Cela devrait prendre environ une demi-heure.
+[[Commencez le premier cas|Case 1 introduction]]
 
 :: Usability Survey
 <<set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]>>
 
-A. I think that I would like to use this learning tool frequently.
-	<label><<radiobutton "$usability[0]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[0]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[0]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[0]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[0]" 5 autocheck>> 5 Completely agree </label> 
+A. Je pense que j'aimerais utiliser fréquemment cet outil d'apprentissage. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[0]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[0]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[0]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[0]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[0]" 5 autocheck>> 5 Complètement d'accord</label> 
 
 
-B. I found this learning tool unnecessarily complex. 
-	<label><<radiobutton "$usability[1]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[1]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[1]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[1]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[1]" 5 autocheck>> 5 Completely agree </label> 
+B. J'ai trouvé l'outil d'apprentissage inutile et complexe. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[1]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[1]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[1]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[1]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[1]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-C. I thought the learning tool was easy to use. 
-	<label><<radiobutton "$usability[2]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[2]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[2]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[2]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[2]" 5 autocheck>> 5 Completely agree </label> 
+C. J'ai pensé que l'outil d'apprentissage était facile à utiliser. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[2]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[2]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[2]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[2]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[2]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-D. I think that I would need the support of a technical person to be able to use this learning tool. 
-	<label><<radiobutton "$usability[3]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[3]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[3]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[3]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[3]" 5 autocheck>> 5 Completely agree </label> 
+D. Je pense que j'aurais besoin du soutien d'une personne technique pour pouvoir utiliser cet outil d'apprentissage. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[3]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[3]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[3]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[3]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[3]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-E. I found the various functions in this learning tool were well integrated.
-	<label><<radiobutton "$usability[4]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[4]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[4]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[4]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[4]" 5 autocheck>> 5 Completely agree </label> 
+E. J'ai trouvé que les différentes fonctions de cet outil d'apprentissage étaient bien intégrées. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[4]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[4]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[4]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[4]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[4]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-F. I thought there was too much inconsistency in this learning tool. 
-	<label><<radiobutton "$usability[5]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[5]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[5]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[5]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[5]" 5 autocheck>> 5 Completely agree </label> 
+F. J'ai pensé qu'il y avait trop d'incohérence dans cet outil d'apprentissage. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[5]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[5]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[5]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[5]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[5]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-G. I would imagine that most people would learn to use this learning tool very quickly. 
-	<label><<radiobutton "$usability[6]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[6]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[6]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[6]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[6]" 5 autocheck>> 5 Completely agree </label> 
+G. J'imagine que la plupart des gens apprendraient à utiliser cet outil d'apprentissage très rapidement. Choisissez parmi les options suivantes : 
+	<label><<radiobutton "$usability[6]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[6]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[6]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[6]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[6]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-H. I found the learning tool very cumbersome to use. 
-	<label><<radiobutton "$usability[7]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[7]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[7]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[7]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[7]" 5 autocheck>> 5 Completely agree </label> 
+H. J'ai trouvé l'outil d'apprentissage très lourd à utiliser. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[7]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[7]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[7]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[7]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[7]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-I. I felt very confident using the learning tool. 
-	<label><<radiobutton "$usability[8]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[8]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[8]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[8]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[8]" 5 autocheck>> 5 Completely agree </label> 
+I. Je me sentais très à l'aise avec l'outil d'apprentissage. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[8]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[8]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[8]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[8]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[8]" 5 autocheck>> 5 Complètement d'accord</label> 
 
-J. I needed to learn a lot of things before I could get going with this learning tool. 
-	<label><<radiobutton "$usability[9]" 1 autocheck>> 1 Completely disagree </label> 
-	<label><<radiobutton "$usability[9]" 2 autocheck>> 2 Disagree </label> 
-	<label><<radiobutton "$usability[9]" 3 autocheck>> 3 Neutral </label> 
-	<label><<radiobutton "$usability[9]" 4 autocheck>> 4 Agree </label> 
-	<label><<radiobutton "$usability[9]" 5 autocheck>> 5 Completely agree </label> 
+J. J'avais besoin d'apprendre beaucoup de choses avant de pouvoir utiliser cet outil d'apprentissage. Choisissez parmi les options suivantes :
+	<label><<radiobutton "$usability[9]" 1 autocheck>> 1 Pas dutout d'accord </label> 
+	<label><<radiobutton "$usability[9]" 2 autocheck>> 2 en désaccord </label> 
+	<label><<radiobutton "$usability[9]" 3 autocheck>> 3 Neutre </label> 
+	<label><<radiobutton "$usability[9]" 4 autocheck>> 4 Accepter </label> 
+	<label><<radiobutton "$usability[9]" 5 autocheck>> 5 Complètement d'accord</label> 
 [[Continue|Score report]]
 
 :: Score report
-Please submit your results and then restart if anyone else wants to use the same device. Thank you! 
+Veuillez envoyer vos résultats, puis redémarrer si quelqu'un d'autre souhaite utiliser le même appareil. Merci!
 <!-- Make sure you don't change the form action-->
 <div id="first">
 	<form onsubmit="document.getElementById('first').style.display = 'none'; document.getElementById('second').style.display = 'block'" action="https://api.staticforms.xyz/submit" method="post" target="_blank">
@@ -219,8 +219,8 @@ Please submit your results and then restart if anyone else wants to use the same
 	</form>
 </div>
 <div id="second" style="display:none">
-	Thank you! If the new tab is still loading, please wait. You should see: message	"Email Sent", success	true.
-	At that point, you can close that tab.  
+	Merci! Si le nouvel onglet est toujours en cours de chargement, veuillez patienter. Vous devriez voir : message "E-mail envoyé", succès vrai.
+	À ce stade, vous pouvez fermer cet onglet.
 </div>
 
-<<button 'Restart'>> <<script>> UI.restart(); <</script>> <</button>>
+<<button 'Redémarrer'>> <<script>> UI.restart(); <</script>> <</button>>
