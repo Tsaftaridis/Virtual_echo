@@ -1,5 +1,7 @@
 :: Case 1 introduction 
-A 65 year-old male patient presents to the emergency department for evaluation.  He has a past medical history of hypertension and hyperlipidemia. He recently visited his cardiologist because of worsening shortness of breath, but despite some medication changes it has not resolved. The patient reports he smokes one pack of cigarettes daily and had an episode of severe chest pain 5 years ago for which he did not seek treatment. His blood pressure is 110/70 mmHg, his heart rate is 120 bpm, his respiratory rate is 24 per minute and his SpO2 is 94% on room air. 
+M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené par son fils à l'hôpital. Son fils décrit qu'il souffre d'essoufflement ("souf kout") depuis quelques jours, mais il ne voulait pas aller à l'hôpital et a essayé de se soigner en utilisant son ancien remède familial à base de miel, d'Aloe Vera et feuilles d'amandier.
+
+M. Joseph dit que ses symptômes sont causés par des "mauvais esprits" et ne cherche pas de soins médicaux à moins qu'il ne s'agisse d'une situation de vie ou de mort. Il dit aussi qu'hier il toussait pendant la nuit  et ne pouvait pas dormir.
 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn">
 
@@ -7,12 +9,12 @@ A 65 year-old male patient presents to the emergency department for evaluation. 
 <<silently>> <<set $physical_exam_1 to false>> <<set $EKG_1 to false>> <<set $CXR_1 to false>> <<set $Labs_1 to false>> <<set $Echo_1 to false>> <<set $reprimand_1 to 0>> <</silently>>
 
 /* First part is displayed, second part is the passage name. */
-What is your first step in workup? 
-[[Physical Exam|Physical Exam 1]]
+Quelle est votre première étape dans le bilan? 
+[[Examen physique|Physical Exam 1]]
 [[EKG|EKG 1]]
-[[Chest X-Ray|Chest X-Ray 1]]
-[[Labs|Labs 1]]
-[[Echo|Echo 1]]
+[[Radiographie pulmonaire|Chest X-Ray 1]]
+[[Laboratoires|Labs 1]]
+[[Écho|Echo 1]]
 
 /* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
 <<silently>>
@@ -23,149 +25,161 @@ What is your first step in workup?
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */
 :: Case stare 1
-What is your next step? 
+Quelle est votre prochaine étape?
 
-[[Physical Exam|Physical Exam 1]]
+[[Examen physique|Physical Exam 1]]
 [[EKG|EKG 1]]
-[[Chest X-Ray|Chest X-Ray 1]]
-[[Labs|Labs 1]]
-[[Echo|Echo 1]]
+[[Radiographie pulmonaire|Chest X-Ray 1]]
+[[Laboratoires|Labs 1]]
+[[Écho|Echo 1]]
 /* If the correct workup has been done, move on to treatment. Otherwise reprimand. */
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continuer le traitement|Treatment 1]] <<else>> [[Continuer le traitement|Not done Dx yet 1]] <</if>>
 
-
-Notes: 65 year-old male. C/o worsening SOB. Hx of Htn, hyperlipidemia, smoking, suspected MI 5 years ago.  Clx evaluation: BP 110/70, HR 120, FF 24, sat 94% on RA 
+Remarques : Homme de 65 ans avec une aggravation de dyspnée. ATCD d’ HTA d’hyperlipidémie, tabagisme, suspicion de SCA  il y a 5 ans. Évaluation Clinique  : TA 110/70, FC 120 bpm, FR 24 cpm, sat 94 % en AA
 
 /* Start of the workup choices code.*/
 :: Physical Exam 1 
-You start a physical examination of the patient. You notice buldging of his neck veins, a third heart sound, crackling lung sounds. Pressing below the right costal margin makes the vein distension worse. 
+Vous commencez un examen physique du patient. Vous remarquez une turgescence des jugulaires un troisième bruit cardiaque, des crépitements pulmonaires.un Reflux hepato-jugulaire. 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.0cQhitmVDNPrEFUpfOiG?pid=ImgGn">
 
 /* Keep track for scoring purposes later. */
 <<set $physical_exam_1 to true>>
-[[Continue|Case stare 1]]
+[[Continuer|Case stare 1]]
 
 :: EKG 1 
-His EKG showed sinus tachycardia and a Q waves in the inferior leads. 
+Son électrocardiogramme a montré une tachycardie sinusale et des ondes Q dans les dérivations inférieures.
 <img style='width: 100%' src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png">
 <<set $EKG_1 to true>>
-[[Continue|Case stare 1]]
+[[Continuer|Case stare 1]]
 
 :: Chest X-Ray 1 
-40 minutes later, the radiologist hands you the following film with a handwritten signed note that reads: 
+40 minutes plus tard, le radiologue vous remet le film suivant avec une note manuscrite signée qui dit:
 
-Name: H.F. 
-Age: 65 
-Gender: Male 
-Modality: Chest CXR 
+Nom : H. F.
+ ge : 65 ans
+Genre masculin
+Modalité : Radio Thorax 
 
-CXR reveals bilateral pulmonary edema - diffuse opacification of both lung fields with prominence of the interstitial markings. Cardiac silhouette slightly enlarged. Correlate clinically. 
+CXR révèle un œdème pulmonaire bilatéral - opacification diffuse des deux champs pulmonaires avec proéminence des marques interstitielles. Silhouette cardiaque légèrement agrandie. Corréler cliniquement.
+
 <<set $CXR_1 to true>>
 <img style='width:100' src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg">
 
-[[Continue|Case stare 1]]
+[[Continuer|Case stare 1]]
 
 :: Labs 1 
-
-Laboratory testing showed a Hb level of 10.3 mg/dL. Values for renal function, liver function and glucose returned normal. 
+Les tests de laboratoire ont montré un niveau de Hg de 10,3 mg/dL. Les valeurs de la fonction rénale, de la fonction hépatique et de la glycémie sont revenues à la normale.
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 <<set $Labs_1 to true>>
 
-[[Continue|Case stare 1]]
+[[Continuer|Case stare 1]]
 
 :: Echo 1 
-The cardiac echo is shown below: 
+L'écho cardiaque est illustré ci-dessous:
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
 
-What do you think the echo shows? 
-<label><<radiobutton "$case_1_Echo" 1 autocheck>> Dilated inferior vena cava and severely reduced ejection fraction </label>
-<label><<radiobutton "$case_1_Echo" 0 autocheck>> Preserved ejection fraction and collapsable dilated inferior vena cava </label> 
-<label><<radiobutton "$case_1_Echo" 0 autocheck>> Mitral valve prolapse and left atrial dilation </label>
+Que pensez-vous que l'écho montre?
+<label><<radiobutton "$case_1_Echo" 1 autocheck>> Veine cave inférieure dilatée et fraction d'éjection sévèrement réduite </label>
+<label><<radiobutton "$case_1_Echo" 0 autocheck>> Fraction d'éjection préservée et veine cave inférieure dilatée mais compliante </label> 
+<label><<radiobutton "$case_1_Echo" 0 autocheck>> Prolapsus valvulaire mitral et dilatation auriculaire gauche </label>
 
-[[Continue|Echo results 1]]
+[[Continuer|Echo results 1]]
 
 :: Echo results 1
-The cardiac echo report reads: "Left ventricle ejection fraction of 20%. Moderate pulmonary hypertension and dilated inferior vena cava."
+Le rapport d'écho cardiaque se lit comme suit : "Fraction d'éjection du ventricule gauche à 20 %. signe d’hypertension pulmonaire modérée et veine cave inférieure dilatée."
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 
-[[Continue|Case stare 1]]
+[[Continuer|Case stare 1]]
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
 :: Not done Dx yet 1 
-The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement. 
 <<set $reprimand_2 += 1>>
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
-[[Continue|Case stare 1]]
+[[Continuer|Case stare 1]]
 
 :: Treatment 1 
-Remember, a physical examination is important when first approaching a patient. After that, a cardiac echo and an EKG are required diagnostic steps before moving on to treatment in this patient. 
+N'oubliez pas qu'un examen physique est important lors de la première approche d'un patient. Après cela, une écho cardiaque et un ECG sont des étapes diagnostiques nécessaires avant de passer au traitement chez ce patient.
 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.frL6vSaxNaetRJfhLhQt?pid=ImgGn">
 
-The head nurse asks you which of the following the best starting treatment option for this patient would be: 
-[[Furosemide IV|Furosemide IV 1]]
-[[Loop diuretic per os|Bad outcome 1]]
-[[1.5 L intravenous fluids and 10mg metoprolol|Very bad outcome 1]]
-[[Inotropes|Bad outcome 1]]
+L'infirmière en chef vous demande laquelle des options suivantes serait la meilleure option de traitement de départ pour ce patient :
+Furosémide IV
+Diurétique de l'anse per os
+1,5 L de Ringer lactate (pas de NaCl) et 10 mg de métoprolol IV
+
+[[Furosémide IV|Furosemide IV 1]]
+[[Diurétique de l'anse per os|Bad outcome 1]]
+[[1,5 L de Ringer lactate (pas de NaCl) et 10 mg de métoprolol IV|Very bad outcome 1]]
 
 :: Furosemide IV 1
-After starting high-dose IV furosemide, the patient reports an improvement in symptoms. He says he "doesn't feel bloated anymore". His blood pressure has normalized. 
+Après avoir commencé le furosémide IV à haute dose, le patient signale une amélioration des symptômes.Il est capable de mieux respirer et de se coucher à plat. Il te remercie . Sa tension artérielle s'est normalisée.
 
-IV Furosemide is the correct first choice in the treatment of acute decompensated heart failure, according to the guidelines. 
+Le furosémide IV est le bon premier choix dans le traitement de l'insuffisance cardiaque décompensée aiguë, selon les recommandations internationales.
 <<set $case_1_Tx_score += 4 >>
-[[Continue|Further management 1]]
+[[Continuer|Further management 1]]
 
 :: Bad outcome 1
-The patient improves over the next few days, though slowly. While staying hospitalized, he complains of shortness of breath for the next five days, though his peripheral edema seems to be improving slowly. 
-On the 6th day he is finally symptom-free. 
+M. Joseph s'améliore lentement  au cours des jours suivants. Pendant son séjour à l'hôpital, il se plaint toujours de dyspnée pendant les cinq jours suivants “souf li wo”  lorsqu'il essaie de marcher jusqu'aux toilettes, bien que son œdème périphérique semble s'améliorer lentement.
+Le 6ème jour, il est enfin selon ses dires  asymptomatique. 
+
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.X6JIXmdBt0K_GY8_8GVG?pid=ImgGn">
 <<set $case_1_Tx_score += 3 >>
-[[Continue|Further management 1]]
+[[Continuer|Further management 1]]
 
 :: Very bad outcome 1
-3 hours later, you are called by the nurse because the patient "doesn't seem to be doing well". His blood pressure is 110/70 mmHg, his heart rate is 140 and his extremities are pale and cold to the touch. 
+3 heures plus tard, vous êtes appelé par l'infirmière car le patient "ne semble pas aller bien". La tension artérielle de M. Joseph est de 90/70 mmHg, sa fréquence cardiaque est de 140 bpm et ses extrémités sont pâles et froides au toucher.
 
-He is admitted to the intensive care unit for further monitoring for heart failure with reduced ejection fraction complicated by cardiogenic shock. 
+M. Joseph est admis aux soins intensifs pour un suivi plus approfondi d'une insuffisance cardiaque avec fraction d'éjection réduite compliquée d'un choc cardiogénique.
+
 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZCGoOne7gjb9cVeeQ5SV?pid=ImgGn&rs=1">
 
-After 5 days in the intensive care unit, his ejection fraction improves and he is discharged to the floor. 
+Après 5 jours dans l'unité de soins intensifs, ses symptômes et ses signes vitaux s'améliorent et il est renvoyé en hospitalisation conventionnelle.
 <<set $case_1_Tx_score -= 4 >>
-[[Continue|Further management 1]]
+[[Continuer|Further management 1]]
 
 :: Further management 1
-You examine the patient and have a conversation with them about their symptoms. They report they are feeling better. The edema is gone, the lung sounds are normal, while a repeat cardiac echo shows the following findings: 
+Vous examinez M. Joseph et discutez avec lui de ses symptômes. Il rapporte qu'il se sent mieux et qu'il n'a plus de "Pye anfle". Au cours de l'examen, vous vérifiez que l'œdème a disparu, que les bruits pulmonaires sont normaux. 
 
-The attending asks you what you think the next step in managing this patient should be. 
+Le Médecin de service vient vous demander quelle serait la prochaine étape dans la prise en charge de M. Joseph.
 
-[[Discharge Home on oral diuretics|Discharge home 1]]
-[[Keep in the hospital for further management|Hospitalization and monitoring 1]]
+[[Sortie à domicile sous diurétiques oraux|Discharge home 1]]
+[[Garder à l'hôpital pour une prise en charge ultérieure|Hospitalization and monitoring 1]]
 
 :: Discharge home 1
-According to the guidelines, it is advisable to hospitalize and monitor the patient! Oral diuretic treatment may not be enough to keep their heart failure under control. Furthermore, given that this patient travelled a long way to the hospital, they may be lost to follow-up and should be started on heart failure medications before leaving. 
+Selon les directives, il est conseillé d'hospitaliser et de surveiller les patients atteints d'insuffisance cardiaque en décompensation aiguë. Le traitement diurétique oral peut ne pas être suffisant pour contrôler leur insuffisance cardiaque. De plus, étant donné que ce patient a parcouru un long chemin jusqu'à l'hôpital, il peut être perdu de vue et doit être mis sous traitement contre l'insuffisance cardiaque avant de partir.
+
 <<set $case_1_Fu_score -= 5 >>
-[[Continue|Hospitalization and monitoring 1]]
+[[Continuer|Hospitalization and monitoring 1]]
 
 :: Hospitalization and monitoring 1
-The patient stays in the hospital for further care. You consult the appropriate attendings for chronic HF management.
+M. Joseph reste à l'hôpital pour une prise en charge plus optimale. Vous révisez et discutez avec les LDS  sur la prise en charge de  l'IC chronique.
 
-He is started on an ACE-inhibitor, a beta-blocker, spironolactone and furosemide per os. They are also given directions on how to take the medication at home and help towards finding a primary care physician for long-term follow-up. 
+M. Joseph est mis sous IEC, bêta-bloquant, spironolactone et furosémide per os. M. Joseph reçoit également des séances d'éducation médicale sur la façon de prendre les médicaments à domicile et de l'aide pour trouver un médecin de soins primaires pour un suivi à long terme. 
 <<set $case_1_Fu_score += 3 >>
-[[Continue|End of case 1]]
+[[Continuer|End of case 1]]
 
 :: End of case 1
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.QMlLg0S0P5J4GJQhjdAU?pid=ImgGn">
 
-Congratulations! You have completed the first case! 
+Un mois plus tard, le fils de M. Joseph vient à l'hôpital pour demander à l'infirmière de vous voir.
 
-The main points in managing heart failure are the following: 
+Il tient dans sa main une sculpture en bois représentant un stéthoscope et vous dit : « Mon père va beaucoup mieux avec le nouveau médicament. Il m'a dit de te donner ça comme cadeau pour éliminer les mauvais esprits qui lui faisaient du mal, il l'a fait pour toi. Merci de l'avoir aidé !"
 
-After a physical exam, an EKG and a cardiac echo are necessary for the full assessment of suspected heart failure. A chest x-ray is not very useful, as it does not give us any actionable information. 
-The best first step in management is to give intravenous furosemide. Furosemide per os will not hurt the patient, but would not be the ideal treatment. In contrast, beta blockers and IV fluids should be avoided in acute decompensated heart failure, because the can worsen the patient's condition and increase intensive care admissions. 
-After initial stabilization, the patients need to be put on long-term heart failure treatment before leaving the hospital. This ensures that they are adequately treated, given the danger that they will be lost to follow-up due to difficulties accessing care. An early discharge or inadequate treatment (e.g. oral diuretics only) could lead to worse outcomes. 
+Toutes nos félicitations! Vous avez terminé le premier cas !
 
-You can learn more about heart failure management by reading the [[2021 European Society of Cardiology Guidelines|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
-[[See the next patient|Case 2 introduction]]
+Les principaux points de la prise en charge de l'insuffisance cardiaque sont les suivants :
+
+Après un examen physique, un ECG et une écho cardiaque sont nécessaires pour l'évaluation complète d'une suspicion d'insuffisance cardiaque. Une radiographie pulmonaire moins pertinente si l'échocardiographie est réalisée couplée à une dosage des BNP. En absence de ces examens paraclinique elle permettra de vérifier l'état du parenchyme pulmonaire - détecter une cardiomégalie mais n’élimine pas une cardiopathie 
+
+La meilleure première étape de la prise en charge consiste à administrer du furosémide par voie intraveineuse. Le furosémide per os doit être considéré si pas de forme IV  mais  la réponse attendue peut être retardée.
+En revanche, les bêta-bloquants et les fluides IV doivent être évités dans l'insuffisance cardiaque aiguë décompensée, car ils peuvent aggraver l'état du patient et augmenter les admissions en soins intensifs.
+
+Après stabilisation initiale, les patients doivent être mis sous traitement à long terme pour l'insuffisance cardiaque avant de quitter l'hôpital. Cela garantit qu'ils sont pris en charge de manière adéquate, compte tenu du risque qu'ils soient perdus de vue en raison de difficultés d'accès aux soins. Une sortie précoce ou un traitement inadéquat (par exemple, diurétiques oraux uniquement) pourrait entraîner de moins bons résultats.
+
+Vous pouvez en savoir plus sur la gestion de l'insuffisance cardiaque en lisant les lignes directrices 2021 de la Société européenne de cardiologie. [[lignes directrices 2021 de la Société européenne de cardiologie|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
+[[Voir le prochain patient|Case 2 introduction]]
