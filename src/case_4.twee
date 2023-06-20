@@ -23,14 +23,13 @@ Quelle est votre première étape dans le bilan?
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 4
 Quelle est votre prochaine étape?
-<img src=“https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn”>
+<img src="https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn"> 
 
 [[Examen physique|Physical Exam 4]]
 [[EKG|EKG 4]]
 [[Radiographie pulmonaire|Chest X-Ray 4]]
 [[Laboratoires|Labs 4]]
 [[Écho|Echo 4]]
-[[Continuer le traitement|Treatment 4]]
 <<if hasVisited("EKG 4", "Echo 4", "Physical Exam 4")>> [[Continuer le traitement|Treatment 4]] <<else>> [[Continuer le traitement|Not done Dx yet 4]] <</if>>
 
 Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s'aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l'air ambiant.
@@ -41,14 +40,15 @@ Vous commencez un examen physique sur Jessica.
 Vous remarquez que les veines de son cou sont bombées et que ses pieds sont enflés. Elle dit que son « ventre est lourd, comme si elle était encore enceinte ». Son abdomen semble distendu et à la palpitation, vous pouvez clairement sentir la présence de liquide libre (ascite)
 
 Auscultation cardiaque à l'apex, décubitus gauche.
-
-Les résultats de l'auscultation cardiaque peuvent être entendus ci-dessus.
-
-À l'auscultation pulmonaire, vous entendez des râles 
+Vous aurez peut-être besoin d'un casque pour une expérience optimale.
 <audio controls>
   <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/05_S3_Gallop_Apex.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio> 
+
+Les résultats de l'auscultation cardiaque peuvent être entendus ci-dessus.
+
+À l'auscultation pulmonaire, vous entendez des râles 
 [[Continuer| Case stare 4]]
 
 :: Chest X-Ray 4

@@ -58,7 +58,7 @@ L'auscultation a révélé un souffle cardiaque systolique de grade 2/6 avec mie
 :: Consults results 2
 <<if not $case_2_fundoscopy>> Marie a besoin d'un fond d’œil pour vérifier les signes de rétinopathie hypertensive.<</if>>
 
-<img src="https://th.bing.com/th/id/OIG.NDGdptd6Z4uhFTMLobRS?pid=ImgGn">
+<img src="https://th.bing.com/th/id/OIG.oKcvm6lVAv4vfuFNpf9d?pid=ImgGn">
 
 <<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Mis à part le fond d'œil, les autres tests ne sont pas nécessaires pour le moment. <</if>>
 
@@ -185,6 +185,7 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
 [[Continuer|Guideline treatment 2]]
 
 :: Guideline treatment 2 
+<img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn"> 
 <<silently>>
     <<if $inotropes_2>>  <<set $case_2_Tx_score -= 4>> <</if>>
     <<if $diuretics_2>>  <<set $case_2_Tx_score += 2>> <</if>>
@@ -193,7 +194,6 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
     <<if $ace_arb_2>>  <<set $case_2_Tx_score += 4>> <</if>>
     <<if $amlodipine_2>>  <<set $case_2_Tx_score +=2>> <</if>>
 <</silently>>
-
 Les diurétiques thiazidiques, en particulier la chlorthalidone, sont la première ligne pour l'hypertension - les diurétiques sont nécessaires pour les patients atteints d'une maladie hypertensive résistante
 Les inhibiteurs de l'enzyme de conversion,  les ARA2 sont la première ligne chez les patients atteints de diabète ou de maladie rénale chronique.
 les inhibiteurs calciques 
