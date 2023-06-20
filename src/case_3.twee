@@ -24,24 +24,19 @@ Quelle est votre première étape dans le bilan?
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 3
 Quelle est votre prochaine étape?
-
-/* Show each choice if it hasn't been visited before. */
-
+<img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
 [[Examen physique|Physical Exam 3]] 
 [[EKG|EKG 3]]
 [[Radiographie pulmonaire|Chest X-Ray 3]]
 [[Laboratoires|Labs 3]]
 [[Écho|Echo 3]]
 <<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continuer le traitement|Treatment 3]] <<else>> [[Continuer le traitement|Not done Dx yet 3]] <</if>>
-
 Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s'aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l'air ambiant.
-
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
-
-/* This is where the dagnostics start. */
 :: Physical Exam 3
 <<set $diagnostics_3[0] to 1>> 
 Vous commencez un examen physique du patient.
+Vous aurez peut-être besoin d'un casque pour une expérience optimale.
  <audio controls>
   <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
@@ -117,12 +112,13 @@ The attending cardiologist tells you that you need some more diagnostic steps be
 
 :: Treatment 3
 N'oubliez pas qu'un écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
-<<set $diuretics_3 to false>>
-<<set $penicillin_3 to false>>
-<<set $beta_blocker_3 to false>>
-<<set $inotropes_3 to false>>
-<<set $fluids_3 to false>>
-
+<<silently>>
+  <<set $diuretics_3 to false>>
+  <<set $penicillin_3 to false>>
+  <<set $beta_blocker_3 to false>>
+  <<set $inotropes_3 to false>>
+  <<set $fluids_3 to false>>
+<</silently>>
 Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie du traitement approprié.
 <<checkbox "$diuretics_3" false true>> Diurétiques
 <<checkbox "$inotropes_3" false true>> Inotropes
@@ -140,11 +136,12 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
     <<if $inotropes_3>>  <<set $case_3_Tx_score -= 2>> <</if>>
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
-
+<img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn">
 Après consultation avec le médecin de service, Stéphanie est mise sous diurétiques, pénicilline et bêtabloquant. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.
 [[Continuer|Further management 3]]
 
 :: Further management 3
+<img src="https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn"> 
 Le MDS vous demande quelle devrait être, selon vous, la prochaine étape de la prise en charge de ce patient.
 [[Sortie à domicile sous diurétiques oraux|Discharge home 3]]
 [[Garder à l'hôpital pour une prise en charge ultérieure|Mitral valve intervention 3]]

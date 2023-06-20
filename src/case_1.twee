@@ -4,10 +4,8 @@ M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené 
 M. Joseph dit que ses symptômes sont causés par des "mauvais esprits" et ne cherche pas de soins médicaux à moins qu'il ne s'agisse d'une situation de vie ou de mort. Il dit aussi qu'hier il toussait pendant la nuit  et ne pouvait pas dormir.
 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn">
-
 /* Diagnostic choices booleans. */
 <<silently>> <<set $physical_exam_1 to false>> <<set $EKG_1 to false>> <<set $CXR_1 to false>> <<set $Labs_1 to false>> <<set $Echo_1 to false>> <<set $reprimand_1 to 0>> <</silently>>
-
 /* First part is displayed, second part is the passage name. */
 Quelle est votre première étape dans le bilan? 
 [[Examen physique|Physical Exam 1]]
@@ -15,14 +13,12 @@ Quelle est votre première étape dans le bilan?
 [[Radiographie pulmonaire|Chest X-Ray 1]]
 [[Laboratoires|Labs 1]]
 [[Écho|Echo 1]]
-
-/* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
 <<silently>>
+/* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
     <<set $case_1_Tx_score to 0>>
     <<set $case_1_Fu_score to 0>>
     <<set $case_1_Echo to 0>>
 <</silently>>
-
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */
 :: Case stare 1
 Quelle est votre prochaine étape?
@@ -107,9 +103,6 @@ N'oubliez pas qu'un examen physique est important lors de la première approche 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.frL6vSaxNaetRJfhLhQt?pid=ImgGn">
 
 L'infirmière en chef vous demande laquelle des options suivantes serait la meilleure option de traitement de départ pour ce patient :
-Furosémide IV
-Diurétique de l'anse per os
-1,5 L de Ringer lactate (pas de NaCl) et 10 mg de métoprolol IV
 
 [[Furosémide IV|Furosemide IV 1]]
 [[Diurétique de l'anse per os|Bad outcome 1]]

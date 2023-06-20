@@ -211,10 +211,8 @@ $(document.head).find('#style-ui-bar').remove();</script><tw-passagedata pid="1"
 M. Joseph dit que ses symptômes sont causés par des &quot;mauvais esprits&quot; et ne cherche pas de soins médicaux à moins qu&#39;il ne s&#39;agisse d&#39;une situation de vie ou de mort. Il dit aussi qu&#39;hier il toussait pendant la nuit  et ne pouvait pas dormir.
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn&quot;&gt;
-
 /* Diagnostic choices booleans. */
 &lt;&lt;silently&gt;&gt; &lt;&lt;set $physical_exam_1 to false&gt;&gt; &lt;&lt;set $EKG_1 to false&gt;&gt; &lt;&lt;set $CXR_1 to false&gt;&gt; &lt;&lt;set $Labs_1 to false&gt;&gt; &lt;&lt;set $Echo_1 to false&gt;&gt; &lt;&lt;set $reprimand_1 to 0&gt;&gt; &lt;&lt;/silently&gt;&gt;
-
 /* First part is displayed, second part is the passage name. */
 Quelle est votre première étape dans le bilan? 
 [[Examen physique|Physical Exam 1]]
@@ -222,14 +220,12 @@ Quelle est votre première étape dans le bilan?
 [[Radiographie pulmonaire|Chest X-Ray 1]]
 [[Laboratoires|Labs 1]]
 [[Écho|Echo 1]]
-
-/* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
 &lt;&lt;silently&gt;&gt;
+/* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
     &lt;&lt;set $case_1_Tx_score to 0&gt;&gt;
     &lt;&lt;set $case_1_Fu_score to 0&gt;&gt;
     &lt;&lt;set $case_1_Echo to 0&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */</tw-passagedata><tw-passagedata pid="2" name="Case stare 1" tags="" position="225,100" size="100,100">Quelle est votre prochaine étape?
 
 [[Examen physique|Physical Exam 1]]
@@ -290,9 +286,6 @@ Que pensez-vous que l&#39;écho montre?
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.frL6vSaxNaetRJfhLhQt?pid=ImgGn&quot;&gt;
 
 L&#39;infirmière en chef vous demande laquelle des options suivantes serait la meilleure option de traitement de départ pour ce patient :
-Furosémide IV
-Diurétique de l&#39;anse per os
-1,5 L de Ringer lactate (pas de NaCl) et 10 mg de métoprolol IV
 
 [[Furosémide IV|Furosemide IV 1]]
 [[Diurétique de l&#39;anse per os|Bad outcome 1]]
@@ -395,7 +388,7 @@ Remarques : Une femme de 39 ans diabétique  se plaint de dyspnée et de nausée
 &lt;&lt;checkbox &quot;$case_2_kernig_brudzinsky&quot; false true&gt;&gt; Recherche des signes de Kerning et Brudzinsky tests 
 [[Continuer| Consults results 2]]</tw-passagedata><tw-passagedata pid="21" name="Consults results 2" tags="" position="100,350" size="100,100">&lt;&lt;if not $case_2_fundoscopy&gt;&gt; Marie a besoin d&#39;un fond d’œil pour vérifier les signes de rétinopathie hypertensive.&lt;&lt;/if&gt;&gt;
 
-&lt;img src=&quot;https://th.bing.com/th/id/OIG.NDGdptd6Z4uhFTMLobRS?pid=ImgGn&quot;&gt;
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.oKcvm6lVAv4vfuFNpf9d?pid=ImgGn&quot;&gt;
 
 &lt;&lt;if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky&gt;&gt; Mis à part le fond d&#39;œil, les autres tests ne sont pas nécessaires pour le moment. &lt;&lt;/if&gt;&gt;
 
@@ -490,7 +483,8 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
 &lt;&lt;checkbox &quot;$digoxin_2&quot; false true&gt;&gt; Digoxine 
 &lt;&lt;checkbox &quot;$ace_arb_2&quot; false true&gt;&gt; nhibiteur de l&#39;enzyme de conversion de l&#39;angiotensine ou bloqueur des récepteurs de l&#39;angiotensine
 &lt;&lt;checkbox &quot;$amlodipine_2&quot; false true&gt;&gt; Amlodipine 
-[[Continuer|Guideline treatment 2]]</tw-passagedata><tw-passagedata pid="32" name="Guideline treatment 2" tags="" position="225,475" size="100,100">&lt;&lt;silently&gt;&gt;
+[[Continuer|Guideline treatment 2]]</tw-passagedata><tw-passagedata pid="32" name="Guideline treatment 2" tags="" position="225,475" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn&quot;&gt; 
+&lt;&lt;silently&gt;&gt;
     &lt;&lt;if $inotropes_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $diuretics_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $metoprolol_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 1&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -498,7 +492,6 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
     &lt;&lt;if $ace_arb_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 4&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $amlodipine_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score +=2&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-
 Les diurétiques thiazidiques, en particulier la chlorthalidone, sont la première ligne pour l&#39;hypertension - les diurétiques sont nécessaires pour les patients atteints d&#39;une maladie hypertensive résistante
 Les inhibiteurs de l&#39;enzyme de conversion,  les ARA2 sont la première ligne chez les patients atteints de diabète ou de maladie rénale chronique.
 les inhibiteurs calciques 
@@ -552,22 +545,17 @@ Quelle est votre première étape dans le bilan?
 &lt;&lt;set $diagnostics_3 to [0, 0, 0, 0, 0, 0]&gt;&gt;
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="35" name="Case stare 3" tags="" position="600,475" size="100,100">Quelle est votre prochaine étape?
-
-/* Show each choice if it hasn&#39;t been visited before. */
-
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 [[Examen physique|Physical Exam 3]] 
 [[EKG|EKG 3]]
 [[Radiographie pulmonaire|Chest X-Ray 3]]
 [[Laboratoires|Labs 3]]
 [[Écho|Echo 3]]
 &lt;&lt;if hasVisited(&quot;EKG 3&quot;, &quot;Echo 3&quot;, &quot;Physical Exam 3&quot;)&gt;&gt; [[Continuer le traitement|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continuer le traitement|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
-
 Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s&#39;aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l&#39;air ambiant.
-
-/* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
-
-/* This is where the dagnostics start. */</tw-passagedata><tw-passagedata pid="36" name="Physical Exam 3" tags="" position="725,475" size="100,100">&lt;&lt;set $diagnostics_3[0] to 1&gt;&gt; 
+/* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="36" name="Physical Exam 3" tags="" position="725,475" size="100,100">&lt;&lt;set $diagnostics_3[0] to 1&gt;&gt; 
 Vous commencez un examen physique du patient.
+Vous aurez peut-être besoin d&#39;un casque pour une expérience optimale.
  &lt;audio controls&gt;
   &lt;source src=&quot;https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 Your browser does not support the audio element.
@@ -617,12 +605,13 @@ Que pensez-vous que l&#39;écho montre?
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 &lt;&lt;set $diagnostics_3[5] += 1&gt;&gt;
 [[Continuer|Case stare 3]]</tw-passagedata><tw-passagedata pid="45" name="Treatment 3" tags="" position="600,600" size="100,100">N&#39;oubliez pas qu&#39;un écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
-&lt;&lt;set $diuretics_3 to false&gt;&gt;
-&lt;&lt;set $penicillin_3 to false&gt;&gt;
-&lt;&lt;set $beta_blocker_3 to false&gt;&gt;
-&lt;&lt;set $inotropes_3 to false&gt;&gt;
-&lt;&lt;set $fluids_3 to false&gt;&gt;
-
+&lt;&lt;silently&gt;&gt;
+  &lt;&lt;set $diuretics_3 to false&gt;&gt;
+  &lt;&lt;set $penicillin_3 to false&gt;&gt;
+  &lt;&lt;set $beta_blocker_3 to false&gt;&gt;
+  &lt;&lt;set $inotropes_3 to false&gt;&gt;
+  &lt;&lt;set $fluids_3 to false&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
 Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie du traitement approprié.
 &lt;&lt;checkbox &quot;$diuretics_3&quot; false true&gt;&gt; Diurétiques
 &lt;&lt;checkbox &quot;$inotropes_3&quot; false true&gt;&gt; Inotropes
@@ -637,9 +626,10 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
     &lt;&lt;if $inotropes_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $fluids_3&gt;&gt; &lt;&lt;set $case_3_Tx_score -= 3&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn&quot;&gt;
 Après consultation avec le médecin de service, Stéphanie est mise sous diurétiques, pénicilline et bêtabloquant. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.
-[[Continuer|Further management 3]]</tw-passagedata><tw-passagedata pid="47" name="Further management 3" tags="" position="850,600" size="100,100">Le MDS vous demande quelle devrait être, selon vous, la prochaine étape de la prise en charge de ce patient.
+[[Continuer|Further management 3]]</tw-passagedata><tw-passagedata pid="47" name="Further management 3" tags="" position="850,600" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn&quot;&gt; 
+Le MDS vous demande quelle devrait être, selon vous, la prochaine étape de la prise en charge de ce patient.
 [[Sortie à domicile sous diurétiques oraux|Discharge home 3]]
 [[Garder à l&#39;hôpital pour une prise en charge ultérieure|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="48" name="Discharge home 3" tags="" position="975,600" size="100,100">Selon les directives, le patient doit rester à l&#39;hôpital jusqu&#39;à ce qu&#39;un plan thérapeutique clair soit en place!
 &lt;&lt;set $case_3_Fu_score -= 3 &gt;&gt;
@@ -684,14 +674,13 @@ Quelle est votre première étape dans le bilan?
 &lt;&lt;/silently&gt;&gt;
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="51" name="Case stare 4" tags="" position="100,725" size="100,100">Quelle est votre prochaine étape?
-&lt;img src=“https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn”&gt;
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn&quot;&gt; 
 
 [[Examen physique|Physical Exam 4]]
 [[EKG|EKG 4]]
 [[Radiographie pulmonaire|Chest X-Ray 4]]
 [[Laboratoires|Labs 4]]
 [[Écho|Echo 4]]
-[[Continuer le traitement|Treatment 4]]
 &lt;&lt;if hasVisited(&quot;EKG 4&quot;, &quot;Echo 4&quot;, &quot;Physical Exam 4&quot;)&gt;&gt; [[Continuer le traitement|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continuer le traitement|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt;
 
 Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s&#39;aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l&#39;air ambiant.
@@ -700,14 +689,15 @@ Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s&#
 Vous remarquez que les veines de son cou sont bombées et que ses pieds sont enflés. Elle dit que son « ventre est lourd, comme si elle était encore enceinte ». Son abdomen semble distendu et à la palpitation, vous pouvez clairement sentir la présence de liquide libre (ascite)
 
 Auscultation cardiaque à l&#39;apex, décubitus gauche.
-
-Les résultats de l&#39;auscultation cardiaque peuvent être entendus ci-dessus.
-
-À l&#39;auscultation pulmonaire, vous entendez des râles 
+Vous aurez peut-être besoin d&#39;un casque pour une expérience optimale.
 &lt;audio controls&gt;
   &lt;source src=&quot;https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/05_S3_Gallop_Apex.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 Your browser does not support the audio element.
 &lt;/audio&gt; 
+
+Les résultats de l&#39;auscultation cardiaque peuvent être entendus ci-dessus.
+
+À l&#39;auscultation pulmonaire, vous entendez des râles 
 [[Continuer| Case stare 4]]</tw-passagedata><tw-passagedata pid="53" name="Chest X-Ray 4" tags="" position="350,725" size="100,100">Quelque temps plus tard, l&#39;infirmière vous remet la radio pulmonaire  suivante: 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://prod-images-static.radiopaedia.org/multiple_choice_questions/420/bat-wings-pulmonary-oedema_big_gallery.jpeg&quot;&gt;
 &lt;&lt;set $diagnostics_4[1] to 1&gt;&gt;
