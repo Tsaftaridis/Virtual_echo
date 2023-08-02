@@ -14,7 +14,7 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Waiting Room",
+  "start": "Guard",
   "zoom": 1
 }
 
@@ -47,7 +47,7 @@ Veuillez saisir un mot de passe pour continuer.
 <<button "Vérifier le mot de passe">>
 	<<if _answer is "">>
 		/% They have not supplied an answer. %/
-		<<script>>UI.alert("You did not supply a password!");<</script>>
+		<<script>>UI.alert("Vous n'avez pas fourni de mot de passe !");<</script>>
 	<<else>>
 		/%
 			Remove extra white space from both ends of the answer then
@@ -57,9 +57,33 @@ Veuillez saisir un mot de passe pour continuer.
 			Check if one of the correct answers was supplied,
 			otherwise send them to the Start passage. %/
 		<<switch _answer>>
-			<<case "testuser1">>
+			<<case "POUDYDAR">>
 				<<set $has_access = 1>>
-			<<case "testuser2">>
+			<<case "PAULYAD2">>
+				<<set $has_access = 1>>
+			<<case "AUGUSTERUB">>
+				<<set $has_access = 1>>
+			<<case "BAPTISTEBRU">>
+				<<set $has_access = 1>>
+			<<case "ENNELOUISE">>
+				<<set $has_access = 1>>
+			<<case "RAMAJOUB">>
+				<<set $has_access = 1>>
+			<<case "jp123456">>
+				<<set $has_access = 1>>
+			<<case "ONEworld321">>
+				<<set $has_access = 1>>
+			<<case "Mamepape1">>
+				<<set $has_access = 1>>
+			<<case "Makevyje27">>
+				<<set $has_access = 1>>
+			<<case "Paulina12">>
+				<<set $has_access = 1>>
+			<<case "cperrotin1990">>
+				<<set $has_access = 1>>
+			<<case "POUDYDAR">>
+				<<set $has_access = 1>>
+			<<case "proponisi_zurich_enter">>
 				<<set $has_access = 1>>
 			<<default>>
 				<<set $has_access = 0>>
