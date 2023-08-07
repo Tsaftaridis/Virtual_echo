@@ -102,14 +102,35 @@ Monocytes : 6 %
 
 :: EKG 2
 <<set $diagnostics_2[3] to 1>>
+<<set $echo2_quiz[0, 0, 0]>>
 <img style='width: 100%' src="https://www.wikidoc.org/images/f/f8/LVH_6.jpg">
 [[Continuer|Case stare 2]]
 
 :: Echo 2
 L'écho cardiaque est illustré ci-dessous et le septum mesure 1,3 cm.
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4" frameborder="0" allowfullscreen></video>
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo2_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4" frameborder="0" allowfullscreen></video>
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo2_quiz[0]" 1 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4" frameborder="0" allowfullscreen></video>
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo2_quiz[0]" 1 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo2_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
 
 /* Echo diagnosis choices. */
 <<silently>>

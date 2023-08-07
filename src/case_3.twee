@@ -69,18 +69,40 @@ Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est 
 :: EKG 3
 <img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
 <<set $diagnostics_3[3]>>
+<<set $echo3_quiz to [0, 0, 0, 0]>>
 [[Continuer| Case stare 3]]
 
 :: Echo 3
 <<set $diagnostics_3[4] to 1>>
 L'écho cardiaque est illustré ci-dessous:
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></video>
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></video>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Apical 4 cavités (Zoomé) </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
 
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 4 cavités (Zoomé) </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Doppler à onde continue </label>
 
 Que pensez-vous que l'écho montre?
 [[Régurgitation mitrale et dilatation auriculaire gauche|Wrong Echo 3]]
