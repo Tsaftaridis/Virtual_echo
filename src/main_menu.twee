@@ -9,6 +9,9 @@ Echo Cases
 <<set $case_1_Tx_score to 0>>
 <<set $submitted to 0>>
 
+:: StoryBanner 
+<img style='width: 100%' src="https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png">
+
 :: StoryData
 {
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
@@ -100,6 +103,10 @@ Veuillez saisir un mot de passe pour continuer.
 <</button>>
 
 :: Waiting Room
+Global MedEd Network FoCUS-HAITI 2023 
+
+Vous aurez une expérience optimale de la plateforme en utilisant chrome, Une source audio sera nécessaire pour compléter votre progression.
+
 Bienvenue à gmenecho ! Il s'agit d'un outil d'apprentissage virtuel pour les patients qui nous aide à évaluer l'efficacité du programme de formation auquel vous participez. Il y a quatre cas de patients. Une fois que vous avez terminé avec ceux-ci, il y aura un court sondage avant de soumettre vos résultats pour examen.
 Veuillez commencer lorsque vous êtes prêt. Cela devrait prendre environ une demi-heure.
 [[Commencez le premier cas|Case 1 introduction]]

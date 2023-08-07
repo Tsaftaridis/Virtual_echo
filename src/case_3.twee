@@ -97,7 +97,7 @@ La valve mitrale présentait des cuspides épaissies avec une fusion commissural
 [[Continuer| Case stare 3]]
 
 :: Wrong Echo 3
-Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
+La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l'oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l'artère pulmonaire était estimée à 50 mmHg.
 <<set $diagnostics_3[4] to 0>>
 <img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 [[Continuer| Case stare 3]]
@@ -105,7 +105,7 @@ Mitral valve presented thickened cusps with commissural fusion and reduced openi
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
-The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement. 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 <<set $diagnostics_3[5] += 1>>
 [[Continuer|Case stare 3]]

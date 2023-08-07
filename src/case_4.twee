@@ -119,7 +119,7 @@ Echocardiography showed the presence of a severely impaired left ventricular sys
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4
-The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
 <img src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 <<set $diagnostics_4[5] += 1>>
 [[Continuer|Case stare 4]]
@@ -134,7 +134,7 @@ N'oubliez pas qu'une écho cardiaque et un électrocardiogramme sont des étapes
 <</silently>>
 
 Parmi les médicaments suivants, choisissez ceux qui, selon vous, feraient partie du traitement approprié.
-<<checkbox "$diuretics_4" false true>> IV Lasix 
+<<checkbox "$diuretics_4" false true>> IV Furosemide 
 <<checkbox "$albuterol_4" false true>> Albutérol inhalé
 <<checkbox "$antihypertensives_4" false true>> Antihypertenseurs 
 <<checkbox "$beta_blocker_4" false true>> Bêta-bloquant
@@ -210,14 +210,14 @@ Jessica revient pour son rendez-vous de suivi. Elle est très satisfaite de son 
 
 Veuillez choisir la bonne réponse (en supposant que vous avez les flacons de pilules devant vous et que vous pouvez directement montrer à la patiente quelles pilules elle doit continuer à prendre)
 
-<<checkbox "$stop_beta_4" false true>> "Puisque vous vous sentez bien, vous pouvez arrêter de prendre le bêta-bloquant, mais vous devez continuer l'ACE-I/ARB"
-<<checkbox "$stop_ACE_4" false true>> "Puisque vous vous sentez bien, vous pouvez arrêter de prendre l'ACE-I/ARB, mais vous devez continuer le bêta-bloquant"
+<<checkbox "$stop_beta_4" false true>> "Puisque vous vous sentez bien, vous pouvez arrêter de prendre le bêta-bloquant, mais vous devez continuer l'IEC/ARA2"
+<<checkbox "$stop_ACE_4" false true>> "Puisque vous vous sentez bien, vous pouvez arrêter de prendre l'IEC/ARA2, mais vous devez continuer le bêta-bloquant"
 Aucune de ces réponses: "Vous devez continuer à prendre les deux médicaments pour maintenir votre amélioration"
 
 Jessica acquiesce en comprenant mais elle semble sceptique. Elle vous demande alors : « Êtes-vous sûr que mon bébé est en sécurité ? J'ai peur que les médicaments n'affectent mon bébé puisque je l'allaite exclusivement.
 
 <<checkbox "$b_stop_beta_4" false true>> "Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre le bêta-bloquant"
-<<checkbox "$b_stop_ACE_4" false true>> "Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre l'ACE-I/ARB"
+<<checkbox "$b_stop_ACE_4" false true>> "Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre l'IEC/ARA2"
 
 [[Continuer|Attending questions 4]]
 
@@ -241,13 +241,13 @@ Le médecin de service décide également de tester vos connaissances : « Dison
 <</silently>>
 
 <<checkbox "$q_stop_beta_4" false true>> Elle doit arrêter de prendre le bêta-bloquant.
-<<checkbox "$q_stop_ACE_4" false true>> Elle doit arrêter de prendre l'ACE-I/ARB.
+<<checkbox "$q_stop_ACE_4" false true>> Elle doit arrêter de prendre l'IEC/ARA2.
 Laissez en blanc si elle doit continuer à prendre les deux médicaments.
 
 « Et si la patiente vous disait qu'elle prévoyait de retomber enceinte bientôt ? »
 
 <<checkbox "$p_stop_beta_4" false true>> Elle doit arrêter de prendre le bêta-bloquant.
-<<checkbox "$p_stop_ACE_4" false true>> Elle doit arrêter de prendre l'ACE-I/ARB.
+<<checkbox "$p_stop_ACE_4" false true>> Elle doit arrêter de prendre l'IEC/ARA2.
 Laissez en blanc si elle doit continuer à prendre les deux médicaments. 
 [[Continuer|Case conclusion 4]]
 
