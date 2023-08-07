@@ -103,10 +103,10 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="77" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
     background-color: #e0fbfc;
     color: #1D1D1D;
-    background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png); 
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: auto 50%; 
+    /* background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png); */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: auto 50%; */
 }
 
 #ui-bar {
@@ -125,7 +125,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 } 
 
 .link-internal {
-    background-color: #d7f7f7;
+    background-color: #e0fbfc;
     color: black;
     padding: 5px 5px;
     text-align: center;
@@ -209,9 +209,9 @@ function form_submitted() {
 }
 
 window.form_submitted = form_submitted; 
-$('#ui-bar').remove();
-$(document.head).find('#style-ui-bar').remove();
-$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené par son fils à l&#39;hôpital. Son fils décrit qu&#39;il souffre d&#39;essoufflement (&quot;souf kout&quot;) depuis quelques jours, mais il ne voulait pas aller à l&#39;hôpital et a essayé de se soigner en utilisant son ancien remède familial à base de miel, d&#39;Aloe Vera et feuilles d&#39;amandier.
+/* $('#ui-bar').remove(); */
+/* $(document.head).find('#style-ui-bar').remove(); */
+/* $(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>"); */</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené par son fils à l&#39;hôpital. Son fils décrit qu&#39;il souffre d&#39;essoufflement (&quot;souf kout&quot;) depuis quelques jours, mais il ne voulait pas aller à l&#39;hôpital et a essayé de se soigner en utilisant son ancien remède familial à base de miel, d&#39;Aloe Vera et feuilles d&#39;amandier.
 
 M. Joseph dit que ses symptômes sont causés par des &quot;mauvais esprits&quot; et ne cherche pas de soins médicaux à moins qu&#39;il ne s&#39;agisse d&#39;une situation de vie ou de mort. Il dit aussi qu&#39;hier il toussait pendant la nuit  et ne pouvait pas dormir.
 
@@ -320,7 +320,7 @@ Le Médecin de service vient vous demander quelle serait la prochaine étape dan
 [[Garder à l&#39;hôpital pour une prise en charge ultérieure|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="15" name="Discharge home 1" tags="" position="600,225" size="100,100">Selon les directives, il est conseillé d&#39;hospitaliser et de surveiller les patients atteints d&#39;insuffisance cardiaque en décompensation aiguë. Le traitement diurétique oral peut ne pas être suffisant pour contrôler leur insuffisance cardiaque. De plus, étant donné que ce patient a parcouru un long chemin jusqu&#39;à l&#39;hôpital, il peut être perdu de vue et doit être mis sous traitement contre l&#39;insuffisance cardiaque avant de partir.
 
 &lt;&lt;set $case_1_Fu_score -= 5 &gt;&gt;
-[[Continuer|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Hospitalization and monitoring 1" tags="" position="725,225" size="100,100">M. Joseph reste à l&#39;hôpital pour une prise en charge plus optimale. Vous révisez et discutez avec les LDS  sur la prise en charge de  l&#39;IC chronique.
+[[Continuer|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="16" name="Hospitalization and monitoring 1" tags="" position="725,225" size="100,100">M. Joseph reste à l&#39;hôpital pour une prise en charge plus optimale. Vous révisez et discutez avec les MDS sur la prise en charge de  l&#39;IC chronique.
 
 M. Joseph est mis sous IEC, bêta-bloquant, spironolactone et furosémide per os. M. Joseph reçoit également des séances d&#39;éducation médicale sur la façon de prendre les médicaments à domicile et de l&#39;aide pour trouver un médecin de soins primaires pour un suivi à long terme. 
 &lt;&lt;set $case_1_Fu_score += 3 &gt;&gt;
@@ -402,7 +402,7 @@ Un examen du fond d&#39;œil a montré un rétrécissement et un croisement  art
 [[Continuer|Case stare 2]]</tw-passagedata><tw-passagedata pid="22" name="CXR 2" tags="" position="225,350" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg&quot;&gt;
 &lt;&lt;set $diagnostics_2[1] to 1&gt;&gt;
 [[J&#39;ai besoin de voir le rapport du radiologue|Radiologist 2]]
-[[Do another examination|Case stare 2]]</tw-passagedata><tw-passagedata pid="23" name="Radiologist 2" tags="" position="350,350" size="100,100">La radiographie révèle une cardiomégalie, des signes de redistribution vasculaire et un œdème pulmonaire.  bonne corrélation cliniquement.
+[[Continuer|Case stare 2]]</tw-passagedata><tw-passagedata pid="23" name="Radiologist 2" tags="" position="350,350" size="100,100">La radiographie révèle une cardiomégalie, des signes de redistribution vasculaire et un œdème pulmonaire.  bonne corrélation cliniquement.
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.kqTDMVNgBItNj5Wjx6_1?pid=ImgGn&quot;&gt;
 
@@ -459,7 +459,7 @@ A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejec
 &lt;&lt;set $diagnostics_2[4] to 0&gt;&gt;
 [[Continuer|Diagnosis 2]]
 
-/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="29" name="Not done Dx yet 2" tags="" position="1100,350" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="29" name="Not done Dx yet 2" tags="" position="1100,350" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
 &lt;&lt;set $diagnostics_2[5] += 1&gt;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 
@@ -483,7 +483,7 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.W9iaLRJkSOWUwe2Wgsfa?pid=ImgGn&quot;&gt;
 &lt;&lt;checkbox &quot;$inotropes_2&quot; false true&gt;&gt; Inotropes
-&lt;&lt;checkbox &quot;$diuretics_2&quot; false true&gt;&gt; IV Lasix 
+&lt;&lt;checkbox &quot;$diuretics_2&quot; false true&gt;&gt; IV Furosemide 
 &lt;&lt;checkbox &quot;$metoprolol_2&quot; false true&gt;&gt; Métoprolol 
 &lt;&lt;checkbox &quot;$digoxin_2&quot; false true&gt;&gt; Digoxine 
 &lt;&lt;checkbox &quot;$ace_arb_2&quot; false true&gt;&gt; nhibiteur de l&#39;enzyme de conversion de l&#39;angiotensine ou bloqueur des récepteurs de l&#39;angiotensine
@@ -600,13 +600,13 @@ Que pensez-vous que l&#39;écho montre?
 &lt;&lt;set $diagnostics_3[4] to 1&gt;&gt;
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn&quot;&gt;
-[[Continuer| Case stare 3]]</tw-passagedata><tw-passagedata pid="43" name="Wrong Echo 3" tags="" position="350,600" size="100,100">Mitral valve presented thickened cusps with commissural fusion and reduced opening, consistent with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean, at 16 mm Hg; the aortic valve appears to be functioning normally. Pulmonary artery systolic pressure was estimated at 50 mmHg. 
+[[Continuer| Case stare 3]]</tw-passagedata><tw-passagedata pid="43" name="Wrong Echo 3" tags="" position="350,600" size="100,100">La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l&#39;oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l&#39;artère pulmonaire était estimée à 50 mmHg.
 &lt;&lt;set $diagnostics_3[4] to 0&gt;&gt;
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn&quot;&gt;
 [[Continuer| Case stare 3]]
 
 
-/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="44" name="Not done Dx yet 3" tags="" position="475,600" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="44" name="Not done Dx yet 3" tags="" position="475,600" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement. 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 &lt;&lt;set $diagnostics_3[5] += 1&gt;&gt;
 [[Continuer|Case stare 3]]</tw-passagedata><tw-passagedata pid="45" name="Treatment 3" tags="" position="600,600" size="100,100">N&#39;oubliez pas qu&#39;un écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
@@ -746,7 +746,7 @@ Que pensez-vous que l&#39;écho montre?
 &lt;&lt;set $diagnostics_4[4] to -1&gt;&gt;
 [[Continuer| Case stare 4]]
 
-/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="61" name="Not done Dx yet 4" tags="" position="100,850" size="100,100">The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="61" name="Not done Dx yet 4" tags="" position="100,850" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 &lt;&lt;set $diagnostics_4[5] += 1&gt;&gt;
 [[Continuer|Case stare 4]]</tw-passagedata><tw-passagedata pid="62" name="Treatment 4" tags="" position="225,850" size="100,100">N&#39;oubliez pas qu&#39;une écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
@@ -758,7 +758,7 @@ Que pensez-vous que l&#39;écho montre?
 &lt;&lt;/silently&gt;&gt;
 
 Parmi les médicaments suivants, choisissez ceux qui, selon vous, feraient partie du traitement approprié.
-&lt;&lt;checkbox &quot;$diuretics_4&quot; false true&gt;&gt; IV Lasix 
+&lt;&lt;checkbox &quot;$diuretics_4&quot; false true&gt;&gt; IV Furosemide 
 &lt;&lt;checkbox &quot;$albuterol_4&quot; false true&gt;&gt; Albutérol inhalé
 &lt;&lt;checkbox &quot;$antihypertensives_4&quot; false true&gt;&gt; Antihypertenseurs 
 &lt;&lt;checkbox &quot;$beta_blocker_4&quot; false true&gt;&gt; Bêta-bloquant
@@ -809,14 +809,14 @@ Jessica revient pour son rendez-vous de suivi. Elle est très satisfaite de son 
 
 Veuillez choisir la bonne réponse (en supposant que vous avez les flacons de pilules devant vous et que vous pouvez directement montrer à la patiente quelles pilules elle doit continuer à prendre)
 
-&lt;&lt;checkbox &quot;$stop_beta_4&quot; false true&gt;&gt; &quot;Puisque vous vous sentez bien, vous pouvez arrêter de prendre le bêta-bloquant, mais vous devez continuer l&#39;ACE-I/ARB&quot;
-&lt;&lt;checkbox &quot;$stop_ACE_4&quot; false true&gt;&gt; &quot;Puisque vous vous sentez bien, vous pouvez arrêter de prendre l&#39;ACE-I/ARB, mais vous devez continuer le bêta-bloquant&quot;
+&lt;&lt;checkbox &quot;$stop_beta_4&quot; false true&gt;&gt; &quot;Puisque vous vous sentez bien, vous pouvez arrêter de prendre le bêta-bloquant, mais vous devez continuer l&#39;IEC/ARA2&quot;
+&lt;&lt;checkbox &quot;$stop_ACE_4&quot; false true&gt;&gt; &quot;Puisque vous vous sentez bien, vous pouvez arrêter de prendre l&#39;IEC/ARA2, mais vous devez continuer le bêta-bloquant&quot;
 Aucune de ces réponses: &quot;Vous devez continuer à prendre les deux médicaments pour maintenir votre amélioration&quot;
 
 Jessica acquiesce en comprenant mais elle semble sceptique. Elle vous demande alors : « Êtes-vous sûr que mon bébé est en sécurité ? J&#39;ai peur que les médicaments n&#39;affectent mon bébé puisque je l&#39;allaite exclusivement.
 
 &lt;&lt;checkbox &quot;$b_stop_beta_4&quot; false true&gt;&gt; &quot;Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre le bêta-bloquant&quot;
-&lt;&lt;checkbox &quot;$b_stop_ACE_4&quot; false true&gt;&gt; &quot;Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre l&#39;ACE-I/ARB&quot;
+&lt;&lt;checkbox &quot;$b_stop_ACE_4&quot; false true&gt;&gt; &quot;Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre l&#39;IEC/ARA2&quot;
 
 [[Continuer|Attending questions 4]]</tw-passagedata><tw-passagedata pid="71" name="Attending questions 4" tags="" position="100,975" size="100,100">/% Evaluate answers to patient questions. %/
 &lt;&lt;silently&gt;&gt;
@@ -837,13 +837,13 @@ Le médecin de service décide également de tester vos connaissances : « Dison
 &lt;&lt;/silently&gt;&gt;
 
 &lt;&lt;checkbox &quot;$q_stop_beta_4&quot; false true&gt;&gt; Elle doit arrêter de prendre le bêta-bloquant.
-&lt;&lt;checkbox &quot;$q_stop_ACE_4&quot; false true&gt;&gt; Elle doit arrêter de prendre l&#39;ACE-I/ARB.
+&lt;&lt;checkbox &quot;$q_stop_ACE_4&quot; false true&gt;&gt; Elle doit arrêter de prendre l&#39;IEC/ARA2.
 Laissez en blanc si elle doit continuer à prendre les deux médicaments.
 
 « Et si la patiente vous disait qu&#39;elle prévoyait de retomber enceinte bientôt ? »
 
 &lt;&lt;checkbox &quot;$p_stop_beta_4&quot; false true&gt;&gt; Elle doit arrêter de prendre le bêta-bloquant.
-&lt;&lt;checkbox &quot;$p_stop_ACE_4&quot; false true&gt;&gt; Elle doit arrêter de prendre l&#39;ACE-I/ARB.
+&lt;&lt;checkbox &quot;$p_stop_ACE_4&quot; false true&gt;&gt; Elle doit arrêter de prendre l&#39;IEC/ARA2.
 Laissez en blanc si elle doit continuer à prendre les deux médicaments. 
 [[Continuer|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="72" name="Case conclusion 4" tags="" position="225,975" size="100,100">Jessica vous remercie pour votre aide et promet que lors du prochain rendez-vous, elle vous apportera une photo de son fils ! Elle dit qu&#39;elle est très heureuse de pouvoir bien dormir la nuit avec les nouveaux médicaments !
 
@@ -966,7 +966,11 @@ Veuillez saisir un mot de passe pour continuer.
 			&lt;&lt;goto &quot;Guard&quot;&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Waiting Room" tags="" position="975,975" size="100,100">Bienvenue à gmenecho ! Il s&#39;agit d&#39;un outil d&#39;apprentissage virtuel pour les patients qui nous aide à évaluer l&#39;efficacité du programme de formation auquel vous participez. Il y a quatre cas de patients. Une fois que vous avez terminé avec ceux-ci, il y aura un court sondage avant de soumettre vos résultats pour examen.
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="Waiting Room" tags="" position="975,975" size="100,100">Global MedEd Network FoCUS-HAITI 2023 
+
+Vous aurez une expérience optimale de la plateforme en utilisant chrome, Une source audio sera nécessaire pour compléter votre progression.
+
+Bienvenue à gmenecho ! Il s&#39;agit d&#39;un outil d&#39;apprentissage virtuel pour les patients qui nous aide à évaluer l&#39;efficacité du programme de formation auquel vous participez. Il y a quatre cas de patients. Une fois que vous avez terminé avec ceux-ci, il y aura un court sondage avant de soumettre vos résultats pour examen.
 Veuillez commencer lorsque vous êtes prêt. Cela devrait prendre environ une demi-heure.
 [[Commencez le premier cas|Case 1 introduction]]</tw-passagedata><tw-passagedata pid="79" name="Usability Survey" tags="" position="1100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
