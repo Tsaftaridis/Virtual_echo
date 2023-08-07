@@ -70,7 +70,7 @@ Un examen du fond d'œil a montré un rétrécissement et un croisement  artéri
 <img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
 <<set $diagnostics_2[1] to 1>>
 [[J'ai besoin de voir le rapport du radiologue|Radiologist 2]]
-[[Do another examination|Case stare 2]]
+[[Continuer|Case stare 2]]
 
 :: Radiologist 2
 La radiographie révèle une cardiomégalie, des signes de redistribution vasculaire et un œdème pulmonaire.  bonne corrélation cliniquement.
@@ -147,7 +147,7 @@ A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejec
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2
-The attending cardiologist tells you that you need some more diagnostic steps before moving on to treatment. 
+Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
 <<set $diagnostics_2[5] += 1>>
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 
@@ -177,7 +177,7 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
 
 <img src="https://th.bing.com/th/id/OIG.W9iaLRJkSOWUwe2Wgsfa?pid=ImgGn">
 <<checkbox "$inotropes_2" false true>> Inotropes
-<<checkbox "$diuretics_2" false true>> IV Lasix 
+<<checkbox "$diuretics_2" false true>> IV Furosemide 
 <<checkbox "$metoprolol_2" false true>> Métoprolol 
 <<checkbox "$digoxin_2" false true>> Digoxine 
 <<checkbox "$ace_arb_2" false true>> nhibiteur de l'enzyme de conversion de l'angiotensine ou bloqueur des récepteurs de l'angiotensine

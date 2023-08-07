@@ -150,7 +150,7 @@ Selon les directives, il est conseillé d'hospitaliser et de surveiller les pati
 [[Continuer|Hospitalization and monitoring 1]]
 
 :: Hospitalization and monitoring 1
-M. Joseph reste à l'hôpital pour une prise en charge plus optimale. Vous révisez et discutez avec les LDS  sur la prise en charge de  l'IC chronique.
+M. Joseph reste à l'hôpital pour une prise en charge plus optimale. Vous révisez et discutez avec les MDS sur la prise en charge de  l'IC chronique.
 
 M. Joseph est mis sous IEC, bêta-bloquant, spironolactone et furosémide per os. M. Joseph reçoit également des séances d'éducation médicale sur la façon de prendre les médicaments à domicile et de l'aide pour trouver un médecin de soins primaires pour un suivi à long terme. 
 <<set $case_1_Fu_score += 3 >>
