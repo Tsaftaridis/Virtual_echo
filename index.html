@@ -461,11 +461,32 @@ Lymphocytes : 36 %
 Monocytes : 6 %
 
 [[Continuer|Case stare 2]]</tw-passagedata><tw-passagedata pid="25" name="EKG 2" tags="" position="600,350" size="100,100">&lt;&lt;set $diagnostics_2[3] to 1&gt;&gt;
+&lt;&lt;set $echo2_quiz[0, 0, 0]&gt;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://www.wikidoc.org/images/f/f8/LVH_6.jpg&quot;&gt;
 [[Continuer|Case stare 2]]</tw-passagedata><tw-passagedata pid="26" name="Echo 2" tags="" position="725,350" size="100,100">L&#39;écho cardiaque est illustré ci-dessous et le septum mesure 1,3 cm.
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 1 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
 /* Echo diagnosis choices. */
 &lt;&lt;silently&gt;&gt;
@@ -617,15 +638,37 @@ Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn&quot;&gt;
 [[Continuer|Case stare 3]]</tw-passagedata><tw-passagedata pid="40" name="EKG 3" tags="" position="1225,475" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg&quot;&gt;
 &lt;&lt;set $diagnostics_3[3]&gt;&gt;
+&lt;&lt;set $echo3_quiz to [0, 0, 0, 0]&gt;&gt;
 [[Continuer| Case stare 3]]</tw-passagedata><tw-passagedata pid="41" name="Echo 3" tags="" position="100,600" size="100,100">&lt;&lt;set $diagnostics_3[4] to 1&gt;&gt;
 L&#39;écho cardiaque est illustré ci-dessous:
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 1 autocheck &gt;&gt; Apical 4 cavités et échographie doppler &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 1 autocheck &gt;&gt; Apical 4 cavités (Zoomé) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png&quot;&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 4 cavités (Zoomé) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 1 autocheck &gt;&gt; Doppler à onde continue &lt;/label&gt;
 
 Que pensez-vous que l&#39;écho montre?
 [[Régurgitation mitrale et dilatation auriculaire gauche|Wrong Echo 3]]
@@ -1118,6 +1161,9 @@ J. J&#39;avais besoin d&#39;apprendre beaucoup de choses avant de pouvoir utilis
 			&quot;DixHallpike2&quot;, &lt;&lt;print $case_2_dix_hallpike&gt;&gt;, 
 			&quot;KernigBrudzinsky2&quot;, &lt;&lt;print $case_2_kernig_brudzinsky&gt;&gt;, 
 			&quot;DiagnosticVerbose2&quot;, &lt;&lt;print $ddx_2_HTeCM&gt;&gt;, 
+			&quot;Echo2 Quiz Q1&quot;, &lt;&lt;print $echo2_quiz[0]&gt;&gt;, 
+			&quot;Echo2 Quiz Q2&quot;, &lt;&lt;print $echo2_quiz[1]&gt;&gt;, 
+			&quot;Echo2 Quiz Q3&quot;, &lt;&lt;print $echo2_quiz[2]&gt;&gt;, 
 			&quot;Physical3&quot;, &lt;&lt;print $diagnostics_3[0]&gt;&gt;, 
 			&quot;CXR3&quot;, &lt;&lt;print $diagnostics_3[1]&gt;&gt;, 
 			&quot;Labs3&quot;, &lt;&lt;print $diagnostics_3[2]&gt;&gt;, 
@@ -1127,6 +1173,10 @@ J. J&#39;avais besoin d&#39;apprendre beaucoup de choses avant de pouvoir utilis
 			&quot;Tx3&quot;, &lt;&lt;print $case_3_Tx_score&gt;&gt;, 
 			&quot;Fu3&quot;, &lt;&lt;print $case_3_Fu_score&gt;&gt;, 
 			&quot;Echo3&quot;, &lt;&lt;print $case_3_Echo&gt;&gt;, 
+			&quot;Echo3 Quiz Q1&quot;, &lt;&lt;print $echo3_quiz[0]&gt;&gt;, 
+			&quot;Echo3 Quiz Q2&quot;, &lt;&lt;print $echo3_quiz[1]&gt;&gt;, 
+			&quot;Echo3 Quiz Q3&quot;, &lt;&lt;print $echo3_quiz[2]&gt;&gt;, 
+			&quot;Echo3 Quiz Q3&quot;, &lt;&lt;print $echo3_quiz[3]&gt;&gt;, 
 			&quot;Physical4&quot;, &lt;&lt;print $diagnostics_4[0]&gt;&gt;, 
 			&quot;CXR4&quot;, &lt;&lt;print $diagnostics_4[1]&gt;&gt;, 
 			&quot;Labs4&quot;, &lt;&lt;print $diagnostics_4[2]&gt;&gt;, 
