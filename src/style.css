@@ -15,11 +15,14 @@ body {
 .passage {
     background-color: #ffffff;
     color: #1D1D1D;
-    position: relative; 
-    top: 150px; 
+    background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png);
+    background-size: 20%;
+    background-repeat: no-repeat; 
+    background-position: left 5% top 25%; 
     border-color: black;
     border-width: 2px;
     padding: 30px;
+    padding-left: 30%; 
 } 
 
 .link-internal {
@@ -85,3 +88,8 @@ img {
     width: 100% !important;
     height: auto !important;
 }
+
+.passage input[type="text"] {
+    min-width: 50px;
+    width: 150px;
+    }

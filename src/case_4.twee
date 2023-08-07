@@ -92,10 +92,7 @@ Que pensez-vous que l'écho montre?
 
 :: Correct echo 4
 L'échocardiographie a montré la présence d'une fonction systolique ventriculaire gauche sévèrement altérée avec une faible fraction d'éjection de 30 % et veine cave inférieure dilatée. Les ventricules droit et gauche semblaient tous deux sévèrement dilatés et hypokinétiques de manière homogène. Le volume télédiastolique du ventricule gauche était de 118 ml/m2 et la dimension télédiastolique de 6,5 cm avec un indice de dimension télédiastolique de 3,96 cm/m2. L'élargissement biatrial a également été noté.
-
-<img style='width: 100%' src="https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w">
-<img style='width: 100%' src="https://twitter.com/i/status/1484596495672299525">
-<img style='width: 100%' src="https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg">
+<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
 
 <<set $diagnostics_4[4] to 1>>
 [[Continuer|Case stare 4]]

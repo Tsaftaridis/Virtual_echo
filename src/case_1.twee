@@ -67,15 +67,43 @@ CXR révèle un œdème pulmonaire bilatéral - opacification diffuse des deux c
 Les tests de laboratoire ont montré un niveau de Hg de 10,3 mg/dL. Les valeurs de la fonction rénale, de la fonction hépatique et de la glycémie sont revenues à la normale.
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 <<set $Labs_1 to true>>
+<<set $echo1_quiz to [0,0,0,0]>>
 
 [[Continuer|Case stare 1]]
 
 :: Echo 1 
 L'écho cardiaque est illustré ci-dessous:
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo1_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo1_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo1_quiz[0]" 0 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo1_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo1_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo1_quiz[1]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo1_quiz[1]" 1 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo1_quiz[1]" 0 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo1_quiz[1]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo1_quiz[1]" 0 autocheck >> Vue de la veine cave inférieure sous-costale </label>
+
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo1_quiz[2]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo1_quiz[2]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo1_quiz[2]" 1 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo1_quiz[2]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo1_quiz[2]" 0 autocheck >> Sous-xyphoidienne </label>
+
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo1_quiz[3]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo1_quiz[3]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo1_quiz[3]" 0 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo1_quiz[3]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo1_quiz[3]" 1 autocheck >> Vue de la veine cave inférieure sous-costale </label>
 
 Que pensez-vous que l'écho montre?
 <label><<radiobutton "$case_1_Echo" 1 autocheck>> Veine cave inférieure dilatée et fraction d'éjection sévèrement réduite </label>

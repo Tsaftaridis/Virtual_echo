@@ -75,7 +75,6 @@ Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est 
 <<set $diagnostics_3[4] to 1>>
 L'écho cardiaque est illustré ci-dessous:
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-<video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4" frameborder="0" allowfullscreen></video>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></video>
 

@@ -117,11 +117,14 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 .passage {
     background-color: #ffffff;
     color: #1D1D1D;
-    position: relative; 
-    top: 150px; 
+    background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png);
+    background-size: 20%;
+    background-repeat: no-repeat; 
+    background-position: left 5% top 25%; 
     border-color: black;
     border-width: 2px;
     padding: 30px;
+    padding-left: 30%; 
 } 
 
 .link-internal {
@@ -186,7 +189,12 @@ video {
 img {
     width: 100% !important;
     height: auto !important;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+}
+
+.passage input[type="text"] {
+    min-width: 50px;
+    width: 150px;
+    }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
 Config.history.controls = false; 
@@ -266,12 +274,40 @@ CXR révèle un œdème pulmonaire bilatéral - opacification diffuse des deux c
 [[Continuer|Case stare 1]]</tw-passagedata><tw-passagedata pid="6" name="Labs 1" tags="" position="725,100" size="100,100">Les tests de laboratoire ont montré un niveau de Hg de 10,3 mg/dL. Les valeurs de la fonction rénale, de la fonction hépatique et de la glycémie sont revenues à la normale.
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn&quot;&gt;
 &lt;&lt;set $Labs_1 to true&gt;&gt;
+&lt;&lt;set $echo1_quiz to [0,0,0,0]&gt;&gt;
 
 [[Continuer|Case stare 1]]</tw-passagedata><tw-passagedata pid="7" name="Echo 1" tags="" position="850,100" size="100,100">L&#39;écho cardiaque est illustré ci-dessous:
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt;
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[0]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[0]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[0]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w&quot;&gt;
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[1]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[1]&quot; 1 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[1]&quot; 0 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[1]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[1]&quot; 0 autocheck &gt;&gt; Vue de la veine cave inférieure sous-costale &lt;/label&gt;
+
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w&quot;&gt;
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 1 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 0 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w&quot;&gt; 
+Quelle est la vue échographique ? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[3]&quot; 0 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[3]&quot; 0 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[3]&quot; 0 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[3]&quot; 0 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[3]&quot; 1 autocheck &gt;&gt; Vue de la veine cave inférieure sous-costale &lt;/label&gt;
 
 Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 1 autocheck&gt;&gt; Veine cave inférieure dilatée et fraction d&#39;éjection sévèrement réduite &lt;/label&gt;
@@ -584,7 +620,6 @@ Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est 
 [[Continuer| Case stare 3]]</tw-passagedata><tw-passagedata pid="41" name="Echo 3" tags="" position="100,600" size="100,100">&lt;&lt;set $diagnostics_3[4] to 1&gt;&gt;
 L&#39;écho cardiaque est illustré ci-dessous:
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
-&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19b.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 
@@ -728,10 +763,7 @@ Que pensez-vous que l&#39;écho montre?
 [[Épanchement péricardique abondant et signe de tamponnade|Very Wrong Echo 4]]
 [[Ventricule gauche dilaté, faible fraction d&#39;éjection, veine cave inférieure dilatée|Correct echo 4]]
 [[Valve aortique bicuspide, sténose aortique|Wrong Echo 4]]</tw-passagedata><tw-passagedata pid="58" name="Correct echo 4" tags="" position="975,725" size="100,100">L&#39;échocardiographie a montré la présence d&#39;une fonction systolique ventriculaire gauche sévèrement altérée avec une faible fraction d&#39;éjection de 30 % et veine cave inférieure dilatée. Les ventricules droit et gauche semblaient tous deux sévèrement dilatés et hypokinétiques de manière homogène. Le volume télédiastolique du ventricule gauche était de 118 ml/m2 et la dimension télédiastolique de 6,5 cm avec un indice de dimension télédiastolique de 3,96 cm/m2. L&#39;élargissement biatrial a également été noté.
-
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w&quot;&gt;
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://twitter.com/i/status/1484596495672299525&quot;&gt;
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg&quot;&gt;
+&lt;img src=&quot;https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn&quot;&gt;
 
 &lt;&lt;set $diagnostics_4[4] to 1&gt;&gt;
 [[Continuer|Case stare 4]]</tw-passagedata><tw-passagedata pid="59" name="Wrong Echo 4" tags="" position="1100,725" size="100,100">Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
@@ -1069,6 +1101,10 @@ J. J&#39;avais besoin d&#39;apprendre beaucoup de choses avant de pouvoir utilis
 			&quot;tx1&quot;, &lt;&lt;print $case_1_Tx_score&gt;&gt;, 
 			&quot;Fu1&quot;, &lt;&lt;print $case_1_Fu_score&gt;&gt;, 
 			&quot;Echo1&quot;, &lt;&lt;print $case_1_Echo&gt;&gt;, 
+			&quot;Echo1 Quiz Q1&quot;, &lt;&lt;print $echo1_quiz[0]&gt;&gt;, 
+			&quot;Echo1 Quiz Q2&quot;, &lt;&lt;print $echo1_quiz[1]&gt;&gt;, 
+			&quot;Echo1 Quiz Q3&quot;, &lt;&lt;print $echo1_quiz[2]&gt;&gt;, 
+			&quot;Echo1 Quiz Q4&quot;, &lt;&lt;print $echo1_quiz[3]&gt;&gt;, 
 			&quot;Physical2&quot;, &lt;&lt;print $diagnostics_2[0]&gt;&gt;, 
 			&quot;CXR2&quot;, &lt;&lt;print $diagnostics_2[1]&gt;&gt;, 
 			&quot;Labs2&quot;, &lt;&lt;print $diagnostics_2[2]&gt;&gt;, 
