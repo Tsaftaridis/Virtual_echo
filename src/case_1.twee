@@ -52,7 +52,7 @@ Son électrocardiogramme a montré une tachycardie sinusale et des ondes Q dans 
 40 minutes plus tard, le radiologue vous remet le film suivant avec une note manuscrite signée qui dit:
 
 Nom : H. F.
- ge : 65 ans
+ge : 65 ans
 Genre masculin
 Modalité : Radio Thorax 
 
@@ -67,12 +67,12 @@ CXR révèle un œdème pulmonaire bilatéral - opacification diffuse des deux c
 Les tests de laboratoire ont montré un niveau de Hg de 10,3 mg/dL. Les valeurs de la fonction rénale, de la fonction hépatique et de la glycémie sont revenues à la normale.
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 <<set $Labs_1 to true>>
-<<set $echo1_quiz to [0,0,0,0]>>
 
 [[Continuer|Case stare 1]]
 
 :: Echo 1 
 L'écho cardiaque est illustré ci-dessous:
+<<set $echo1_quiz to [0, 0, 0, 0]>>
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
 Quelle est la vue échographique ? 
 <label><<radiobutton "$echo1_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
@@ -90,6 +90,7 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo1_quiz[1]" 0 autocheck >> Vue de la veine cave inférieure sous-costale </label>
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
+
 Quelle est la vue échographique ? 
 <label><<radiobutton "$echo1_quiz[2]" 0 autocheck >> Parasternal grand axe </label>
 <label><<radiobutton "$echo1_quiz[2]" 0 autocheck >> Parasternal petit axe </label>
@@ -110,12 +111,6 @@ Que pensez-vous que l'écho montre?
 <label><<radiobutton "$case_1_Echo" 0 autocheck>> Fraction d'éjection préservée et veine cave inférieure dilatée mais compliante </label> 
 <label><<radiobutton "$case_1_Echo" 0 autocheck>> Prolapsus valvulaire mitral et dilatation auriculaire gauche </label>
 
-[[Continuer|Echo results 1]]
-
-:: Echo results 1
-Le rapport d'écho cardiaque se lit comme suit : "Fraction d'éjection du ventricule gauche à 20 %. signe d’hypertension pulmonaire modérée et veine cave inférieure dilatée."
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
-
 [[Continuer|Case stare 1]]
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
@@ -126,6 +121,9 @@ Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de dia
 [[Continuer|Case stare 1]]
 
 :: Treatment 1 
+Le rapport d'écho cardiaque se lit comme suit : "Fraction d'éjection du ventricule gauche à 20 %. signe d’hypertension pulmonaire modérée et veine cave inférieure dilatée."
+<img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
+
 N'oubliez pas qu'un examen physique est important lors de la première approche d'un patient. Après cela, une écho cardiaque et un ECG sont des étapes diagnostiques nécessaires avant de passer au traitement chez ce patient.
 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.frL6vSaxNaetRJfhLhQt?pid=ImgGn">

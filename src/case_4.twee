@@ -74,16 +74,37 @@ Créatinine 2,1 mg/dL
 
 :: EKG 4
 /% Diffuse T-wave inversion. %/
-<<set $diagnostics_4[3] to 1>>
+
 <img style='width: 100%' src="https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg">
 
 [[Continuer|Case stare 4]]
 
 :: Echo 4
+<<set $diagnostics_4 to [0, 0, 0]>>
 L'écho cardiaque est illustré ci-dessous:
 <img style='width: 100%' src="https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w">
-<img style='width: 100%' src="https://twitter.com/i/status/1484596495672299525">
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo4_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+
+<img style='width: 100%' src="https://video.twimg.com/ext_tw_video/1484593156675018754/pu/vid/800x600/jvB_vzTb3BIsMqm8.mp4?tag=12">
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 1 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+
 <img style='width: 100%' src="https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg">
+Quelle est la vue échographique ? 
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 1 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
 
 Que pensez-vous que l'écho montre?
 [[Épanchement péricardique abondant et signe de tamponnade|Very Wrong Echo 4]]

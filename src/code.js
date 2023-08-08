@@ -21,6 +21,6 @@ function form_submitted() {
 }
 
 window.form_submitted = form_submitted; 
-/* $('#ui-bar').remove(); */
-/* $(document.head).find('#style-ui-bar').remove(); */
-/* $(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>"); */
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove(); 
+$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");

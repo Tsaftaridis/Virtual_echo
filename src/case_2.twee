@@ -102,11 +102,12 @@ Monocytes : 6 %
 
 :: EKG 2
 <<set $diagnostics_2[3] to 1>>
-<<set $echo2_quiz[0, 0, 0]>>
 <img style='width: 100%' src="https://www.wikidoc.org/images/f/f8/LVH_6.jpg">
 [[Continuer|Case stare 2]]
 
 :: Echo 2
+<<set $echo2_quiz to [0, 0, 0]>>
+
 L'écho cardiaque est illustré ci-dessous et le septum mesure 1,3 cm.
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4" frameborder="0" allowfullscreen></video>
 Quelle est la vue échographique ? 
@@ -146,24 +147,11 @@ Quelle est la vue échographique ?
 L'écho cardiaque est illustré ci-dessous et le septum mesure 1,3 cm.
 Comment décririez-vous l'écho ?
 
-[[Cardiomyopathie dilatée|Wrong Echo 2]]
-[[Sténose aortique|Wrong Echo 2]]
-[[Hypertrophie ventriculaire gauche sévère|Correct echo 2]]
-[[Cardiopathie rhumatismale|Wrong Echo 2]]
+<label><<radiobutton "$diagnostics_2[4]" 0 autocheck>> Cardiomyopathie dilatée </label>
+<label><<radiobutton "$diagnostics_2[4]" 0 autocheck>> Sténose aortique </label> 
+<label><<radiobutton "$diagnostics_2[4]" 1 autocheck>> Hypertrophie ventriculaire gauche sévère </label>
+<label><<radiobutton "$diagnostics_2[4]" 0 autocheck>> Cardiopathie rhumatismale </label>
 
-:: Correct echo 2
-<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
-
-/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
-Une échocardiographie transthoracique (ETT) a montré une HVG concentrique avec une fraction d'éjection préservée. L'épaisseur du septum interventriculaire et de la paroi postérieure était de 13 mm. Il n'y avait aucun signe d'obstruction des voies d'éjection. Il n'y avait pas de dysfonction valvulaire significative. Une légère hypertrophie auriculaire gauche a été notée.
-<<set $diagnostics_2[4] to 1>>
-[[Continuer|Diagnosis 2]]
-
-:: Wrong Echo 2
-<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
-
-A transthoracic echocardiogram (TTE) showed concentric LVH with a preserved ejection fraction. The thickness of both the inter ventricular septum and the posterior wall was 13 mm. There were no signs of outflow tract obstruction. There was no significant valvular dysfunction. Mild left atrial enlargement was noted. 
-<<set $diagnostics_2[4] to 0>>
 [[Continuer|Diagnosis 2]]
 
 /* Reprimand and return to diagnostic evaluation. */
@@ -186,6 +174,11 @@ Selon vous, quel est le bon diagnostic ?
 [[Continuer|Case stare 2]]
 
 :: Treatment 2
+<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+
+/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
+Une échocardiographie transthoracique (ETT) a montré une HVG concentrique avec une fraction d'éjection préservée. L'épaisseur du septum interventriculaire et de la paroi postérieure était de 13 mm. Il n'y avait aucun signe d'obstruction des voies d'éjection. Il n'y avait pas de dysfonction valvulaire significative. Une légère hypertrophie auriculaire gauche a été notée.
+
 <<silently>>
     <<set $inotropes_2 to false>>
     <<set $diuretics_2 to false>>
