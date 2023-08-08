@@ -40,6 +40,8 @@ Echo Cases
 <</if>>
 
 :: Guard
+<img style='width: 100%' src="https://video.twimg.com/ext_tw_video/1484593156675018754/pu/vid/800x600/jvB_vzTb3BIsMqm8.mp4?tag=12">
+
 <<silently>>
 	<<set _answer to "">>
 	<<set $has_access = 0>>
