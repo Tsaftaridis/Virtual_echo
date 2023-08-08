@@ -18,6 +18,7 @@ Quelle est votre première étape dans le bilan?
 <<set $case_3_Tx_score to 0>>
 <<set $case_3_Fu_score to 0>>
 <<set $case_3_Echo to 0>>
+<<set $echo3_quiz to [0, 0, 0, 0]>>
 /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
 <<set $diagnostics_3 to [0, 0, 0, 0, 0, 0]>>
 
@@ -73,61 +74,47 @@ Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est 
 [[Continuer| Case stare 3]]
 
 :: Echo 3
-<<set $diagnostics_3[4] to 1>>
-<<set $echo3_quiz to [0, 0, 0, 0]>>
 L'écho cardiaque est illustré ci-dessous:
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
 Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Apical 4 cavités et échographie doppler </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[0]" 3 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo3_quiz[0]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[0]" 5 autocheck >> Sous-xyphoidienne </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></video>
 Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 4 cavités </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo3_quiz[1]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[1]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[1]" 3 autocheck >> Apical 4 cavités </label>
+<label><<radiobutton "$echo3_quiz[1]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[1]" 5 autocheck >> Sous-xyphoidienne </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></video>
 Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Apical 4 cavités (Zoomé) </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo3_quiz[2]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[2]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[2]" 3 autocheck >> Apical 4 cavités (Zoomé) </label>
+<label><<radiobutton "$echo3_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
 
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
 Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 4 cavités (Zoomé) </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
-<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Doppler à onde continue </label>
+<label><<radiobutton "$echo3_quiz[3]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo3_quiz[3]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo3_quiz[3]" 3 autocheck >> Apical 4 cavités (Zoomé) </label>
+<label><<radiobutton "$echo3_quiz[3]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Doppler à onde continue </label>
 
 Que pensez-vous que l'écho montre?
-[[Régurgitation mitrale et dilatation auriculaire gauche|Wrong Echo 3]]
-[[Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale|HF echo 3]]
-[[Valve aortique bicuspide, sténose aortique|Wrong Echo 3]]
+<label><<radiobutton "$diagnostics_3[4]" 1 autocheck>> Régurgitation mitrale et dilatation auriculaire gauche </label>
+<label><<radiobutton "$diagnostics_3[4]" 2 autocheck>> Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale </label> 
+<label><<radiobutton "$diagnostics_3[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
 
-:: HF echo 3
-La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l'oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l'artère pulmonaire était estimée à 50 mmHg.
-
-<<set $diagnostics_3[4] to 1>>
-
-<img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
-[[Continuer| Case stare 3]]
-
-:: Wrong Echo 3
-La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l'oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l'artère pulmonaire était estimée à 50 mmHg.
-<<set $diagnostics_3[4] to 0>>
-<img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
-[[Continuer| Case stare 3]]
-
+Please answer all quiz questions before moving on.
+<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $diagnostics_3[4])>> [[Continuer|Case stare 3]] <<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
@@ -137,6 +124,9 @@ Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de dia
 [[Continuer|Case stare 3]]
 
 :: Treatment 3
+La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l'oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l'artère pulmonaire était estimée à 50 mmHg.
+<img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
+
 N'oubliez pas qu'un écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
 <<silently>>
   <<set $diuretics_3 to false>>
