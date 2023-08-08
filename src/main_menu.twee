@@ -40,8 +40,6 @@ Echo Cases
 <</if>>
 
 :: Guard
-<img style='width: 100%' src="https://video.twimg.com/ext_tw_video/1484593156675018754/pu/vid/800x600/jvB_vzTb3BIsMqm8.mp4?tag=12">
-
 <<silently>>
 	<<set _answer to "">>
 	<<set $has_access = 0>>
@@ -62,31 +60,29 @@ Veuillez saisir un mot de passe pour continuer.
 			Check if one of the correct answers was supplied,
 			otherwise send them to the Start passage. %/
 		<<switch _answer>>
-			<<case "POUDYDAR">>
+			<<case "poudydar">>
 				<<set $has_access = 1>>
-			<<case "PAULYAD2">>
+			<<case "paulyad2">>
 				<<set $has_access = 1>>
-			<<case "AUGUSTERUB">>
+			<<case "augusterub">>
 				<<set $has_access = 1>>
-			<<case "BAPTISTEBRU">>
+			<<case "baptistebru">>
 				<<set $has_access = 1>>
-			<<case "ENNELOUISE">>
+			<<case "ennelouise">>
 				<<set $has_access = 1>>
-			<<case "RAMAJOUB">>
+			<<case "ramajoub">>
 				<<set $has_access = 1>>
 			<<case "jp123456">>
 				<<set $has_access = 1>>
-			<<case "ONEworld321">>
+			<<case "oneworld321">>
 				<<set $has_access = 1>>
-			<<case "Mamepape1">>
+			<<case "mamepape1">>
 				<<set $has_access = 1>>
-			<<case "Makevyje27">>
+			<<case "makevyje27">>
 				<<set $has_access = 1>>
-			<<case "Paulina12">>
+			<<case "paulina12">>
 				<<set $has_access = 1>>
 			<<case "cperrotin1990">>
-				<<set $has_access = 1>>
-			<<case "POUDYDAR">>
 				<<set $has_access = 1>>
 			<<case "proponisi_zurich_enter">>
 				<<set $has_access = 1>>
@@ -109,7 +105,7 @@ Global MedEd Network FoCUS-HAITI 2023
 
 Vous aurez une expérience optimale de la plateforme en utilisant chrome, Une source audio sera nécessaire pour compléter votre progression.
 
-Bienvenue à gmenecho ! Il s'agit d'un outil d'apprentissage virtuel pour les patients qui nous aide à évaluer l'efficacité du programme de formation auquel vous participez. Il y a quatre cas de patients. Une fois que vous avez terminé avec ceux-ci, il y aura un court sondage avant de soumettre vos résultats pour examen.
+Bienvenue à gmenecho ! Il s'agit d'un outil d'apprentissage virtuel pour les patients qui nous aide à évaluer l'efficacité du programme de formation auquel vous participez. Vous aurez à travailler sur quatre cas cliniques, une fois que vous aurez terminé, vous aurez à remplir une forme d’évaluation du programme avant de passer à l’examen. 
 Veuillez commencer lorsque vous êtes prêt. Cela devrait prendre environ une demi-heure.
 [[Commencez le premier cas|Case 1 introduction]]
 

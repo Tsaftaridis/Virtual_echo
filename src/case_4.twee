@@ -18,6 +18,7 @@ Quelle est votre première étape dans le bilan?
     <<set $case_4_Tx_score to 0>>
     <<set $case_4_Fu_score to 0>>
     <<set $case_4_Echo to 0>>
+    <<set $echo4_quiz to [0, 0, 0]>>
 <</silently>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
@@ -80,60 +81,38 @@ Créatinine 2,1 mg/dL
 [[Continuer|Case stare 4]]
 
 :: Echo 4
-<<set $diagnostics_4 to [0, 0, 0]>>
 L'écho cardiaque est illustré ci-dessous:
 <img style='width: 100%' src="https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w">
 Quelle est la vue échographique ? 
 <label><<radiobutton "$echo4_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 4 cavités et échographie doppler </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo4_quiz[0]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo4_quiz[0]" 3 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo4_quiz[0]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo4_quiz[0]" 5 autocheck >> Sous-xyphoidienne </label>
 
-<img style='width: 100%' src="https://video.twimg.com/ext_tw_video/1484593156675018754/pu/vid/800x600/jvB_vzTb3BIsMqm8.mp4?tag=12">
+<img style='width: 100%' src="https://images2.imgbox.com/53/1d/nzetW9Pm_o.gif">
 Quelle est la vue échographique ? 
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo4_quiz[0]" 1 autocheck >> Apical 4 cavités et échographie doppler </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo4_quiz[1]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo4_quiz[1]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo4_quiz[1]" 3 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo4_quiz[1]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo4_quiz[1]" 5 autocheck >> Sous-xyphoidienne </label>
 
 <img style='width: 100%' src="https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg">
 Quelle est la vue échographique ? 
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo4_quiz[0]" 1 autocheck >> Apical 4 cavités et échographie doppler </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo4_quiz[0]" 0 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo4_quiz[2]" 1 autocheck >> Parasternal grand axe </label>
+<label><<radiobutton "$echo4_quiz[2]" 2 autocheck >> Parasternal petit axe </label>
+<label><<radiobutton "$echo4_quiz[2]" 3 autocheck >> Apical 4 cavités et échographie doppler </label>
+<label><<radiobutton "$echo4_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
+<label><<radiobutton "$echo4_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
 
 Que pensez-vous que l'écho montre?
-[[Épanchement péricardique abondant et signe de tamponnade|Very Wrong Echo 4]]
-[[Ventricule gauche dilaté, faible fraction d'éjection, veine cave inférieure dilatée|Correct echo 4]]
-[[Valve aortique bicuspide, sténose aortique|Wrong Echo 4]]
+<label><<radiobutton "$diagnostics_4[4]" 1 autocheck>> Épanchement péricardique abondant et signe de tamponnade </label>
+<label><<radiobutton "$diagnostics_4[4]" 2 autocheck>> Ventricule gauche dilaté, faible fraction d'éjection, veine cave inférieure dilatée </label> 
+<label><<radiobutton "$diagnostics_4[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
 
-:: Correct echo 4
-L'échocardiographie a montré la présence d'une fonction systolique ventriculaire gauche sévèrement altérée avec une faible fraction d'éjection de 30 % et veine cave inférieure dilatée. Les ventricules droit et gauche semblaient tous deux sévèrement dilatés et hypokinétiques de manière homogène. Le volume télédiastolique du ventricule gauche était de 118 ml/m2 et la dimension télédiastolique de 6,5 cm avec un indice de dimension télédiastolique de 3,96 cm/m2. L'élargissement biatrial a également été noté.
-<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
-
-<<set $diagnostics_4[4] to 1>>
-[[Continuer|Case stare 4]]
-
-
-:: Wrong Echo 4
-Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
-
-<img src="https://th.bing.com/th/id/OIG.uHYUIpYklHthf.RgHX7.?pid=ImgGn&w=1024&h=1024&rs=1">
-
-<<set $diagnostics_4[4] to 0>>
-[[Continuer| Case stare 4]]
-
-:: Very Wrong Echo 4
-Echocardiography showed the presence of a severely impaired left ventricular systolic function with a low ejection fraction of 30%(, along with mitral regurgitation), dilated inferior vena cava. Right and left ventricles appeared severely dilated and diffusely hypokinetic. End-diastolic volume of the left ventricle was 118 ml/m2 and end-diastolic dimension 6.5 cm with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted. 
-
-<img src="https://th.bing.com/th/id/OIG.uHYUIpYklHthf.RgHX7.?pid=ImgGn&w=1024&h=1024&rs=1">
-
-<<set $diagnostics_4[4] to -1>>
-[[Continuer| Case stare 4]]
+Please answer all quiz questions before moving on.
+<<repeat 0.2s>><<if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $diagnostics_4[4])>> [[Continuer|Case stare 4]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4
@@ -143,6 +122,9 @@ Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de dia
 [[Continuer|Case stare 4]]
 
 :: Treatment 4
+L'échocardiographie a montré la présence d'une fonction systolique ventriculaire gauche sévèrement altérée avec une faible fraction d'éjection de 30 % et veine cave inférieure dilatée. Les ventricules droit et gauche semblaient tous deux sévèrement dilatés et hypokinétiques de manière homogène. Le volume télédiastolique du ventricule gauche était de 118 ml/m2 et la dimension télédiastolique de 6,5 cm avec un indice de dimension télédiastolique de 3,96 cm/m2. L'élargissement biatrial a également été noté.
+<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+
 N'oubliez pas qu'une écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
 <<silently>>
     <<set $diuretics_4 to false>>
