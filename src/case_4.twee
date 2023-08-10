@@ -18,7 +18,7 @@ Quelle est votre première étape dans le bilan?
     <<set $case_4_Tx_score to 0>>
     <<set $case_4_Fu_score to 0>>
     <<set $case_4_Echo to 0>>
-    <<set $echo4_quiz to [0, 0, 0]>>
+    <<set $echo4_quiz to [0, 0, 0, 0]>>
 <</silently>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
@@ -106,13 +106,18 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo4_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo4_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
 
+Que pensez-vous de la Fractionné d’éjection du VG?
+<label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
+<label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
+<label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+
 Que pensez-vous que l'écho montre?
 <label><<radiobutton "$diagnostics_4[4]" 1 autocheck>> Épanchement péricardique abondant et signe de tamponnade </label>
 <label><<radiobutton "$diagnostics_4[4]" 2 autocheck>> Ventricule gauche dilaté, faible fraction d'éjection, veine cave inférieure dilatée </label> 
 <label><<radiobutton "$diagnostics_4[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
 
 Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $diagnostics_4[4])>> [[Continuer|Case stare 4]]<<stop>><</if>><</repeat>>
+<<repeat 0.2s>><<if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $diagnostics_4[4])>> [[Continuer|Case stare 4]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4

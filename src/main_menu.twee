@@ -192,67 +192,59 @@ Veuillez envoyer vos résultats, puis redémarrer si quelqu'un d'autre souhaite 
 		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> 
 		<textarea hidden name="message">
 			<<set _last to $started>>
-			<<nobr>>
-					<<print "$id,">>
+			<<nobr>> 
+					<<print "{ \"ID\"\:\" $id \" ,">>
+					<<set $i to 0>>
 					<<for _event range $history>>
-						"<<= _event.passage>>", <<= setup.toSeconds(_last, _event.time)>>, 
+						"<<= _event.passage>>$i": <<= setup.toSeconds(_last, _event.time)>>, 
 						<<set _last to _event.time>>
+						<<set $i += 1>>
 					<</for>>
 			<</nobr>>
 			<<nobr>>
-			"PE1", <<print $physical_exam_1>>, 
-			"EKG1", <<print $EKG_1>>, 
-			"CXR1", <<print $CXR_1>>, 
-			"Labs1", <<print $Labs1>>, 
-			"case_1_Echo", <<print $case_1_echo>>, 
-			"Reprimanded1", <<print $reprimand_1>>, 
-			"dx1", <<print $case_1_dx_score>>, 
-			"tx1", <<print $case_1_Tx_score>>, 
-			"Fu1", <<print $case_1_Fu_score>>, 
-			"Echo1", <<print $case_1_Echo>>, 
-			"Echo1 Quiz Q1", <<print $echo1_quiz[0]>>, 
-			"Echo1 Quiz Q2", <<print $echo1_quiz[1]>>, 
-			"Echo1 Quiz Q3", <<print $echo1_quiz[2]>>, 
-			"Echo1 Quiz Q4", <<print $echo1_quiz[3]>>, 
-			"Physical2", <<print $diagnostics_2[0]>>, 
-			"CXR2", <<print $diagnostics_2[1]>>, 
-			"Labs2", <<print $diagnostics_2[2]>>, 
-			"EKG2", <<print $diagnostics_2[3]>>, 
-			"Echo2", <<print $diagnostics_2[4]>>, 
-			"Reprimanded2", <<print $diagnostics_2[5]>>, 
-			"Tx2", <<print $case_2_Tx_score>>, 
-			"Fu2", <<print $case_2_Fu_score>>, 
-			"Fundoscopy2", <<print $case_2_fundoscopy>>, 
-			"Orthostatics2", <<print $case_2_orthostatics>>, 
-			"DixHallpike2", <<print $case_2_dix_hallpike>>, 
-			"KernigBrudzinsky2", <<print $case_2_kernig_brudzinsky>>, 
-			"DiagnosticVerbose2", <<print $ddx_2_HTeCM>>, 
-			"Echo2 Quiz Q1", <<print $echo2_quiz[0]>>, 
-			"Echo2 Quiz Q2", <<print $echo2_quiz[1]>>, 
-			"Echo2 Quiz Q3", <<print $echo2_quiz[2]>>, 
-			"Physical3", <<print $diagnostics_3[0]>>, 
-			"CXR3", <<print $diagnostics_3[1]>>, 
-			"Labs3", <<print $diagnostics_3[2]>>, 
-			"EKG3", <<print $diagnostics_3[3]>>, 
-			"Echo3", <<print $diagnostics_3[4]>>, 
-			"Reprimanded3", <<print $diagnostics_3[5]>>, 
-			"Tx3", <<print $case_3_Tx_score>>, 
-			"Fu3", <<print $case_3_Fu_score>>, 
-			"Echo3", <<print $case_3_Echo>>, 
-			"Echo3 Quiz Q1", <<print $echo3_quiz[0]>>, 
-			"Echo3 Quiz Q2", <<print $echo3_quiz[1]>>, 
-			"Echo3 Quiz Q3", <<print $echo3_quiz[2]>>, 
-			"Echo3 Quiz Q3", <<print $echo3_quiz[3]>>, 
-			"Physical4", <<print $diagnostics_4[0]>>, 
-			"CXR4", <<print $diagnostics_4[1]>>, 
-			"Labs4", <<print $diagnostics_4[2]>>, 
-			"EKG4", <<print $diagnostics_4[3]>>, 
-			"Echo4", <<print $diagnostics_4[4]>>, 
-			"Reprimanded4", <<print $diagnostics_4[5]>>, 
-			"Tx4", <<print $case_4_Tx_score>>, 
-			"Fu4", <<print $case_4_Fu_score>>, 
-			"Echo4", <<print $case_4_Echo>>, 
-			"usability", <<print $usability>>
+			"PE1":<<print $physical_exam_1>>, 
+			"EKG1":<<print $EKG_1>>, 
+			"CXR1":<<print $CXR_1>>, 
+			"Labs1":<<print $Labs_1>>,  
+			"Reprimanded1":<<print $reprimand_1>>, 
+			"dx1":<<print $case_1_dx_score>>, 
+			"tx1":<<print $case_1_Tx_score>>, 
+			"Fu1":<<print $case_1_Fu_score>>, 
+			"Echo1":<<print $case_1_Echo>>, 
+			"Echo1 Quiz":[<<print $echo1_quiz>>], 
+			"Physical2":<<print $diagnostics_2[0]>>, 
+			"CXR2":<<print $diagnostics_2[1]>>, 
+			"Labs2":<<print $diagnostics_2[2]>>, 
+			"EKG2":<<print $diagnostics_2[3]>>, 
+			"Echo2":<<print $diagnostics_2[4]>>, 
+			"Reprimanded2":<<print $diagnostics_2[5]>>, 
+			"Tx2":<<print $case_2_Tx_score>>, 
+			"Fu2":<<print $case_2_Fu_score>>, 
+			"Fundoscopy2":<<print $case_2_fundoscopy>>, 
+			"Orthostatics2":<<print $case_2_orthostatics>>, 
+			"DixHallpike2":<<print $case_2_dix_hallpike>>, 
+			"KernigBrudzinsky2":<<print $case_2_kernig_brudzinsky>>, 
+			"DiagnosticVerbose2":<<print $ddx_2_HTeCM>>, 
+			"Echo2 Quiz":[<<print $echo2_quiz>>], 
+			"Physical3":<<print $diagnostics_3[0]>>, 
+			"CXR3":<<print $diagnostics_3[1]>>, 
+			"Labs3":<<print $diagnostics_3[2]>>, 
+			"EKG3":<<print $diagnostics_3[3]>>, 
+			"Echo3":<<print $diagnostics_3[4]>>, 
+			"Reprimanded3":<<print $diagnostics_3[5]>>, 
+			"Tx3":<<print $case_3_Tx_score>>, 
+			"Fu3":<<print $case_3_Fu_score>>, 
+			"Echo3 Quiz":[<<print $echo3_quiz>>], 
+			"Physical4":<<print $diagnostics_4[0]>>, 
+			"CXR4":<<print $diagnostics_4[1]>>, 
+			"Labs4":<<print $diagnostics_4[2]>>, 
+			"EKG4":<<print $diagnostics_4[3]>>, 
+			"Echo4":<<print $diagnostics_4[4]>>, 
+			"Reprimanded4":<<print $diagnostics_4[5]>>, 
+			"Echo4 Quiz":[<<print $echo4_quiz>>],   
+			"Tx4":<<print $case_4_Tx_score>>, 
+			"Fu4":<<print $case_4_Fu_score>>, 
+			"usability":[<<print $usability>>]}
 			<</nobr>>
 		</textarea> 
 		<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /> 
@@ -261,6 +253,6 @@ Veuillez envoyer vos résultats, puis redémarrer si quelqu'un d'autre souhaite 
 <div id="second" style="display:none">
 	Merci! Si le nouvel onglet est toujours en cours de chargement, veuillez patienter. Vous devriez voir : message "E-mail envoyé", succès vrai.
 	À ce stade, vous pouvez fermer cet onglet.
+	<<button 'Redémarrer'>> <<script>> UI.restart(); <</script>> <</button>>
 </div>
 
-<<button 'Redémarrer'>> <<script>> UI.restart(); <</script>> <</button>>

@@ -17,7 +17,7 @@ Quelle est votre première étape dans le bilan?
 <<silently>>
     <<set $case_2_Tx_score to 0>> 
     <<set $case_2_Fu_score to 0>> 
-    <<set $echo2_quiz to [0, 0, 0]>>
+    <<set $echo2_quiz to [0, 0, 0, 0]>>
     /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
     <<set $diagnostics_2 to [0, 0, 0, 0, 0, 0]>>
     /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
@@ -132,6 +132,11 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo2_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo2_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
 
+Que pensez-vous de la Fractionné d’éjection du VG?
+<label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
+<label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
+<label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+
 /* Echo diagnosis choices. */
 <<silently>>
     <<set $ddx_2_CAD to false>>
@@ -152,7 +157,7 @@ Comment décririez-vous l'écho ?
 <label><<radiobutton "$diagnostics_2[4]" 4 autocheck>> Cardiopathie rhumatismale </label>
 
 Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $diagnostics_2[4])>> [[Continuer|Diagnosis 2]]<<stop>><</if>><</repeat>>
+<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $diagnostics_2[4])>> [[Continuer|Diagnosis 2]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2

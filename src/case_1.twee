@@ -18,7 +18,7 @@ Quelle est votre première étape dans le bilan?
     <<set $case_1_Tx_score to 0>>
     <<set $case_1_Fu_score to 0>>
     <<set $case_1_Echo to 0>>
-    <<set $echo1_quiz to [0, 0, 0, 0]>>
+    <<set $echo1_quiz to [0, 0, 0, 0, 0]>>
 <</silently>>
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */
 :: Case stare 1
@@ -107,13 +107,18 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo1_quiz[3]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo1_quiz[3]" 5 autocheck >> Vue de la veine cave inférieure sous-costale </label>
 
+Que pensez-vous de la Fractionné d’éjection du VG?
+<label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
+<label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
+<label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+
 Que pensez-vous que l'écho montre?
 <label><<radiobutton "$case_1_Echo" 1 autocheck>> Veine cave inférieure dilatée et fraction d'éjection sévèrement réduite </label>
 <label><<radiobutton "$case_1_Echo" 2 autocheck>> Fraction d'éjection préservée et veine cave inférieure dilatée mais compliante </label>
 <label><<radiobutton "$case_1_Echo" 3 autocheck>> Prolapsus valvulaire mitral et dilatation auriculaire gauche </label>
 
 Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $case_1_Echo)>> [[Continuer|Case stare 1]]<<stop>><</if>><</repeat>>
+<<repeat 0.2s>><<if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $echo1_quiz[3] * $echo1_quiz[4] * $case_1_Echo)>> [[Continuer|Case stare 1]]<<stop>><</if>><</repeat>>
 
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
