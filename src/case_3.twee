@@ -17,8 +17,7 @@ Quelle est votre première étape dans le bilan?
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 <<set $case_3_Tx_score to 0>>
 <<set $case_3_Fu_score to 0>>
-<<set $case_3_Echo to 0>>
-<<set $echo3_quiz to [0, 0, 0, 0]>>
+<<set $echo3_quiz to [0, 0, 0, 0, 0]>>
 /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
 <<set $diagnostics_3 to [0, 0, 0, 0, 0, 0]>>
 
@@ -108,13 +107,18 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Sous-xyphoidienne </label>
 <label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Doppler à onde continue </label>
 
+Que pensez-vous de la Fractionné d’éjection du VG?
+<label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
+<label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
+<label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+
 Que pensez-vous que l'écho montre?
 <label><<radiobutton "$diagnostics_3[4]" 1 autocheck>> Régurgitation mitrale et dilatation auriculaire gauche </label>
 <label><<radiobutton "$diagnostics_3[4]" 2 autocheck>> Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale </label> 
 <label><<radiobutton "$diagnostics_3[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
 
 Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $diagnostics_3[4])>> [[Continuer|Case stare 3]] <<stop>><</if>><</repeat>>
+<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $diagnostics_3[4])>> [[Continuer|Case stare 3]] <<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
