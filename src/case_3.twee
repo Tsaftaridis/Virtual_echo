@@ -107,7 +107,7 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Sous-xyphoidienne </label>
 <label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Doppler à onde continue </label>
 
-Que pensez-vous de la Fractionné d’éjection du VG?
+Que pensez-vous de la Fraction d’éjection du VG?
 <label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
 <label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
 <label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
@@ -185,7 +185,7 @@ L'approche diagnostique d'une maladie cardiaque sous-jacente suspectée doit imp
 
 L'écho cardiaque peut aider à l'évaluation diagnostique, montrant une dilatation auriculaire gauche, une hypertension pulmonaire et un bombage du feuillet antérieur mitral. L'électrocardiogramme a également un rôle important à jouer dans l'établissement du diagnostic.
 
-Le traitement approprié pour ce patient comprend des diurétiques pour gérer l'œdème pulmonaire, de la pénicilline pour prévenir la récidive du rhumatisme articulaire aigu et des bêta-bloquants. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.
+''Le traitement approprié pour ce patient comprend des diurétiques pour gérer l'œdème pulmonaire, de la pénicilline pour prévenir la récidive du rhumatisme articulaire aigu et des bêta-bloquants. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.''
 
 En général, l'évaluation et la prise en charge par un cardiologue sont fortement conseillées en cas de sténose mitrale, car les directives de traitement ont tendance à être compliquées.
 

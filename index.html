@@ -382,7 +382,7 @@ Les principaux points de la prise en charge de l&#39;insuffisance cardiaque sont
 Après un examen physique, un ECG et une écho cardiaque sont nécessaires pour l&#39;évaluation complète d&#39;une suspicion d&#39;insuffisance cardiaque. Une radiographie pulmonaire moins pertinente si l&#39;échocardiographie est réalisée couplée à une dosage des BNP. En absence de ces examens paraclinique elle permettra de vérifier l&#39;état du parenchyme pulmonaire - détecter une cardiomégalie mais n’élimine pas une cardiopathie 
 
 La meilleure première étape de la prise en charge consiste à administrer du furosémide par voie intraveineuse. Le furosémide per os doit être considéré si pas de forme IV  mais  la réponse attendue peut être retardée.
-En revanche, les bêta-bloquants et les fluides IV doivent être évités dans l&#39;insuffisance cardiaque aiguë décompensée, car ils peuvent aggraver l&#39;état du patient et augmenter les admissions en soins intensifs.
+**En revanche, les bêta-bloquants et les fluides IV doivent être évités dans l&#39;insuffisance cardiaque aiguë décompensée, car ils peuvent aggraver l&#39;état du patient et augmenter les admissions en soins intensifs.**
 
 Après stabilisation initiale, les patients doivent être mis sous traitement à long terme pour l&#39;insuffisance cardiaque avant de quitter l&#39;hôpital. Cela garantit qu&#39;ils sont pris en charge de manière adéquate, compte tenu du risque qu&#39;ils soient perdus de vue en raison de difficultés d&#39;accès aux soins. Une sortie précoce ou un traitement inadéquat (par exemple, diurétiques oraux uniquement) pourrait entraîner de moins bons résultats.
 
@@ -1018,7 +1018,9 @@ Maintenant, veuillez répondre à un court sondage sur cet outil d&#39;apprentis
 		&quot;passage&quot;: passage(),
 		&quot;time&quot;: 0
 	})&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Guard" tags="" position="1100,850" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Guard" tags="" position="1100,850" size="100,100">&#39;&#39;En revanche, les bêta-bloquants et les fluides IV doivent être évités dans l&#39;insuffisance cardiaque aiguë décompensée, car ils peuvent aggraver l&#39;état du patient et augmenter les admissions en soins intensifs.&#39;&#39;
+
+&lt;&lt;silently&gt;&gt;
 	&lt;&lt;set _answer to &quot;&quot;&gt;&gt;
 	&lt;&lt;set $has_access = 0&gt;&gt;
 	&lt;&lt;if $wrong_password&gt;&gt; Mauvais mot de passe! &lt;&lt;/if&gt;&gt;
@@ -1062,7 +1064,15 @@ Veuillez saisir un mot de passe pour continuer.
 				&lt;&lt;set $has_access = 1&gt;&gt;
 			&lt;&lt;case &quot;cperrotin1990&quot;&gt;&gt;
 				&lt;&lt;set $has_access = 1&gt;&gt;
+			&lt;&lt;case &quot;gmenanswer&quot;&gt;&gt;
+				&lt;&lt;set $has_access = 1&gt;&gt;
 			&lt;&lt;case &quot;proponisi_zurich_enter&quot;&gt;&gt;
+				&lt;&lt;set $has_access = 1&gt;&gt;
+			&lt;&lt;case &quot;gmenmernard&quot;&gt;&gt;
+				&lt;&lt;set $has_access = 1&gt;&gt;
+			&lt;&lt;case &quot;gmenmikenson&quot;&gt;&gt;
+				&lt;&lt;set $has_access = 1&gt;&gt;
+			&lt;&lt;case &quot;gmenauguste&quot;&gt;&gt;
 				&lt;&lt;set $has_access = 1&gt;&gt;
 			&lt;&lt;default&gt;&gt;
 				&lt;&lt;set $has_access = 0&gt;&gt;
@@ -1180,7 +1190,7 @@ J. J&#39;avais besoin d&#39;apprendre beaucoup de choses avant de pouvoir utilis
 			&quot;tx1&quot;:&lt;&lt;print $case_1_Tx_score&gt;&gt;, 
 			&quot;Fu1&quot;:&lt;&lt;print $case_1_Fu_score&gt;&gt;, 
 			&quot;Echo1&quot;:&lt;&lt;print $case_1_Echo&gt;&gt;, 
-			&quot;Echo1 Quiz&quot;:[&lt;&lt;print $echo1_quiz&gt;&gt;]
+			&quot;Echo1 Quiz&quot;:[&lt;&lt;print $echo1_quiz&gt;&gt;], 
 			&quot;Physical2&quot;:&lt;&lt;print $diagnostics_2[0]&gt;&gt;, 
 			&quot;CXR2&quot;:&lt;&lt;print $diagnostics_2[1]&gt;&gt;, 
 			&quot;Labs2&quot;:&lt;&lt;print $diagnostics_2[2]&gt;&gt;, 
@@ -1203,13 +1213,13 @@ J. J&#39;avais besoin d&#39;apprendre beaucoup de choses avant de pouvoir utilis
 			&quot;Reprimanded3&quot;:&lt;&lt;print $diagnostics_3[5]&gt;&gt;, 
 			&quot;Tx3&quot;:&lt;&lt;print $case_3_Tx_score&gt;&gt;, 
 			&quot;Fu3&quot;:&lt;&lt;print $case_3_Fu_score&gt;&gt;, 
-			&quot;Echo3 Quiz&quot;:[&lt;&lt;print $echo3_quiz&gt;&gt;]
+			&quot;Echo3 Quiz&quot;:[&lt;&lt;print $echo3_quiz&gt;&gt;], 
 			&quot;Physical4&quot;:&lt;&lt;print $diagnostics_4[0]&gt;&gt;, 
 			&quot;CXR4&quot;:&lt;&lt;print $diagnostics_4[1]&gt;&gt;, 
 			&quot;Labs4&quot;:&lt;&lt;print $diagnostics_4[2]&gt;&gt;, 
 			&quot;EKG4&quot;:&lt;&lt;print $diagnostics_4[3]&gt;&gt;, 
 			&quot;Echo4&quot;:&lt;&lt;print $diagnostics_4[4]&gt;&gt;, 
-			&quot;Reprimanded4&quot;:&lt;&lt;print $diagnostics_4[5]&gt;&gt;,
+			&quot;Reprimanded4&quot;:&lt;&lt;print $diagnostics_4[5]&gt;&gt;, 
 			&quot;Echo4 Quiz&quot;:[&lt;&lt;print $echo4_quiz&gt;&gt;],   
 			&quot;Tx4&quot;:&lt;&lt;print $case_4_Tx_score&gt;&gt;, 
 			&quot;Fu4&quot;:&lt;&lt;print $case_4_Fu_score&gt;&gt;, 

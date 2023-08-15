@@ -106,7 +106,7 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo4_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo4_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
 
-Que pensez-vous de la Fractionné d’éjection du VG?
+Que pensez-vous de la Fraction d’éjection du VG?
 <label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
 <label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
 <label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
@@ -280,11 +280,11 @@ Bien qu'il soit important de commencer par un examen physique et un électrocard
 
 Les diurétiques peuvent être utilisés pour traiter l'œdème pulmonaire, mais doivent être utilisés avec prudence chez les patientes enceintes en raison du risque d'hypoperfusion placentaire et d'anomalies électrolytiques fœtales. La thérapie de resynchronisation cardiaque peut également être une option pour les patients qui ne répondent pas au traitement médical seul
 
-Le traitement de la CMPP stable peut inclure l'utilisation prudente de bêta-bloquants sélectifs et d'inhibiteurs de l'enzyme de conversion de l'angiotensine et d'ARA, ainsi qu'une perfusion saline pour corriger l'hypotension et améliorer la perfusion. Une thromboprophylaxie et une supplémentation en fer peuvent également être envisagées. Les bêta-bloquants et la digoxine peuvent être utilisés si nécessaire. De nouveaux médicaments contre l'insuffisance cardiaque, tels que le sacubitril/valsartan, peuvent également améliorer les symptômes d'insuffisance cardiaque dans les cardiomyopathies liées à la grossesse. Les inhibiteurs de l’enzyme de conversion(IEC) et les ARA² sont contre-indiqués pendant la grossesse. 
+Le traitement de la CMPP stable peut inclure l'utilisation prudente de bêta-bloquants sélectifs et d'inhibiteurs de l'enzyme de conversion de l'angiotensine et d'ARA, ainsi qu'une perfusion saline pour corriger l'hypotension et améliorer la perfusion. Une thromboprophylaxie et une supplémentation en fer peuvent également être envisagées. Les bêta-bloquants et la digoxine peuvent être utilisés si nécessaire. De nouveaux médicaments contre l'insuffisance cardiaque, tels que le sacubitril/valsartan, peuvent également améliorer les symptômes d'insuffisance cardiaque dans les cardiomyopathies liées à la grossesse. ''Les inhibiteurs de l’enzyme de conversion(IEC) et les ARA² sont contre-indiqués pendant la grossesse.''
 
-Les IEC et les ARA² peuvent servir durant l’allaitement mais avec beaucoup de précautions. Les études effectuées montrent que l'énalapril, le captopril et le bénazépril sont sans danger chez les patientes qui allaitent mais les autres IEC et ARA² n'étaient pas inclus.
+''Les IEC et les ARA² peuvent servir durant l’allaitement mais avec beaucoup de précautions. Les études effectuées montrent que l'énalapril, le captopril et le bénazépril sont sans danger chez les patientes qui allaitent mais les autres IEC et ARA² n'étaient pas inclus.''
 
-Au cours de la grossesse il est possible d’utiliser une combinaison ISDN/Hydralazine pour diminuer la Post charge. Les inhibiteurs directs de la rénine, les inhibiteurs des récepteurs de l'angiotensine-néprylisine, la spironolactone et l'éplérénone sont également contre-indiqués pendant la grossesse. Il a également été démontré que la thérapie de resynchronisation cardiaque améliore la fraction d'éjection et les résultats lorsque la thérapie médicale seule est inefficace.
+''Au cours de la grossesse il est possible d’utiliser une combinaison ISDN/Hydralazine pour diminuer la Post charge. Les inhibiteurs directs de la rénine, les inhibiteurs des récepteurs de l'angiotensine-néprylisine, la spironolactone et l'éplérénone sont également contre-indiqués pendant la grossesse. Il a également été démontré que la thérapie de resynchronisation cardiaque améliore la fraction d'éjection et les résultats lorsque la thérapie médicale seule est inefficace.''
 
 La thromboprophylaxie doit être envisagée chez les patients atteints de CMPP en raison du risque accru de thromboembolie associé à l'hypertrophie du ventricule gauche et à un dysfonctionnement grave.
 

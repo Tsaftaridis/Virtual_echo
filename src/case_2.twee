@@ -132,7 +132,7 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo2_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo2_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
 
-Que pensez-vous de la Fractionné d’éjection du VG?
+Que pensez-vous de la Fraction d’éjection du VG?
 <label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
 <label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
 <label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
@@ -241,7 +241,7 @@ Les patients présentant une hypertension de stade 2 doivent débuter avec deux 
 Les patients atteints de cardiopathie hypertensive  sont généralement asymptomatiques et les complications surviennent tardivement dans l'évolution de la maladie. Les complications les plus courantes sont l'hypertrophie ventriculaire gauche (HVG), l'insuffisance cardiaque, le syndrome coronarien aigu et la mort cardiaque subite. L'HVG, en particulier, est associée à une morbidité et une mortalité accrue, car elle peut entraîner une insuffisance cardiaque décompensée, une fibrillation auriculaire, un accident vasculaire cérébral ou une mort cardiaque subite. 
 L'ECG est recommandé pour l'évaluation initiale du HHD, car il peut démontrer une hypertrophie ventriculaire, une déviation de l'axe gauche ou des anomalies de conduction. Cependant, sa sensibilité pour détecter les maladies cardiovasculaires est faible, allant de 25 à 61 %.
 Le traitement de la cardiopathie hypertensive se concentre sur le contrôle de l'hypertension, car l'HVG ne bénéficie pas directement de la pharmacothérapie. Les patients atteints de la cardiopathie hypertensive doivent suivre un traitement ciblé pour l'insuffisance cardiaque et utiliser des brassards de tension artérielle automatiques pour la surveillance à domicile.
-Un médicament hypertenseur exerce 75 % de son effet maximal à seulement 50 % de la dose maximale. Par conséquent, chez les patients dont la tension artérielle reste considérablement élevée après le début d'un médicament antihypertenseur, l'ajout d'une autre classe de médicaments plutôt que l'augmentation de la dose peut être plus efficace.
+''Un médicament hypertenseur exerce 75 % de son effet maximal à seulement 50 % de la dose maximale. Par conséquent, chez les patients dont la tension artérielle reste considérablement élevée après le début d'un médicament antihypertenseur, l'ajout d'une autre classe de médicaments plutôt que l'augmentation de la dose peut être plus efficace.''
 
  Algorithme de traitement de l'hypertension :
 <img style='width: 100%' src="https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg">

@@ -107,7 +107,7 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo1_quiz[3]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo1_quiz[3]" 5 autocheck >> Vue de la veine cave inférieure sous-costale </label>
 
-Que pensez-vous de la Fractionné d’éjection du VG?
+Que pensez-vous de la Fraction d’éjection du VG?
 <label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
 <label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
 <label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
@@ -204,7 +204,7 @@ Les principaux points de la prise en charge de l'insuffisance cardiaque sont les
 Après un examen physique, un ECG et une écho cardiaque sont nécessaires pour l'évaluation complète d'une suspicion d'insuffisance cardiaque. Une radiographie pulmonaire moins pertinente si l'échocardiographie est réalisée couplée à une dosage des BNP. En absence de ces examens paraclinique elle permettra de vérifier l'état du parenchyme pulmonaire - détecter une cardiomégalie mais n’élimine pas une cardiopathie 
 
 La meilleure première étape de la prise en charge consiste à administrer du furosémide par voie intraveineuse. Le furosémide per os doit être considéré si pas de forme IV  mais  la réponse attendue peut être retardée.
-En revanche, les bêta-bloquants et les fluides IV doivent être évités dans l'insuffisance cardiaque aiguë décompensée, car ils peuvent aggraver l'état du patient et augmenter les admissions en soins intensifs.
+''En revanche, les bêta-bloquants et les fluides IV doivent être évités dans l'insuffisance cardiaque aiguë décompensée, car ils peuvent aggraver l'état du patient et augmenter les admissions en soins intensifs.''
 
 Après stabilisation initiale, les patients doivent être mis sous traitement à long terme pour l'insuffisance cardiaque avant de quitter l'hôpital. Cela garantit qu'ils sont pris en charge de manière adéquate, compte tenu du risque qu'ils soient perdus de vue en raison de difficultés d'accès aux soins. Une sortie précoce ou un traitement inadéquat (par exemple, diurétiques oraux uniquement) pourrait entraîner de moins bons résultats.
 
