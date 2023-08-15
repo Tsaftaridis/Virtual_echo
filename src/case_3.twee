@@ -97,6 +97,7 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo3_quiz[2]" 3 autocheck >> Apical 4 cavités (Zoomé) </label>
 <label><<radiobutton "$echo3_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo3_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
+<label><<radiobutton "$echo3_quiz[2]" 6 autocheck >> Vue trans œsophagienne 4 cavités </label>
 
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
 Quelle est la vue échographique ? 
