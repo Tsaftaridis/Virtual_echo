@@ -200,7 +200,9 @@ J. J'avais besoin d'apprendre beaucoup de choses avant de pouvoir utiliser cet o
 	<label><<radiobutton "$usability[9]" 3 autocheck>> 3 Neutre </label> 
 	<label><<radiobutton "$usability[9]" 4 autocheck>> 4 Accepter </label> 
 	<label><<radiobutton "$usability[9]" 5 autocheck>> 5 Complètement d'accord</label> 
-[[Continue|Score report]]
+
+Veuillez répondre à toutes les questions avant de continuer.
+<<repeat 0.2s>><<if ($usability[0] * $usability[1] * $usability[2] * $usability[3] * $usability[4] * $usability[5] * $usability[6] * $usability[7] * $usability[8] * $usability[9])>> [[Continuer|Score report]]<<stop>><</if>><</repeat>>
 
 :: Score report
 Veuillez envoyer vos résultats, puis redémarrer si quelqu'un d'autre souhaite utiliser le même appareil. Merci!

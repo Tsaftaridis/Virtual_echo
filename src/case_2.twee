@@ -163,8 +163,8 @@ Comment décririez-vous l'écho ?
 <label><<radiobutton "$diagnostics_2[4]" 3 autocheck>> Hypertrophie ventriculaire gauche sévère </label>
 <label><<radiobutton "$diagnostics_2[4]" 4 autocheck>> Cardiopathie rhumatismale </label>
 
-Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $diagnostics_2[4])>> [[Continuer|Diagnosis 2]]<<stop>><</if>><</repeat>>
+Veuillez répondre à toutes les questions avant de continuer.
+<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $echo2_quiz[4] * $diagnostics_2[4])>> [[Continuer|Diagnosis 2]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2

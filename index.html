@@ -328,8 +328,8 @@ Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 2 autocheck&gt;&gt; Fraction d&#39;éjection préservée et veine cave inférieure dilatée mais compliante &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 3 autocheck&gt;&gt; Prolapsus valvulaire mitral et dilatation auriculaire gauche &lt;/label&gt;
 
-Please answer all quiz questions before moving on.
-&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $echo1_quiz[3] * $echo1_quiz[4] * $case_1_Echo)&gt;&gt; [[Continuer|Case stare 1]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
+Veuillez répondre à toutes les questions avant de continuer.
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $echo1_quiz[3] * $echo1_quiz[4] * $echo1_quiz[5] * $case_1_Echo)&gt;&gt; [[Continuer|Case stare 1]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
 
 
 /* Reprimand and return to diagnostic evaluation. Don&#39;t need to remove points here, you can see if they got here through the history later. */</tw-passagedata><tw-passagedata pid="8" name="Not done Dx yet 1" tags="" position="975,100" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement. 
@@ -535,8 +535,8 @@ Comment décririez-vous l&#39;écho ?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 3 autocheck&gt;&gt; Hypertrophie ventriculaire gauche sévère &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 4 autocheck&gt;&gt; Cardiopathie rhumatismale &lt;/label&gt;
 
-Please answer all quiz questions before moving on.
-&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $diagnostics_2[4])&gt;&gt; [[Continuer|Diagnosis 2]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
+Veuillez répondre à toutes les questions avant de continuer.
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $echo2_quiz[4] * $diagnostics_2[4])&gt;&gt; [[Continuer|Diagnosis 2]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
 
 /* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="26" name="Not done Dx yet 2" tags="" position="725,350" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
 &lt;&lt;set $diagnostics_2[5] += 1&gt;&gt;
@@ -719,8 +719,8 @@ Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_3[4]&quot; 2 autocheck&gt;&gt; Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale &lt;/label&gt; 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_3[4]&quot; 3 autocheck&gt;&gt; Valve aortique bicuspide, sténose aortique &lt;/label&gt;
 
-Please answer all quiz questions before moving on.
-&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $diagnostics_3[4])&gt;&gt; [[Continuer|Case stare 3]] &lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
+Veuillez répondre à toutes les questions avant de continuer.
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])&gt;&gt; [[Continuer|Case stare 3]] &lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
 
 /* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="39" name="Not done Dx yet 3" tags="" position="1100,475" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement. 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
@@ -881,8 +881,8 @@ Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 2 autocheck&gt;&gt; Ventricule gauche dilaté, faible fraction d&#39;éjection, veine cave inférieure dilatée &lt;/label&gt; 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 3 autocheck&gt;&gt; Valve aortique bicuspide, sténose aortique &lt;/label&gt;
 
-Please answer all quiz questions before moving on.
-&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $diagnostics_4[4])&gt;&gt; [[Continuer|Case stare 4]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
+Veuillez répondre à toutes les questions avant de continuer.
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $echo4_quiz[4] * $diagnostics_4[4])&gt;&gt; [[Continuer|Case stare 4]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
 
 /* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="53" name="Not done Dx yet 4" tags="" position="350,725" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
@@ -1201,7 +1201,9 @@ J. J&#39;avais besoin d&#39;apprendre beaucoup de choses avant de pouvoir utilis
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 3 autocheck&gt;&gt; 3 Neutre &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 4 autocheck&gt;&gt; 4 Accepter &lt;/label&gt; 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 5 autocheck&gt;&gt; 5 Complètement d&#39;accord&lt;/label&gt; 
-[[Continue|Score report]]</tw-passagedata><tw-passagedata pid="72" name="Score report" tags="" position="225,975" size="100,100">Veuillez envoyer vos résultats, puis redémarrer si quelqu&#39;un d&#39;autre souhaite utiliser le même appareil. Merci!
+
+Veuillez répondre à toutes les questions avant de continuer.
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($usability[0] * $usability[1] * $usability[2] * $usability[3] * $usability[4] * $usability[5] * $usability[6] * $usability[7] * $usability[8] * $usability[9])&gt;&gt; [[Continuer|Score report]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="Score report" tags="" position="225,975" size="100,100">Veuillez envoyer vos résultats, puis redémarrer si quelqu&#39;un d&#39;autre souhaite utiliser le même appareil. Merci!
 &lt;!-- Make sure you don&#39;t change the form action--&gt;
 &lt;div id=&quot;first&quot;&gt;
 	&lt;form onsubmit=&quot;document.getElementById(&#39;first&#39;).style.display = &#39;none&#39;; document.getElementById(&#39;second&#39;).style.display = &#39;block&#39;&quot; action=&quot;https://api.staticforms.xyz/submit&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
