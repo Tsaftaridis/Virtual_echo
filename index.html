@@ -238,7 +238,7 @@ Quelle est votre première étape dans le bilan?
     &lt;&lt;set $case_1_Tx_score to 0&gt;&gt;
     &lt;&lt;set $case_1_Fu_score to 0&gt;&gt;
     &lt;&lt;set $case_1_Echo to 0&gt;&gt;
-    &lt;&lt;set $echo1_quiz to [0, 0, 0, 0, 0]&gt;&gt;
+    &lt;&lt;set $echo1_quiz to [0, 0, 0, 0, 0, 0]&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */</tw-passagedata><tw-passagedata pid="2" name="Case stare 1" tags="" position="225,100" size="100,100">Quelle est votre prochaine étape?
 
@@ -301,7 +301,14 @@ Quelle est la vue échographique ?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 2 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 3 autocheck &gt;&gt; Apical 4 cavités &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[2]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt; 
+
+Comment obtient-on cette vue en échographie ?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[5]&quot; 1 autocheck&gt;&gt; Placez le transducteur dans la fenêtre parasternale avec la marque d&#39;index du transducteur orientée vers l&#39;épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal (parasternal long). &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[5]&quot; 2 autocheck&gt;&gt; Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[5]&quot; 3 autocheck&gt;&gt; Placez le transducteur sur l&#39;impulsion maximale du pouls avec l&#39;indicateur pointant vers le côté gauche du patient. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[5]&quot; 4 autocheck&gt;&gt; Placez le transducteur sur l&#39;abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d&#39;index du transducteur est orientée vers la gauche du patient, en position 3 heures. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[5]&quot; 5 autocheck&gt;&gt; Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d&#39;orientation vers la tête du patient et légèrement incliné vers la droite du patient. &lt;/label&gt;
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w&quot;&gt; 
 Quelle est la vue échographique ? 
@@ -313,8 +320,8 @@ Quelle est la vue échographique ?
 
 Que pensez-vous de la Fraction d’éjection du VG?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[4]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection réduite (&lt;40%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[4]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[4]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[4]&quot; 2 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz[4]&quot; 3 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
 
 Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 1 autocheck&gt;&gt; Veine cave inférieure dilatée et fraction d&#39;éjection sévèrement réduite &lt;/label&gt;
@@ -405,7 +412,7 @@ Quelle est votre première étape dans le bilan?
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;set $case_2_Tx_score to 0&gt;&gt; 
     &lt;&lt;set $case_2_Fu_score to 0&gt;&gt; 
-    &lt;&lt;set $echo2_quiz to [0, 0, 0, 0]&gt;&gt;
+    &lt;&lt;set $echo2_quiz to [0, 0, 0, 0, 0]&gt;&gt;
     /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
     &lt;&lt;set $diagnostics_2 to [0, 0, 0, 0, 0, 0]&gt;&gt;
     /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
@@ -489,6 +496,18 @@ Quelle est la vue échographique ?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
+Comment obtient-on cette vue en échographie ?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 1 autocheck&gt;&gt; Placez le transducteur dans la fenêtre parasternale avec la marque d&#39;index du transducteur orientée vers l&#39;épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal (parasternal long).
+ &lt;/label
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 2 autocheck&gt;&gt; Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. (parasternal court)
+&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 3 autocheck&gt;&gt; Placez le transducteur sur l&#39;impulsion maximale du pouls avec l&#39;indicateur pointant vers le côté gauche du patient. (apical four chamber)
+&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 4 autocheck&gt;&gt; Placez le transducteur sur l&#39;abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d&#39;index du transducteur est orientée vers la gauche du patient, en position 3 heures (subcostal).
+&lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 5 autocheck&gt;&gt; Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d&#39;orientation vers la tête du patient et légèrement incliné vers la droite du patient (subxiphoid view)
+&lt;/label&gt;
+
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 Quelle est la vue échographique ? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
@@ -499,8 +518,8 @@ Quelle est la vue échographique ?
 
 Que pensez-vous de la Fraction d’éjection du VG?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection réduite (&lt;40%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 2 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 3 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
 
 /* Echo diagnosis choices. */
 &lt;&lt;silently&gt;&gt;
@@ -616,7 +635,7 @@ Quelle est votre première étape dans le bilan?
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 &lt;&lt;set $case_3_Tx_score to 0&gt;&gt;
 &lt;&lt;set $case_3_Fu_score to 0&gt;&gt;
-&lt;&lt;set $echo3_quiz to [0, 0, 0, 0, 0]&gt;&gt;
+&lt;&lt;set $echo3_quiz to [0, 0, 0, 0, 0, 0]&gt;&gt;
 /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
 &lt;&lt;set $diagnostics_3 to [0, 0, 0, 0, 0, 0]&gt;&gt;
 
@@ -670,6 +689,13 @@ Quelle est la vue échographique ?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
+Comment obtient-on cette vue en échographie ?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 1 autocheck&gt;&gt; Placez le transducteur dans la fenêtre parasternale avec la marque d&#39;index du transducteur orientée vers l&#39;épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal &lt;/label
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 2 autocheck&gt;&gt; Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 3 autocheck&gt;&gt; Placez le transducteur sur l&#39;impulsion maximale du pouls avec l&#39;indicateur pointant vers le côté gauche du patient. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 4 autocheck&gt;&gt; Placez le transducteur sur l&#39;abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d&#39;index du transducteur est orientée vers la gauche du patient, en position 3 heures &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 5 autocheck&gt;&gt; Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d&#39;orientation vers la tête du patient et légèrement incliné vers la droite du patient &lt;/label&gt;
+
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 Quelle est la vue échographique ? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
@@ -690,8 +716,8 @@ Quelle est la vue échographique ?
 
 Que pensez-vous de la Fraction d’éjection du VG?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection réduite (&lt;40%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 2 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 3 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
 
 Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_3[4]&quot; 1 autocheck&gt;&gt; Régurgitation mitrale et dilatation auriculaire gauche &lt;/label&gt;
@@ -774,7 +800,7 @@ Quelle est votre première étape dans le bilan?
     &lt;&lt;set $case_4_Tx_score to 0&gt;&gt;
     &lt;&lt;set $case_4_Fu_score to 0&gt;&gt;
     &lt;&lt;set $case_4_Echo to 0&gt;&gt;
-    &lt;&lt;set $echo4_quiz to [0, 0, 0, 0]&gt;&gt;
+    &lt;&lt;set $echo4_quiz to [0, 0, 0, 0, 0]&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="46" name="Case stare 4" tags="" position="725,600" size="100,100">Quelle est votre prochaine étape?
@@ -827,6 +853,13 @@ Quelle est la vue échographique ?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
 
+Comment obtient-on cette vue en échographie ?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 1 autocheck&gt;&gt; Placez le transducteur dans la fenêtre parasternale avec la marque d&#39;index du transducteur orientée vers l&#39;épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal &lt;/label
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 2 autocheck&gt;&gt; Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 3 autocheck&gt;&gt; Placez le transducteur sur l&#39;impulsion maximale du pouls avec l&#39;indicateur pointant vers le côté gauche du patient. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 4 autocheck&gt;&gt; Placez le transducteur sur l&#39;abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d&#39;index du transducteur est orientée vers la gauche du patient, en position 3 heures. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 5 autocheck&gt;&gt; Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d&#39;orientation vers la tête du patient et légèrement incliné vers la droite du patient. &lt;/label&gt;
+
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/53/1d/nzetW9Pm_o.gif&quot;&gt;
 Quelle est la vue échographique ? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
@@ -845,8 +878,8 @@ Quelle est la vue échographique ?
 
 Que pensez-vous de la Fraction d’éjection du VG?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection réduite (&lt;40%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 2 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 3 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
 
 Que pensez-vous que l&#39;écho montre?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 1 autocheck&gt;&gt; Épanchement péricardique abondant et signe de tamponnade &lt;/label&gt;
