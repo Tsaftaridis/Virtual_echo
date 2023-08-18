@@ -18,7 +18,7 @@ Quelle est votre première étape dans le bilan?
     <<set $case_4_Tx_score to 0>>
     <<set $case_4_Fu_score to 0>>
     <<set $case_4_Echo to 0>>
-    <<set $echo4_quiz to [0, 0, 0, 0]>>
+    <<set $echo4_quiz to [0, 0, 0, 0, 0]>>
 <</silently>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
@@ -90,6 +90,13 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo4_quiz[0]" 4 autocheck >> Apical 2 cavités </label>
 <label><<radiobutton "$echo4_quiz[0]" 5 autocheck >> Sous-xyphoidienne </label>
 
+Comment obtient-on cette vue en échographie ?
+<label><<radiobutton "$echo4_quiz[4]" 1 autocheck>> Placez le transducteur dans la fenêtre parasternale avec la marque d'index du transducteur orientée vers l'épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal </label
+<label><<radiobutton "$echo4_quiz[4]" 2 autocheck>> Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. </label>
+<label><<radiobutton "$echo4_quiz[4]" 3 autocheck>> Placez le transducteur sur l'impulsion maximale du pouls avec l'indicateur pointant vers le côté gauche du patient. </label>
+<label><<radiobutton "$echo4_quiz[4]" 4 autocheck>> Placez le transducteur sur l'abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d'index du transducteur est orientée vers la gauche du patient, en position 3 heures. </label>
+<label><<radiobutton "$echo4_quiz[4]" 5 autocheck>> Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d'orientation vers la tête du patient et légèrement incliné vers la droite du patient. </label>
+
 <img style='width: 100%' src="https://images2.imgbox.com/53/1d/nzetW9Pm_o.gif">
 Quelle est la vue échographique ? 
 <label><<radiobutton "$echo4_quiz[1]" 1 autocheck >> Parasternal grand axe </label>
@@ -108,8 +115,8 @@ Quelle est la vue échographique ?
 
 Que pensez-vous de la Fraction d’éjection du VG?
 <label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
-<label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
-<label><<radiobutton "$echo4_quiz[3]" 1 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+<label><<radiobutton "$echo4_quiz[3]" 2 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
+<label><<radiobutton "$echo4_quiz[3]" 3 autocheck >> Fraction d'éjection préservée (≥50%) </label>
 
 Que pensez-vous que l'écho montre?
 <label><<radiobutton "$diagnostics_4[4]" 1 autocheck>> Épanchement péricardique abondant et signe de tamponnade </label>
