@@ -123,8 +123,8 @@ Que pensez-vous que l'écho montre?
 <label><<radiobutton "$diagnostics_4[4]" 2 autocheck>> Ventricule gauche dilaté, faible fraction d'éjection, veine cave inférieure dilatée </label> 
 <label><<radiobutton "$diagnostics_4[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
 
-Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $diagnostics_4[4])>> [[Continuer|Case stare 4]]<<stop>><</if>><</repeat>>
+Veuillez répondre à toutes les questions avant de continuer.
+<<repeat 0.2s>><<if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $echo4_quiz[4] * $diagnostics_4[4])>> [[Continuer|Case stare 4]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4

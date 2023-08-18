@@ -124,8 +124,8 @@ Que pensez-vous que l'écho montre?
 <label><<radiobutton "$case_1_Echo" 2 autocheck>> Fraction d'éjection préservée et veine cave inférieure dilatée mais compliante </label>
 <label><<radiobutton "$case_1_Echo" 3 autocheck>> Prolapsus valvulaire mitral et dilatation auriculaire gauche </label>
 
-Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $echo1_quiz[3] * $echo1_quiz[4] * $case_1_Echo)>> [[Continuer|Case stare 1]]<<stop>><</if>><</repeat>>
+Veuillez répondre à toutes les questions avant de continuer.
+<<repeat 0.2s>><<if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $echo1_quiz[3] * $echo1_quiz[4] * $echo1_quiz[5] * $case_1_Echo)>> [[Continuer|Case stare 1]]<<stop>><</if>><</repeat>>
 
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */

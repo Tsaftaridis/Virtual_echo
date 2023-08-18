@@ -125,8 +125,8 @@ Que pensez-vous que l'écho montre?
 <label><<radiobutton "$diagnostics_3[4]" 2 autocheck>> Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale </label> 
 <label><<radiobutton "$diagnostics_3[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
 
-Please answer all quiz questions before moving on.
-<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $diagnostics_3[4])>> [[Continuer|Case stare 3]] <<stop>><</if>><</repeat>>
+Veuillez répondre à toutes les questions avant de continuer.
+<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])>> [[Continuer|Case stare 3]] <<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
