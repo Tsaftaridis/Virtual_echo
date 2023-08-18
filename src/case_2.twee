@@ -125,16 +125,11 @@ Quelle est la vue échographique ?
 <label><<radiobutton "$echo2_quiz[1]" 5 autocheck >> Sous-xyphoidienne </label>
 
 Comment obtient-on cette vue en échographie ?
-<label><<radiobutton "$echo2_quiz[4]" 1 autocheck>> Placez le transducteur dans la fenêtre parasternale avec la marque d'index du transducteur orientée vers l'épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal (parasternal long).
- </label
-<label><<radiobutton "$echo2_quiz[4]" 2 autocheck>> Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. (parasternal court)
-</label>
-<label><<radiobutton "$echo2_quiz[4]" 3 autocheck>> Placez le transducteur sur l'impulsion maximale du pouls avec l'indicateur pointant vers le côté gauche du patient. (apical four chamber)
-</label>
-<label><<radiobutton "$echo2_quiz[4]" 4 autocheck>> Placez le transducteur sur l'abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d'index du transducteur est orientée vers la gauche du patient, en position 3 heures (subcostal).
-</label>
-<label><<radiobutton "$echo2_quiz[4]" 5 autocheck>> Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d'orientation vers la tête du patient et légèrement incliné vers la droite du patient (subxiphoid view)
-</label>
+<label><<radiobutton "$echo2_quiz[4]" 1 autocheck>> Placez le transducteur dans la fenêtre parasternale avec la marque d'index du transducteur orientée vers l'épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal. </label>
+<label><<radiobutton "$echo2_quiz[4]" 2 autocheck>> Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. </label>
+<label><<radiobutton "$echo2_quiz[4]" 3 autocheck>> Placez le transducteur sur l'impulsion maximale du pouls avec l'indicateur pointant vers le côté gauche du patient. </label>
+<label><<radiobutton "$echo2_quiz[4]" 4 autocheck>> Placez le transducteur sur l'abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d'index du transducteur est orientée vers la gauche du patient, en position 3 heures. </label>
+<label><<radiobutton "$echo2_quiz[4]" 5 autocheck>> Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d'orientation vers la tête du patient et légèrement incliné vers la droite du patient</label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4" frameborder="0" allowfullscreen></video>
 Quelle est la vue échographique ? 
