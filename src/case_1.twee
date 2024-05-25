@@ -3,7 +3,7 @@ M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené 
 
 M. Joseph dit que ses symptômes sont causés par des "mauvais esprits" et ne cherche pas de soins médicaux à moins qu'il ne s'agisse d'une situation de vie ou de mort. Il dit aussi qu'hier il toussait pendant la nuit  et ne pouvait pas dormir.
 
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZyzafN19ayZ8AffsQ27n?pid=ImgGn">
+<img style='width: 100%' src="https://images2.imgbox.com/cb/48/6PHqRZKz_o.jpg">
 /* Diagnostic choices booleans. */
 <<silently>> <<set $physical_exam_1 to false>> <<set $EKG_1 to false>> <<set $CXR_1 to false>> <<set $Labs_1 to false>> <<set $Echo_1 to false>> <<set $reprimand_1 to 0>> <</silently>>
 /* First part is displayed, second part is the passage name. */
