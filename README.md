@@ -34,7 +34,7 @@ This project uses GitHub Actions for automated deployment to GitHub Pages. Push 
 
 ## Data Collection
 
-User responses are collected via StaticForms and emailed to designated addresses. See `src/score-reporting.tw` for implementation details.
+User responses are collected via StaticForms and emailed to designated addresses.  https://www.staticforms.xyz/
 
 ## Customization
 
