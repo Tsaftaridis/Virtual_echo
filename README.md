@@ -27,6 +27,7 @@ The code is shared for reference purposes only and is not maintained.
 2. Install [Tweego](https://www.motoslave.net/tweego/) for compiling Twine stories
 3. Run `tweego -o index.html src/` to compile the project
 4. Open `index.html` in a web browser to view locally
+5. Share via traditional filesharing methods or continue to deployment
 
 ## Deployment 
 
@@ -34,11 +35,11 @@ This project uses GitHub Actions for automated deployment to GitHub Pages. Push 
 
 ## Data Collection
 
-User responses are collected via StaticForms and emailed to designated addresses.  https://www.staticforms.xyz/
+User responses are automatically collected via StaticForms and emailed to designated addresses.  https://www.staticforms.xyz/ 
 
 ## Customization
 
-Modify source files in the `src/` directory to customize cases. Main case logic is in `src/cases/`.
+Modify source files in the `src/` directory to customize cases. Main case logic is in `src/cases/` and it includes rudimentary access and data reporting functionality.  
 
 ## License
 
