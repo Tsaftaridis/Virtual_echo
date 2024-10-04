@@ -12,6 +12,16 @@ the Focused Echo InTervention Package (FETIP) program to assess and supplement e
 - Low-cost implementation using open-source tools
 - Cross-platform compatibility for end users with minimal technological requirements
 
+## Key case development steps
+
+1. Define objectives: Our primary aim was to create test cases to evaluate the effectiveness of the formalized echocardiography training method. While the cases had an educational component, their main purpose was assessment. We focused on echocardiographic learning within the context of clinical scenarios, rather than solely on image interpretation.
+2. Develop Case Content: a) Outline learning objectives for each case b) Construct relevant questions around key learning points c) Identify necessary supporting materials (e.g. ECG traces, lab values) 
+3. Source Multimedia: a) Utilize open-source or appropriately licensed images and audio files b) If using original content, ensure proper informed consent and stakeholder agreement
+4. Technical Implementation: a) Author cases using Twine notation in a text editor: basic understanding of HTML, CSS, and JavaScript is beneficial. Support for Twine notation is available in active online communities of contributors and maintainers c) Export cases as standalone files or integrate into an existing website d) Implement CI/CD workflow for iterative development if applicable. The simplicity with which cases can be created means that they can be deployed in a traditional lecture context as well.\cite{marei_collaborative_2019, quail_twine_2023} 
+5. Determine Distribution Methods: Options include: a) Local creation and direct file sharing via email or messaging platforms b) Hosting on a simple dedicated server c) Implementing a continuous integration/continuous deployment (CI/CD) pipeline using GitHub Pages or similar frameworks for collaborative development
+6. Data collection: a) Integrate form submission functionality for result reporting. Spreadsheet integration may be preferable to our approach of receiving results as simple text. b) Request result reports via email, manually submitted by the trainees. 
+\end{enumerate}
+
 ## Technical Stack
 
 - Twine/SugarCube 2.30.0 for scenario coding
