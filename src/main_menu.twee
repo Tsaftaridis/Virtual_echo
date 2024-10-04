@@ -60,49 +60,9 @@ Veuillez saisir un mot de passe pour continuer.
 			Check if one of the correct answers was supplied,
 			otherwise send them to the Start passage. %/
 		<<switch _answer>>
-			<<case "proponisi_zurich_enter">>
+			<<case "password">>
 				<<set $has_access = 1>>
-			<<case "poudydar">>
-				<<set $has_access = 1>>
-			<<case "gmenpauly">>
-				<<set $has_access = 1>>
-			<<case "augusterub">>
-				<<set $has_access = 1>>
-			<<case "gmenbaptiste">>
-				<<set $has_access = 1>>
-			<<case "ennelouise">>
-				<<set $has_access = 1>>
-			<<case "ramajoub">>
-				<<set $has_access = 1>>
-			<<case "jp123456">>
-				<<set $has_access = 1>>
-			<<case "oneworld321.">>
-				<<set $has_access = 1>>
-			<<case "mamepape1">>
-				<<set $has_access = 1>>
-			<<case "makevyje27">>
-				<<set $has_access = 1>>
-			<<case "paulina12">>
-				<<set $has_access = 1>>
-			<<case "cperrotin1990">>
-				<<set $has_access = 1>>
-			<<case "gmenanswer">>
-				<<set $has_access = 1>>
-			<<case "gmenmernard">>
-				<<set $has_access = 1>>
-			<<case "gmenmikenson">>
-				<<set $has_access = 1>>
-			<<case "gmenauguste">>
-				<<set $has_access = 1>>
-			<<case "gmenleandre">> 
-				<<set $has_access = 1>>
-			<<case "global2023+">>
-				<<set $has_access = 1>>
-			<<case "gmendoucet">>
-				<<set $has_access = 1>>
-			<<case "gmenetienne">>	
-				<<set $has_access = 1>>
-			<<case "focus-0905">>
+			<<case "password2">>
 				<<set $has_access = 1>>
 			<<default>>
 				<<set $has_access = 0>>
