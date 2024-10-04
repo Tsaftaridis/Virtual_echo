@@ -209,7 +209,7 @@ Veuillez envoyer vos résultats, puis redémarrer si quelqu'un d'autre souhaite 
 <!-- Make sure you don't change the form action-->
 <div id="first">
 	<form onsubmit="document.getElementById('first').style.display = 'none'; document.getElementById('second').style.display = 'block'" action="https://api.staticforms.xyz/submit" method="post" target="_blank">
-		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> 
+		<input type="hidden" name="accessKey" value="Enter your access key from staticforms here"> 
 		<textarea hidden name="message">
 			<<set _last to $started>>
 			<<nobr>> 
