@@ -85,7 +85,7 @@ Vous aurez une expérience optimale de la plateforme en utilisant chrome, Une so
 
 Bienvenue à gmenecho ! Il s'agit d'un outil d'apprentissage virtuel pour les patients qui nous aide à évaluer l'efficacité du programme de formation auquel vous participez. Vous aurez à travailler sur quatre cas cliniques, une fois que vous aurez terminé, vous aurez à remplir une forme d’évaluation du programme avant de passer à l’examen. 
 Veuillez commencer lorsque vous êtes prêt. Cela devrait prendre environ une demi-heure.
-[[Commencez le premier cas|Case 1 introduction]]
+[[Commencez le premier cas|Case 4 introduction]]
 
 :: Usability Survey
 <<set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]>>
