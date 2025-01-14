@@ -190,6 +190,7 @@ Selon les directives, il est conseillé d'hospitaliser et de surveiller les pati
 <<set $case_1_Fu_score -= 5 >>
 [[Continuer|Hospitalization and monitoring 1]]
 
+
 :: Hospitalization and monitoring 1
 M. Joseph reste à l'hôpital pour une prise en charge plus optimale. Vous révisez et discutez avec les MDS sur la prise en charge de  l'IC chronique.
 
