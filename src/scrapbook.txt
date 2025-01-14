@@ -2,6 +2,7 @@ See the entered data; https://docs.google.com/spreadsheets/d/1Cqo2cEdvDF7mcTza2b
 Edit the script: https://script.google.com/u/0/home/projects/1146XFimMkEjvg5uZg_lItLXQmm4hw0_A_uzrqtlHWVYH6LWIPyLump0S/edit 
 API hook: https://script.google.com/macros/s/AKfycbzw49-l2aJyzE7EOQw2hKhntH1hJz2-O102tvsJGQw_NVWJSnxiGlPcLReEICq4G3Nq/exec
 Deployment ID: AKfycbzw49-l2aJyzE7EOQw2hKhntH1hJz2-O102tvsJGQw_NVWJSnxiGlPcLReEICq4G3Nq 
+O1 https://chatgpt.com/share/6785d10d-0d48-8005-ac85-c02aef43cdb8
 
 From Claude: 
 
