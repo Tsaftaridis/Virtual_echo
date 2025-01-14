@@ -9,6 +9,51 @@ Echo Cases
 <<set $case_1_Tx_score to 0>>
 <<set $submitted to 0>>
 
+<<set $history to []>>
+<<set $started to 0>>
+<<set $wrong_password to false>>
+<<set $submitted to 0>>
+<<set $id to "">>
+
+/* Case 1 Variables */
+<<set $physical_exam_1 to 0>>
+<<set $EKG_1 to 0>>
+<<set $CXR_1 to 0>>
+<<set $Labs_1 to 0>>
+<<set $reprimand_1 to 0>>
+<<set $case_1_dx_score to 0>>
+<<set $case_1_Tx_score to 0>>
+<<set $case_1_Fu_score to 0>>
+<<set $case_1_Echo to 0>>
+<<set $echo1_quiz to [0,0,0,0,0]>>
+
+/* Case 2 Variables */
+<<set $diagnostics_2 to [0,0,0,0,0,0]>>
+<<set $case_2_Tx_score to 0>>
+<<set $case_2_Fu_score to 0>>
+<<set $case_2_fundoscopy to 0>>
+<<set $case_2_orthostatics to 0>>
+<<set $case_2_dix_hallpike to 0>>
+<<set $case_2_kernig_brudzinsky to 0>>
+<<set $ddx_2_HTeCM to "">>
+<<set $echo2_quiz to [0,0,0,0,0]>>
+
+/* Case 3 Variables */
+<<set $diagnostics_3 to [0,0,0,0,0,0]>>
+<<set $case_3_Tx_score to 0>>
+<<set $case_3_Fu_score to 0>>
+<<set $echo3_quiz to [0,0,0,0,0]>>
+
+/* Case 4 Variables */
+<<set $diagnostics_4 to [0,0,0,0,0,0]>>
+<<set $case_4_Tx_score to 0>>
+<<set $case_4_Fu_score to 0>>
+<<set $echo4_quiz to [0,0,0,0,0]>>
+
+/* Usability Survey */
+<<set $usability to [0,0,0,0,0,0,0,0,0,0]>>
+
+
 :: StoryBanner 
 <img style='width: 100%' src="https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png">
 
@@ -17,7 +62,7 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Guard",
+  "start": "Score report",
   "zoom": 1
 }
 
@@ -166,73 +211,96 @@ Please answer all questions before continuing.
 <<repeat 0.2s>><<if ($usability[0] * $usability[1] * $usability[2] * $usability[3] * $usability[4] * $usability[5] * $usability[6] * $usability[7] * $usability[8] * $usability[9])>> [[Continue|Score report]]<<stop>><</if>><</repeat>>
 
 :: Score report
+<<script src="https://code.jquery.com/jquery-3.3.1.min.js">><</script>>
+
 Please submit your results, then restart if someone else wants to use the same device. Thank you!
-<!-- Make sure you don't change the form action-->
+
 <div id="first">
-	<form onsubmit="document.getElementById('first').style.display = 'none'; document.getElementById('second').style.display = 'block'" action="https://api.staticforms.xyz/submit" method="post" target="_blank">
-		<input type="hidden" name="accessKey" value="Enter your access key from staticforms here"> 
-		<textarea hidden name="message">
-			<<set _last to $started>>
-			<<nobr>> 
-					<<print "{ \"ID\"\:\" $id \" ,">>
-					<<set $i to 0>>
-					<<for _event range $history>>
-						"<<= _event.passage>>$i": <<= setup.toSeconds(_last, _event.time)>>, 
-						<<set _last to _event.time>>
-						<<set $i += 1>>
-					<</for>>
-			<</nobr>>
-			<<nobr>>
-			"PE1":<<print $physical_exam_1>>, 
-			"EKG1":<<print $EKG_1>>, 
-			"CXR1":<<print $CXR_1>>, 
-			"Labs1":<<print $Labs_1>>,  
-			"Reprimanded1":<<print $reprimand_1>>, 
-			"dx1":<<print $case_1_dx_score>>, 
-			"tx1":<<print $case_1_Tx_score>>, 
-			"Fu1":<<print $case_1_Fu_score>>, 
-			"Echo1":<<print $case_1_Echo>>, 
-			"Echo1 Quiz":[<<print $echo1_quiz>>], 
-			"Physical2":<<print $diagnostics_2[0]>>, 
-			"CXR2":<<print $diagnostics_2[1]>>, 
-			"Labs2":<<print $diagnostics_2[2]>>, 
-			"EKG2":<<print $diagnostics_2[3]>>, 
-			"Echo2":<<print $diagnostics_2[4]>>, 
-			"Reprimanded2":<<print $diagnostics_2[5]>>, 
-			"Tx2":<<print $case_2_Tx_score>>, 
-			"Fu2":<<print $case_2_Fu_score>>, 
-			"Fundoscopy2":<<print $case_2_fundoscopy>>, 
-			"Orthostatics2":<<print $case_2_orthostatics>>, 
-			"DixHallpike2":<<print $case_2_dix_hallpike>>, 
-			"KernigBrudzinsky2":<<print $case_2_kernig_brudzinsky>>, 
-			"DiagnosticVerbose2":<<print $ddx_2_HTeCM>>, 
-			"Echo2 Quiz":[<<print $echo2_quiz>>], 
-			"Physical3":<<print $diagnostics_3[0]>>, 
-			"CXR3":<<print $diagnostics_3[1]>>, 
-			"Labs3":<<print $diagnostics_3[2]>>, 
-			"EKG3":<<print $diagnostics_3[3]>>, 
-			"Echo3":<<print $diagnostics_3[4]>>, 
-			"Reprimanded3":<<print $diagnostics_3[5]>>, 
-			"Tx3":<<print $case_3_Tx_score>>, 
-			"Fu3":<<print $case_3_Fu_score>>, 
-			"Echo3 Quiz":[<<print $echo3_quiz>>], 
-			"Physical4":<<print $diagnostics_4[0]>>, 
-			"CXR4":<<print $diagnostics_4[1]>>, 
-			"Labs4":<<print $diagnostics_4[2]>>, 
-			"EKG4":<<print $diagnostics_4[3]>>, 
-			"Echo4":<<print $diagnostics_4[4]>>, 
-			"Reprimanded4":<<print $diagnostics_4[5]>>, 
-			"Echo4 Quiz":[<<print $echo4_quiz>>],   
-			"Tx4":<<print $case_4_Tx_score>>, 
-			"Fu4":<<print $case_4_Fu_score>>, 
-			"usability":[<<print $usability>>]}
-			<</nobr>>
-		</textarea> 
-		<input style="background-color:powderblue; color:black" type="submit" value="Submit Score and Finish" /> 
-	</form>
+<<script>>
+// First calculate time durations for each passage
+let passageTimes = {};
+let lastTime = State.variables.started;
+State.variables.history.forEach((event, index) => {
+    if (event.time) {
+        passageTimes[`${event.passage}${index}`] = (event.time - lastTime) / 1000; // Convert to seconds
+        lastTime = event.time;
+    }
+});
+
+// Prepare the complete data object
+const sendData = JSON.stringify({
+    "ID": State.variables.id,
+    ...passageTimes,
+    "PE1": 1,
+    "EKG1": State.variables.EKG_1, 
+    "CXR1": State.variables.CXR_1,
+    "Labs1": State.variables.Labs_1,
+    "Reprimanded1": State.variables.reprimand_1,
+    "dx1": State.variables.case_1_dx_score,
+    "tx1": State.variables.case_1_Tx_score,
+    "Fu1": State.variables.case_1_Fu_score,
+    "Echo1": State.variables.case_1_Echo,
+    "Echo1 Quiz": State.variables.echo1_quiz,
+    "Physical2": State.variables.diagnostics_2[0],
+    "CXR2": State.variables.diagnostics_2[1],
+    "Labs2": State.variables.diagnostics_2[2],
+    "EKG2": State.variables.diagnostics_2[3],
+    "Echo2": State.variables.diagnostics_2[4],
+    "Reprimanded2": State.variables.diagnostics_2[5],
+    "Tx2": State.variables.case_2_Tx_score,
+    "Fu2": State.variables.case_2_Fu_score,
+    "Fundoscopy2": State.variables.case_2_fundoscopy,
+    "Orthostatics2": State.variables.case_2_orthostatics,
+    "DixHallpike2": State.variables.case_2_dix_hallpike,
+    "KernigBrudzinsky2": State.variables.case_2_kernig_brudzinsky,
+    "DiagnosticVerbose2": State.variables.ddx_2_HTeCM,
+    "Echo2 Quiz": State.variables.echo2_quiz,
+    "Physical3": State.variables.diagnostics_3[0],
+    "CXR3": State.variables.diagnostics_3[1],
+    "Labs3": State.variables.diagnostics_3[2],
+    "EKG3": State.variables.diagnostics_3[3],
+    "Echo3": State.variables.diagnostics_3[4],
+    "Reprimanded3": State.variables.diagnostics_3[5],
+    "Tx3": State.variables.case_3_Tx_score,
+    "Fu3": State.variables.case_3_Fu_score,
+    "Echo3 Quiz": State.variables.echo3_quiz,
+    "Physical4": State.variables.diagnostics_4[0],
+    "CXR4": State.variables.diagnostics_4[1],
+    "Labs4": State.variables.diagnostics_4[2],
+    "EKG4": State.variables.diagnostics_4[3],
+    "Echo4": State.variables.diagnostics_4[4],
+    "Reprimanded4": State.variables.diagnostics_4[5],
+    "Echo4 Quiz": State.variables.echo4_quiz,
+    "Tx4": State.variables.case_4_Tx_score,
+    "Fu4": State.variables.case_4_Fu_score,
+    "usability": State.variables.usability
+});
+
+$.ajax({
+    // Replace this URL with your Google Apps Script Web App URL
+    url: "https://script.google.com/macros/s/AKfycbzw49-l2aJyzE7EOQw2hKhntH1hJz2-O102tvsJGQw_NVWJSnxiGlPcLReEICq4G3Nq/exec",
+    method: "POST",
+    dataType: "json",
+    data: sendData,
+    success: function(response) {
+        if(response.result === "success") {
+            $("#first").hide();
+            $("#second").show();
+        } else {
+            UI.alert("There was an error submitting your results. Please try again.");
+        }
+    },
+    error: function() {
+        UI.alert("There was an error connecting to the server. Please try again.");
+    }
+});
+<</script>>
+
+<button id="submitBtn" style="background-color:powderblue; color:black">Submit Score and Finish</button>
 </div>
+
 <div id="second" style="display:none">
-	Thank you! If the new tab is still loading, please wait. You should see: message “Email sent”, success true.
-	At this point, you may close this tab.
-	<<button 'Restart'>><<script>>UI.restart();<</script>><</button>>
+Thank you! Your results have been submitted successfully.
+<<button 'Restart'>><<script>>UI.restart();<</script>><</button>>
 </div>
+
