@@ -776,18 +776,18 @@ En général, l&#39;évaluation et la prise en charge par un cardiologue sont fo
 
 La prochaine étape de la prise en charge de cette patiente consiste à la référer pour une intervention sur la valve mitrale, car une sténose mitrale sévère est une affection potentiellement mortelle qui nécessite un traitement urgent.
 
-[[Voir le prochain patient|Case 4 introduction]]</tw-passagedata><tw-passagedata pid="45" name="Case 4 introduction" tags="" position="600,600" size="100,100">Jessy, une femme de 34 ans et mère de trois enfants se présente à l&#39;hôpital. Elle dit avoir une toux et plusieurs épisodes de dyspnée paroxystique noturne (&quot;etoufman sitou lanwit&quot;) qui ont commencé deux semaines après l&#39;accouchement de son troisième enfant. Elle a essayé de prendre quelques pilules restantes pour &quot;l&#39;infection pulmonaire&quot; qu&#39;elle avait eue il y a quelques mois, mais la toux n&#39;a pas disparu.
+[[Voir le prochain patient|Case 4 introduction]]</tw-passagedata><tw-passagedata pid="45" name="Case 4 introduction" tags="" position="600,600" size="100,100">Jessy, a 34-year-old woman and mother of three children, presents to the hospital. She reports having a cough and several episodes of paroxysmal nocturnal dyspnea (“feeling of choking at night”) that started two weeks after giving birth to her third child. She tried taking some leftover pills for the “lung infection” she had a few months ago, but the cough did not go away.
 
-Jessica dit qu&#39;environ un mois avant son accouchement, elle a commencé à se sentir faible et qu&#39;elle a dû changer de chaussures parce que ses pieds ne rentraient pas “ Pyem te vinn pi gwo” elle n&#39;a pas cherché d&#39;aide. À l&#39;examen, elle n&#39;a pas de fièvre, sa numération blanche est de 7 500/ml et sa tension artérielle est de 90/60 mmHg. Sa fréquence cardiaque est de 120 bpm. D&#39;après ses antécédents médicaux, il est clair pour vous qu&#39;elle n&#39;avait aucun problème de santé antérieur.
+Jessica also mentions that about a month before her delivery, she started feeling weak and had to change her shoes because her feet wouldn’t fit anymore (“Feet got bigger”). She did not seek help at that time. On examination, she does not have a fever; her white cell count is 7,500/ml and her blood pressure is 90/60 mmHg. Her heart rate is 120 bpm. Based on her medical history, it’s clear she had no prior health problems.
 
-Quelle est votre première étape dans le bilan?
+What is your first step in the evaluation?
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.xp7PeYBOUWNsecu6cNJD?pid=ImgGn&quot;&gt;
 
-[[Examen physique|Physical Exam 4]]
+[[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
-[[Radiographie pulmonaire|Chest X-Ray 4]]
-[[Laboratoires|Labs 4]]
-[[Écho|Echo 4]]
+[[Chest X-Ray|Chest X-Ray 4]]
+[[Labs|Labs 4]]
+[[Echo|Echo 4]]
 
 &lt;&lt;silently&gt;&gt;
     /* Scoring variables start at 0. Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
@@ -798,99 +798,101 @@ Quelle est votre première étape dans le bilan?
     &lt;&lt;set $echo4_quiz to [0, 0, 0, 0, 0]&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
-/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="46" name="Case stare 4" tags="" position="725,600" size="100,100">Quelle est votre prochaine étape?
+/* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus, it shows only tests not already done yet and some notes for quick review. */</tw-passagedata><tw-passagedata pid="46" name="Case stare 4" tags="" position="725,600" size="100,100">What is your next step?
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn&quot;&gt; 
 
-[[Examen physique|Physical Exam 4]]
+[[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
-[[Radiographie pulmonaire|Chest X-Ray 4]]
-[[Laboratoires|Labs 4]]
-[[Écho|Echo 4]]
-&lt;&lt;if hasVisited(&quot;EKG 4&quot;, &quot;Echo 4&quot;, &quot;Physical Exam 4&quot;)&gt;&gt; [[Continuer le traitement|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continuer le traitement|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt;
+[[Chest X-Ray|Chest X-Ray 4]]
+[[Labs|Labs 4]]
+[[Echo|Echo 4]]
+&lt;&lt;if hasVisited(&quot;EKG 4&quot;, &quot;Echo 4&quot;, &quot;Physical Exam 4&quot;)&gt;&gt; [[Continue to Treatment|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continue to Treatment|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt;
 
-Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s&#39;aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l&#39;air ambiant.
-/* Diagnostic choices start. */</tw-passagedata><tw-passagedata pid="47" name="Physical Exam 4" tags="" position="850,600" size="100,100">Vous commencez un examen physique sur Jessica.
-&lt;&lt;set $diagnostics_4[0] to 1&gt;&gt; 
-Vous remarquez que les veines de son cou sont bombées et que ses pieds sont enflés. Elle dit que son « ventre est lourd, comme si elle était encore enceinte ». Son abdomen semble distendu et à la palpitation, vous pouvez clairement sentir la présence de liquide libre (ascite)
+Notes: 50-year-old female with cough, fatigue, and dyspnea on minimal exertion worsening progressively for 2 months, plus nighttime cough. BP 140/90 mmHg, HR 92 bpm, Temperature 37.7 Celsius, SaO2 94% on room air.
 
-Auscultation cardiaque à l&#39;apex, décubitus gauche.
-Vous aurez peut-être besoin d&#39;un casque pour une expérience optimale.
+/* Diagnostic choices start. */</tw-passagedata><tw-passagedata pid="47" name="Physical Exam 4" tags="" position="850,600" size="100,100">You begin a physical exam on Jessica.
+&lt;&lt;set $diagnostics_4[0] to 1&gt;&gt;
+You notice distended neck veins and swelling of her feet. She says her “belly is heavy, like she’s still pregnant.” Her abdomen appears distended, and on palpation, you can clearly appreciate free fluid (ascites).
+
+Cardiac auscultation at the apex, left lateral decubitus.
+You may need headphones for an optimal experience.
 &lt;audio controls&gt;
   &lt;source src=&quot;https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/05_S3_Gallop_Apex.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 Your browser does not support the audio element.
 &lt;/audio&gt; 
 
-Les résultats de l&#39;auscultation cardiaque peuvent être entendus ci-dessus.
+The cardiac auscultation findings can be heard above.
 
-À l&#39;auscultation pulmonaire, vous entendez des râles 
-[[Continuer| Case stare 4]]</tw-passagedata><tw-passagedata pid="48" name="Chest X-Ray 4" tags="" position="975,600" size="100,100">Quelque temps plus tard, l&#39;infirmière vous remet la radio pulmonaire  suivante: 
+On lung auscultation, you hear crackles.
+[[Continue| Case stare 4]]</tw-passagedata><tw-passagedata pid="48" name="Chest X-Ray 4" tags="" position="975,600" size="100,100">Some time later, the nurse hands you the following chest X-ray:
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://prod-images-static.radiopaedia.org/multiple_choice_questions/420/bat-wings-pulmonary-oedema_big_gallery.jpeg&quot;&gt;
 &lt;&lt;set $diagnostics_4[1] to 1&gt;&gt;
-[[J&#39;ai besoin de voir le rapport du radiologue|Radiologist 4]]
-[[Continuer| Case stare 4]]</tw-passagedata><tw-passagedata pid="49" name="Radiologist 4" tags="" position="1100,600" size="100,100">La radiographie thoracique à l&#39;admission montrait un œdème pulmonaire aigu avec épanchement pleural bilatéral. 
-[[Continuer|Case stare 4]]</tw-passagedata><tw-passagedata pid="50" name="Labs 4" tags="" position="1225,600" size="100,100">&lt;&lt;set $diagnostics_4[2] to 1&gt;&gt;
-Au service des urgences, une pise de sang avait été faite et envoyé au laboratoire. Quelques heures plus tard, les résultats de laboratoire suivants reviennent :
+[[I need to see the radiologist’s report|Radiologist 4]]
+[[Continue| Case stare 4]]</tw-passagedata><tw-passagedata pid="49" name="Radiologist 4" tags="" position="1100,600" size="100,100">The admission chest radiograph showed acute pulmonary edema with bilateral pleural effusions.
+[[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="50" name="Labs 4" tags="" position="1225,600" size="100,100">&lt;&lt;set $diagnostics_4[2] to 1&gt;&gt;
+In the emergency department, blood was drawn and sent to the lab. A few hours later, the following lab results come back:
 
-Nombre de globules blancs : 6700/ml
-Hb 9,8 g/dL
-Protéine C réactive 0,21 mg/dL (dans les limites normales)
-Créatinine 2,1 mg/dL
-[[Continuer|Case stare 4]]</tw-passagedata><tw-passagedata pid="51" name="EKG 4" tags="" position="100,725" size="100,100">/% Diffuse T-wave inversion. %/
+White blood cell count: 6700/ml  
+Hb 9.8 g/dL  
+C-reactive protein 0.21 mg/dL (within normal limits)  
+Creatinine 2.1 mg/dL  
+
+[[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="51" name="EKG 4" tags="" position="100,725" size="100,100">/% Diffuse T-wave inversion. %/
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg&quot;&gt;
 
-[[Continuer|Case stare 4]]</tw-passagedata><tw-passagedata pid="52" name="Echo 4" tags="" position="225,725" size="100,100">L&#39;écho cardiaque est illustré ci-dessous:
+[[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="52" name="Echo 4" tags="" position="225,725" size="100,100">The cardiac echo is shown below:
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w&quot;&gt;
-Quelle est la vue échographique ? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 2 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 3 autocheck &gt;&gt; Apical 4 cavités et échographie doppler &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+Which echographic view is this?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 3 autocheck &gt;&gt; Apical 4-chamber + Doppler &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[0]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
 
-Comment obtient-on cette vue en échographie ?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 1 autocheck&gt;&gt; Placez le transducteur dans la fenêtre parasternale avec la marque d&#39;index du transducteur orientée vers l&#39;épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 2 autocheck&gt;&gt; Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 3 autocheck&gt;&gt; Placez le transducteur sur l&#39;impulsion maximale du pouls avec l&#39;indicateur pointant vers le côté gauche du patient. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 4 autocheck&gt;&gt; Placez le transducteur sur l&#39;abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d&#39;index du transducteur est orientée vers la gauche du patient, en position 3 heures. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 5 autocheck&gt;&gt; Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d&#39;orientation vers la tête du patient et légèrement incliné vers la droite du patient. &lt;/label&gt;
+How is this echographic view obtained?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 1 autocheck&gt;&gt; Place the transducer in the parasternal window with the transducer index mark oriented toward the patient’s right shoulder (10 o’clock) in the third or fourth intercostal space. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 2 autocheck&gt;&gt; Place the transducer in the left parasternal fourth or fifth intercostal space in a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the parasternal long-axis view. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 3 autocheck&gt;&gt; Place the transducer at the point of maximal impulse with the indicator pointing to the patient’s left side. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 4 autocheck&gt;&gt; Place the transducer on the patient’s abdomen in the subcostal region, slightly to the right of midline. The index mark is oriented to the patient’s left (3 o’clock). &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[4]&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient’s head and slightly tilted toward the patient’s right. &lt;/label&gt;
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/53/1d/nzetW9Pm_o.gif&quot;&gt;
-Quelle est la vue échographique ? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 2 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 3 autocheck &gt;&gt; Apical 4 cavités et échographie doppler &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+Which echographic view is this?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 3 autocheck &gt;&gt; Apical 4-chamber + Doppler &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[1]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg&quot;&gt;
-Quelle est la vue échographique ? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 1 autocheck &gt;&gt; Parasternal grand axe &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 2 autocheck &gt;&gt; Parasternal petit axe &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 3 autocheck &gt;&gt; Apical 4 cavités et échographie doppler &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 4 autocheck &gt;&gt; Apical 2 cavités &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 5 autocheck &gt;&gt; Sous-xyphoidienne &lt;/label&gt;
+Which echographic view is this?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 3 autocheck &gt;&gt; Apical 4-chamber + Doppler &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[2]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
 
-Que pensez-vous de la Fraction d’éjection du VG?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 1 autocheck &gt;&gt; Fraction d&#39;éjection réduite (&lt;40%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 2 autocheck &gt;&gt; Fraction d&#39;éjection modérément réduite (40-49%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 3 autocheck &gt;&gt; Fraction d&#39;éjection préservée (≥50%) &lt;/label&gt;
+What do you think of the LV ejection fraction?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 1 autocheck &gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 2 autocheck &gt;&gt; Moderately reduced ejection fraction (40-49%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz[3]&quot; 3 autocheck &gt;&gt; Preserved ejection fraction (≥50%) &lt;/label&gt;
 
-Que pensez-vous que l&#39;écho montre?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 1 autocheck&gt;&gt; Épanchement péricardique abondant et signe de tamponnade &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 2 autocheck&gt;&gt; Ventricule gauche dilaté, faible fraction d&#39;éjection, veine cave inférieure dilatée &lt;/label&gt; 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 3 autocheck&gt;&gt; Valve aortique bicuspide, sténose aortique &lt;/label&gt;
+What do you think this echo shows?
+&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 1 autocheck&gt;&gt; Large pericardial effusion and evidence of tamponade &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 2 autocheck&gt;&gt; Dilated left ventricle, low ejection fraction, dilated IVC &lt;/label&gt; 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_4[4]&quot; 3 autocheck&gt;&gt; Bicuspid aortic valve, aortic stenosis &lt;/label&gt;
 
-Veuillez répondre à toutes les questions avant de continuer.
-&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $echo4_quiz[4] * $diagnostics_4[4])&gt;&gt; [[Continuer|Case stare 4]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
+Please answer all questions before continuing.
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo4_quiz[0] * $echo4_quiz[1] * $echo4_quiz[2] * $echo4_quiz[3] * $echo4_quiz[4] * $diagnostics_4[4])&gt;&gt; [[Continue|Case stare 4]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
 
-/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="53" name="Not done Dx yet 4" tags="" position="350,725" size="100,100">Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
+/* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="53" name="Not done Dx yet 4" tags="" position="350,725" size="100,100">The consulting cardiologist thinks you need a few more diagnostic steps before moving on to treatment.
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 &lt;&lt;set $diagnostics_4[5] += 1&gt;&gt;
-[[Continuer|Case stare 4]]</tw-passagedata><tw-passagedata pid="54" name="Treatment 4" tags="" position="475,725" size="100,100">L&#39;échocardiographie a montré la présence d&#39;une fonction systolique ventriculaire gauche sévèrement altérée avec une faible fraction d&#39;éjection de 30 % et veine cave inférieure dilatée. Les ventricules droit et gauche semblaient tous deux sévèrement dilatés et hypokinétiques de manière homogène. Le volume télédiastolique du ventricule gauche était de 118 ml/m2 et la dimension télédiastolique de 6,5 cm avec un indice de dimension télédiastolique de 3,96 cm/m2. L&#39;élargissement biatrial a également été noté.
+[[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="54" name="Treatment 4" tags="" position="475,725" size="100,100">The echocardiogram showed severely reduced left ventricular systolic function with a low ejection fraction of 30% and a dilated inferior vena cava. The right and left ventricles both appeared severely dilated and diffusely hypokinetic. The left ventricle end-diastolic volume was 118 ml/m2 and the end-diastolic dimension was 6.5 cm, with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted.
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn&quot;&gt;
 
-N&#39;oubliez pas qu&#39;une écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
+Remember that a cardiac echo and an electrocardiogram are necessary diagnostic steps.
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;set $diuretics_4 to false&gt;&gt;
     &lt;&lt;set $antihypertensives_4 to false&gt;&gt;
@@ -898,68 +900,68 @@ N&#39;oubliez pas qu&#39;une écho cardiaque et un électrocardiogramme sont des
     &lt;&lt;set $albuterol_4 to false&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
-Parmi les médicaments suivants, choisissez ceux qui, selon vous, feraient partie du traitement approprié.
+Among the following medications, choose those that you believe would be part of appropriate management.
 &lt;&lt;checkbox &quot;$diuretics_4&quot; false true&gt;&gt; IV Furosemide 
-&lt;&lt;checkbox &quot;$albuterol_4&quot; false true&gt;&gt; Albutérol inhalé
-&lt;&lt;checkbox &quot;$antihypertensives_4&quot; false true&gt;&gt; Antihypertenseurs 
-&lt;&lt;checkbox &quot;$beta_blocker_4&quot; false true&gt;&gt; Bêta-bloquant
+&lt;&lt;checkbox &quot;$albuterol_4&quot; false true&gt;&gt; Inhaled Albuterol
+&lt;&lt;checkbox &quot;$antihypertensives_4&quot; false true&gt;&gt; Antihypertensives 
+&lt;&lt;checkbox &quot;$beta_blocker_4&quot; false true&gt;&gt; Beta-blocker
 
-[[Continuer|Guideline treatment 4]]</tw-passagedata><tw-passagedata pid="55" name="Guideline treatment 4" tags="" position="600,725" size="100,100">&lt;&lt;silently&gt;&gt;
+[[Continue|Guideline treatment 4]]</tw-passagedata><tw-passagedata pid="55" name="Guideline treatment 4" tags="" position="600,725" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;if $diuretics_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $antihypertensives_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $beta_blocker_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $albuterol_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-L&#39;objectif du traitement chez cette patiente atteinte de cardiomyopathie péripartum est de contrôler les symptômes de l&#39;insuffisance cardiaque. Dans le contexte aigu, la diurèse est le pilier du traitement. Le furosémide, le bumétanide ou l&#39;hydrochlorothiazide peuvent être utilisés pour l&#39;œdème pulmonaire, mais un dosage excessif comporte un risque d&#39;hypoperfusion placentaire et d&#39;anomalies électrolytiques fœtales si la patiente est enceinte.
-[[Continuer|Deterioration 4]]</tw-passagedata><tw-passagedata pid="56" name="Deterioration 4" tags="" position="725,725" size="100,100">Le lendemain, l&#39;infirmière vous appelle parce que Jessica se plaint d&#39;une aggravation de son essoufflement. Elle rapporte également que la patiente a eu une production d&#39;urine minimale et que sa tension artérielle est très basse.
+The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide, bumetanide, or hydrochlorothiazide can be used for pulmonary edema, but overdosing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant.
 
-Vous allez dans la chambre de Jessica pour la vérifier et remarquez qu&#39;elle a produit environ 309 ml d&#39;urine au cours des dernières 24 heures. Elle est clairement en détresse, respire rapidement et l&#39;oxymètre de pouls indique 87 %.
-Vous décidez d&#39;admettre Jessica aux soins intensifs.
+[[Continue|Deterioration 4]]</tw-passagedata><tw-passagedata pid="56" name="Deterioration 4" tags="" position="725,725" size="100,100">The next day, the nurse calls you because Jessica complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
+
+You go to Jessica’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%. You decide to admit Jessica to the intensive care unit.
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.1ole1s2_WpfGS3Aq5p0N?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
-[[Continuer|ICU 4]]</tw-passagedata><tw-passagedata pid="57" name="ICU 4" tags="" position="850,725" size="100,100">Les bilans de Jessica après son entrée aux soins intensifs montrent : Lactate = 5,4 mg/dL, ALAT = 123 mg/dL, ASAT 140 mg/dL. Ses tests de la fonction thyroïdienne sont revenus normaux.
+[[Continue|ICU 4]]</tw-passagedata><tw-passagedata pid="57" name="ICU 4" tags="" position="850,725" size="100,100">Jessica’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
 
-Selon vous, que comprendrait la meilleure thérapie médicale ?
+In your opinion, what is the best medical therapy?
 
-[[Oxygène et inotropes|Incorrect ICU mgmt 4]]
-[[Diurétiques à forte dose IV|Incorrect ICU mgmt 4]]
-[[Oxygène seul|Incorrect ICU mgmt 4]]
-[[Oxygène, inotropes, diurétiques à forte dose|Improvement 4]]</tw-passagedata><tw-passagedata pid="58" name="Incorrect ICU mgmt 4" tags="" position="975,725" size="100,100">Avant de commencer la thérapie, après avoir vérifié auprès de votre médecin traitant, vous décidez de tout inclure dans votre plan de traitement : oxygène, inotropes et diurétiques à forte dose.
-[[Continuer|Improvement 4]]</tw-passagedata><tw-passagedata pid="59" name="Improvement 4" tags="" position="1100,725" size="100,100">Le traitement semble fonctionner comme prévu, bon travail ! Au cours des 48 heures suivantes, Jessica excrète environ 5 litres d&#39;urine et ses symptômes s&#39;améliorent rapidement. La créatinine sérique s&#39;est normalisée à 0,9 mg/dL, tandis que sa tension artérielle s&#39;est améliorée et est maintenant de 110/80 mmHg. Son lactate sérique est de 0,9 mg/dL. Après deux jours supplémentaires aux soins intensifs, ses tests de la fonction hépatique sont normalisés. L&#39;oxymètre de pouls affiche 100 % d&#39;oxygène à haute dose. Vous décidez d&#39;arrêter les vasopresseurs et l&#39;oxygénothérapie à haut débit.
-[[Continuer|Further management 4]]</tw-passagedata><tw-passagedata pid="60" name="Further management 4" tags="" position="1225,725" size="100,100">Jessica quitte l&#39;USI et est déplacée à l&#39;étage pour une gestion plus poussée. Là, elle reçoit un traitement approprié pour l&#39;insuffisance cardiaque, y compris un bêta-bloquant et un inhibiteur de l&#39;ECA/ARA. Plus tard, elle est libérée et invitée à revenir pour une écho répétée 6 mois plus tard. 
+[[Oxygen and inotropes|Incorrect ICU mgmt 4]]
+[[High-dose IV diuretics|Incorrect ICU mgmt 4]]
+[[Oxygen alone|Incorrect ICU mgmt 4]]
+[[Oxygen, inotropes, high-dose diuretics|Improvement 4]]</tw-passagedata><tw-passagedata pid="58" name="Incorrect ICU mgmt 4" tags="" position="975,725" size="100,100">Before initiating therapy, after consulting your attending physician, you decide to include everything in your treatment plan: oxygen, inotropes, and high-dose diuretics.
+[[Continue|Improvement 4]]</tw-passagedata><tw-passagedata pid="59" name="Improvement 4" tags="" position="1100,725" size="100,100">The treatment seems to work as intended, good job! Over the next 48 hours, Jessica puts out around 5 liters of urine and her symptoms improve rapidly. Her serum creatinine normalizes to 0.9 mg/dL, while her blood pressure improves to 110/80 mmHg. Her serum lactate is now 0.9 mg/dL. After two more days in the ICU, her liver function tests return to normal. The pulse oximeter shows 100% on high oxygen flow. You decide to discontinue vasopressors and high-flow oxygen.
+[[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="60" name="Further management 4" tags="" position="1225,725" size="100,100">Jessica is discharged from the ICU and transferred to the floor for further management. There, she receives appropriate heart failure treatment, including a beta-blocker and an ACE inhibitor/ARB. Later, she is discharged and asked to return for a repeat echo in 6 months.
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
-[[Continuer|Repeat echo 4]]</tw-passagedata><tw-passagedata pid="61" name="Repeat echo 4" tags="" position="100,850" size="100,100">L&#39;écho répété est illustré ci-dessous :
+[[Continue|Repeat echo 4]]</tw-passagedata><tw-passagedata pid="61" name="Repeat echo 4" tags="" position="100,850" size="100,100">The repeat echo is shown below:
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1533340755751-28DSIIEOY3LCLELVB8FQ/parasternal+long+axis+normal.gif?format=500w&quot;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1515544100377-BDN6UHGVSAYQOGJO3PT8/ezgif.com-optimize+%286%29.gif?format=500w &quot;&gt;
 
-[[Continuer|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="62" name="Patient Questions 4" tags="" position="225,850" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
+[[Continue|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="62" name="Patient Questions 4" tags="" position="225,850" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;set $stop_beta_4 to false&gt;&gt;
 &lt;&lt;set $stop_ACE_4 to false&gt;&gt;
 &lt;&lt;set $b_stop_beta_4 to false&gt;&gt;
 &lt;&lt;set $b_stop_ACE_4 to false&gt;&gt;
-
 &lt;&lt;/silently&gt;&gt;
-Jessica revient pour son rendez-vous de suivi. Elle est très satisfaite de son amélioration et à quelques questions qu&#39;elle veut vous poser :
 
-« Cela fait longtemps que je n&#39;ai pas été à l&#39;hôpital et je peux dormir normalement la nuit depuis que je suis ici. De plus, les résultats de l&#39;écho sont normaux pour autant que je sache. Dois-je continuer à prendre toutes ces pilules ?
+Jessica returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
 
-Veuillez choisir la bonne réponse (en supposant que vous avez les flacons de pilules devant vous et que vous pouvez directement montrer à la patiente quelles pilules elle doit continuer à prendre)
+“It’s been a while since I was in the hospital, and I can now sleep normally at night ever since I got here. Also, as far as I know, the echo results look normal. Do I need to keep taking all these pills?”
 
-&lt;&lt;checkbox &quot;$stop_beta_4&quot; false true&gt;&gt; &quot;Puisque vous vous sentez bien, vous pouvez arrêter de prendre le bêta-bloquant, mais vous devez continuer l&#39;IEC/ARA2&quot;
-&lt;&lt;checkbox &quot;$stop_ACE_4&quot; false true&gt;&gt; &quot;Puisque vous vous sentez bien, vous pouvez arrêter de prendre l&#39;IEC/ARA2, mais vous devez continuer le bêta-bloquant&quot;
-Aucune de ces réponses: &quot;Vous devez continuer à prendre les deux médicaments pour maintenir votre amélioration&quot;
+Please choose the correct response (assuming you have the pill bottles in front of you and can directly show the patient which pills she needs to keep taking):
 
-Jessica acquiesce en comprenant mais elle semble sceptique. Elle vous demande alors : « Êtes-vous sûr que mon bébé est en sécurité ? J&#39;ai peur que les médicaments n&#39;affectent mon bébé puisque je l&#39;allaite exclusivement.
+&lt;&lt;checkbox &quot;$stop_beta_4&quot; false true&gt;&gt; “Since you feel fine, you can stop taking the beta-blocker, but you must continue the ACEi/ARB.”
+&lt;&lt;checkbox &quot;$stop_ACE_4&quot; false true&gt;&gt; “Since you feel fine, you can stop taking the ACEi/ARB, but you must continue the beta-blocker.”
+None of these: “You must continue taking both medications to maintain your improvement.”
 
-&lt;&lt;checkbox &quot;$b_stop_beta_4&quot; false true&gt;&gt; &quot;Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre le bêta-bloquant&quot;
-&lt;&lt;checkbox &quot;$b_stop_ACE_4&quot; false true&gt;&gt; &quot;Dans ce cas, puisque vous allaitez, vous devez arrêter de prendre l&#39;IEC/ARA2&quot;
+Jessica nods in understanding but seems skeptical. She then asks: “Are you sure my baby is safe? I’m worried that these medications might affect my baby since I’m exclusively breastfeeding.”
 
-[[Continuer|Attending questions 4]]</tw-passagedata><tw-passagedata pid="63" name="Attending questions 4" tags="" position="350,850" size="100,100">/% Evaluate answers to patient questions. %/
+&lt;&lt;checkbox &quot;$b_stop_beta_4&quot; false true&gt;&gt; “In that case, since you’re breastfeeding, you must stop taking the beta-blocker.”
+&lt;&lt;checkbox &quot;$b_stop_ACE_4&quot; false true&gt;&gt; “In that case, since you’re breastfeeding, you must stop taking the ACEi/ARB.”
+
+[[Continue|Attending questions 4]]</tw-passagedata><tw-passagedata pid="63" name="Attending questions 4" tags="" position="350,850" size="100,100">/% Evaluate answers to patient questions. %/
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;if $stop_beta_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -969,7 +971,7 @@ Jessica acquiesce en comprenant mais elle semble sceptique. Elle vous demande al
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.0gOcVorZ6fnCkJInRLye?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
-Le médecin de service décide également de tester vos connaissances : « Disons que ce patient se plaint de symptômes révélateurs d&#39;épisodes hypotenseurs. Que proposeriez-vous ?
+The attending physician also tests your knowledge: “Let’s say this patient complains of symptoms indicating hypotensive episodes. What would you suggest?”
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;set $q_stop_beta_4 to false&gt;&gt;
 &lt;&lt;set $q_stop_ACE_4 to false&gt;&gt;
@@ -977,19 +979,18 @@ Le médecin de service décide également de tester vos connaissances : « Dison
 &lt;&lt;set $p_stop_ACE_4 to false&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
-&lt;&lt;checkbox &quot;$q_stop_beta_4&quot; false true&gt;&gt; Elle doit arrêter de prendre le bêta-bloquant.
-&lt;&lt;checkbox &quot;$q_stop_ACE_4&quot; false true&gt;&gt; Elle doit arrêter de prendre l&#39;IEC/ARA2.
-Laissez en blanc si elle doit continuer à prendre les deux médicaments.
+&lt;&lt;checkbox &quot;$q_stop_beta_4&quot; false true&gt;&gt; She should stop taking the beta-blocker.
+&lt;&lt;checkbox &quot;$q_stop_ACE_4&quot; false true&gt;&gt; She should stop taking the ACEi/ARB.
+Leave blank if she should continue both medications.
 
-« Et si la patiente vous disait qu&#39;elle prévoyait de retomber enceinte bientôt ? »
+“And if the patient tells you she plans on getting pregnant again soon?”
 
-&lt;&lt;checkbox &quot;$p_stop_beta_4&quot; false true&gt;&gt; Elle doit arrêter de prendre le bêta-bloquant.
-&lt;&lt;checkbox &quot;$p_stop_ACE_4&quot; false true&gt;&gt; Elle doit arrêter de prendre l&#39;IEC/ARA2.
-Laissez en blanc si elle doit continuer à prendre les deux médicaments. 
-[[Continuer|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="64" name="Case conclusion 4" tags="" position="475,850" size="100,100">Jessica vous remercie pour votre aide et promet que lors du prochain rendez-vous, elle vous apportera une photo de son fils ! Elle dit qu&#39;elle est très heureuse de pouvoir bien dormir la nuit avec les nouveaux médicaments !
+&lt;&lt;checkbox &quot;$p_stop_beta_4&quot; false true&gt;&gt; She should stop taking the beta-blocker.
+&lt;&lt;checkbox &quot;$p_stop_ACE_4&quot; false true&gt;&gt; She should stop taking the ACEi/ARB.
+Leave blank if she should continue both medications.
+[[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="64" name="Case conclusion 4" tags="" position="475,850" size="100,100">Jessica thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
-
-Toutes nos félicitations! Vous avez terminé le cas 4 !
+Congratulations! You’ve completed Case 4!
 
 /% Evaluate answers to the attending physician. %/
 &lt;&lt;silently&gt;&gt;
@@ -1003,29 +1004,29 @@ Toutes nos félicitations! Vous avez terminé le cas 4 !
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.lAZOeFLxqw.eix_38xjd?pid=ImgGn&quot;&gt;
 
-La cardiomyopathie post-partum (PPCM) doit être envisagée chez les patientes qui présentent des symptômes de dyspnée et d&#39;insuffisance cardiaque après l&#39;accouchement.
+Peripartum cardiomyopathy (PPCM) should be considered in patients presenting with shortness of breath and heart failure symptoms postpartum.
 
-Bien qu&#39;il soit important de commencer par un examen physique et un électrocardiogramme, l&#39;échocardiographie est un outil diagnostique important pour identifier une dysfonction systolique ventriculaire gauche sévère, une régurgitation mitrale et une régurgitation tricuspide chez ces patients.
+While it is important to start with a physical exam and an electrocardiogram, echocardiography is a crucial diagnostic tool to identify severe left ventricular systolic dysfunction, mitral regurgitation, and tricuspid regurgitation in these patients.
 
-Les diurétiques peuvent être utilisés pour traiter l&#39;œdème pulmonaire, mais doivent être utilisés avec prudence chez les patientes enceintes en raison du risque d&#39;hypoperfusion placentaire et d&#39;anomalies électrolytiques fœtales. La thérapie de resynchronisation cardiaque peut également être une option pour les patients qui ne répondent pas au traitement médical seul
+Diuretics can be used to treat pulmonary edema, but must be used carefully in pregnant patients due to the risk of placental hypoperfusion and fetal electrolyte abnormalities. Cardiac resynchronization therapy may also be an option for patients who do not respond to medical management alone.
 
-Le traitement de la CMPP stable peut inclure l&#39;utilisation prudente de bêta-bloquants sélectifs et d&#39;inhibiteurs de l&#39;enzyme de conversion de l&#39;angiotensine et d&#39;ARA, ainsi qu&#39;une perfusion saline pour corriger l&#39;hypotension et améliorer la perfusion. Une thromboprophylaxie et une supplémentation en fer peuvent également être envisagées. Les bêta-bloquants et la digoxine peuvent être utilisés si nécessaire. De nouveaux médicaments contre l&#39;insuffisance cardiaque, tels que le sacubitril/valsartan, peuvent également améliorer les symptômes d&#39;insuffisance cardiaque dans les cardiomyopathies liées à la grossesse. &#39;&#39;Les inhibiteurs de l’enzyme de conversion(IEC) et les ARA² sont contre-indiqués pendant la grossesse.&#39;&#39;
+Management of stable PPCM may include prudent use of selective beta-blockers and ACE inhibitors/ARBs, as well as a saline infusion to correct hypotension and improve perfusion. Thromboprophylaxis and iron supplementation may also be considered. Beta-blockers and digoxin can be used if necessary. Newer heart failure medications such as sacubitril/valsartan can also improve heart failure symptoms in pregnancy-related cardiomyopathies. **ACE inhibitors and ARBs are contraindicated during pregnancy.**
 
-&#39;&#39;Les IEC et les ARA² peuvent servir durant l’allaitement mais avec beaucoup de précautions. Les études effectuées montrent que l&#39;énalapril, le captopril et le bénazépril sont sans danger chez les patientes qui allaitent mais les autres IEC et ARA² n&#39;étaient pas inclus.&#39;&#39;
+**ACE inhibitors and ARBs can be used with great caution during breastfeeding. Studies show that enalapril, captopril, and benazepril are safe in breastfeeding patients, but other ACE inhibitors and ARBs were not included.**
 
-&#39;&#39;Au cours de la grossesse il est possible d’utiliser une combinaison ISDN/Hydralazine pour diminuer la Post charge. Les inhibiteurs directs de la rénine, les inhibiteurs des récepteurs de l&#39;angiotensine-néprylisine, la spironolactone et l&#39;éplérénone sont également contre-indiqués pendant la grossesse. Il a également été démontré que la thérapie de resynchronisation cardiaque améliore la fraction d&#39;éjection et les résultats lorsque la thérapie médicale seule est inefficace.&#39;&#39;
+**During pregnancy, a combination of ISDN/hydralazine can be used to reduce afterload. Direct renin inhibitors, angiotensin receptor-neprilysin inhibitors, spironolactone, and eplerenone are also contraindicated during pregnancy. Cardiac resynchronization therapy has been shown to improve ejection fraction and outcomes when medical therapy alone is ineffective.**
 
-La thromboprophylaxie doit être envisagée chez les patients atteints de CMPP en raison du risque accru de thromboembolie associé à l&#39;hypertrophie du ventricule gauche et à un dysfonctionnement grave.
+Thromboprophylaxis should be considered in PPCM patients due to the increased risk of thromboembolism associated with severe LV dilation.
 
-Une supplémentation en fer peut être recommandée chez les patients atteints de CMPP avec un faible taux d&#39;hémoglobine.
+Iron supplementation may be recommended for PPCM patients with low hemoglobin.
 
-Un suivi étroit avec échocardiographie et surveillance du BNP peut aider à évaluer la réponse au traitement et à orienter les décisions de prise en charge.
+Close follow-up with echocardiography and BNP monitoring can help evaluate response to treatment and guide management decisions.
 
-Vous pouvez consulter les lignes directrices sur les médicaments cardiovasculaires pour les patientes enceintes, en post-partum et allaitantes ici: [[Médicaments contre les maladies cardiovasculaires pendant la grossesse - American College of Cardiology|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
+You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Médicaments contre les maladies cardiovasculaires pendant la grossesse - American College of Cardiology|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
-[[Continuer|Finish]]</tw-passagedata><tw-passagedata pid="65" name="Finish" tags="" position="600,850" size="100,100">Toutes nos félicitations! Vous avez terminé toutes les affaires !
+[[Continue|Case 2 introduction]]</tw-passagedata><tw-passagedata pid="65" name="Finish" tags="" position="600,850" size="100,100">Congratulations! You have completed all the cases!
 
-[[Continuer|Score report]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
+[[Continue|Score report]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
 &lt;&lt;set $wrong_password to false&gt;&gt;
 &lt;&lt;set $case_1_dx_score to 0&gt;&gt;
@@ -1087,7 +1088,7 @@ Vous aurez une expérience optimale de la plateforme en utilisant chrome, Une so
 
 Bienvenue à gmenecho ! Il s&#39;agit d&#39;un outil d&#39;apprentissage virtuel pour les patients qui nous aide à évaluer l&#39;efficacité du programme de formation auquel vous participez. Vous aurez à travailler sur quatre cas cliniques, une fois que vous aurez terminé, vous aurez à remplir une forme d’évaluation du programme avant de passer à l’examen. 
 Veuillez commencer lorsque vous êtes prêt. Cela devrait prendre environ une demi-heure.
-[[Commencez le premier cas|Case 1 introduction]]</tw-passagedata><tw-passagedata pid="71" name="Usability Survey" tags="" position="100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
+[[Commencez le premier cas|Case 4 introduction]]</tw-passagedata><tw-passagedata pid="71" name="Usability Survey" tags="" position="100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
 A. Je pense que j&#39;aimerais utiliser fréquemment cet outil d&#39;apprentissage. Choisissez parmi les options suivantes :
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 1 autocheck&gt;&gt; 1 Pas dutout d&#39;accord &lt;/label&gt; 
