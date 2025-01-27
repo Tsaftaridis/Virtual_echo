@@ -268,7 +268,7 @@ Leave blank if she should continue both medications.
 :: Case conclusion 4
 Jessica thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
-Congratulations! You’ve completed Case 4!
+Congratulations! You’ve completed Case 1!
 
 /% Evaluate answers to the attending physician. %/
 <<silently>>
@@ -300,11 +300,7 @@ Iron supplementation may be recommended for PPCM patients with low hemoglobin.
 
 Close follow-up with echocardiography and BNP monitoring can help evaluate response to treatment and guide management decisions.
 
-You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Médicaments contre les maladies cardiovasculaires pendant la grossesse - American College of Cardiology|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
+You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
-[[Continue|Case 2 introduction]]
+[[Continue|Case 3 introduction]]
 
-:: Finish
-Congratulations! You have completed all the cases!
-
-[[Continue|Score report]]

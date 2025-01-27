@@ -1,18 +1,18 @@
 :: Case 3 introduction 
 
-Stéphanie est une femme de 50 ans qui habite Tabarre et qui vient à l'hôpital en disant qu'elle a a eu l'impression d'étouffer pendant la nuit à cause de la toux ("li te pèdi souf li") et ne peut pas dormir sans 2 oreillers ("paka kouche tet ba") pendant au moins deux semaines.
+Stéphanie is a 50-year-old woman who lives in Tabarre and comes to the hospital saying that she felt like she was suffocating during the night because of coughing ("li te pèdi souf li") and cannot sleep without 2 pillows ("paka kouche tet ba") for at least two weeks.
 
-Stéphanie a essayé de masser ses jambes chaque fois qu'elles étaient enflées sans succès. Elle dit avoir même demandé à un hougan de l'aider à mieux respirer car elle fait selon elle une “opwesyon)
+Stéphanie tried massaging her legs whenever they were swollen without success. She says she even asked a hougan to help her breathe better because she is experiencing what she believes to be an “oppression.”
 
-Après avoir essayé tout ce qu'elle pouvait, sa meilleure amie l'a convaincue de venir à l'hôpital au cas où il y aurait des médicaments qui pourraient l'aider.
+After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
 <img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
-Quelle est votre première étape dans le bilan?  
-[[Examen physique|Physical Exam 3]]
+What is your first step in the evaluation?  
+[[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
-[[Radiographie pulmonaire|Chest X-Ray 3]]
-[[Laboratoires|Labs 3]]
-[[Écho|Echo 3]]
+[[Chest X-Ray|Chest X-Ray 3]]
+[[Labs|Labs 3]]
+[[Echo|Echo 3]]
 
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 <<set $case_3_Tx_score to 0>>
@@ -23,123 +23,123 @@ Quelle est votre première étape dans le bilan?
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 3
-Quelle est votre prochaine étape?
+What is your next step?
 <img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
-[[Examen physique|Physical Exam 3]] 
+[[Physical Exam|Physical Exam 3]] 
 [[EKG|EKG 3]]
-[[Radiographie pulmonaire|Chest X-Ray 3]]
-[[Laboratoires|Labs 3]]
-[[Écho|Echo 3]]
-<<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continuer le traitement|Treatment 3]] <<else>> [[Continuer le traitement|Not done Dx yet 3]] <</if>>
-Remarques : femme de 50 ans. avec toux, fatigue, dyspnée au moindre effort  s'aggravant progressivement depuis 2 mois et toux la nuit. TA140/90mmHg, FC 92 bpm, Température 37,7 degrés Celsius, SaO² 94% à l'air ambiant.
+[[Chest X-Ray|Chest X-Ray 3]]
+[[Labs|Labs 3]]
+[[Echo|Echo 3]]
+<<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continue Treatment|Treatment 3]] <<else>> [[Continue Treatment|Not done Dx yet 3]] <</if>>
+Notes: 50-year-old woman with cough, fatigue, dyspnea on minimal exertion worsening progressively over 2 months and coughing at night. BP140/90mmHg, HR 92 bpm, Temperature 37.7°C, SpO₂ 94% on room air.
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 :: Physical Exam 3
 <<set $diagnostics_3[0] to 1>> 
-Vous commencez un examen physique du patient.
-Vous aurez peut-être besoin d'un casque pour une expérience optimale.
+You begin a physical examination of the patient.
+You might need headphones for an optimal experience.
  <audio controls>
   <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio> 
 
-Examen physique:  les résultats de l'auscultation cardiaque peuvent être entendus ci-dessus. À l'auscultation pulmonaire, vous entendez des crépitements plus important aux deux bases ; L'examen abdominal est normal ; Il existe un léger œdème des membres inférieurs et le pouls est normal. 
+Physical Exam: The results of the cardiac auscultation can be heard above. On pulmonary auscultation, you hear more significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal.
 
-[[Continuer|Case stare 3]]
+[[Continue|Case stare 3]]
 
 :: Chest X-Ray 3
 <<set $diagnostics_3[1]>>
-40 minutes plus tard, l'infirmière vous remet le film radiographique suivant:
+40 minutes later, the nurse hands you the following radiographic film:
 <img style='width: 100%' src="https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg">
 
-[[J'ai besoin de voir le rapport du radiologue|radiologist 3]]
-[[Continuer| Case stare 3]]
+[[I need to see the radiologist's report|radiologist 3]]
+[[Continue| Case stare 3]]
 
 :: radiologist 3
-Œdème pulmonaire léger. Léger élargissement auriculaire.
+Mild pulmonary edema. Mild atrial enlargement.
 
 <img src="https://th.bing.com/th/id/OIG.DRFK5kCiRpW5p9RzvcLC?pid=ImgGn">
-[[Continuer|Case stare 3]]
+[[Continue|Case stare 3]]
 
 :: Labs 3
 <<set $diagnostics_3[2] to 1>>
-Niveau de Hb de 12 mg/dL. Sinon le reste des bilans biologiques disponibles est normal.
+Hb level of 12 mg/dL. Otherwise, the rest of the available biological assessments are normal.
 <img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
-[[Continuer|Case stare 3]]
+[[Continue|Case stare 3]]
 
 :: EKG 3
 <img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
 <<set $diagnostics_3[3]>>
 
-[[Continuer| Case stare 3]]
+[[Continue| Case stare 3]]
 
 :: Echo 3
-L'écho cardiaque est illustré ci-dessous:
+The cardiac echo is illustrated below:
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[0]" 3 autocheck >> Apical 4 cavités et échographie doppler </label>
-<label><<radiobutton "$echo3_quiz[0]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[0]" 5 autocheck >> Sous-xyphoidienne </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo3_quiz[0]" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo3_quiz[0]" 3 autocheck >> Apical 4-chamber and Doppler ultrasound </label>
+<label><<radiobutton "$echo3_quiz[0]" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo3_quiz[0]" 5 autocheck >> Subxiphoid </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></video>
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[1]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[1]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[1]" 3 autocheck >> Apical 4 cavités </label>
-<label><<radiobutton "$echo3_quiz[1]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[1]" 5 autocheck >> Sous-xyphoidienne </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo3_quiz[1]" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo3_quiz[1]" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo3_quiz[1]" 3 autocheck >> Apical 4-chamber </label>
+<label><<radiobutton "$echo3_quiz[1]" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo3_quiz[1]" 5 autocheck >> Subxiphoid </label>
 
-Comment obtient-on cette vue en échographie ?
-<label><<radiobutton "$echo3_quiz[5]" 1 autocheck>> Placez le transducteur dans la fenêtre parasternale avec la marque d'index du transducteur orientée vers l'épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal </label>
-<label><<radiobutton "$echo3_quiz[5]" 2 autocheck>> Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. </label>
-<label><<radiobutton "$echo3_quiz[5]" 3 autocheck>> Placez le transducteur sur l'impulsion maximale du pouls avec l'indicateur pointant vers le côté gauche du patient. </label>
-<label><<radiobutton "$echo3_quiz[5]" 4 autocheck>> Placez le transducteur sur l'abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d'index du transducteur est orientée vers la gauche du patient, en position 3 heures </label>
-<label><<radiobutton "$echo3_quiz[5]" 5 autocheck>> Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d'orientation vers la tête du patient et légèrement incliné vers la droite du patient </label>
+How is this view obtained in ultrasound?
+<label><<radiobutton "$echo3_quiz[5]" 1 autocheck>> Place the transducer in the parasternal window with the transducer's index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space </label>
+<label><<radiobutton "$echo3_quiz[5]" 2 autocheck>> Place the transducer in the left parasternal fourth or fifth intercostal space along a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the long parasternal view. </label>
+<label><<radiobutton "$echo3_quiz[5]" 3 autocheck>> Place the transducer on the area of maximum pulse palpation with the indicator pointing toward the patient's left side. </label>
+<label><<radiobutton "$echo3_quiz[5]" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer's index mark is oriented toward the patient's left, in the 3 o'clock position </label>
+<label><<radiobutton "$echo3_quiz[5]" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly tilted to the patient's right </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></video>
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[2]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[2]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[2]" 3 autocheck >> Apical 4 cavités (Zoomé) </label>
-<label><<radiobutton "$echo3_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
-<label><<radiobutton "$echo3_quiz[2]" 6 autocheck >> Vue trans œsophagienne 4 cavités </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo3_quiz[2]" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo3_quiz[2]" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo3_quiz[2]" 3 autocheck >> Apical 4-chamber (Zoomed) </label>
+<label><<radiobutton "$echo3_quiz[2]" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo3_quiz[2]" 5 autocheck >> Subxiphoid </label>
+<label><<radiobutton "$echo3_quiz[2]" 6 autocheck >> Transesophageal 4-chamber view </label>
 
 <img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo3_quiz[3]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo3_quiz[3]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo3_quiz[3]" 3 autocheck >> Apical 4 cavités (Zoomé) </label>
-<label><<radiobutton "$echo3_quiz[3]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Sous-xyphoidienne </label>
-<label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Doppler à onde continue </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo3_quiz[3]" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo3_quiz[3]" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo3_quiz[3]" 3 autocheck >> Apical 4-chamber (Zoomed) </label>
+<label><<radiobutton "$echo3_quiz[3]" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Subxiphoid </label>
+<label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Continuous wave Doppler </label>
 
-Que pensez-vous de la Fraction d’éjection du VG?
-<label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
-<label><<radiobutton "$echo3_quiz[4]" 2 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
-<label><<radiobutton "$echo3_quiz[4]" 3 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+What do you think about the LV Ejection Fraction?
+<label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Reduced ejection fraction (<40%) </label>
+<label><<radiobutton "$echo3_quiz[4]" 2 autocheck >> Moderately reduced ejection fraction (40-49%) </label>
+<label><<radiobutton "$echo3_quiz[4]" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
 
-Que pensez-vous que l'écho montre?
-<label><<radiobutton "$diagnostics_3[4]" 1 autocheck>> Régurgitation mitrale et dilatation auriculaire gauche </label>
-<label><<radiobutton "$diagnostics_3[4]" 2 autocheck>> Dilatation atriale gauche, bombement mitral antérieur compatible avec une sténose mitrale </label> 
-<label><<radiobutton "$diagnostics_3[4]" 3 autocheck>> Valve aortique bicuspide, sténose aortique </label>
+What do you think the echo shows?
+<label><<radiobutton "$diagnostics_3[4]" 1 autocheck>> Mitral regurgitation and left atrial dilation </label>
+<label><<radiobutton "$diagnostics_3[4]" 2 autocheck>> Left atrial dilation, anterior mitral leaflet prolapse compatible with mitral stenosis </label> 
+<label><<radiobutton "$diagnostics_3[4]" 3 autocheck>> Bicuspid aortic valve, aortic stenosis </label>
 
-Veuillez répondre à toutes les questions avant de continuer.
-<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])>> [[Continuer|Case stare 3]] <<stop>><</if>><</repeat>>
+Please answer all questions before continuing.
+<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])>> [[Continue|Case stare 3]] <<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
-Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement. 
+The consulting cardiologist tells you that you need a few more diagnostic steps before proceeding to treatment. 
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 <<set $diagnostics_3[5] += 1>>
-[[Continuer|Case stare 3]]
+[[Continue|Case stare 3]]
 
 :: Treatment 3
-La valve mitrale présentait des cuspides épaissies avec une fusion commissurale et une ouverture réduite, compatibles avec une sténose mitrale due à une cardiopathie rhumatismale sévère. Le gradient diastolique maximum entre l'oreillette gauche et le ventricule a été estimé à 29 mm Hg, et la moyenne, à 16 mm Hg ; la valve aortique semble fonctionner normalement. La pression systolique de l'artère pulmonaire était estimée à 50 mmHg.
+The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean at 16 mm Hg; the aortic valve appears to function normally. The systolic pressure of the pulmonary artery was estimated at 50 mmHg.
 <img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 
-N'oubliez pas qu'un écho cardiaque et un électrocardiogramme sont des étapes de diagnostic nécessaires.
+Remember that a cardiac echo and an electrocardiogram are necessary diagnostic steps.
 <<silently>>
   <<set $diuretics_3 to false>>
   <<set $penicillin_3 to false>>
@@ -147,14 +147,14 @@ N'oubliez pas qu'un écho cardiaque et un électrocardiogramme sont des étapes 
   <<set $inotropes_3 to false>>
   <<set $fluids_3 to false>>
 <</silently>>
-Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie du traitement approprié.
-<<checkbox "$diuretics_3" false true>> Diurétiques
+Choose from the following medications those that you think would be part of the appropriate treatment.
+<<checkbox "$diuretics_3" false true>> Diuretics
 <<checkbox "$inotropes_3" false true>> Inotropes
-<<checkbox "$penicillin_3" false true>> Pénicilline
-<<checkbox "$beta_blocker_3" false true>> Bêta-bloquants
-<<checkbox "$fluids_3" false true>> Fluides
+<<checkbox "$penicillin_3" false true>> Penicillin
+<<checkbox "$beta_blocker_3" false true>> Beta-blockers
+<<checkbox "$fluids_3" false true>> Fluids
 
-[[Continuer|Guideline treatment 3]]
+[[Continue|Guideline treatment 3]]
 
 :: Guideline treatment 3
 <<silently>>
@@ -165,38 +165,38 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
 <img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn">
-Après consultation avec le médecin de service, Stéphanie est mise sous diurétiques, pénicilline et bêtabloquant. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.
-[[Continuer|Further management 3]]
+After consulting with the attending physician, Stéphanie is started on diuretics, penicillin, and beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient.
+[[Continue|Further management 3]]
 
 :: Further management 3
 <img src="https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn"> 
-Le MDS vous demande quelle devrait être, selon vous, la prochaine étape de la prise en charge de ce patient.
-[[Sortie à domicile sous diurétiques oraux|Discharge home 3]]
-[[Garder à l'hôpital pour une prise en charge ultérieure|Mitral valve intervention 3]]
+The MDS asks you what you believe should be the next step in managing this patient.
+[[Discharge Home on Oral Diuretics|Discharge home 3]]
+[[Keep in Hospital for Further Management|Mitral valve intervention 3]]
 
 :: Discharge home 3
-Selon les directives, le patient doit rester à l'hôpital jusqu'à ce qu'un plan thérapeutique clair soit en place!
+According to guidelines, the patient should remain in the hospital until a clear treatment plan is in place!
 <<set $case_3_Fu_score -= 3 >>
-[[Continuer|Mitral valve intervention 3]]
+[[Continue|Mitral valve intervention 3]]
 
 :: Mitral valve intervention 3
- Compte tenu de la découverte d'une sténose mitrale, une consultation avec le cardiologue doit être organisée pour une éventuelle intervention.
+Given the discovery of mitral stenosis, a consultation with a cardiologist should be arranged for possible intervention.
 
 <img src="https://th.bing.com/th/id/OIG.nbUfv1DrBpzJQ_JYgHwi?pid=ImgGn">
 <<set $case_3_Fu_score += 2 >>
 
-Un mois plus tard, Stéphanie vient pour une visite de suivi pour renouveler les ordonnances de ses médicaments. Elle vous dit que le gonflement de ses jambes s'est beaucoup amélioré et qu'elle dort mieux la nuit. Elle vous remercie pour votre aide !
+One month later, Stéphanie comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
 
-Toutes nos félicitations! Vous venez de terminer le troisième cas !
+Congratulations! You have just completed the second case!
 
-L'approche diagnostique d'une maladie cardiaque sous-jacente suspectée doit impliquer une anamnèse approfondie et un examen physique complet, car les symptômes sont généralement non spécifiques (toux, dyspnée, fatigue).
+The diagnostic approach to a suspected underlying heart disease should involve a thorough history and a complete physical examination, as the symptoms are generally non-specific (cough, dyspnea, fatigue).
 
-L'écho cardiaque peut aider à l'évaluation diagnostique, montrant une dilatation auriculaire gauche, une hypertension pulmonaire et un bombage du feuillet antérieur mitral. L'électrocardiogramme a également un rôle important à jouer dans l'établissement du diagnostic.
+The cardiac echo can aid in diagnostic evaluation, showing left atrial dilation, pulmonary hypertension, and prolapse of the anterior mitral leaflet. The electrocardiogram also plays an important role in establishing the diagnosis.
 
-''Le traitement approprié pour ce patient comprend des diurétiques pour gérer l'œdème pulmonaire, de la pénicilline pour prévenir la récidive du rhumatisme articulaire aigu et des bêta-bloquants. Les inotropes et les liquides IV ne sont pas indiqués et peuvent nuire au patient.''
+''The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent recurrence of acute rheumatic fever, and beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient.''
 
-En général, l'évaluation et la prise en charge par un cardiologue sont fortement conseillées en cas de sténose mitrale, car les directives de traitement ont tendance à être compliquées.
+In general, evaluation and management by a cardiologist are strongly recommended in cases of mitral stenosis, as treatment guidelines tend to be complex.
 
-La prochaine étape de la prise en charge de cette patiente consiste à la référer pour une intervention sur la valve mitrale, car une sténose mitrale sévère est une affection potentiellement mortelle qui nécessite un traitement urgent.
+The next step in managing this patient is to refer her for mitral valve intervention, as severe mitral stenosis is a potentially life-threatening condition that requires urgent treatment.
 
-[[Voir le prochain patient|Case 4 introduction]]
+[[See the next patient|Case 2 introduction]]
