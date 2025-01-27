@@ -1,19 +1,22 @@
 :: Case 2 introduction
-Marie, une femme de 39 ans, se présente aux urgences avec un essoufflement sévère et des nausées. Elle dit qu'elle a ces symptômes depuis deux mois, mais qu'ils se sont beaucoup aggravés récemment.
-Lorsqu'on lui a demandé son histoire, Marie se souvient qu'au cours de son adolescence, on lui a dit une fois que sa tension artérielle était un peu élevée, mais aucun suivi n'a été fait.
-Elle suit un traitement contraceptif oral, ainsi que de la metformine et de l'insuline pour son diabète. Son IMC est de 29,3.
-Son père et sa mère souffrent tous deux d'hypertension qui s'est manifestée dans la cinquantaine. Il n'y a pas d'autres problèmes cardiaques dans la famille.
+Marie, a 39-year-old woman, presents to the emergency room with severe shortness of breath and nausea. She says she has had these symptoms for two months, but they have significantly worsened recently.
+
+When asked about her history, Marie recalls that during her adolescence, she was once told that her blood pressure was slightly elevated, but no follow-up was done.
+
+She is on oral contraceptive therapy, as well as metformin and insulin for her diabetes. Her BMI is 29.3.
+
+Both her father and mother suffer from hypertension that manifested in their fifties. There are no other cardiac problems in the family.
 
 <img src="https://th.bing.com/th/id/OIG.crb5tn2O9NJw_0yRun8t?pid=ImgGn">
 
-Au triage, la tension artérielle de Marie est de 200/100 mmHg au bras droit avec un pouls régulier de 120 bpm. La fréquence respiratoire était de 21 respirations/min avec une SpO2 de 93 % à l'air ambiant. Sa température était de 36,2 degrés Celsius.
+At triage, Marie's blood pressure is 200/100 mmHg in her right arm with a regular pulse of 120 bpm. Her respiratory rate was 21 breaths/min with a SpO₂ of 93% on room air. Her temperature was 36.2 degrees Celsius.
 
-Quelle est votre première étape dans le bilan? 
-[[Examen physique|Physical Exam 2]]
+What is your first step in the evaluation?
+[[Physical Exam|Physical Exam 2]]
 [[EKG|EKG 2]]
-[[Radiographie pulmonaire|CXR 2]]
-[[Laboratoires|Labs 2]]
-[[Écho|Echo 2]]
+[[Chest X-Ray|CXR 2]]
+[[Labs|Labs 2]]
+[[Echo|Echo 2]]
 <<silently>>
     <<set $case_2_Tx_score to 0>> 
     <<set $case_2_Fu_score to 0>> 
@@ -24,20 +27,20 @@ Quelle est votre première étape dans le bilan?
 <</silently>>
 
 :: Case stare 2
-Quelle est votre prochaine étape?
+What is your next step?
 
-[[Examen physique|Physical Exam 2]]
+[[Physical Exam|Physical Exam 2]]
 [[EKG|EKG 2]]
-[[Radiographie pulmonaire|CXR 2]]
-[[Laboratoires|Labs 2]]
-[[Écho|Echo 2]]
-<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continuer le traitement|Treatment 2]] <<else>> [[Continuer le traitement|Not done Dx yet 2]] <</if>>
+[[Chest X-Ray|CXR 2]]
+[[Labs|Labs 2]]
+[[Echo|Echo 2]]
+<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue Treatment|Treatment 2]] <<else>> [[Continue Treatment|Not done Dx yet 2]] <</if>>
 
-Remarques : Une femme de 39 ans diabétique  se plaint de dyspnée et de nausées depuis 2 mois, récemment aggravées. Antécédents d'hypertension artérielle sans suivi. Thérapie contraceptive orale. Antécédents familiaux d'hypertension mais autrement propre. 
+Notes: A 39-year-old diabetic woman complains of dyspnea and nausea for 2 months, recently worsened. History of hypertension without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.
 
 /* This is where the diagnosis starts. */
 :: Physical Exam 2
-L'auscultation a révélé un souffle cardiaque systolique de grade 2/6 avec mieux perçu au deuxième espace intercostal gauche et de légers râles crépitants aux deux bases. Pas d’œdème périphérique, pas d’hépatomégalie.
+Cardiac auscultation revealed a grade 2/6 systolic heart murmur best heard at the second left intercostal space and mild crackles at both bases. No peripheral edema, no hepatomegaly.
 
 /* Set physical exam variables. */
 <<silently>>
@@ -50,99 +53,98 @@ L'auscultation a révélé un souffle cardiaque systolique de grade 2/6 avec mie
     <<set $diagnostics_2[0] to 1>> 
 <</silently>>
 
-<<checkbox "$case_2_fundoscopy" false true>> Fond d’œil  
-<<checkbox "$case_2_orthostatics" false true>> Test hypotension orthostatique
-<<checkbox "$case_2_dix_hallpike" false true>> Manœuvre Dix-Hallpike
-<<checkbox "$case_2_kernig_brudzinsky" false true>> Recherche des signes de Kerning et Brudzinsky tests 
-[[Continuer| Consults results 2]]
+<<checkbox "$case_2_fundoscopy" false true>> Fundoscopy  
+<<checkbox "$case_2_orthostatics" false true>> Orthostatic Hypotension Test
+<<checkbox "$case_2_dix_hallpike" false true>> Dix-Hallpike Maneuver
+<<checkbox "$case_2_kernig_brudzinsky" false true>> Search for Kernig and Brudzinski Signs 
+[[Continue| Consults results 2]]
 
 :: Consults results 2
-<<if not $case_2_fundoscopy>> Marie a besoin d'un fond d’œil pour vérifier les signes de rétinopathie hypertensive.<</if>>
+<<if not $case_2_fundoscopy>> Marie needs a fundoscopy to check for signs of hypertensive retinopathy.<</if>>
 
 <img src="https://th.bing.com/th/id/OIG.oKcvm6lVAv4vfuFNpf9d?pid=ImgGn">
 
-<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Mis à part le fond d'œil, les autres tests ne sont pas nécessaires pour le moment. <</if>>
+<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <</if>>
 
-Un examen du fond d'œil a montré un rétrécissement et un croisement  artério-veineux, des taches cotonneuses, un exsudat, une hémorragie et un œdème papillaire. Sur la base de ces résultats, l'état de Marie peut être classé comme une rétinopathie hypertensive de grade 4 dans son œil gauche et de grade 3 dans son œil droit.
+A fundoscopy revealed arteriovenous nicking, cotton-wool spots, exudates, hemorrhages, and papilledema. Based on these findings, Marie's condition can be classified as grade 4 hypertensive retinopathy in her left eye and grade 3 in her right eye.
 
-[[Continuer|Case stare 2]]
+[[Continue|Case stare 2]]
 
 :: CXR 2 
 <img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
 <<set $diagnostics_2[1] to 1>>
-[[J'ai besoin de voir le rapport du radiologue|Radiologist 2]]
-[[Continuer|Case stare 2]]
+[[I need to see the radiologist's report|Radiologist 2]]
+[[Continue|Case stare 2]]
 
 :: Radiologist 2
-La radiographie révèle une cardiomégalie, des signes de redistribution vasculaire et un œdème pulmonaire.  bonne corrélation cliniquement.
+The X-ray reveals cardiomegaly, signs of vascular redistribution, and pulmonary edema. Clinically correlates well.
 
 <img src="https://th.bing.com/th/id/OIG.kqTDMVNgBItNj5Wjx6_1?pid=ImgGn">
 
-[[Continuer|Case stare 2]]
+[[Continue|Case stare 2]]
 
 :: Labs 2 
 <<set $diagnostics_2[2] to 1>>
 
 <img src="https://th.bing.com/th/id/OIG.3qMMfG7hebIEwBjWJrgj?pid=ImgGn">
 
- Les tests de laboratoire ont montré un taux d'hémoglobine de 11,5 g/dL
-Créatinine sérique : 0,9 mg/dL
-Sodium sérique : 140 mEq/L
-Potassium sérique : 4 mEq/L
-Calcium sérique (total)/(ionisé) : 9/5,1 mg/dL
-GR : 6.700/ml
-GB : 7.540/ml
-Plaquettes : 225000/ml
-Neutrophiles : 50 %
-Éosinophiles : 4 %
-Basophiles : 4 %
-Lymphocytes : 36 %
-Monocytes : 6 %
+Laboratory tests showed a hemoglobin level of 11.5 g/dL
+Serum creatinine: 0.9 mg/dL
+Serum sodium: 140 mEq/L
+Serum calcium (total)/(ionized): 9/5.1 mg/dL
+RBC: 6,700/ml
+WBC: 7,540/ml
+Platelets: 225,000/ml
+Neutrophils: 50 %
+Eosinophils: 4 %
+Basophils: 4 %
+Lymphocytes: 36 %
+Monocytes: 6 %
 
-[[Continuer|Case stare 2]]
+[[Continue|Case stare 2]]
 
 :: EKG 2
 <<set $diagnostics_2[3] to 1>>
 <img style='width: 100%' src="https://www.wikidoc.org/images/f/f8/LVH_6.jpg">
-[[Continuer|Case stare 2]]
+[[Continue|Case stare 2]]
 
 :: Echo 2
-L'écho cardiaque est illustré ci-dessous et le septum mesure 1,3 cm.
+The cardiac echo is illustrated below and the septum measures 1.3 cm.
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4" frameborder="0" allowfullscreen></video>
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo2_quiz[0]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo2_quiz[0]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo2_quiz[0]" 3 autocheck >> Apical 4 cavités </label>
-<label><<radiobutton "$echo2_quiz[0]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo2_quiz[0]" 5 autocheck >> Sous-xyphoidienne </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo2_quiz[0]" 1 autocheck>> Parasternal long axis </label>
+<label><<radiobutton "$echo2_quiz[0]" 2 autocheck>> Parasternal short axis </label>
+<label><<radiobutton "$echo2_quiz[0]" 3 autocheck>> Apical 4-chamber </label>
+<label><<radiobutton "$echo2_quiz[0]" 4 autocheck>> Apical 2-chamber </label>
+<label><<radiobutton "$echo2_quiz[0]" 5 autocheck>> Subxiphoid </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4" frameborder="0" allowfullscreen></video>
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo2_quiz[1]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo2_quiz[1]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo2_quiz[1]" 3 autocheck >> Apical 4 cavités </label>
-<label><<radiobutton "$echo2_quiz[1]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo2_quiz[1]" 5 autocheck >> Sous-xyphoidienne </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo2_quiz[1]" 1 autocheck>> Parasternal long axis </label>
+<label><<radiobutton "$echo2_quiz[1]" 2 autocheck>> Parasternal short axis </label>
+<label><<radiobutton "$echo2_quiz[1]" 3 autocheck>> Apical 4-chamber </label>
+<label><<radiobutton "$echo2_quiz[1]" 4 autocheck>> Apical 2-chamber </label>
+<label><<radiobutton "$echo2_quiz[1]" 5 autocheck>> Subxiphoid </label>
 
-Comment obtient-on cette vue en échographie ?
-<label><<radiobutton "$echo2_quiz[4]" 1 autocheck>> Placez le transducteur dans la fenêtre parasternale avec la marque d'index du transducteur orientée vers l'épaule droite du patient (10 heures) dans le troisième ou quatrième espace intercostal. </label>
-<label><<radiobutton "$echo2_quiz[4]" 2 autocheck>> Placez le transducteur dans le quatrième ou cinquième espace intercostal parasternal gauche dans une ligne reliant la clavicule/épaule gauche et la hanche droite, avec le transducteur tourné de 90 degrés dans le sens horaire par rapport à la vue parasternale en long. </label>
-<label><<radiobutton "$echo2_quiz[4]" 3 autocheck>> Placez le transducteur sur l'impulsion maximale du pouls avec l'indicateur pointant vers le côté gauche du patient. </label>
-<label><<radiobutton "$echo2_quiz[4]" 4 autocheck>> Placez le transducteur sur l'abdomen du patient dans la région sous-costale, légèrement à droite de la ligne médiane. La marque d'index du transducteur est orientée vers la gauche du patient, en position 3 heures. </label>
-<label><<radiobutton "$echo2_quiz[4]" 5 autocheck>> Placez le transducteur dans la fenêtre sous-xiphoïdienne avec la marque d'orientation vers la tête du patient et légèrement incliné vers la droite du patient</label>
+How is this view obtained in ultrasound?
+<label><<radiobutton "$echo2_quiz[4]" 1 autocheck>> Place the transducer in the parasternal window with the transducer's index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
+<label><<radiobutton "$echo2_quiz[4]" 2 autocheck>> Place the transducer in the left parasternal fourth or fifth intercostal space along a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the long parasternal view. </label>
+<label><<radiobutton "$echo2_quiz[4]" 3 autocheck>> Place the transducer on the area of maximum pulse palpation with the indicator pointing toward the patient's left side. </label>
+<label><<radiobutton "$echo2_quiz[4]" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer's index mark is oriented toward the patient's left, in the 3 o'clock position. </label>
+<label><<radiobutton "$echo2_quiz[4]" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly tilted to the patient's right </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4" frameborder="0" allowfullscreen></video>
-Quelle est la vue échographique ? 
-<label><<radiobutton "$echo2_quiz[2]" 1 autocheck >> Parasternal grand axe </label>
-<label><<radiobutton "$echo2_quiz[2]" 2 autocheck >> Parasternal petit axe </label>
-<label><<radiobutton "$echo2_quiz[2]" 3 autocheck >> Apical 4 cavités </label>
-<label><<radiobutton "$echo2_quiz[2]" 4 autocheck >> Apical 2 cavités </label>
-<label><<radiobutton "$echo2_quiz[2]" 5 autocheck >> Sous-xyphoidienne </label>
+What is the echocardiographic view? 
+<label><<radiobutton "$echo2_quiz[2]" 1 autocheck>> Parasternal long axis </label>
+<label><<radiobutton "$echo2_quiz[2]" 2 autocheck>> Parasternal short axis </label>
+<label><<radiobutton "$echo2_quiz[2]" 3 autocheck>> Apical 4-chamber </label>
+<label><<radiobutton "$echo2_quiz[2]" 4 autocheck>> Apical 2-chamber </label>
+<label><<radiobutton "$echo2_quiz[2]" 5 autocheck>> Subxiphoid </label>
 
-Que pensez-vous de la Fraction d’éjection du VG?
-<label><<radiobutton "$echo2_quiz[3]" 1 autocheck >> Fraction d'éjection réduite (<40%) </label>
-<label><<radiobutton "$echo2_quiz[3]" 2 autocheck >> Fraction d'éjection modérément réduite (40-49%) </label>
-<label><<radiobutton "$echo2_quiz[3]" 3 autocheck >> Fraction d'éjection préservée (≥50%) </label>
+What do you think about the LV Ejection Fraction?
+<label><<radiobutton "$echo2_quiz[3]" 1 autocheck>> Reduced ejection fraction (<40%) </label>
+<label><<radiobutton "$echo2_quiz[3]" 2 autocheck>> Moderately reduced ejection fraction (40-49%) </label>
+<label><<radiobutton "$echo2_quiz[3]" 3 autocheck>> Preserved ejection fraction (≥50%) </label>
 
 /* Echo diagnosis choices. */
 <<silently>>
@@ -155,42 +157,42 @@ Que pensez-vous de la Fraction d’éjection du VG?
     <<set $ddx_2_score = 0>>
 <</silently>>
 
-L'écho cardiaque est illustré ci-dessous et le septum mesure 1,3 cm.
-Comment décririez-vous l'écho ?
+The cardiac echo is illustrated below and the septum measures 1.3 cm.
+How would you describe the echo?
 
-<label><<radiobutton "$diagnostics_2[4]" 1 autocheck>> Cardiomyopathie dilatée </label>
-<label><<radiobutton "$diagnostics_2[4]" 2 autocheck>> Sténose aortique </label> 
-<label><<radiobutton "$diagnostics_2[4]" 3 autocheck>> Hypertrophie ventriculaire gauche sévère </label>
-<label><<radiobutton "$diagnostics_2[4]" 4 autocheck>> Cardiopathie rhumatismale </label>
+<label><<radiobutton "$diagnostics_2[4]" 1 autocheck>> Dilated cardiomyopathy </label>
+<label><<radiobutton "$diagnostics_2[4]" 2 autocheck>> Aortic stenosis </label> 
+<label><<radiobutton "$diagnostics_2[4]" 3 autocheck>> Severe left ventricular hypertrophy </label>
+<label><<radiobutton "$diagnostics_2[4]" 4 autocheck>> Rheumatic heart disease </label>
 
-Veuillez répondre à toutes les questions avant de continuer.
-<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $echo2_quiz[4] * $diagnostics_2[4])>> [[Continuer|Diagnosis 2]]<<stop>><</if>><</repeat>>
+Please answer all questions before continuing.
+<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $echo2_quiz[4] * $diagnostics_2[4])>> [[Continue|Diagnosis 2]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2
-Le cardiologue d’avis vous dit que vous avez besoin de quelques étapes de diagnostic supplémentaires avant de passer au traitement.
+The consulting cardiologist tells you that you need a few more diagnostic steps before proceeding to treatment.
 <<set $diagnostics_2[5] += 1>>
 <img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
 
-[[Continuer|Case stare 2]]
+[[Continue|Case stare 2]]
 
 :: Diagnosis 2 
 /% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 
-Selon vous, quel est le bon diagnostic ?
-<<checkbox "$ddx_2_CAD" false true>> Maladie de l'artère coronaire
-<<checkbox "$ddx_2_HTeCM" false true>> Cardiomyopathie hypertensive
-<<checkbox "$ddx_2_PICM" false true>> Cardiomyopathie iatrogénique/infectieuse
-<<checkbox "$ddx_2_AST" false true>> Sténose aortique
-<<checkbox "$ddx_2_SAP" false true>> Apnée du sommeil
-<<checkbox "$ddx_2_HTrCM" false true>> Cardiomyopathie hypertrophique (génétique) 
+According to you, what is the correct diagnosis?
+<<checkbox "$ddx_2_CAD" false true>> Coronary artery disease
+<<checkbox "$ddx_2_HTeCM" false true>> Hypertensive cardiomyopathy
+<<checkbox "$ddx_2_PICM" false true>> Iatrogenic/Infectious cardiomyopathy
+<<checkbox "$ddx_2_AST" false true>> Aortic stenosis
+<<checkbox "$ddx_2_SAP" false true>> Sleep apnea
+<<checkbox "$ddx_2_HTrCM" false true>> Hypertrophic cardiomyopathy (genetic) 
 
-[[Continuer|Case stare 2]]
+[[Continue|Case stare 2]]
 
 :: Treatment 2
 <img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
 
-Une échocardiographie transthoracique (ETT) a montré une HVG concentrique avec une fraction d'éjection préservée. L'épaisseur du septum interventriculaire et de la paroi postérieure était de 13 mm. Il n'y avait aucun signe d'obstruction des voies d'éjection. Il n'y avait pas de dysfonction valvulaire significative. Une légère hypertrophie auriculaire gauche a été notée.
+A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertrophy with preserved ejection fraction. The interventricular septum and posterior wall thickness was 13 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial hypertrophy was observed.
 
 <<silently>>
     <<set $inotropes_2 to false>>
@@ -200,16 +202,16 @@ Une échocardiographie transthoracique (ETT) a montré une HVG concentrique avec
     <<set $ace_arb_2 to false>>
     <<set $amlodipine_2 to false>>
 <</silently>>
-Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie du traitement approprié.
+Choose from the following medications those that you think would be part of the appropriate treatment.
 
 <img src="https://th.bing.com/th/id/OIG.W9iaLRJkSOWUwe2Wgsfa?pid=ImgGn">
 <<checkbox "$inotropes_2" false true>> Inotropes
 <<checkbox "$diuretics_2" false true>> IV Furosemide 
-<<checkbox "$metoprolol_2" false true>> Métoprolol 
-<<checkbox "$digoxin_2" false true>> Digoxine 
-<<checkbox "$ace_arb_2" false true>> nhibiteur de l'enzyme de conversion de l'angiotensine ou bloqueur des récepteurs de l'angiotensine
+<<checkbox "$metoprolol_2" false true>> Metoprolol 
+<<checkbox "$digoxin_2" false true>> Digoxin 
+<<checkbox "$ace_arb_2" false true>> Angiotensin-converting enzyme inhibitor or angiotensin receptor blocker
 <<checkbox "$amlodipine_2" false true>> Amlodipine 
-[[Continuer|Guideline treatment 2]]
+[[Continue|Guideline treatment 2]]
 
 :: Guideline treatment 2 
 <img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn"> 
@@ -221,38 +223,43 @@ Choisissez parmi les médicaments suivants ceux qui, selon vous, feraient partie
     <<if $ace_arb_2>>  <<set $case_2_Tx_score += 4>> <</if>>
     <<if $amlodipine_2>>  <<set $case_2_Tx_score +=2>> <</if>>
 <</silently>>
-Les diurétiques thiazidiques, en particulier la chlorthalidone, sont la première ligne pour l'hypertension - les diurétiques sont nécessaires pour les patients atteints d'une maladie hypertensive résistante
-Les inhibiteurs de l'enzyme de conversion,  les ARA2 sont la première ligne chez les patients atteints de diabète ou de maladie rénale chronique.
-les inhibiteurs calciques 
-Les bêta-bloquants ne sont pas recommandés sauf en cas d'insuffisance cardiaque, de cardiopathie ischémique ou de fibrillation auriculaire.
-Les vasodilatateurs tels que l'hydralazine ne doivent être ajoutés qu'en tant que quatrième agent
-Les diurétiques, les inhibiteurs calciques et les inhibiteurs de la rénine-angiotensine présentent des effets synergiques permettant un meilleur contrôle de la pression artérielle.
+Thiazide diuretics, particularly chlorthalidone, are first-line for hypertension - diuretics are necessary for patients with resistant hypertensive disease
+Angiotensin-converting enzyme inhibitors, ARBs are first-line in patients with diabetes or chronic kidney disease.
+Calcium channel blockers 
+Beta-blockers are not recommended except in cases of heart failure, ischemic heart disease, or atrial fibrillation.
+Vasodilators such as hydralazine should only be added as a fourth agent
+Diuretics, calcium channel blockers, and renin-angiotensin inhibitors have synergistic effects allowing for better blood pressure control.
 
-Puisque Marie est diabétique et en surpoids, les inhibiteurs de l'enzyme de conversion (IEC)  ou les ARA2 sont le meilleur choix de traitement médicamenteux pour elle. Si le patient n'était pas diabétique, un inhibiteur calcique, tel que l'amlodipine, aurait été le meilleur choix, car ce médicament ne nécessite pas une surveillance étroite de la kaliémie, de la créatinine et de la pression artérielle, contrairement aux IEC et aux ARA2. 
-[[Continuer|Outcome 2]]
+Since Marie is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for her. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
+[[Continue|Outcome 2]]
 
 :: Outcome 2
 <img src="https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&w=1024&h=1024&rs=1">
 
- Deux semaines plus tard, Marie vient à la clinique pour renouveler son ordonnance. Elle vous dit que sa dyspnée s'est améliorée et qu'elle n'a aucun problème avec les médicaments.
-Félicitations, vous avez terminé le deuxième cas !
+Two weeks later, Marie comes to the clinic to renew her prescription. She tells you that her dyspnea has improved and that she has no problems with the medications.
+Congratulations, you have completed the third case!
 
-La cardiopathie hypertensive fait référence aux modifications du muscle cardiaque dues à l'hypertension.
- Classification de la pression artérielle :
-   * Normal : <120/80
-   * Élevé : >120/80 <130/90
-   * Hypertension de stade 1 : >130/90   <139/90
-   * Hypertension de stade 2 : > 140/90
- 
-Les patients présentant une hypertension de stade 2 doivent débuter avec deux molécules de classes différentes et réévalués dans 30 jours. De plus, d'autres facteurs de risque, notamment l'hyperlipidémie, la consommation d'alcool, le tabagisme et les comorbidités telles que les maladies rénales chroniques et les maladies pulmonaires, doivent être évalués lors du dépistage de l'apnée du sommeil, des troubles liés à la consommation d'alcool et du syndrome métabolique. L'évaluation doit inclure la mesure de l'HbA1c.
-Les patients atteints de cardiopathie hypertensive  sont généralement asymptomatiques et les complications surviennent tardivement dans l'évolution de la maladie. Les complications les plus courantes sont l'hypertrophie ventriculaire gauche (HVG), l'insuffisance cardiaque, le syndrome coronarien aigu et la mort cardiaque subite. L'HVG, en particulier, est associée à une morbidité et une mortalité accrue, car elle peut entraîner une insuffisance cardiaque décompensée, une fibrillation auriculaire, un accident vasculaire cérébral ou une mort cardiaque subite. 
-L'ECG est recommandé pour l'évaluation initiale du HHD, car il peut démontrer une hypertrophie ventriculaire, une déviation de l'axe gauche ou des anomalies de conduction. Cependant, sa sensibilité pour détecter les maladies cardiovasculaires est faible, allant de 25 à 61 %.
-Le traitement de la cardiopathie hypertensive se concentre sur le contrôle de l'hypertension, car l'HVG ne bénéficie pas directement de la pharmacothérapie. Les patients atteints de la cardiopathie hypertensive doivent suivre un traitement ciblé pour l'insuffisance cardiaque et utiliser des brassards de tension artérielle automatiques pour la surveillance à domicile.
-''Un médicament hypertenseur exerce 75 % de son effet maximal à seulement 50 % de la dose maximale. Par conséquent, chez les patients dont la tension artérielle reste considérablement élevée après le début d'un médicament antihypertenseur, l'ajout d'une autre classe de médicaments plutôt que l'augmentation de la dose peut être plus efficace.''
+Hypertensive cardiomyopathy refers to changes in the heart muscle due to hypertension.
+ Blood pressure classification:
+   * Normal: <120/80
+   * Elevated: >120/80 <130/90
+   * Stage 1 Hypertension: >130/90 <139/90
+   * Stage 2 Hypertension: >140/90
 
- Algorithme de traitement de l'hypertension :
+Patients with stage 2 hypertension should start with two different classes of medications and be re-evaluated in 30 days. Additionally, other risk factors, including hyperlipidemia, alcohol consumption, smoking, and comorbidities such as chronic kidney disease and lung diseases, should be assessed when screening for sleep apnea, alcohol-related disorders, and metabolic syndrome. The evaluation should include HbA1c measurement.
+Patients with hypertensive cardiomyopathy are generally asymptomatic and complications occur late in the disease course. The most common complications are left ventricular hypertrophy (LVH), heart failure, acute coronary syndrome, and sudden cardiac death. LVH, in particular, is associated with increased morbidity and mortality as it can lead to decompensated heart failure, atrial fibrillation, stroke, or sudden cardiac death. 
+ECG is recommended for initial evaluation of HHD, as it can demonstrate ventricular hypertrophy, left axis deviation, or conduction abnormalities. However, its sensitivity for detecting cardiovascular diseases is low, ranging from 25 to 61%.
+Treatment of hypertensive cardiomyopathy focuses on controlling hypertension, as LVH does not directly benefit from pharmacotherapy. Patients with hypertensive cardiomyopathy should follow targeted heart failure treatment and use automatic blood pressure cuffs for home monitoring.
+''A hypertensive medication exerts 75% of its maximum effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains significantly elevated after starting an antihypertensive medication, adding another class of medications rather than increasing the dose may be more effective.''
+
+Hypertension treatment algorithm:
 <img style='width: 100%' src="https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg">
 
-[[Recommandations AHA sur le traitement de l'hypertension|https://academic.oup.com/view-large/186438663]]
-[[Chapitre du livre Statpearls sur les maladies cardiaques hypertensives|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
-[[Voir le prochain patient|Case 3 introduction]]
+[[AHA recommendations on hypertension treatment|https://academic.oup.com/view-large/186438663]]
+[[Statpearls book chapter on hypertensive heart diseases|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
+[[Continue|Finish]]
+
+:: Finish
+Congratulations! You have completed all the cases!
+
+[[Continue|Score report]]

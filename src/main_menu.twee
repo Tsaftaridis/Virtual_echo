@@ -170,7 +170,7 @@ Please submit your results, then restart if someone else wants to use the same d
 <!-- Make sure you don't change the form action-->
 <div id="first">
 	<form onsubmit="document.getElementById('first').style.display = 'none'; document.getElementById('second').style.display = 'block'" action="https://api.staticforms.xyz/submit" method="post" target="_blank">
-		<input type="hidden" name="accessKey" value="Enter your access key from staticforms here"> 
+		<input type="hidden" name="accessKey" value="970627d4-986b-49a4-a379-77ab002c7a03"> 
 		<textarea hidden name="message">
 			<<set _last to $started>>
 			<<nobr>> 
