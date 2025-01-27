@@ -13,7 +13,7 @@ Echo Cases
 <<set $started to 0>>
 <<set $wrong_password to false>>
 <<set $submitted to 0>>
-<<set $id to "">>
+<<set $id to "thats_good">>
 
 /* Case 1 Variables */
 <<set $physical_exam_1 to 0>>
@@ -45,10 +45,31 @@ Echo Cases
 <<set $echo3_quiz to [0,0,0,0,0]>>
 
 /* Case 4 Variables */
-<<set $diagnostics_4 to [0,0,0,0,0,0]>>
+<<set $diagnostics_4_physical_exam to 0>>
+<<set $diagnostics_4_cxr to 0 >>
+<<set $diagnostics_4_labs to 0 >>
+<<set $diagnostics_4_echo_diagnosis to 0 >>
+<<set $diagnostics_4_premature_treatment to 0 >>
 <<set $case_4_Tx_score to 0>>
 <<set $case_4_Fu_score to 0>>
-<<set $echo4_quiz to [0,0,0,0,0]>>
+<<set $case_4_Echo to 0>>
+<<set $echo4_quiz_view to 0>>
+<<set $echo4_quiz_placement to 0>>
+<<set $echo4_quiz_view_2 to 0>>
+<<set $echo4_quiz_view_3 to 0>>
+<<set $echo4_quiz_lvef to 0>>
+<<set $diuretics_4 to false>>
+<<set $antihypertensives_4 to false>>
+<<set $beta_blocker_4 to false>>
+<<set $albuterol_4 to false>>
+<<set $q_stop_beta_4 to false>>
+<<set $q_stop_ACE_4 to false>>
+<<set $p_stop_beta_4 to false>>
+<<set $p_stop_ACE_4 to false>>
+<<set $stop_beta_4 to false>>
+<<set $stop_ACE_4 to false>>
+<<set $b_stop_beta_4 to false>>
+<<set $b_stop_ACE_4 to false>>
 
 /* Usability Survey */
 <<set $usability to [0,0,0,0,0,0,0,0,0,0]>>
@@ -229,51 +250,7 @@ State.variables.history.forEach((event, index) => {
 
 // Prepare the complete data object
 const sendData = JSON.stringify({
-    "ID": State.variables.id,
-    ...passageTimes,
-    "PE1": 1,
-    "EKG1": State.variables.EKG_1, 
-    "CXR1": State.variables.CXR_1,
-    "Labs1": State.variables.Labs_1,
-    "Reprimanded1": State.variables.reprimand_1,
-    "dx1": State.variables.case_1_dx_score,
-    "tx1": State.variables.case_1_Tx_score,
-    "Fu1": State.variables.case_1_Fu_score,
-    "Echo1": State.variables.case_1_Echo,
-    "Echo1 Quiz": State.variables.echo1_quiz,
-    "Physical2": State.variables.diagnostics_2[0],
-    "CXR2": State.variables.diagnostics_2[1],
-    "Labs2": State.variables.diagnostics_2[2],
-    "EKG2": State.variables.diagnostics_2[3],
-    "Echo2": State.variables.diagnostics_2[4],
-    "Reprimanded2": State.variables.diagnostics_2[5],
-    "Tx2": State.variables.case_2_Tx_score,
-    "Fu2": State.variables.case_2_Fu_score,
-    "Fundoscopy2": State.variables.case_2_fundoscopy,
-    "Orthostatics2": State.variables.case_2_orthostatics,
-    "DixHallpike2": State.variables.case_2_dix_hallpike,
-    "KernigBrudzinsky2": State.variables.case_2_kernig_brudzinsky,
-    "DiagnosticVerbose2": State.variables.ddx_2_HTeCM,
-    "Echo2 Quiz": State.variables.echo2_quiz,
-    "Physical3": State.variables.diagnostics_3[0],
-    "CXR3": State.variables.diagnostics_3[1],
-    "Labs3": State.variables.diagnostics_3[2],
-    "EKG3": State.variables.diagnostics_3[3],
-    "Echo3": State.variables.diagnostics_3[4],
-    "Reprimanded3": State.variables.diagnostics_3[5],
-    "Tx3": State.variables.case_3_Tx_score,
-    "Fu3": State.variables.case_3_Fu_score,
-    "Echo3 Quiz": State.variables.echo3_quiz,
-    "Physical4": State.variables.diagnostics_4[0],
-    "CXR4": State.variables.diagnostics_4[1],
-    "Labs4": State.variables.diagnostics_4[2],
-    "EKG4": State.variables.diagnostics_4[3],
-    "Echo4": State.variables.diagnostics_4[4],
-    "Reprimanded4": State.variables.diagnostics_4[5],
-    "Echo4 Quiz": State.variables.echo4_quiz,
-    "Tx4": State.variables.case_4_Tx_score,
-    "Fu4": State.variables.case_4_Fu_score,
-    "usability": State.variables.usability
+    "ID": State.variables.id
 });
 
 $.ajax({
