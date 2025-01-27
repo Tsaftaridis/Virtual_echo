@@ -50,7 +50,7 @@ Please enter a password to continue.
 <<button "Verify password">>
 	<<if _answer is "">>
 		/% They have not supplied an answer. %/
-		<<script>>UI.alert("You haven't supplied a password!");<</script>>
+		<<script>>UI.alert("You haven't provided a password!");<</script>>
 	<<else>>
 		/%
 			Remove extra white space from both ends of the answer then
