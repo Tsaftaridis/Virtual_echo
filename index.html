@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="46" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="69" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
     background-color: #e0fbfc;
     color: #1D1D1D;
     /* background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png); */
@@ -197,10 +197,10 @@ img {
     }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
-Config.history.controls = false; 
+Config.history.controls = true;
 
 /* Hide sidebar initially. */ 
-Config.ui.stowBarInitially = true;
+Config.ui.stowBarInitially = false;
 
 setup.toSeconds = function (from, to) {
 	/* Determine the number of milliseconds between the two times. */
@@ -217,9 +217,9 @@ function form_submitted() {
 }
 
 window.form_submitted = form_submitted; 
-$('#ui-bar').remove();
+/*$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove(); 
-$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené par son fils à l&#39;hôpital. Son fils décrit qu&#39;il souffre d&#39;essoufflement (&quot;souf kout&quot;) depuis quelques jours, mais il ne voulait pas aller à l&#39;hôpital et a essayé de se soigner en utilisant son ancien remède familial à base de miel, d&#39;Aloe Vera et feuilles d&#39;amandier.
+$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");*/</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">M. Joseph est un homme de 65 ans du village Boucan Ferdinand qui a été amené par son fils à l&#39;hôpital. Son fils décrit qu&#39;il souffre d&#39;essoufflement (&quot;souf kout&quot;) depuis quelques jours, mais il ne voulait pas aller à l&#39;hôpital et a essayé de se soigner en utilisant son ancien remède familial à base de miel, d&#39;Aloe Vera et feuilles d&#39;amandier.
 
 M. Joseph dit que ses symptômes sont causés par des &quot;mauvais esprits&quot; et ne cherche pas de soins médicaux à moins qu&#39;il ne s&#39;agisse d&#39;une situation de vie ou de mort. Il dit aussi qu&#39;hier il toussait pendant la nuit  et ne pouvait pas dormir.
 
@@ -617,7 +617,7 @@ Hypertension treatment algorithm:
 [[Statpearls book chapter on hypertensive heart diseases|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
 [[Continue|Finish]]</tw-passagedata><tw-passagedata pid="31" name="Finish" tags="" position="100,475" size="100,100">Congratulations! You have completed all the cases!
 
-[[Continue|Score report]]</tw-passagedata><tw-passagedata pid="32" name="Case 3 introduction" tags="" position="225,475" size="100,100">Stéphanie is a 50-year-old woman who lives in Tabarre and comes to the hospital saying that she felt like she was suffocating during the night because of coughing (&quot;li te pèdi souf li&quot;) and cannot sleep without 2 pillows (&quot;paka kouche tet ba&quot;) for at least two weeks.
+[[Continue|Usability Survey]]</tw-passagedata><tw-passagedata pid="32" name="Case 3 introduction" tags="" position="225,475" size="100,100">Stéphanie is a 50-year-old woman who lives in Tabarre and comes to the hospital saying that she felt like she was suffocating during the night because of coughing (&quot;li te pèdi souf li&quot;) and cannot sleep without 2 pillows (&quot;paka kouche tet ba&quot;) for at least two weeks.
 
 Stéphanie tried massaging her legs whenever they were swollen without success. She says she even asked a hougan to help her breathe better because she is experiencing what she believes to be an “oppression.”
 
@@ -1029,8 +1029,7 @@ Close follow-up with echocardiography and BNP monitoring can help evaluate respo
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
-[[Continue|Case 3 introduction]]
-[[score report for debug| Score report]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
+[[Continue|Case 3 introduction]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
 &lt;&lt;set $wrong_password to false&gt;&gt;
 &lt;&lt;set $case_1_dx_score to 0&gt;&gt;
@@ -1153,11 +1152,11 @@ Please enter a password to continue.
 			&lt;&lt;goto &quot;Guard&quot;&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="Waiting Room" tags="" position="1225,850" size="100,100">Global MedEd Network FoCUS-HAITI 2023
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="Waiting Room" tags="" position="1225,850" size="100,100">Global MedEd Network FoCUS-Uganda 2025
 
 For an optimal platform experience, please use Chrome. You will need an audio source to complete this activity.
 
-Welcome to gmenecho! This is a virtual learning tool for patients that helps us evaluate the effectiveness of the training program you are participating in. You will work on four clinical cases. Once you’ve completed them, you’ll fill out a program evaluation form before taking the exam.  
+Welcome to gmenecho! This is a virtual learning tool for clinicians that helps us evaluate the effectiveness of the training program you are participating in. You will work on four clinical cases. Once you’ve completed them, you’ll fill out a program evaluation form before taking the exam.  
 Please begin when you are ready. This should take about half an hour.
 [[Start the first case|Case 4 introduction]]</tw-passagedata><tw-passagedata pid="71" name="Usability Survey" tags="" position="100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
