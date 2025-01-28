@@ -1,8 +1,8 @@
 :: Case 3 introduction 
 
-Stéphanie is a 50-year-old woman who lives in Tabarre and comes to the hospital saying that she felt like she was suffocating during the night because of coughing ("li te pèdi souf li") and cannot sleep without 2 pillows ("paka kouche tet ba") for at least two weeks.
+Stéphanie is a 15-year-old teenage girl who lives in XXXXX TODO and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
 
-Stéphanie tried massaging her legs whenever they were swollen without success. She says she even asked a hougan to help her breathe better because she is experiencing what she believes to be an “oppression.”
+She has been sweating more than usual (do we mention fever? TODO) and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
 
 After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
@@ -31,7 +31,7 @@ What is your next step?
 [[Labs|Labs 3]]
 [[Echo|Echo 3]]
 <<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continue Treatment|Treatment 3]] <<else>> [[Continue Treatment|Not done Dx yet 3]] <</if>>
-Notes: 50-year-old woman with cough, fatigue, dyspnea on minimal exertion worsening progressively over 2 months and coughing at night. BP140/90mmHg, HR 92 bpm, Temperature 37.7°C, SpO₂ 94% on room air.
+Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 :: Physical Exam 3
 <<set $diagnostics_3[0] to 1>> 
@@ -42,7 +42,7 @@ You might need headphones for an optimal experience.
 Your browser does not support the audio element.
 </audio> 
 
-Physical Exam: The results of the cardiac auscultation can be heard above. On pulmonary auscultation, you hear more significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal.
+Physical Exam: The results of the cardiac auscultation can be heard above. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
 
 [[Continue|Case stare 3]]
 
@@ -62,7 +62,7 @@ Mild pulmonary edema. Mild atrial enlargement.
 
 :: Labs 3
 <<set $diagnostics_3[2] to 1>>
-Hb level of 12 mg/dL. Otherwise, the rest of the available biological assessments are normal.
+Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
 <img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 [[Continue|Case stare 3]]
 
