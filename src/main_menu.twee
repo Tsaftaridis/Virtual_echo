@@ -83,7 +83,7 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Score report",
+  "start": "Case 4 introduction",
   "zoom": 1
 }
 
@@ -241,16 +241,51 @@ Please submit your results, then restart if someone else wants to use the same d
 // First calculate time durations for each passage
 let passageTimes = {};
 let lastTime = State.variables.started;
-State.variables.history.forEach((event, index) => {
+const passageHistoryWithDuration = State.variables.history.map((event, index) => {
     if (event.time) {
-        passageTimes[`${event.passage}${index}`] = (event.time - lastTime) / 1000; // Convert to seconds
+        const duration = (event.time - lastTime) / 1000; // Convert to seconds
         lastTime = event.time;
+        return {
+            passage: event.passage,
+            time: event.time / 1000, // Convert to seconds
+            duration: duration
+        };
+    } else {
+        return {
+            passage: event.passage,
+            time: 0,
+            duration: 0
+        };
     }
 });
 
 // Prepare the complete data object
 const sendData = JSON.stringify({
-    "ID": State.variables.id
+    "ID": State.variables.id, 
+	"diagnostics_4_physical_exam": State.variables.diagnostics_4_physical_exam, 
+	"diagnostics_4_echo_diagnosis": State.variables.diagnostics_4_echo_diagnosis, 
+	"diagnostics_4_premature_treatment": State.variables.diagnostics_4_premature_treatment, 
+	"case_4_Tx_score": State.variables.case_4_Tx_score, 
+	"case_4_Fu_score": State.variables.case_4_Fu_score, 
+	"case_4_Echo": State.variables.case_4_Echo, 
+	"echo4_quiz_view": State.variables.echo4_quiz_view, 
+	"echo4_quiz_placement": State.variables.echo4_quiz_placement, 
+	"echo4_quiz_view_2": State.variables.echo4_quiz_view_2,
+	"echo4_quiz_view_3": State.variables.echo4_quiz_view_3,
+    "echo4_quiz_lvef": State.variables.echo4_quiz_lvef,
+    "diuretics_4": State.variables.diuretics_4,
+    "antihypertensives_4": State.variables.antihypertensives_4,
+    "beta_blocker_4": State.variables.beta_blocker_4,
+    "albuterol_4": State.variables.albuterol_4,
+    "q_stop_beta_4": State.variables.q_stop_beta_4,
+    "q_stop_ACE_4": State.variables.q_stop_ACE_4,
+    "p_stop_beta_4": State.variables.p_stop_beta_4,
+    "p_stop_ACE_4": State.variables.p_stop_ACE_4,
+    "stop_beta_4": State.variables.stop_beta_4,
+    "stop_ACE_4": State.variables.stop_ACE_4,
+    "b_stop_beta_4": State.variables.b_stop_beta_4,
+    "b_stop_ACE_4": State.variables.b_stop_ACE_4, 
+	"passage_history": JSON.stringify(passageHistoryWithDuration)
 });
 
 $.ajax({
