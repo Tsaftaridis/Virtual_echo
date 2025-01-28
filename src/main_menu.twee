@@ -83,7 +83,7 @@ Echo Cases
   "ifid": "454461CD-2408-4984-A6B7-C0A0BBCA20E6",
   "format": "SugarCube",
   "format-version": "2.30.0",
-  "start": "Case 4 introduction",
+  "start": "Guard",
   "zoom": 1
 }
 
@@ -147,11 +147,11 @@ Please enter a password to continue.
 <</button>>
 
 :: Waiting Room
-Global MedEd Network FoCUS-HAITI 2023
+Global MedEd Network FoCUS-Uganda 2025
 
 For an optimal platform experience, please use Chrome. You will need an audio source to complete this activity.
 
-Welcome to gmenecho! This is a virtual learning tool for patients that helps us evaluate the effectiveness of the training program you are participating in. You will work on four clinical cases. Once you’ve completed them, you’ll fill out a program evaluation form before taking the exam.  
+Welcome to gmenecho! This is a virtual learning tool for clinicians that helps us evaluate the effectiveness of the training program you are participating in. You will work on four clinical cases. Once you’ve completed them, you’ll fill out a program evaluation form before taking the exam.  
 Please begin when you are ready. This should take about half an hour.
 [[Start the first case|Case 4 introduction]]
 
@@ -315,4 +315,3 @@ $.ajax({
 Thank you! Your results have been submitted successfully.
 <<button 'Restart'>><<script>>UI.restart();<</script>><</button>>
 </div>
-

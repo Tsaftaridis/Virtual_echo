@@ -1,10 +1,10 @@
 window.setup = window.setup || {};
 
 /* Disable history controls to stop users from affecting the scores. (Un)comment the following line to toggle. */
-Config.history.controls = false; 
+Config.history.controls = true;
 
 /* Hide sidebar initially. */ 
-Config.ui.stowBarInitially = true;
+Config.ui.stowBarInitially = false;
 
 setup.toSeconds = function (from, to) {
 	/* Determine the number of milliseconds between the two times. */
@@ -21,6 +21,6 @@ function form_submitted() {
 }
 
 window.form_submitted = form_submitted; 
-$('#ui-bar').remove();
+/*$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove(); 
-$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");
+$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");*/
