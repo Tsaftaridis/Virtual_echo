@@ -111,7 +111,7 @@ Echo Cases
 	<<set $has_access = 0>>
 	<<if $wrong_password>> Wrong password! <</if>>
 <</silently>>
-Please enter a password to continue.
+Please enter your trainee ID to continue.
 <<textbox "_answer" "">>
 <<button "Verify password">>
 	<<if _answer is "">>
