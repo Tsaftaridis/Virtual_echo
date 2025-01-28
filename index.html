@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="72" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="46" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
     background-color: #e0fbfc;
     color: #1D1D1D;
     /* background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png); */
@@ -1029,7 +1029,8 @@ Close follow-up with echocardiography and BNP monitoring can help evaluate respo
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
-[[Continue|Case 3 introduction]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
+[[Continue|Case 3 introduction]]
+[[score report for debug| Score report]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
 &lt;&lt;set $wrong_password to false&gt;&gt;
 &lt;&lt;set $case_1_dx_score to 0&gt;&gt;
@@ -1240,16 +1241,51 @@ Please submit your results, then restart if someone else wants to use the same d
 // First calculate time durations for each passage
 let passageTimes = {};
 let lastTime = State.variables.started;
-State.variables.history.forEach((event, index) =&gt; {
+const passageHistoryWithDuration = State.variables.history.map((event, index) =&gt; {
     if (event.time) {
-        passageTimes[`${event.passage}${index}`] = (event.time - lastTime) / 1000; // Convert to seconds
+        const duration = (event.time - lastTime) / 1000; // Convert to seconds
         lastTime = event.time;
+        return {
+            passage: event.passage,
+            time: event.time / 1000, // Convert to seconds
+            duration: duration
+        };
+    } else {
+        return {
+            passage: event.passage,
+            time: 0,
+            duration: 0
+        };
     }
 });
 
 // Prepare the complete data object
 const sendData = JSON.stringify({
-    &quot;ID&quot;: State.variables.id
+    &quot;ID&quot;: State.variables.id, 
+	&quot;diagnostics_4_physical_exam&quot;: State.variables.diagnostics_4_physical_exam, 
+	&quot;diagnostics_4_echo_diagnosis&quot;: State.variables.diagnostics_4_echo_diagnosis, 
+	&quot;diagnostics_4_premature_treatment&quot;: State.variables.diagnostics_4_premature_treatment, 
+	&quot;case_4_Tx_score&quot;: State.variables.case_4_Tx_score, 
+	&quot;case_4_Fu_score&quot;: State.variables.case_4_Fu_score, 
+	&quot;case_4_Echo&quot;: State.variables.case_4_Echo, 
+	&quot;echo4_quiz_view&quot;: State.variables.echo4_quiz_view, 
+	&quot;echo4_quiz_placement&quot;: State.variables.echo4_quiz_placement, 
+	&quot;echo4_quiz_view_2&quot;: State.variables.echo4_quiz_view_2,
+	&quot;echo4_quiz_view_3&quot;: State.variables.echo4_quiz_view_3,
+    &quot;echo4_quiz_lvef&quot;: State.variables.echo4_quiz_lvef,
+    &quot;diuretics_4&quot;: State.variables.diuretics_4,
+    &quot;antihypertensives_4&quot;: State.variables.antihypertensives_4,
+    &quot;beta_blocker_4&quot;: State.variables.beta_blocker_4,
+    &quot;albuterol_4&quot;: State.variables.albuterol_4,
+    &quot;q_stop_beta_4&quot;: State.variables.q_stop_beta_4,
+    &quot;q_stop_ACE_4&quot;: State.variables.q_stop_ACE_4,
+    &quot;p_stop_beta_4&quot;: State.variables.p_stop_beta_4,
+    &quot;p_stop_ACE_4&quot;: State.variables.p_stop_ACE_4,
+    &quot;stop_beta_4&quot;: State.variables.stop_beta_4,
+    &quot;stop_ACE_4&quot;: State.variables.stop_ACE_4,
+    &quot;b_stop_beta_4&quot;: State.variables.b_stop_beta_4,
+    &quot;b_stop_ACE_4&quot;: State.variables.b_stop_ACE_4, 
+	&quot;passage_history&quot;: JSON.stringify(passageHistoryWithDuration)
 });
 
 $.ajax({
