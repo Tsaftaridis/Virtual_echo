@@ -1,11 +1,11 @@
 :: Case 4 introduction
-Jessy, a 34-year-old woman and mother of three children, presents to the hospital. She reports having a cough and several episodes of paroxysmal nocturnal dyspnea (“feeling of choking at night”) that started two weeks after giving birth to her third child. She tried taking some leftover pills for the “lung infection” she had a few months ago, but the cough did not go away.
-
-Jessica also mentions that about a month before her delivery, she started feeling weak and had to change her shoes because her feet wouldn’t fit anymore (“Feet got bigger”). She did not seek help at that time. On examination, she does not have a fever; her white cell count is 7,500/ml and her blood pressure is 90/60 mmHg. Her heart rate is 120 bpm. Based on her medical history, it’s clear she had no prior health problems.
-
-What is your first step in the evaluation?
 <img src="https://th.bing.com/th/id/OIG.xp7PeYBOUWNsecu6cNJD?pid=ImgGn">
 
+Namatovu, a 34-year-old woman and mother of three children, presents to the hospital. She reports having a cough and several episodes of paroxysmal nocturnal dyspnea (“feeling of choking at night”) that started two weeks after giving birth to her third child. She tried taking some local herbs for the “lung infection” she had a few months ago, but the cough did not go away.
+
+Namatovu also mentions that about a month before her delivery, she started feeling weak and had to change her shoes because her feet wouldn’t fit anymore (“Feet got bigger”). She did not seek help at that time. On examination, she does not have a fever; her white cell count is 7,500/ml and her blood pressure is 90/60 mmHg. Her heart rate is 120 bpm. Based on her medical history, it’s clear she had no prior health problems.
+
+What is your first step in the management of this patient?
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]]
 [[Chest X-Ray|Chest X-Ray 4]]
@@ -38,6 +38,11 @@ What is your first step in the evaluation?
     <<set $stop_ACE_4 to false>>
     <<set $b_stop_beta_4 to false>>
     <<set $b_stop_ACE_4 to false>>
+    <<set $mortality_meds_4_arb to false>>
+    <<set $mortality_meds_4_ccb to false>>
+    <<set $mortality_meds_4_ace to false>>
+    <<set $mortality_meds_4_bb to false>>
+    <<set $mortality_meds_4_spiro to false>>
 <</silently>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus, it shows only tests not already done yet and some notes for quick review. */
@@ -46,28 +51,18 @@ What is your next step?
 <img src="https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn"> 
 
 [[Physical Exam|Physical Exam 4]]
-[[EKG|EKG 4]]
+[[EKG|EKG 4]] 
 [[Chest X-Ray|Chest X-Ray 4]]
 [[Labs|Labs 4]]
 [[Echo|Echo 4]]
-<<if hasVisited("EKG 4", "Echo 4", "Physical Exam 4")>> [[Continue to Treatment|Treatment 4]] <<else>> [[Continue to Treatment|Not done Dx yet 4]] <</if>>
+<<if hasVisited("Labs 4, "Echo 4", "Physical Exam 4")>> [[Continue to Treatment|Treatment 4]] <<else>> [[Continue to Treatment|Not done Dx yet 4]] <</if>> 
 
-Notes: 50-year-old female with cough, fatigue, and dyspnea on minimal exertion worsening progressively for 2 months, plus nighttime cough. BP 140/90 mmHg, HR 92 bpm, Temperature 37.7 Celsius, SaO2 94% on room air.
 
 /* Diagnostic choices start. */
 :: Physical Exam 4 
-You begin a physical exam on Jessica.
+You begin a physical exam on Namatovu.
 <<set $diagnostics_4_physical_exam to 1>>
 You notice distended neck veins and swelling of her feet. She says her “belly is heavy, like she’s still pregnant.” Her abdomen appears distended, and on palpation, you can clearly appreciate free fluid (ascites).
-
-Cardiac auscultation at the apex, left lateral decubitus.
-You may need headphones for an optimal experience.
-<audio controls>
-  <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/05_S3_Gallop_Apex.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio> 
-
-The cardiac auscultation findings can be heard above.
 
 On lung auscultation, you hear crackles.
 [[Continue| Case stare 4]]
@@ -76,27 +71,27 @@ On lung auscultation, you hear crackles.
 Some time later, the nurse hands you the following chest X-ray:
 <img style='width: 100%' src="https://prod-images-static.radiopaedia.org/multiple_choice_questions/420/bat-wings-pulmonary-oedema_big_gallery.jpeg">
 <<set $diagnostics_4_cxr to 1>>
-[[I need to see the radiologist’s report|Radiologist 4]]
+[[Read the radiologist report|Radiologist 4]]
 [[Continue| Case stare 4]]
 
 :: Radiologist 4
-The admission chest radiograph showed acute pulmonary edema with bilateral pleural effusions.
+The admission chest radiograph showed acute pulmonary edema with bilateral pleural effusions and cardiomegaly. 
 [[Continue|Case stare 4]]
 
 :: Labs 4
 <<set $diagnostics_4_labs to 1>>
 In the emergency department, blood was drawn and sent to the lab. A few hours later, the following lab results come back:
 
-White blood cell count: 6700/ml  
-Hb 9.8 g/dL  
-C-reactive protein 0.21 mg/dL (within normal limits)  
-Creatinine 2.1 mg/dL  
+White blood cell count: 6.7 k/ml  
+Hb: 9.8 g/dL  
+Creatinine: 2.1 mg/dL  
+NT pro-BNP: 956 pg/mL **HIGH** (upper normal limit 125 pg/mL)
 
 [[Continue|Case stare 4]]
 
 :: EKG 4
-/% Diffuse T-wave inversion. %/
-
+/* Diffuse T wave inversion. */
+ Here is the EKG. 
 <img style='width: 100%' src="https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg">
 
 [[Continue|Case stare 4]]
@@ -104,7 +99,8 @@ Creatinine 2.1 mg/dL
 :: Echo 4
 The cardiac echo is shown below:
 <img style='width: 100%' src="https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1680198032131-P2FIQDODZHSKVCF9JZKP/image-asset.gif?format=500w">
-Which echographic view is this?
+Which echographic view is this? 
+/* Parasternal long */
 <label><<radiobutton "$echo4_quiz_view" 1 autocheck >> Parasternal long axis </label>
 <label><<radiobutton "$echo4_quiz_view" 2 autocheck >> Parasternal short axis </label>
 <label><<radiobutton "$echo4_quiz_view" 3 autocheck >> Apical 4-chamber + Doppler </label>
@@ -126,20 +122,21 @@ Which echographic view is this?
 <label><<radiobutton "$echo4_quiz_view_2" 4 autocheck >> Apical 2-chamber </label>
 <label><<radiobutton "$echo4_quiz_view_2" 5 autocheck >> Subxiphoid </label>
 
-<img style='width: 100%' src="https://images2.imgbox.com/f5/1d/2ywSMD6V_o.jpg">
-Which echographic view is this?
+<img style='width: 100%' src="">// TODO ADD IVC picture after hiding labels (IVC remove labels)
+Which echographic view is this? //TODO add subxiphoid new pic from downloads. /* Correct is subxiphoid */
 <label><<radiobutton "$echo4_quiz_view_3" 1 autocheck >> Parasternal long axis </label>
 <label><<radiobutton "$echo4_quiz_view_3" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo4_quiz_view_3" 3 autocheck >> Apical 4-chamber + Doppler </label>
+<label><<radiobutton "$echo4_quiz_view_3" 3 autocheck >> Apical 4-chamber </label>
 <label><<radiobutton "$echo4_quiz_view_3" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo4_quiz_view_3" 5 autocheck >> Subxiphoid </label>
+<label><<radiobutton "$echo4_quiz_view_3" 5 autocheck >> Subxiphoid </label> 
 
-What do you think of the LV ejection fraction?
+
+What do you think of the LV ejection fraction? /* Correct is <40% */
 <label><<radiobutton "$echo4_quiz_lvef" 1 autocheck >> Reduced ejection fraction (<40%) </label>
-<label><<radiobutton "$echo4_quiz_lvef" 2 autocheck >> Moderately reduced ejection fraction (40-49%) </label>
+<label><<radiobutton "$echo4_quiz_lvef" 2 autocheck >> Mid-range ejection fraction (40-49%) </label>
 <label><<radiobutton "$echo4_quiz_lvef" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
 
-What do you think this echo shows?
+What do you think these echo images show? /* Correct is dilated left ventricle, low ejection fraction, dilated IVC */ 
 <label><<radiobutton "$diagnostics_4_echo_diagnosis" 1 autocheck>> Large pericardial effusion and evidence of tamponade </label>
 <label><<radiobutton "$diagnostics_4_echo_diagnosis" 2 autocheck>> Dilated left ventricle, low ejection fraction, dilated IVC </label> 
 <label><<radiobutton "$diagnostics_4_echo_diagnosis" 3 autocheck>> Bicuspid aortic valve, aortic stenosis </label>
@@ -155,10 +152,10 @@ The consulting cardiologist thinks you need a few more diagnostic steps before m
 [[Continue|Case stare 4]]
 
 :: Treatment 4
-The echocardiogram showed severely reduced left ventricular systolic function with a low ejection fraction of 30% and a dilated inferior vena cava. The right and left ventricles both appeared severely dilated and diffusely hypokinetic. The left ventricle end-diastolic volume was 118 ml/m2 and the end-diastolic dimension was 6.5 cm, with an end-diastolic dimension index of 3.96 cm/m2. Biatrial enlargement was also noted.
-<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+The echocardiogram showed severely reduced left ventricular systolic function with a low ejection fraction of 30% and a dilated inferior vena cava. Both ventricles appear dilated and biatrial enlargement was also noted. 
 
-Remember that a cardiac echo and an electrocardiogram are necessary diagnostic steps.
+<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+Remember that the cardiac echo and the NT pro-BNP are necessary to perform for diagnosing this patient. 
 
 Among the following medications, choose those that you believe would be part of appropriate management.
 <<checkbox "$diuretics_4" false true>> IV Furosemide 
@@ -169,27 +166,31 @@ Among the following medications, choose those that you believe would be part of 
 [[Continue|Guideline treatment 4]]
 
 :: Guideline treatment 4
-<<silently>>
+<<silently>> \\ TODO ADJUST SCORING FOR THIS CASE AND ADD TO REPORTING 
     <<if $diuretics_4>>  <<set $case_4_Tx_score += 2>> <</if>>
-    <<if $antihypertensives_4>>  <<set $case_4_Tx_score -= 4>> <</if>>
-    <<if $beta_blocker_4>>  <<set $case_4_Tx_score -= 2>> <</if>>
+    <<if $antihypertensives_4>> <<set $case_4_Tx_score -= 4>> <</if>>
+    <<if $beta_blocker_4>> <<set $case_4_Tx_score -= 2>> <</if>>
     <<if $albuterol_4>>  <<set $case_4_Tx_score -= 4>> <</if>>
 <</silently>>
-The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide, bumetanide, or hydrochlorothiazide can be used for pulmonary edema, but overdosing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant.
+The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
+
+\\ TODO if any of the meds other than diuretic, worsen > teaching point > A) consult cardiologist B) Continue to manage patient on your own 
+\\ TODO if correct, exam normalizes, GDMT: ACE ARM or Beta blocker and maintenance lasix  
 
 [[Continue|Deterioration 4]]
 
-:: Deterioration 4
-The next day, the nurse calls you because Jessica complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
+:: Deterioration 4 
+The next day, the nurse calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
 
-You go to Jessica’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%. You decide to admit Jessica to the intensive care unit.
+You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%. You decide to admit Namatovu to the intensive care unit.
 
 <img src="https://th.bing.com/th/id/OIG.1ole1s2_WpfGS3Aq5p0N?pid=ImgGn&w=1024&h=1024&rs=1">
 
 [[Continue|ICU 4]]
 
-:: ICU 4
-Jessica’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
+:: ICU 4 
+// TODO remove completely 
+Namatovu’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
 
 In your opinion, what is the best medical therapy?
 
@@ -198,16 +199,29 @@ In your opinion, what is the best medical therapy?
 [[Oxygen alone|Incorrect ICU mgmt 4]]
 [[Oxygen, inotropes, high-dose diuretics|Improvement 4]]
 
-:: Incorrect ICU mgmt 4
+:: Incorrect ICU mgmt 4 
+// TODO remove completely 
 Before initiating therapy, after consulting your attending physician, you decide to include everything in your treatment plan: oxygen, inotropes, and high-dose diuretics.
 [[Continue|Improvement 4]]
 
 :: Improvement 4
-The treatment seems to work as intended, good job! Over the next 48 hours, Jessica puts out around 5 liters of urine and her symptoms improve rapidly. Her serum creatinine normalizes to 0.9 mg/dL, while her blood pressure improves to 110/80 mmHg. Her serum lactate is now 0.9 mg/dL. After two more days in the ICU, her liver function tests return to normal. The pulse oximeter shows 100% on high oxygen flow. You decide to discontinue vasopressors and high-flow oxygen.
+//TODO REmove
+Physical findings, no crackles, swelling in legs went away, belly is swollen, she is feeling better. 
+
+BNP decreased (no need for an exact number)
 [[Continue|Further management 4]]
 
 :: Further management 4
-Jessica is discharged from the ICU and transferred to the floor for further management. There, she receives appropriate heart failure treatment, including a beta-blocker and an ACE inhibitor/ARB. Later, she is discharged and asked to return for a repeat echo in 6 months.
+
+Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
+
+    <<checkbox "$mortality_meds_4_arb" false true>> Losartan (ARB)
+    <<checkbox "$mortality_meds_4_ccb" false true>> Amlodipine (calcium Channel Blockers)
+    <<checkbox "$mortality_meds_4_ace" false true>> Lisinopril (ACE-Inhibitor)
+    <<checkbox "$mortality_meds_4_bb" false true>> Metoprolol (Beta-Blocker)
+    <<checkbox "$mortality_meds_4_spiro" false true>> Spironolactone (K+ sparing diuretics)
+
+// We should not do follow-up 
 
 <img src="https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&w=1024&h=1024&rs=1">
 
@@ -225,7 +239,7 @@ The repeat echo is shown below:
 <img src="https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&w=1024&h=1024&rs=1">
 
 
-Jessica returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
+Namatovu returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
 
 “It’s been a while since I was in the hospital, and I can now sleep normally at night ever since I got here. Also, as far as I know, the echo results look normal. Do I need to keep taking all these pills?”
 
@@ -235,7 +249,7 @@ Please choose the correct response (assuming you have the pill bottles in front 
 <<checkbox "$stop_ACE_4" false true>> “Since you feel fine, you can stop taking the ACEi/ARB, but you must continue the beta-blocker.”
 None of these: “You must continue taking both medications to maintain your improvement.”
 
-Jessica nods in understanding but seems skeptical. She then asks: “Are you sure my baby is safe? I’m worried that these medications might affect my baby since I’m exclusively breastfeeding.”
+Namatovu nods in understanding but seems skeptical. She then asks: “Are you sure my baby is safe? I’m worried that these medications might affect my baby since I’m exclusively breastfeeding.”
 
 <<checkbox "$b_stop_beta_4" false true>> “In that case, since you’re breastfeeding, you must stop taking the beta-blocker.”
 <<checkbox "$b_stop_ACE_4" false true>> “In that case, since you’re breastfeeding, you must stop taking the ACEi/ARB.”
@@ -243,7 +257,7 @@ Jessica nods in understanding but seems skeptical. She then asks: “Are you sur
 [[Continue|Attending questions 4]]
 
 :: Attending questions 4
-/% Evaluate answers to patient questions. %/
+/* Evaluate answers to patient questions */ 
 <<silently>>
     <<if $stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
     <<if $stop_ACE_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
@@ -267,7 +281,7 @@ Leave blank if she should continue both medications.
 [[Continue|Case conclusion 4]]
 
 :: Case conclusion 4
-Jessica thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
+Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
 Congratulations! You’ve completed Case 1!
 

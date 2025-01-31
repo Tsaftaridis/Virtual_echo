@@ -34,7 +34,7 @@ What is your next step?
 [[Chest X-Ray|CXR 2]]
 [[Labs|Labs 2]]
 [[Echo|Echo 2]]
-<<if hasVisited("EKG 2", "Echo 2", "Physical Exam 2")>> [[Continue Treatment|Treatment 2]] <<else>> [[Continue Treatment|Not done Dx yet 2]] <</if>>
+<<if hasVisited("Labs 2", "Echo 2", "Physical Exam 2")>> [[Continue Treatment|Treatment 2]] <<else>> [[Continue Treatment|Not done Dx yet 2]] <</if>>
 
 Notes: A 39-year-old diabetic woman complains of dyspnea and nausea for 2 months, recently worsened. History of hypertension without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.
 
