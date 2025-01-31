@@ -30,7 +30,7 @@ What is your next step?
 [[Chest X-Ray|Chest X-Ray 3]]
 [[Labs|Labs 3]]
 [[Echo|Echo 3]]
-<<if hasVisited("EKG 3", "Echo 3", "Physical Exam 3")>> [[Continue Treatment|Treatment 3]] <<else>> [[Continue Treatment|Not done Dx yet 3]] <</if>>
+<<if hasVisited("Labs 3", "Echo 3", "Physical Exam 3")>> [[Continue Treatment|Treatment 3]] <<else>> [[Continue Treatment|Not done Dx yet 3]] <</if>>
 Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 :: Physical Exam 3
@@ -38,7 +38,7 @@ Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively
 You begin a physical examination of the patient.
 You might need headphones for an optimal experience.
  <audio controls>
-  <source src="https://www.med.umich.edu/lrc/psb_open/html/repo/primer_heartsound/assets/media/13_Mitral_Opening_Snap_and_Diastolic_Murmur_Apex.mp3" type="audio/mpeg">
+  <source src="https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/professional/sounds/aortic_stenosis_murmur.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio> 
 
