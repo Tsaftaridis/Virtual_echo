@@ -220,11 +220,9 @@ Which of the following medications have been found to prolong mortality and morb
     <<checkbox "$mortality_meds_4_bb" false true>> Metoprolol (Beta-Blocker)
     <<checkbox "$mortality_meds_4_spiro" false true>> Spironolactone (K+ sparing diuretics)
 
-//We should not do follow-up 
-
 <img src="https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&w=1024&h=1024&rs=1">
 
-[[Continue|Repeat echo 4]]
+[[Continue|Case conclusion 4]]
 
 :: Repeat echo 4
 The repeat echo is shown below:
@@ -234,7 +232,6 @@ The repeat echo is shown below:
 [[Continue|Patient Questions 4]]
 
 :: Patient Questions 4
-
 <img src="https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&w=1024&h=1024&rs=1">
 
 Namatovu returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
@@ -276,13 +273,8 @@ Leave blank if she should continue both medications.
 <<checkbox "$p_stop_beta_4" false true>> She should stop taking the beta-blocker.
 <<checkbox "$p_stop_ACE_4" false true>> She should stop taking the ACEi/ARB.
 Leave blank if she should continue both medications.
-[[Continue|Case conclusion 4]]
 
-:: Case conclusion 4
-Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
-
-Congratulations! You’ve completed Case 1!
-
+/*If the attending questions are used, put these in the next passage.*/
 /% Evaluate answers to the attending physician. %/
 <<silently>>
     <<if $q_stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
@@ -292,6 +284,14 @@ Congratulations! You’ve completed Case 1!
     <<if $p_stop_ACE_4>>  <<set $case_4_Fu_score += 4>> <</if>>
     <<if $p_stop_none_4>> <<set $case_4_Fu_score -= 4>> <</if>>
 <</silently>>
+
+[[Continue|Case conclusion 4]]
+
+:: Case conclusion 4
+Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
+
+Congratulations! You’ve completed Case 1!
+
 
 <img src="https://th.bing.com/th/id/OIG.lAZOeFLxqw.eix_38xjd?pid=ImgGn">
 
