@@ -103,8 +103,8 @@ Which echographic view is this?
 /* Parasternal long */
 <label><<radiobutton "$echo4_quiz_view" 1 autocheck >> Parasternal long axis </label>
 <label><<radiobutton "$echo4_quiz_view" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo4_quiz_view" 3 autocheck >> Apical 4-chamber + Doppler </label>
-<label><<radiobutton "$echo4_quiz_view" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo4_quiz_view" 3 autocheck >> Apical 4-chamber</label>
+<label><<radiobutton "$echo4_quiz_view" 4 autocheck >> Apical 2-chamber</label>
 <label><<radiobutton "$echo4_quiz_view" 5 autocheck >> Subxiphoid </label>
 
 How is this echographic view obtained?
@@ -118,7 +118,7 @@ How is this echographic view obtained?
 Which echographic view is this?
 <label><<radiobutton "$echo4_quiz_view_2" 1 autocheck >> Parasternal long axis </label>
 <label><<radiobutton "$echo4_quiz_view_2" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo4_quiz_view_2" 3 autocheck >> Apical 4-chamber + Doppler </label>
+<label><<radiobutton "$echo4_quiz_view_2" 3 autocheck >> Apical 4-chamber</label>
 <label><<radiobutton "$echo4_quiz_view_2" 4 autocheck >> Apical 2-chamber </label>
 <label><<radiobutton "$echo4_quiz_view_2" 5 autocheck >> Subxiphoid </label>
 
