@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="69" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<!-- UUID://454461CD-2408-4984-A6B7-C0A0BBCA20E6// --><tw-storydata name="Echo Cases" startnode="68" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="454461CD-2408-4984-A6B7-C0A0BBCA20E6" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
     background-color: #e0fbfc;
     color: #1D1D1D;
     /* background-image: url(https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png); */
@@ -834,7 +834,7 @@ What is your first step in the management of this patient?
 [[Chest X-Ray|Chest X-Ray 4]]
 [[Labs|Labs 4]]
 [[Echo|Echo 4]]
-&lt;&lt;if hasVisited(&quot;Labs 4, &quot;Echo 4&quot;, &quot;Physical Exam 4&quot;)&gt;&gt; [[Continue to Treatment|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continue to Treatment|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt; 
+&lt;&lt;if hasVisited(&quot;Labs 4&quot;, &quot;Echo 4&quot;, &quot;Physical Exam 4&quot;)&gt;&gt; [[Continue to Treatment|Treatment 4]] &lt;&lt;else&gt;&gt; [[Continue to Treatment|Not done Dx yet 4]] &lt;&lt;/if&gt;&gt; 
 
 
 /* Diagnostic choices start. */</tw-passagedata><tw-passagedata pid="48" name="Physical Exam 4" tags="" position="975,600" size="100,100">You begin a physical exam on Namatovu.
@@ -920,38 +920,40 @@ Among the following medications, choose those that you believe would be part of 
 &lt;&lt;checkbox &quot;$antihypertensives_4&quot; false true&gt;&gt; Antihypertensives 
 &lt;&lt;checkbox &quot;$beta_blocker_4&quot; false true&gt;&gt; Beta-blocker
 
-[[Continue|Guideline treatment 4]]</tw-passagedata><tw-passagedata pid="56" name="Guideline treatment 4" tags="" position="725,725" size="100,100">&lt;&lt;silently&gt;&gt; \\ TODO ADJUST SCORING FOR THIS CASE AND ADD TO REPORTING 
+[[Continue|Treatment Result 4]]</tw-passagedata><tw-passagedata pid="56" name="Treatment Result 4" tags="" position="725,725" size="100,100">&lt;&lt;if $diuretics_4 &gt;&gt; Furosemide was the correct choice of treatment! The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
+ &lt;&lt;else&gt;&gt; Treatment with diuretics would be the appropriate treatment for this patient. The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
+&lt;&lt;/if&gt;&gt; 
+
+&lt;&lt;silently&gt;&gt; 
     &lt;&lt;if $diuretics_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $antihypertensives_4&gt;&gt; &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $beta_blocker_4&gt;&gt; &lt;&lt;set $case_4_Tx_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $albuterol_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
 
-\\ TODO if any of the meds other than diuretic, worsen &gt; teaching point &gt; A) consult cardiologist B) Continue to manage patient on your own 
-\\ TODO if correct, exam normalizes, GDMT: ACE ARM or Beta blocker and maintenance lasix  
+Despite your best efforts, the patient deteriorates.The next day, a colleague calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
 
-[[Continue|Deterioration 4]]</tw-passagedata><tw-passagedata pid="57" name="Deterioration 4" tags="" position="850,725" size="100,100">The next day, the nurse calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
+You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%.
 
-You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%. You decide to admit Namatovu to the intensive care unit.
+What is your next step? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$deterioration_4&quot; 1 autocheck &gt;&gt; Consult cardiologist &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$deterioration_4&quot; 0 autocheck &gt;&gt; &lt;/label&gt;
 
-&lt;img src=&quot;https://th.bing.com/th/id/OIG.1ole1s2_WpfGS3Aq5p0N?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
-
-[[Continue|ICU 4]]</tw-passagedata><tw-passagedata pid="58" name="ICU 4" tags="" position="975,725" size="100,100">// TODO remove completely 
-Namatovu’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
+[[Continue|Improvement 4]]</tw-passagedata><tw-passagedata pid="57" name="ICU 4" tags="" position="850,725" size="100,100">Namatovu’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
 
 In your opinion, what is the best medical therapy?
 
 [[Oxygen and inotropes|Incorrect ICU mgmt 4]]
 [[High-dose IV diuretics|Incorrect ICU mgmt 4]]
 [[Oxygen alone|Incorrect ICU mgmt 4]]
-[[Oxygen, inotropes, high-dose diuretics|Improvement 4]]</tw-passagedata><tw-passagedata pid="59" name="Incorrect ICU mgmt 4" tags="" position="1100,725" size="100,100">// TODO remove completely 
+[[Oxygen, inotropes, high-dose diuretics|Improvement 4]]</tw-passagedata><tw-passagedata pid="58" name="Incorrect ICU mgmt 4" tags="" position="975,725" size="100,100">// TODO remove completely 
 Before initiating therapy, after consulting your attending physician, you decide to include everything in your treatment plan: oxygen, inotropes, and high-dose diuretics.
-[[Continue|Improvement 4]]</tw-passagedata><tw-passagedata pid="60" name="Improvement 4" tags="" position="1225,725" size="100,100">//TODO REmove
+[[Continue|Improvement 4]]</tw-passagedata><tw-passagedata pid="59" name="Improvement 4" tags="" position="1100,725" size="100,100">//TODO - rephrase: exam normalizes, GDMT: ACE ARM or Beta blocker and maintenance lasix  
+
 Physical findings, no crackles, swelling in legs went away, belly is swollen, she is feeling better. 
 
 BNP decreased (no need for an exact number)
-[[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="61" name="Further management 4" tags="" position="100,850" size="100,100">Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
+[[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="60" name="Further management 4" tags="" position="1225,725" size="100,100">Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
 
     &lt;&lt;checkbox &quot;$mortality_meds_4_arb&quot; false true&gt;&gt; Losartan (ARB)
     &lt;&lt;checkbox &quot;$mortality_meds_4_ccb&quot; false true&gt;&gt; Amlodipine (calcium Channel Blockers)
@@ -959,16 +961,15 @@ BNP decreased (no need for an exact number)
     &lt;&lt;checkbox &quot;$mortality_meds_4_bb&quot; false true&gt;&gt; Metoprolol (Beta-Blocker)
     &lt;&lt;checkbox &quot;$mortality_meds_4_spiro&quot; false true&gt;&gt; Spironolactone (K+ sparing diuretics)
 
-// We should not do follow-up 
+//We should not do follow-up 
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
-[[Continue|Repeat echo 4]]</tw-passagedata><tw-passagedata pid="62" name="Repeat echo 4" tags="" position="225,850" size="100,100">The repeat echo is shown below:
+[[Continue|Repeat echo 4]]</tw-passagedata><tw-passagedata pid="61" name="Repeat echo 4" tags="" position="100,850" size="100,100">The repeat echo is shown below:
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1533340755751-28DSIIEOY3LCLELVB8FQ/parasternal+long+axis+normal.gif?format=500w&quot;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1515544100377-BDN6UHGVSAYQOGJO3PT8/ezgif.com-optimize+%286%29.gif?format=500w &quot;&gt;
 
-[[Continue|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="63" name="Patient Questions 4" tags="" position="350,850" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
-
+[[Continue|Patient Questions 4]]</tw-passagedata><tw-passagedata pid="62" name="Patient Questions 4" tags="" position="225,850" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
 Namatovu returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
 
@@ -985,7 +986,7 @@ Namatovu nods in understanding but seems skeptical. She then asks: “Are you su
 &lt;&lt;checkbox &quot;$b_stop_beta_4&quot; false true&gt;&gt; “In that case, since you’re breastfeeding, you must stop taking the beta-blocker.”
 &lt;&lt;checkbox &quot;$b_stop_ACE_4&quot; false true&gt;&gt; “In that case, since you’re breastfeeding, you must stop taking the ACEi/ARB.”
 
-[[Continue|Attending questions 4]]</tw-passagedata><tw-passagedata pid="64" name="Attending questions 4" tags="" position="475,850" size="100,100">/* Evaluate answers to patient questions */ 
+[[Continue|Attending questions 4]]</tw-passagedata><tw-passagedata pid="63" name="Attending questions 4" tags="" position="350,850" size="100,100">/* Evaluate answers to patient questions */ 
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;if $stop_beta_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -1006,7 +1007,7 @@ Leave blank if she should continue both medications.
 &lt;&lt;checkbox &quot;$p_stop_beta_4&quot; false true&gt;&gt; She should stop taking the beta-blocker.
 &lt;&lt;checkbox &quot;$p_stop_ACE_4&quot; false true&gt;&gt; She should stop taking the ACEi/ARB.
 Leave blank if she should continue both medications.
-[[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="65" name="Case conclusion 4" tags="" position="600,850" size="100,100">Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
+[[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="64" name="Case conclusion 4" tags="" position="475,850" size="100,100">Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
 Congratulations! You’ve completed Case 1!
 
@@ -1042,7 +1043,7 @@ Close follow-up with echocardiography and BNP monitoring can help evaluate respo
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
-[[Continue|Case 3 introduction]]</tw-passagedata><tw-passagedata pid="66" name="StoryInit" tags="" position="725,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
+[[Continue|Case 3 introduction]]</tw-passagedata><tw-passagedata pid="65" name="StoryInit" tags="" position="600,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
 &lt;&lt;set $wrong_password to false&gt;&gt;
 &lt;&lt;set $case_1_dx_score to 0&gt;&gt;
@@ -1112,7 +1113,7 @@ You can review guidelines on cardiovascular medications for pregnant, postpartum
 &lt;&lt;set $b_stop_ACE_4 to false&gt;&gt;
 
 /* Usability Survey */
-&lt;&lt;set $usability to [0,0,0,0,0,0,0,0,0,0]&gt;&gt;</tw-passagedata><tw-passagedata pid="67" name="StoryBanner" tags="" position="850,850" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png&quot;&gt;</tw-passagedata><tw-passagedata pid="68" name="PassageReady" tags="" position="975,850" size="100,100">/* Note: time is measured in milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
+&lt;&lt;set $usability to [0,0,0,0,0,0,0,0,0,0]&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="StoryBanner" tags="" position="725,850" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png&quot;&gt;</tw-passagedata><tw-passagedata pid="67" name="PassageReady" tags="" position="850,850" size="100,100">/* Note: time is measured in milliseconds since Unix Epoch. (January 1, 1970 00:00:00 UTC) */
 /* Update the time of the previous history record if there is one. */
 &lt;&lt;if $history.length gt 0&gt;&gt;
 	&lt;&lt;set $history.last().time to Date.now()&gt;&gt;
@@ -1127,7 +1128,7 @@ You can review guidelines on cardiovascular medications for pregnant, postpartum
 		&quot;passage&quot;: passage(),
 		&quot;time&quot;: 0
 	})&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Guard" tags="" position="1100,850" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="Guard" tags="" position="975,850" size="100,100">&lt;&lt;silently&gt;&gt;
 	&lt;&lt;set _answer to &quot;&quot;&gt;&gt;
 	&lt;&lt;set $has_access = 0&gt;&gt;
 	&lt;&lt;if $wrong_password&gt;&gt; Wrong password! &lt;&lt;/if&gt;&gt;
@@ -1165,13 +1166,13 @@ Please enter your trainee ID to continue.
 			&lt;&lt;goto &quot;Guard&quot;&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="Waiting Room" tags="" position="1225,850" size="100,100">Global MedEd Network FoCUS-Uganda 2025
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Waiting Room" tags="" position="1100,850" size="100,100">Global MedEd Network FoCUS-Uganda 2025
 
 For an optimal platform experience, please use Chrome. You will need an audio source to complete this activity.
 
 Welcome to gmenecho! This is a virtual learning tool for clinicians that helps us evaluate the effectiveness of the training program you are participating in. You will work on four clinical cases. Once you’ve completed them, you’ll fill out a program evaluation form before taking the exam.  
 Please begin when you are ready. This should take about half an hour.
-[[Start the first case|Case 4 introduction]]</tw-passagedata><tw-passagedata pid="71" name="Usability Survey" tags="" position="100,975" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
+[[Start the first case|Case 4 introduction]]</tw-passagedata><tw-passagedata pid="70" name="Usability Survey" tags="" position="1225,850" size="100,100">&lt;&lt;set $usability to [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]&gt;&gt;
 
 A. I think I would like to use this learning tool frequently. Please choose from the following options:
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[0]&quot; 1 autocheck&gt;&gt; 1 Strongly disagree &lt;/label&gt; 
@@ -1244,7 +1245,7 @@ J. I had to learn a lot of things before I could use this learning tool. Please 
 	&lt;label&gt;&lt;&lt;radiobutton &quot;$usability[9]&quot; 5 autocheck&gt;&gt; 5 Strongly agree&lt;/label&gt; 
 
 Please answer all questions before continuing.
-&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($usability[0] * $usability[1] * $usability[2] * $usability[3] * $usability[4] * $usability[5] * $usability[6] * $usability[7] * $usability[8] * $usability[9])&gt;&gt; [[Continue|Score report]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="Score report" tags="" position="225,975" size="100,100">&lt;&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&gt;&lt;&lt;/script&gt;&gt;
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($usability[0] * $usability[1] * $usability[2] * $usability[3] * $usability[4] * $usability[5] * $usability[6] * $usability[7] * $usability[8] * $usability[9])&gt;&gt; [[Continue|Score report]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="Score report" tags="" position="100,975" size="100,100">&lt;&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&gt;&lt;&lt;/script&gt;&gt;
 
 Please submit your results, then restart if someone else wants to use the same device. Thank you!
 

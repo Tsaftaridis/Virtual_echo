@@ -55,7 +55,7 @@ What is your next step?
 [[Chest X-Ray|Chest X-Ray 4]]
 [[Labs|Labs 4]]
 [[Echo|Echo 4]]
-<<if hasVisited("Labs 4, "Echo 4", "Physical Exam 4")>> [[Continue to Treatment|Treatment 4]] <<else>> [[Continue to Treatment|Not done Dx yet 4]] <</if>> 
+<<if hasVisited("Labs 4", "Echo 4", "Physical Exam 4")>> [[Continue to Treatment|Treatment 4]] <<else>> [[Continue to Treatment|Not done Dx yet 4]] <</if>> 
 
 
 /* Diagnostic choices start. */
@@ -163,33 +163,32 @@ Among the following medications, choose those that you believe would be part of 
 <<checkbox "$antihypertensives_4" false true>> Antihypertensives 
 <<checkbox "$beta_blocker_4" false true>> Beta-blocker
 
-[[Continue|Guideline treatment 4]]
+[[Continue|Treatment Result 4]]
 
-:: Guideline treatment 4
-<<silently>> \\ TODO ADJUST SCORING FOR THIS CASE AND ADD TO REPORTING 
+:: Treatment Result 4
+<<if $diuretics_4 >> Furosemide was the correct choice of treatment! The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
+ <<else>> Treatment with diuretics would be the appropriate treatment for this patient. The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
+<</if>> 
+
+<<silently>> 
     <<if $diuretics_4>>  <<set $case_4_Tx_score += 2>> <</if>>
     <<if $antihypertensives_4>> <<set $case_4_Tx_score -= 4>> <</if>>
     <<if $beta_blocker_4>> <<set $case_4_Tx_score -= 2>> <</if>>
     <<if $albuterol_4>>  <<set $case_4_Tx_score -= 4>> <</if>>
 <</silently>>
-The goal of treatment for this patient with peripartum cardiomyopathy is to control heart failure symptoms. In the acute setting, diuresis is the cornerstone of treatment. Furosemide or bumetanide can be used for pulmonary edema, but overdiuresing carries a risk of placental hypoperfusion and fetal electrolyte abnormalities if the patient is pregnant. 
 
-\\ TODO if any of the meds other than diuretic, worsen > teaching point > A) consult cardiologist B) Continue to manage patient on your own 
-\\ TODO if correct, exam normalizes, GDMT: ACE ARM or Beta blocker and maintenance lasix  
+Despite your best efforts, the patient deteriorates.The next day, a colleague calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
 
-[[Continue|Deterioration 4]]
+You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%.
 
-:: Deterioration 4 
-The next day, the nurse calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
+What is your next step? 
+<label><<radiobutton "$deterioration_4" 1 autocheck >> Consult cardiologist </label>
+<label><<radiobutton "$deterioration_4" 0 autocheck >> </label>
 
-You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%. You decide to admit Namatovu to the intensive care unit.
-
-<img src="https://th.bing.com/th/id/OIG.1ole1s2_WpfGS3Aq5p0N?pid=ImgGn&w=1024&h=1024&rs=1">
-
-[[Continue|ICU 4]]
+[[Continue|Improvement 4]]
 
 :: ICU 4 
-// TODO remove completely 
+
 Namatovu’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
 
 In your opinion, what is the best medical therapy?
@@ -205,14 +204,14 @@ Before initiating therapy, after consulting your attending physician, you decide
 [[Continue|Improvement 4]]
 
 :: Improvement 4
-//TODO REmove
+//TODO - rephrase: exam normalizes, GDMT: ACE ARM or Beta blocker and maintenance lasix  
+
 Physical findings, no crackles, swelling in legs went away, belly is swollen, she is feeling better. 
 
 BNP decreased (no need for an exact number)
 [[Continue|Further management 4]]
 
 :: Further management 4
-
 Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
 
     <<checkbox "$mortality_meds_4_arb" false true>> Losartan (ARB)
@@ -221,7 +220,7 @@ Which of the following medications have been found to prolong mortality and morb
     <<checkbox "$mortality_meds_4_bb" false true>> Metoprolol (Beta-Blocker)
     <<checkbox "$mortality_meds_4_spiro" false true>> Spironolactone (K+ sparing diuretics)
 
-// We should not do follow-up 
+//We should not do follow-up 
 
 <img src="https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&w=1024&h=1024&rs=1">
 
@@ -237,7 +236,6 @@ The repeat echo is shown below:
 :: Patient Questions 4
 
 <img src="https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&w=1024&h=1024&rs=1">
-
 
 Namatovu returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
 
