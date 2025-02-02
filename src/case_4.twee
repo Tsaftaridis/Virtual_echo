@@ -208,6 +208,8 @@ Before initiating therapy, after consulting your attending physician, you decide
 
 Physical findings, no crackles, swelling in legs went away, belly is swollen, she is feeling better. 
 
+// Strong evidence suggests that medications like: entresto,... have been shown to improve morbidity and mortality in the heart failure population. Diuretics have not been shown to improve those but they are important for symptom management and patient comfort. 
+
 BNP decreased (no need for an exact number)
 [[Continue|Further management 4]]
 
@@ -244,6 +246,11 @@ Please choose the correct response (assuming you have the pill bottles in front 
 <<checkbox "$stop_ACE_4" false true>> “Since you feel fine, you can stop taking the ACEi/ARB, but you must continue the beta-blocker.”
 None of these: “You must continue taking both medications to maintain your improvement.”
 
+TODO
+// Specific ace-inhibitors: Enalapril benazapril are safe. Others are not.  
+// NO: lisinopril, arbs 
+
+Which medications are safe to take during breastfeeding? 
 Namatovu nods in understanding but seems skeptical. She then asks: “Are you sure my baby is safe? I’m worried that these medications might affect my baby since I’m exclusively breastfeeding.”
 
 <<checkbox "$b_stop_beta_4" false true>> “In that case, since you’re breastfeeding, you must stop taking the beta-blocker.”
@@ -268,7 +275,10 @@ The attending physician also tests your knowledge: “Let’s say this patient c
 <<checkbox "$q_stop_ACE_4" false true>> She should stop taking the ACEi/ARB.
 Leave blank if she should continue both medications.
 
-“And if the patient tells you she plans on getting pregnant again soon?”
+//TODO 
+What blood pressure medications are safe during pregnancy 
+RIGHT: beta-blocker 
+WRONG: ACEi-ARB-spironolactone 
 
 <<checkbox "$p_stop_beta_4" false true>> She should stop taking the beta-blocker.
 <<checkbox "$p_stop_ACE_4" false true>> She should stop taking the ACEi/ARB.
@@ -288,6 +298,9 @@ Leave blank if she should continue both medications.
 [[Continue|Case conclusion 4]]
 
 :: Case conclusion 4
+// During pregnancy beta-blockers can be safe with close monitoring and lasix can also be safe with monitoring for dehydration. 
+// during breastfeeding these medications are considered safe, while others are not. 
+
 Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
 Congratulations! You’ve completed Case 1!
@@ -314,5 +327,6 @@ Iron supplementation may be recommended for PPCM patients with low hemoglobin.
 Close follow-up with echocardiography and BNP monitoring can help evaluate response to treatment and guide management decisions.
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
+// TODO add points from new passages (heart failure, pregnancy, lactation) and make them stand out. 
 
 [[Continue|Case 3 introduction]]
