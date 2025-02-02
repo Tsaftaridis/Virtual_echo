@@ -394,9 +394,32 @@ La meilleure première étape de la prise en charge consiste à administrer du f
 Après stabilisation initiale, les patients doivent être mis sous traitement à long terme pour l&#39;insuffisance cardiaque avant de quitter l&#39;hôpital. Cela garantit qu&#39;ils sont pris en charge de manière adéquate, compte tenu du risque qu&#39;ils soient perdus de vue en raison de difficultés d&#39;accès aux soins. Une sortie précoce ou un traitement inadéquat (par exemple, diurétiques oraux uniquement) pourrait entraîner de moins bons résultats.
 
 Vous pouvez en savoir plus sur la gestion de l&#39;insuffisance cardiaque en lisant les lignes directrices 2021 de la Société européenne de cardiologie. [[lignes directrices 2021 de la Société européenne de cardiologie|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
-[[Voir le prochain patient|Case 2 introduction]]</tw-passagedata><tw-passagedata pid="17" name="Case 2 introduction" tags="" position="850,225" size="100,100">Marie, a 39-year-old woman, presents to the emergency room with severe shortness of breath and nausea. She says she has had these symptoms for two months, but they have significantly worsened recently.
+[[Voir le prochain patient|Case 2 introduction]]
 
-When asked about her history, Marie recalls that during her adolescence, she was once told that her blood pressure was slightly elevated, but no follow-up was done.
+
+You might need headphones for an optimal experience. There is a diastolic murmur 
+ &lt;audio controls&gt;
+  &lt;source src=&quot;https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/professional/sounds/aortic_stenosis_murmur.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt; 
+
+
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png&quot;&gt;
+What is the echocardiographic view? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 3 autocheck &gt;&gt; Apical 4-chamber (Zoomed) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 6 autocheck &gt;&gt; Continuous wave Doppler &lt;/label&gt;</tw-passagedata><tw-passagedata pid="17" name="Case 2 introduction" tags="" position="850,225" size="100,100">// TODO make man 
+// TODO make businessman who has hypertension and overweight.
+// TODO remove diabetes medications, just say diabetic 
+// TODO leave family history of hypertension. 
+// TODO remove nausea 
+
+Mulindwa, a 39-year-old woman, presents to the emergency room with severe shortness of breath and nausea. She says she has had these symptoms for two months, but they have significantly worsened recently.
+
+When asked about her history, Mulindwa recalls that during her adolescence, she was once told that her blood pressure was slightly elevated, but no follow-up was done.
 
 She is on oral contraceptive therapy, as well as metformin and insulin for her diabetes. Her BMI is 29.3.
 
@@ -404,7 +427,7 @@ Both her father and mother suffer from hypertension that manifested in their fif
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.crb5tn2O9NJw_0yRun8t?pid=ImgGn&quot;&gt;
 
-At triage, Marie&#39;s blood pressure is 200/100 mmHg in her right arm with a regular pulse of 120 bpm. Her respiratory rate was 21 breaths/min with a SpO₂ of 93% on room air. Her temperature was 36.2 degrees Celsius.
+At triage, Mulindwa&#39;s blood pressure is 180/95 mmHg in her right arm with a regular pulse of 90 bpm. Her respiratory rate was 21 breaths/min with a SpO₂ of 93% on room air. Her temperature was 36.2 degrees Celsius.
 
 What is your first step in the evaluation?
 [[Physical Exam|Physical Exam 2]]
@@ -432,6 +455,13 @@ Notes: A 39-year-old diabetic woman complains of dyspnea and nausea for 2 months
 
 /* This is where the diagnosis starts. */</tw-passagedata><tw-passagedata pid="19" name="Physical Exam 2" tags="" position="1100,225" size="100,100">Cardiac auscultation revealed a grade 2/6 systolic heart murmur best heard at the second left intercostal space and mild crackles at both bases. No peripheral edema, no hepatomegaly.
 
+// TODO keep crackles at bases 
+// TODO add JVD 
+// TODO add peripheral edema 
+// TODO remove murmur
+// TODO remove fundoscopy 
+// TODO remove postural hyperetsnsion 
+
 /* Set physical exam variables. */
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;set $case_2_fundoscopy to false&gt;&gt; 
@@ -447,13 +477,13 @@ Notes: A 39-year-old diabetic woman complains of dyspnea and nausea for 2 months
 &lt;&lt;checkbox &quot;$case_2_orthostatics&quot; false true&gt;&gt; Orthostatic Hypotension Test
 &lt;&lt;checkbox &quot;$case_2_dix_hallpike&quot; false true&gt;&gt; Dix-Hallpike Maneuver
 &lt;&lt;checkbox &quot;$case_2_kernig_brudzinsky&quot; false true&gt;&gt; Search for Kernig and Brudzinski Signs 
-[[Continue| Consults results 2]]</tw-passagedata><tw-passagedata pid="20" name="Consults results 2" tags="" position="1225,225" size="100,100">&lt;&lt;if not $case_2_fundoscopy&gt;&gt; Marie needs a fundoscopy to check for signs of hypertensive retinopathy.&lt;&lt;/if&gt;&gt;
+[[Continue| Consults results 2]]</tw-passagedata><tw-passagedata pid="20" name="Consults results 2" tags="" position="1225,225" size="100,100">&lt;&lt;if not $case_2_fundoscopy&gt;&gt; Mulindwa needs a fundoscopy to check for signs of hypertensive retinopathy.&lt;&lt;/if&gt;&gt;
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.oKcvm6lVAv4vfuFNpf9d?pid=ImgGn&quot;&gt;
 
 &lt;&lt;if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky&gt;&gt; Aside from fundoscopy, the other tests are not necessary at this time. &lt;&lt;/if&gt;&gt;
 
-A fundoscopy revealed arteriovenous nicking, cotton-wool spots, exudates, hemorrhages, and papilledema. Based on these findings, Marie&#39;s condition can be classified as grade 4 hypertensive retinopathy in her left eye and grade 3 in her right eye.
+A fundoscopy revealed arteriovenous nicking, cotton-wool spots, exudates, hemorrhages, and papilledema. Based on these findings, Mulindwa&#39;s condition can be classified as grade 4 hypertensive retinopathy in her left eye and grade 3 in her right eye.
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="21" name="CXR 2" tags="" position="100,350" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg&quot;&gt;
 &lt;&lt;set $diagnostics_2[1] to 1&gt;&gt;
@@ -469,22 +499,17 @@ A fundoscopy revealed arteriovenous nicking, cotton-wool spots, exudates, hemorr
 Laboratory tests showed a hemoglobin level of 11.5 g/dL
 Serum creatinine: 0.9 mg/dL
 Serum sodium: 140 mEq/L
-Serum calcium (total)/(ionized): 9/5.1 mg/dL
 RBC: 6,700/ml
 WBC: 7,540/ml
 Platelets: 225,000/ml
-Neutrophils: 50 %
-Eosinophils: 4 %
-Basophils: 4 %
-Lymphocytes: 36 %
-Monocytes: 6 %
+NT pro-BNP: 1600 // TODO units 
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="24" name="EKG 2" tags="" position="475,350" size="100,100">&lt;&lt;set $diagnostics_2[3] to 1&gt;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://www.wikidoc.org/images/f/f8/LVH_6.jpg&quot;&gt;
-[[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="25" name="Echo 2" tags="" position="600,350" size="100,100">The cardiac echo is illustrated below and the septum measures 1.3 cm.
+[[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="25" name="Echo 2" tags="" position="600,350" size="100,100">The cardiac echo is illustrated below and the septum measures 1.4 cm.
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 1 autocheck&gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 1 autocheck&gt;&gt; Parasternal long axis &lt;/label&gt; /*correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 2 autocheck&gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 3 autocheck&gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[0]&quot; 4 autocheck&gt;&gt; Apical 2-chamber &lt;/label&gt;
@@ -494,21 +519,21 @@ What is the echocardiographic view?
 What is the echocardiographic view? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 1 autocheck&gt;&gt; Parasternal long axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 2 autocheck&gt;&gt; Parasternal short axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 3 autocheck&gt;&gt; Apical 4-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 3 autocheck&gt;&gt; Apical 4-chamber &lt;/label&gt; /* correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 4 autocheck&gt;&gt; Apical 2-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[1]&quot; 5 autocheck&gt;&gt; Subxiphoid &lt;/label&gt;
 
 How is this view obtained in ultrasound?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 1 autocheck&gt;&gt; Place the transducer in the parasternal window with the transducer&#39;s index mark oriented toward the patient&#39;s right shoulder (10 o&#39;clock) in the third or fourth intercostal space. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 2 autocheck&gt;&gt; Place the transducer in the left parasternal fourth or fifth intercostal space along a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the long parasternal view. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 3 autocheck&gt;&gt; Place the transducer on the area of maximum pulse palpation with the indicator pointing toward the patient&#39;s left side. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 3 autocheck&gt;&gt; Place the transducer on the area of maximal pulse palpation with the indicator pointing toward the patient&#39;s left side. &lt;/label&gt; /*correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 4 autocheck&gt;&gt; Place the transducer on the patient&#39;s abdomen in the subcostal region, slightly to the right of the midline. The transducer&#39;s index mark is oriented toward the patient&#39;s left, in the 3 o&#39;clock position. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[4]&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient&#39;s head and slightly tilted to the patient&#39;s right &lt;/label&gt;
 
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
 What is the echocardiographic view? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 1 autocheck&gt;&gt; Parasternal long axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 2 autocheck&gt;&gt; Parasternal short axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 2 autocheck&gt;&gt; Parasternal short axis &lt;/label&gt; /*correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 3 autocheck&gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 4 autocheck&gt;&gt; Apical 2-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[2]&quot; 5 autocheck&gt;&gt; Subxiphoid &lt;/label&gt;
@@ -516,7 +541,7 @@ What is the echocardiographic view?
 What do you think about the LV Ejection Fraction?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 1 autocheck&gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 2 autocheck&gt;&gt; Moderately reduced ejection fraction (40-49%) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 3 autocheck&gt;&gt; Preserved ejection fraction (≥50%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo2_quiz[3]&quot; 3 autocheck&gt;&gt; Preserved ejection fraction (≥50%) &lt;/label&gt; /* correct */
 
 /* Echo diagnosis choices. */
 &lt;&lt;silently&gt;&gt;
@@ -529,12 +554,12 @@ What do you think about the LV Ejection Fraction?
     &lt;&lt;set $ddx_2_score = 0&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
-The cardiac echo is illustrated below and the septum measures 1.3 cm.
+The cardiac echo is illustrated below and the septum measures 1.4 cm.
 How would you describe the echo?
 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 1 autocheck&gt;&gt; Dilated cardiomyopathy &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 2 autocheck&gt;&gt; Aortic stenosis &lt;/label&gt; 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 3 autocheck&gt;&gt; Severe left ventricular hypertrophy &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 3 autocheck&gt;&gt; Left ventricular hypertrophy &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_2[4]&quot; 4 autocheck&gt;&gt; Rheumatic heart disease &lt;/label&gt;
 
 Please answer all questions before continuing.
@@ -546,17 +571,24 @@ Please answer all questions before continuing.
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="27" name="Diagnosis 2" tags="" position="850,350" size="100,100">/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 
-According to you, what is the correct diagnosis?
+According to you, what is the correct diagnosis? //TODO make radiobutton
 &lt;&lt;checkbox &quot;$ddx_2_CAD&quot; false true&gt;&gt; Coronary artery disease
-&lt;&lt;checkbox &quot;$ddx_2_HTeCM&quot; false true&gt;&gt; Hypertensive cardiomyopathy
-&lt;&lt;checkbox &quot;$ddx_2_PICM&quot; false true&gt;&gt; Iatrogenic/Infectious cardiomyopathy
-&lt;&lt;checkbox &quot;$ddx_2_AST&quot; false true&gt;&gt; Aortic stenosis
-&lt;&lt;checkbox &quot;$ddx_2_SAP&quot; false true&gt;&gt; Sleep apnea
-&lt;&lt;checkbox &quot;$ddx_2_HTrCM&quot; false true&gt;&gt; Hypertrophic cardiomyopathy (genetic) 
+&lt;&lt;checkbox &quot;$ddx_2_HTeCM&quot; false true&gt;&gt; Heart failure with preserved ejection fraction 
+// TODO heart failure with reduced ejection fraction 
+// TODO rheumatic heart disease  
+
+
+TODO: Add question:  
+what is the main risk factor for this patient&#39;s diagnosis? 
+Hypertension 
+Obesity 
+Diabetic 
+Occupation
+
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="28" name="Treatment 2" tags="" position="975,350" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn&quot;&gt;
 
-A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertrophy with preserved ejection fraction. The interventricular septum and posterior wall thickness was 13 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial hypertrophy was observed.
+A transthoracic echocardiogram (TTE) showed concentric left ventricular enlargement with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial hypertrophy was observed.
 
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;set $inotropes_2 to false&gt;&gt;
@@ -569,12 +601,19 @@ A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertro
 Choose from the following medications those that you think would be part of the appropriate treatment.
 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.W9iaLRJkSOWUwe2Wgsfa?pid=ImgGn&quot;&gt;
-&lt;&lt;checkbox &quot;$inotropes_2&quot; false true&gt;&gt; Inotropes
-&lt;&lt;checkbox &quot;$diuretics_2&quot; false true&gt;&gt; IV Furosemide 
-&lt;&lt;checkbox &quot;$metoprolol_2&quot; false true&gt;&gt; Metoprolol 
-&lt;&lt;checkbox &quot;$digoxin_2&quot; false true&gt;&gt; Digoxin 
-&lt;&lt;checkbox &quot;$ace_arb_2&quot; false true&gt;&gt; Angiotensin-converting enzyme inhibitor or angiotensin receptor blocker
-&lt;&lt;checkbox &quot;$amlodipine_2&quot; false true&gt;&gt; Amlodipine 
+
+&lt;&lt;checkbox &quot;$diuretics_2&quot; false true&gt;&gt; Furosemide 
+&lt;&lt;checkbox &quot;$ace_arb_2&quot; false true&gt;&gt; Angiotensin-converting enzyme inhibitor or angiotensin receptor blocker (i.e. lysinopril TODO, valsartan)
+//TODO (what class is this) mra (i.e. spironolactone )
+//TODO sglt-2 inhibitor (empagliflozin or dapagliflozin (TODO verify names))
+//TODO Pressure control 
+//TODO Weight reduction 
+
+
+//TODO He is still hypertensive &gt; medications to treat hypertension will treat with HEfPef. 
+hfpef management literally relies on management of the underlying issues like hypertension, obesity, abnormal rhythms like atrial fibrillation, management of congestion. 
+But there are also other medications that have benefits. 
+
 [[Continue|Guideline treatment 2]]</tw-passagedata><tw-passagedata pid="29" name="Guideline treatment 2" tags="" position="1100,350" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn&quot;&gt; 
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;if $inotropes_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -591,10 +630,10 @@ Beta-blockers are not recommended except in cases of heart failure, ischemic hea
 Vasodilators such as hydralazine should only be added as a fourth agent
 Diuretics, calcium channel blockers, and renin-angiotensin inhibitors have synergistic effects allowing for better blood pressure control.
 
-Since Marie is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for her. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
-[[Continue|Outcome 2]]</tw-passagedata><tw-passagedata pid="30" name="Outcome 2" tags="" position="1225,350" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
+Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for her. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
+[[Continue|Outcome 2]]</tw-passagedata><tw-passagedata pid="30" name="Outcome 2 //TODO remove hypertension management" tags="" position="1225,350" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
-Two weeks later, Marie comes to the clinic to renew her prescription. She tells you that her dyspnea has improved and that she has no problems with the medications.
+Two weeks later, Mulindwa comes to the clinic to renew her prescription. She tells you that her dyspnea has improved and that she has no problems with the medications.
 Congratulations, you have completed the third case!
 
 Hypertensive cardiomyopathy refers to changes in the heart muscle due to hypertension.
@@ -617,9 +656,9 @@ Hypertension treatment algorithm:
 [[Statpearls book chapter on hypertensive heart diseases|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
 [[Continue|Finish]]</tw-passagedata><tw-passagedata pid="31" name="Finish" tags="" position="100,475" size="100,100">Congratulations! You have completed all the cases!
 
-[[Continue|Usability Survey]]</tw-passagedata><tw-passagedata pid="32" name="Case 3 introduction" tags="" position="225,475" size="100,100">Stéphanie is a 15-year-old teenage girl who lives in XXXXX TODO and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
+[[Continue|Usability Survey]]</tw-passagedata><tw-passagedata pid="32" name="Case 3 introduction" tags="" position="225,475" size="100,100">Kasozi is a 15-year-old teenage girl who lives in Kampala and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
 
-She has been sweating more than usual (do we mention fever? TODO) and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
+She has been having fever and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
 
 After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
@@ -649,17 +688,14 @@ What is your first step in the evaluation?
 Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
 /* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="34" name="Physical Exam 3" tags="" position="475,475" size="100,100">&lt;&lt;set $diagnostics_3[0] to 1&gt;&gt; 
 You begin a physical examination of the patient.
-You might need headphones for an optimal experience.
- &lt;audio controls&gt;
-  &lt;source src=&quot;https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/professional/sounds/aortic_stenosis_murmur.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
-Your browser does not support the audio element.
-&lt;/audio&gt; 
 
-Physical Exam: The results of the cardiac auscultation can be heard above. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
+Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
 
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="35" name="Chest X-Ray 3" tags="" position="600,475" size="100,100">&lt;&lt;set $diagnostics_3[1]&gt;&gt;
 40 minutes later, the nurse hands you the following radiographic film:
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://commons.wikimedia.org/wiki/File:Chest_XR_of_HAPE.png&quot;&gt;
+
+Bilateral patchy long infiltrates consistent with pulmonary edema. 
 
 [[I need to see the radiologist&#39;s report|radiologist 3]]
 [[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="36" name="radiologist 3" tags="" position="725,475" size="100,100">Mild pulmonary edema. Mild atrial enlargement.
@@ -668,25 +704,46 @@ Physical Exam: The results of the cardiac auscultation can be heard above. On pu
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="37" name="Labs 3" tags="" position="850,475" size="100,100">&lt;&lt;set $diagnostics_3[2] to 1&gt;&gt;
 Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn&quot;&gt;
-[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="38" name="EKG 3" tags="" position="975,475" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg&quot;&gt;
+
+Which of the following lab findings is most suggestive of the diagnosis? //TODO
+- BNP for mitral stenosis 
+- Elevated BNP at 1200 /*Correct */
+- Normal creatinine (1.0)
+- Hg normal 
+- Kidney function is normal 
+- WBC is normal 5000
+
+
+[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="38" name="EKG 3" tags="" position="975,475" size="100,100">The ekg is notable for left atrial enlargement
+Note the deeply inverted P wave in V1 and wide P wave in II, greater than 120ms.
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.ecgstampede.com/wp-content/uploads/2022/11/150-HCM_LAE-1-scaled.jpg&quot;&gt;
 &lt;&lt;set $diagnostics_3[3]&gt;&gt;
 
 [[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="39" name="Echo 3" tags="" position="1100,475" size="100,100">The cardiac echo is illustrated below:
 &lt;img src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png&quot;&gt;
-What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 3 autocheck &gt;&gt; Apical 4-chamber and Doppler ultrasound &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
+What is the echocardiographic view? /* Apical 4-chamber and doppler ultrasound */
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt; 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt; 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 3 autocheck &gt;&gt; Apical 4-chamber and Doppler ultrasound &lt;/label&gt; 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt; 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[0]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt; 
 
 &lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
-What is the echocardiographic view? 
+What is the echocardiographic view? /* Parasternal long axis */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
+
+Select the features you see in this video that can help you make a diagnosis? 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[1]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+
+Reduced left ventricular ejection fraction 
+Pericardial effusion 
+Restricted opening and doming of the mitral valve /*correct */
+Normal findings overall
+Dilated left atrium /*also correct*/
 
 How is this view obtained in ultrasound?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 1 autocheck&gt;&gt; Place the transducer in the parasternal window with the transducer&#39;s index mark oriented toward the patient&#39;s right shoulder (10 o&#39;clock) in the third or fourth intercostal space &lt;/label&gt;
@@ -695,44 +752,20 @@ How is this view obtained in ultrasound?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 4 autocheck&gt;&gt; Place the transducer on the patient&#39;s abdomen in the subcostal region, slightly to the right of the midline. The transducer&#39;s index mark is oriented toward the patient&#39;s left, in the 3 o&#39;clock position &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[5]&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient&#39;s head and slightly tilted to the patient&#39;s right &lt;/label&gt;
 
-&lt;video controls autoplay src=&quot;https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/video&gt;
-What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 3 autocheck &gt;&gt; Apical 4-chamber (Zoomed) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[2]&quot; 6 autocheck &gt;&gt; Transesophageal 4-chamber view &lt;/label&gt;
-
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png&quot;&gt;
-What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 3 autocheck &gt;&gt; Apical 4-chamber (Zoomed) &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[3]&quot; 6 autocheck &gt;&gt; Continuous wave Doppler &lt;/label&gt;
-
 What do you think about the LV Ejection Fraction?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 1 autocheck &gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 2 autocheck &gt;&gt; Moderately reduced ejection fraction (40-49%) &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo3_quiz[4]&quot; 3 autocheck &gt;&gt; Preserved ejection fraction (≥50%) &lt;/label&gt;
 
-What do you think the echo shows?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_3[4]&quot; 1 autocheck&gt;&gt; Mitral regurgitation and left atrial dilation &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_3[4]&quot; 2 autocheck&gt;&gt; Left atrial dilation, anterior mitral leaflet prolapse compatible with mitral stenosis &lt;/label&gt; 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$diagnostics_3[4]&quot; 3 autocheck&gt;&gt; Bicuspid aortic valve, aortic stenosis &lt;/label&gt;
-
-Please answer all questions before continuing.
+Please answer all questions before continuing.// TODO fix this here 
 &lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])&gt;&gt; [[Continue|Case stare 3]] &lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;
 
 /* Reprimand and return to diagnostic evaluation. */</tw-passagedata><tw-passagedata pid="40" name="Not done Dx yet 3" tags="" position="1225,475" size="100,100">The consulting cardiologist tells you that you need a few more diagnostic steps before proceeding to treatment. 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&amp;rs=1&quot;&gt;
 &lt;&lt;set $diagnostics_3[5] += 1&gt;&gt;
-[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="41" name="Treatment 3" tags="" position="100,600" size="100,100">The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean at 16 mm Hg; the aortic valve appears to function normally. The systolic pressure of the pulmonary artery was estimated at 50 mmHg.
+[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="41" name="Treatment 3" tags="" position="100,600" size="100,100">The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. 
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn&quot;&gt;
 
-Remember that a cardiac echo and an electrocardiogram are necessary diagnostic steps.
 &lt;&lt;silently&gt;&gt;
   &lt;&lt;set $diuretics_3 to false&gt;&gt;
   &lt;&lt;set $penicillin_3 to false&gt;&gt;
@@ -747,6 +780,14 @@ Choose from the following medications those that you think would be part of the 
 &lt;&lt;checkbox &quot;$beta_blocker_3&quot; false true&gt;&gt; Beta-blockers
 &lt;&lt;checkbox &quot;$fluids_3&quot; false true&gt;&gt; Fluids
 
+Choose all that apply TODO 
+diuretics /* correct */
+consult physician /* correct */
+refer to uganda heart institute /* correct */
+give fluids /* wrong */
+penicillin /* correct */
+
+
 [[Continue|Guideline treatment 3]]</tw-passagedata><tw-passagedata pid="42" name="Guideline treatment 3" tags="" position="225,600" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;if $diuretics_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score += 3&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $penicillin_3&gt;&gt;  &lt;&lt;set $case_3_Tx_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
@@ -755,8 +796,9 @@ Choose from the following medications those that you think would be part of the 
     &lt;&lt;if $fluids_3&gt;&gt; &lt;&lt;set $case_3_Tx_score -= 3&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn&quot;&gt;
-After consulting with the attending physician, Stéphanie is started on diuretics, penicillin, and beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient.
-[[Continue|Further management 3]]</tw-passagedata><tw-passagedata pid="43" name="Further management 3" tags="" position="350,600" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn&quot;&gt; 
+After consulting with the attending physician, Kasozi is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
+
+[[Continue|Further management 3]]</tw-passagedata><tw-passagedata pid="43" name="Further management 3 // TODO remove" tags="" position="350,600" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn&quot;&gt; 
 The MDS asks you what you believe should be the next step in managing this patient.
 [[Discharge Home on Oral Diuretics|Discharge home 3]]
 [[Keep in Hospital for Further Management|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="44" name="Discharge home 3" tags="" position="475,600" size="100,100">According to guidelines, the patient should remain in the hospital until a clear treatment plan is in place!
@@ -766,15 +808,15 @@ The MDS asks you what you believe should be the next step in managing this patie
 &lt;img src=&quot;https://th.bing.com/th/id/OIG.nbUfv1DrBpzJQ_JYgHwi?pid=ImgGn&quot;&gt;
 &lt;&lt;set $case_3_Fu_score += 2 &gt;&gt;
 
-One month later, Stéphanie comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
+One month later, Kasozi comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
 
 Congratulations! You have just completed the second case!
 
 The diagnostic approach to a suspected underlying heart disease should involve a thorough history and a complete physical examination, as the symptoms are generally non-specific (cough, dyspnea, fatigue).
 
-The cardiac echo can aid in diagnostic evaluation, showing left atrial dilation, pulmonary hypertension, and prolapse of the anterior mitral leaflet. The electrocardiogram also plays an important role in establishing the diagnosis.
+The cardiac echo can aid in diagnostic evaluation, showing left atrial dilation, pulmonary hypertension, and doming and restricted opening of the mitral valve. 
 
-&#39;&#39;The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent recurrence of acute rheumatic fever, and beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient.&#39;&#39;
+&#39;&#39;The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent recurrence of acute rheumatic fever, and beta-blockers.&#39;&#39;
 
 In general, evaluation and management by a cardiologist are strongly recommended in cases of mitral stenosis, as treatment guidelines tend to be complex.
 
@@ -952,6 +994,8 @@ Before initiating therapy, after consulting your attending physician, you decide
 
 Physical findings, no crackles, swelling in legs went away, belly is swollen, she is feeling better. 
 
+// Strong evidence suggests that medications like: entresto,... have been shown to improve morbidity and mortality in the heart failure population. Diuretics have not been shown to improve those but they are important for symptom management and patient comfort. 
+
 BNP decreased (no need for an exact number)
 [[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="60" name="Further management 4" tags="" position="1225,725" size="100,100">Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
 
@@ -979,6 +1023,11 @@ Please choose the correct response (assuming you have the pill bottles in front 
 &lt;&lt;checkbox &quot;$stop_ACE_4&quot; false true&gt;&gt; “Since you feel fine, you can stop taking the ACEi/ARB, but you must continue the beta-blocker.”
 None of these: “You must continue taking both medications to maintain your improvement.”
 
+TODO
+// Specific ace-inhibitors: Enalapril benazapril are safe. Others are not.  
+// NO: lisinopril, arbs 
+
+Which medications are safe to take during breastfeeding? 
 Namatovu nods in understanding but seems skeptical. She then asks: “Are you sure my baby is safe? I’m worried that these medications might affect my baby since I’m exclusively breastfeeding.”
 
 &lt;&lt;checkbox &quot;$b_stop_beta_4&quot; false true&gt;&gt; “In that case, since you’re breastfeeding, you must stop taking the beta-blocker.”
@@ -1000,7 +1049,10 @@ The attending physician also tests your knowledge: “Let’s say this patient c
 &lt;&lt;checkbox &quot;$q_stop_ACE_4&quot; false true&gt;&gt; She should stop taking the ACEi/ARB.
 Leave blank if she should continue both medications.
 
-“And if the patient tells you she plans on getting pregnant again soon?”
+//TODO 
+What blood pressure medications are safe during pregnancy 
+RIGHT: beta-blocker 
+WRONG: ACEi-ARB-spironolactone 
 
 &lt;&lt;checkbox &quot;$p_stop_beta_4&quot; false true&gt;&gt; She should stop taking the beta-blocker.
 &lt;&lt;checkbox &quot;$p_stop_ACE_4&quot; false true&gt;&gt; She should stop taking the ACEi/ARB.
@@ -1017,7 +1069,10 @@ Leave blank if she should continue both medications.
     &lt;&lt;if $p_stop_none_4&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
-[[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="64" name="Case conclusion 4" tags="" position="475,850" size="100,100">Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
+[[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="64" name="Case conclusion 4" tags="" position="475,850" size="100,100">// During pregnancy beta-blockers can be safe with close monitoring and lasix can also be safe with monitoring for dehydration. 
+// during breastfeeding these medications are considered safe, while others are not. 
+
+Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
 Congratulations! You’ve completed Case 1!
 
@@ -1043,6 +1098,7 @@ Iron supplementation may be recommended for PPCM patients with low hemoglobin.
 Close follow-up with echocardiography and BNP monitoring can help evaluate response to treatment and guide management decisions.
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
+// TODO add points from new passages (heart failure, pregnancy, lactation) and make them stand out. 
 
 [[Continue|Case 3 introduction]]</tw-passagedata><tw-passagedata pid="65" name="StoryInit" tags="" position="600,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;

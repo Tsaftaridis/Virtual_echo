@@ -218,3 +218,20 @@ Après stabilisation initiale, les patients doivent être mis sous traitement à
 
 Vous pouvez en savoir plus sur la gestion de l'insuffisance cardiaque en lisant les lignes directrices 2021 de la Société européenne de cardiologie. [[lignes directrices 2021 de la Société européenne de cardiologie|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
 [[Voir le prochain patient|Case 2 introduction]]
+
+
+You might need headphones for an optimal experience. There is a diastolic murmur 
+ <audio controls>
+  <source src="https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/professional/sounds/aortic_stenosis_murmur.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+
+
+<img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
+What is the echocardiographic view? 
+<label><<radiobutton "$echo3_quiz[3]" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo3_quiz[3]" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo3_quiz[3]" 3 autocheck >> Apical 4-chamber (Zoomed) </label>
+<label><<radiobutton "$echo3_quiz[3]" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Subxiphoid </label>
+<label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Continuous wave Doppler </label>

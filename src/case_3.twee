@@ -1,8 +1,8 @@
 :: Case 3 introduction 
 
-Stéphanie is a 15-year-old teenage girl who lives in XXXXX TODO and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
+Kasozi is a 15-year-old teenage girl who lives in Kampala and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
 
-She has been sweating more than usual (do we mention fever? TODO) and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
+She has been having fever and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
 
 After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
@@ -36,20 +36,17 @@ Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively
 :: Physical Exam 3
 <<set $diagnostics_3[0] to 1>> 
 You begin a physical examination of the patient.
-You might need headphones for an optimal experience.
- <audio controls>
-  <source src="https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/professional/sounds/aortic_stenosis_murmur.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio> 
 
-Physical Exam: The results of the cardiac auscultation can be heard above. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
+Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
 
 [[Continue|Case stare 3]]
 
 :: Chest X-Ray 3
 <<set $diagnostics_3[1]>>
 40 minutes later, the nurse hands you the following radiographic film:
-<img style='width: 100%' src="https://prod-images-static.radiopaedia.org/images/2525222/f152cf202678acf008d83b93041c58_jumbo.jpg">
+<img style='width: 100%' src="https://commons.wikimedia.org/wiki/File:Chest_XR_of_HAPE.png">
+
+Bilateral patchy long infiltrates consistent with pulmonary edema. 
 
 [[I need to see the radiologist's report|radiologist 3]]
 [[Continue| Case stare 3]]
@@ -64,10 +61,22 @@ Mild pulmonary edema. Mild atrial enlargement.
 <<set $diagnostics_3[2] to 1>>
 Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
 <img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
+
+Which of the following lab findings is most suggestive of the diagnosis? //TODO
+- BNP for mitral stenosis 
+- Elevated BNP at 1200 /*Correct */
+- Normal creatinine (1.0)
+- Hg normal 
+- Kidney function is normal 
+- WBC is normal 5000
+
+
 [[Continue|Case stare 3]]
 
 :: EKG 3
-<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ECG_Sinus_Tachycardia_125_bpm.jpg/1200px-ECG_Sinus_Tachycardia_125_bpm.jpg">
+The ekg is notable for left atrial enlargement
+Note the deeply inverted P wave in V1 and wide P wave in II, greater than 120ms.
+<img style='width: 100%' src="https://www.ecgstampede.com/wp-content/uploads/2022/11/150-HCM_LAE-1-scaled.jpg">
 <<set $diagnostics_3[3]>>
 
 [[Continue| Case stare 3]]
@@ -75,20 +84,29 @@ Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, inc
 :: Echo 3
 The cardiac echo is illustrated below:
 <img src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_18a.png">
-What is the echocardiographic view? 
-<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo3_quiz[0]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo3_quiz[0]" 3 autocheck >> Apical 4-chamber and Doppler ultrasound </label>
-<label><<radiobutton "$echo3_quiz[0]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo3_quiz[0]" 5 autocheck >> Subxiphoid </label>
+What is the echocardiographic view? /* Apical 4-chamber and doppler ultrasound */
+<label><<radiobutton "$echo3_quiz[0]" 1 autocheck >> Parasternal long axis </label> 
+<label><<radiobutton "$echo3_quiz[0]" 2 autocheck >> Parasternal short axis </label> 
+<label><<radiobutton "$echo3_quiz[0]" 3 autocheck >> Apical 4-chamber and Doppler ultrasound </label> 
+<label><<radiobutton "$echo3_quiz[0]" 4 autocheck >> Apical 2-chamber </label> 
+<label><<radiobutton "$echo3_quiz[0]" 5 autocheck >> Subxiphoid </label> 
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19a.mp4" frameborder="0" allowfullscreen></video>
-What is the echocardiographic view? 
+What is the echocardiographic view? /* Parasternal long axis */
 <label><<radiobutton "$echo3_quiz[1]" 1 autocheck >> Parasternal long axis </label>
 <label><<radiobutton "$echo3_quiz[1]" 2 autocheck >> Parasternal short axis </label>
 <label><<radiobutton "$echo3_quiz[1]" 3 autocheck >> Apical 4-chamber </label>
 <label><<radiobutton "$echo3_quiz[1]" 4 autocheck >> Apical 2-chamber </label>
 <label><<radiobutton "$echo3_quiz[1]" 5 autocheck >> Subxiphoid </label>
+
+Select the features you see in this video that can help you make a diagnosis? 
+<label><<radiobutton "$echo3_quiz[1]" 1 autocheck >> Parasternal long axis </label>
+
+Reduced left ventricular ejection fraction 
+Pericardial effusion 
+Restricted opening and doming of the mitral valve /*correct */
+Normal findings overall
+Dilated left atrium /*also correct*/
 
 How is this view obtained in ultrasound?
 <label><<radiobutton "$echo3_quiz[5]" 1 autocheck>> Place the transducer in the parasternal window with the transducer's index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space </label>
@@ -97,35 +115,12 @@ How is this view obtained in ultrasound?
 <label><<radiobutton "$echo3_quiz[5]" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer's index mark is oriented toward the patient's left, in the 3 o'clock position </label>
 <label><<radiobutton "$echo3_quiz[5]" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly tilted to the patient's right </label>
 
-<video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/3_19d.mp4" frameborder="0" allowfullscreen></video>
-What is the echocardiographic view? 
-<label><<radiobutton "$echo3_quiz[2]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo3_quiz[2]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo3_quiz[2]" 3 autocheck >> Apical 4-chamber (Zoomed) </label>
-<label><<radiobutton "$echo3_quiz[2]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo3_quiz[2]" 5 autocheck >> Subxiphoid </label>
-<label><<radiobutton "$echo3_quiz[2]" 6 autocheck >> Transesophageal 4-chamber view </label>
-
-<img style='width: 100%' src="https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png">
-What is the echocardiographic view? 
-<label><<radiobutton "$echo3_quiz[3]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo3_quiz[3]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo3_quiz[3]" 3 autocheck >> Apical 4-chamber (Zoomed) </label>
-<label><<radiobutton "$echo3_quiz[3]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo3_quiz[3]" 5 autocheck >> Subxiphoid </label>
-<label><<radiobutton "$echo3_quiz[3]" 6 autocheck >> Continuous wave Doppler </label>
-
 What do you think about the LV Ejection Fraction?
 <label><<radiobutton "$echo3_quiz[4]" 1 autocheck >> Reduced ejection fraction (<40%) </label>
 <label><<radiobutton "$echo3_quiz[4]" 2 autocheck >> Moderately reduced ejection fraction (40-49%) </label>
 <label><<radiobutton "$echo3_quiz[4]" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
 
-What do you think the echo shows?
-<label><<radiobutton "$diagnostics_3[4]" 1 autocheck>> Mitral regurgitation and left atrial dilation </label>
-<label><<radiobutton "$diagnostics_3[4]" 2 autocheck>> Left atrial dilation, anterior mitral leaflet prolapse compatible with mitral stenosis </label> 
-<label><<radiobutton "$diagnostics_3[4]" 3 autocheck>> Bicuspid aortic valve, aortic stenosis </label>
-
-Please answer all questions before continuing.
+Please answer all questions before continuing.// TODO fix this here 
 <<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])>> [[Continue|Case stare 3]] <<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
@@ -136,10 +131,9 @@ The consulting cardiologist tells you that you need a few more diagnostic steps 
 [[Continue|Case stare 3]]
 
 :: Treatment 3
-The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. The maximum diastolic gradient between the left atrium and the ventricle was estimated at 29 mm Hg, and the mean at 16 mm Hg; the aortic valve appears to function normally. The systolic pressure of the pulmonary artery was estimated at 50 mmHg.
+The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. 
 <img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
 
-Remember that a cardiac echo and an electrocardiogram are necessary diagnostic steps.
 <<silently>>
   <<set $diuretics_3 to false>>
   <<set $penicillin_3 to false>>
@@ -154,6 +148,14 @@ Choose from the following medications those that you think would be part of the 
 <<checkbox "$beta_blocker_3" false true>> Beta-blockers
 <<checkbox "$fluids_3" false true>> Fluids
 
+Choose all that apply TODO 
+diuretics /* correct */
+consult physician /* correct */
+refer to uganda heart institute /* correct */
+give fluids /* wrong */
+penicillin /* correct */
+
+
 [[Continue|Guideline treatment 3]]
 
 :: Guideline treatment 3
@@ -165,10 +167,11 @@ Choose from the following medications those that you think would be part of the 
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
 <img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn">
-After consulting with the attending physician, Stéphanie is started on diuretics, penicillin, and beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient.
+After consulting with the attending physician, Kasozi is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
+
 [[Continue|Further management 3]]
 
-:: Further management 3
+:: Further management 3 // TODO remove 
 <img src="https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn"> 
 The MDS asks you what you believe should be the next step in managing this patient.
 [[Discharge Home on Oral Diuretics|Discharge home 3]]
@@ -185,15 +188,15 @@ Given the discovery of mitral stenosis, a consultation with a cardiologist shoul
 <img src="https://th.bing.com/th/id/OIG.nbUfv1DrBpzJQ_JYgHwi?pid=ImgGn">
 <<set $case_3_Fu_score += 2 >>
 
-One month later, Stéphanie comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
+One month later, Kasozi comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
 
 Congratulations! You have just completed the second case!
 
 The diagnostic approach to a suspected underlying heart disease should involve a thorough history and a complete physical examination, as the symptoms are generally non-specific (cough, dyspnea, fatigue).
 
-The cardiac echo can aid in diagnostic evaluation, showing left atrial dilation, pulmonary hypertension, and prolapse of the anterior mitral leaflet. The electrocardiogram also plays an important role in establishing the diagnosis.
+The cardiac echo can aid in diagnostic evaluation, showing left atrial dilation, pulmonary hypertension, and doming and restricted opening of the mitral valve. 
 
-''The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent recurrence of acute rheumatic fever, and beta-blockers. Inotropes and IV fluids are not indicated and may harm the patient.''
+''The appropriate treatment for this patient includes diuretics to manage pulmonary edema, penicillin to prevent recurrence of acute rheumatic fever, and beta-blockers.''
 
 In general, evaluation and management by a cardiologist are strongly recommended in cases of mitral stenosis, as treatment guidelines tend to be complex.
 
