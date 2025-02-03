@@ -122,8 +122,8 @@ Which echographic view is this?
 <label><<radiobutton "$echo4_quiz_view_2" 4 autocheck >> Apical 2-chamber </label>
 <label><<radiobutton "$echo4_quiz_view_2" 5 autocheck >> Subxiphoid </label>
 
-<img style='width: 100%' src="">// TODO ADD IVC picture after hiding labels (IVC remove labels)
-Which echographic view is this? //TODO add subxiphoid new pic from downloads. /* Correct is subxiphoid */
+<img style='width: 100%' src="https://images2.imgbox.com/d2/6b/vsyzkPcu_o.jpg"> 
+Which echographic view is this? /* Correct is subxiphoid */
 <label><<radiobutton "$echo4_quiz_view_3" 1 autocheck >> Parasternal long axis </label>
 <label><<radiobutton "$echo4_quiz_view_3" 2 autocheck >> Parasternal short axis </label>
 <label><<radiobutton "$echo4_quiz_view_3" 3 autocheck >> Apical 4-chamber </label>
@@ -183,7 +183,7 @@ You go to Namatovu’s room to check on her and see she has produced about 309 m
 
 What is your next step? 
 <label><<radiobutton "$deterioration_4" 1 autocheck >> Consult cardiologist </label>
-<label><<radiobutton "$deterioration_4" 0 autocheck >> </label>
+<label><<radiobutton "$deterioration_4" 0 autocheck >> Continue managing patient with escalated medication regimen </label>
 
 [[Continue|Improvement 4]]
 
@@ -199,18 +199,16 @@ In your opinion, what is the best medical therapy?
 [[Oxygen, inotropes, high-dose diuretics|Improvement 4]]
 
 :: Incorrect ICU mgmt 4 
-// TODO remove completely 
 Before initiating therapy, after consulting your attending physician, you decide to include everything in your treatment plan: oxygen, inotropes, and high-dose diuretics.
 [[Continue|Improvement 4]]
 
 :: Improvement 4
-//TODO - rephrase: exam normalizes, GDMT: ACE ARM or Beta blocker and maintenance lasix  
+Namatovu’s condition has significantly improved. On physical examination, there are no crackles in her lungs, the swelling in her legs has resolved, and her abdominal distension has decreased. She reports feeling much better and is able to sleep comfortably at night without episodes of dyspnea. Her BNP levels have decreased, indicating a positive response to treatment.
 
-Physical findings, no crackles, swelling in legs went away, belly is swollen, she is feeling better. 
+Continued monitoring of her symptoms, BNP levels, and echocardiographic findings will be important to guide further management.
 
-// Strong evidence suggests that medications like: entresto,... have been shown to improve morbidity and mortality in the heart failure population. Diuretics have not been shown to improve those but they are important for symptom management and patient comfort. 
+Guideline-Directed Medical Therapy (GDMT): Medications such as ACE inhibitors (e.g., lisinopril), ARBs (e.g., losartan), or beta-blockers (e.g., metoprolol) are essential for improving morbidity and mortality in heart failure patients. Diuretics, while not shown to improve long-term outcomes, are crucial for symptom management and patient comfort.
 
-BNP decreased (no need for an exact number)
 [[Continue|Further management 4]]
 
 :: Further management 4
@@ -246,9 +244,7 @@ Please choose the correct response (assuming you have the pill bottles in front 
 <<checkbox "$stop_ACE_4" false true>> “Since you feel fine, you can stop taking the ACEi/ARB, but you must continue the beta-blocker.”
 None of these: “You must continue taking both medications to maintain your improvement.”
 
-TODO
-// Specific ace-inhibitors: Enalapril benazapril are safe. Others are not.  
-// NO: lisinopril, arbs 
+
 
 Which medications are safe to take during breastfeeding? 
 Namatovu nods in understanding but seems skeptical. She then asks: “Are you sure my baby is safe? I’m worried that these medications might affect my baby since I’m exclusively breastfeeding.”
@@ -275,10 +271,6 @@ The attending physician also tests your knowledge: “Let’s say this patient c
 <<checkbox "$q_stop_ACE_4" false true>> She should stop taking the ACEi/ARB.
 Leave blank if she should continue both medications.
 
-//TODO 
-What blood pressure medications are safe during pregnancy 
-RIGHT: beta-blocker 
-WRONG: ACEi-ARB-spironolactone 
 
 <<checkbox "$p_stop_beta_4" false true>> She should stop taking the beta-blocker.
 <<checkbox "$p_stop_ACE_4" false true>> She should stop taking the ACEi/ARB.
@@ -298,8 +290,6 @@ Leave blank if she should continue both medications.
 [[Continue|Case conclusion 4]]
 
 :: Case conclusion 4
-// During pregnancy beta-blockers can be safe with close monitoring and lasix can also be safe with monitoring for dehydration. 
-// during breastfeeding these medications are considered safe, while others are not. 
 
 Namatovu thanks you for your help and promises that at the next appointment, she’ll bring you a photo of her son! She says she’s very happy she can sleep well at night with the new medications!
 
@@ -307,26 +297,65 @@ Congratulations! You’ve completed Case 1!
 
 
 <img src="https://th.bing.com/th/id/OIG.lAZOeFLxqw.eix_38xjd?pid=ImgGn">
+<strong>Key Takeaways:</strong>
+<h3>Peripartum Cardiomyopathy (PPCM):</h3>
+<ul>
+    <li><strong>Suspect PPCM</strong> in postpartum patients with heart failure symptoms (e.g., dyspnea, edema, fatigue).</li>
+    <li>
+        <strong>Diagnosis:</strong>
+        <ul>
+            <li>Echocardiography is critical to confirm reduced LV ejection fraction (<45%),</li>
+            <li>Ventricular dilation, and</li>
+            <li>Exclusion of other causes.</li>
+        </ul>
+    </li>
+</ul>
 
-Peripartum cardiomyopathy (PPCM) should be considered in patients presenting with shortness of breath and heart failure symptoms postpartum.
+<h3>Medications in PPCM:</h3>
+<p><strong>Acute Management:</strong></p>
+<ul>
+    <li>Diuretics (e.g., furosemide) for pulmonary edema.</li>
+    <li>Inotropes (e.g., dobutamine) for cardiogenic shock.</li>
+</ul>
 
-While it is important to start with a physical exam and an electrocardiogram, echocardiography is a crucial diagnostic tool to identify severe left ventricular systolic dysfunction, mitral regurgitation, and tricuspid regurgitation in these patients.
+<p><strong>Long-Term Therapy:</strong></p>
+<ul>
+    <li>Beta-blockers (e.g., metoprolol): Improve survival and LV function.</li>
+    <li>ACE inhibitors (e.g., enalapril, captopril) or ARBs: Start postpartum (safe in breastfeeding).</li>
+    <li>Sacubitril/valsartan: Consider in stable patients if ACEi/ARB is insufficient.</li>
+    <li>Spironolactone: For persistent symptoms (avoid in pregnancy).</li>
+</ul>
 
-Diuretics can be used to treat pulmonary edema, but must be used carefully in pregnant patients due to the risk of placental hypoperfusion and fetal electrolyte abnormalities. Cardiac resynchronization therapy may also be an option for patients who do not respond to medical management alone.
+<h3>Safety in Pregnancy/Breastfeeding:</h3>
+<p><strong>Pregnancy:</strong></p>
+<ul>
+    <li>Contraindicated: ACE inhibitors, ARBs, spironolactone, ARNIs.</li>
+    <li>Alternatives: Hydralazine + ISDN for afterload reduction.</li>
+</ul>
 
-Management of stable PPCM may include prudent use of selective beta-blockers and ACE inhibitors/ARBs, as well as a saline infusion to correct hypotension and improve perfusion. Thromboprophylaxis and iron supplementation may also be considered. Beta-blockers and digoxin can be used if necessary. Newer heart failure medications such as sacubitril/valsartan can also improve heart failure symptoms in pregnancy-related cardiomyopathies. **ACE inhibitors and ARBs are contraindicated during pregnancy.**
+<p><strong>Breastfeeding:</strong></p>
+<ul>
+    <li>Safe: Enalapril, captopril, benazepril (ACEi); metoprolol (beta-blocker).</li>
+    <li>Avoid: Lisinopril, ARBs (e.g., losartan).</li>
+</ul>
 
-**ACE inhibitors and ARBs can be used with great caution during breastfeeding. Studies show that enalapril, captopril, and benazepril are safe in breastfeeding patients, but other ACE inhibitors and ARBs were not included.**
+<h3>Adjunctive Therapies:</h3>
+<ul>
+    <li>Thromboprophylaxis: LMWH or warfarin (if LVEF <35%) due to high thromboembolism risk.</li>
+    <li>Iron Supplementation: If anemia is present (common in PPCM).</li>
+</ul>
 
-**During pregnancy, a combination of ISDN/hydralazine can be used to reduce afterload. Direct renin inhibitors, angiotensin receptor-neprilysin inhibitors, spironolactone, and eplerenone are also contraindicated during pregnancy. Cardiac resynchronization therapy has been shown to improve ejection fraction and outcomes when medical therapy alone is ineffective.**
+<h3>Monitoring:</h3>
+<ul>
+    <li>Serial echocardiograms and BNP levels to track recovery.</li>
+</ul>
 
-Thromboprophylaxis should be considered in PPCM patients due to the increased risk of thromboembolism associated with severe LV dilation.
-
-Iron supplementation may be recommended for PPCM patients with low hemoglobin.
-
-Close follow-up with echocardiography and BNP monitoring can help evaluate response to treatment and guide management decisions.
+<h3>Patient Counseling:</h3>
+<ul>
+    <li><strong>Do NOT</strong> stop medications (beta-blockers/ACEi) even if symptoms resolve — sudden discontinuation risks relapse.</li>
+    <li>Future pregnancies require careful preconception counseling (high recurrence risk).</li>
+</ul>
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
-// TODO add points from new passages (heart failure, pregnancy, lactation) and make them stand out. 
 
 [[Continue|Case 3 introduction]]

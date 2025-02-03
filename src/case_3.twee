@@ -17,6 +17,7 @@ What is your first step in the evaluation?
 /* Scoring variables start at 0. One each for Diagnosis, Treatment and Follow up. */
 <<set $case_3_Tx_score to 0>>
 <<set $case_3_Fu_score to 0>>
+<<set $labs_most_suggestive_3 to 0>>
 <<set $echo3_quiz to [0, 0, 0, 0, 0, 0]>>
 /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
 <<set $diagnostics_3 to [0, 0, 0, 0, 0, 0]>>
@@ -31,7 +32,7 @@ What is your next step?
 [[Labs|Labs 3]]
 [[Echo|Echo 3]]
 <<if hasVisited("Labs 3", "Echo 3", "Physical Exam 3")>> [[Continue Treatment|Treatment 3]] <<else>> [[Continue Treatment|Not done Dx yet 3]] <</if>>
-Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
+Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP 140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 :: Physical Exam 3
 <<set $diagnostics_3[0] to 1>> 
@@ -62,14 +63,16 @@ Mild pulmonary edema. Mild atrial enlargement.
 Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
 <img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
 
-Which of the following lab findings is most suggestive of the diagnosis? //TODO
-- BNP for mitral stenosis 
-- Elevated BNP at 1200 /*Correct */
-- Normal creatinine (1.0)
-- Hg normal 
-- Kidney function is normal 
-- WBC is normal 5000
+NT pro-BNP at 1200 pg/mL
+Creatinine 1.0 mg/dL
+Hg 14 g/dL 
+WBC: 5000/mL
 
+Which of the patient's lab findings is most suggestive of the diagnosis? 
+<label><<radiobutton "$labs_most_suggestive_3" 1 autocheck >> NT pro-BNP </label> /* Correct */
+<label><<radiobutton "$labs_most_suggestive_3" 2 autocheck >> Creatinine </label>
+<label><<radiobutton "$labs_most_suggestive_3" 3 autocheck >> Hemoglobin </label>
+<label><<radiobutton "$labs_most_suggestive_3" 4 autocheck >> White Blood Cells </label>
 
 [[Continue|Case stare 3]]
 
@@ -100,13 +103,11 @@ What is the echocardiographic view? /* Parasternal long axis */
 <label><<radiobutton "$echo3_quiz[1]" 5 autocheck >> Subxiphoid </label>
 
 Select the features you see in this video that can help you make a diagnosis? 
-<label><<radiobutton "$echo3_quiz[1]" 1 autocheck >> Parasternal long axis </label>
-
-Reduced left ventricular ejection fraction 
-Pericardial effusion 
-Restricted opening and doming of the mitral valve /*correct */
-Normal findings overall
-Dilated left atrium /*also correct*/
+<<checkbox "$echo3_quiz[2]" false true>> Reduced left ventricular ejection fraction
+<<checkbox "$echo3_quiz[2]" false true>> Pericardial effusion
+<<checkbox "$echo3_quiz[2]" false true>> Restricted opening and doming of the mitral valve /* Correct */
+<<checkbox "$echo3_quiz[2]" false true>> Normal findings overall
+<<checkbox "$echo3_quiz[2]" false true>> Dilated left atrium /* Also correct */ 
 
 How is this view obtained in ultrasound?
 <label><<radiobutton "$echo3_quiz[5]" 1 autocheck>> Place the transducer in the parasternal window with the transducer's index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space </label>
@@ -120,8 +121,8 @@ What do you think about the LV Ejection Fraction?
 <label><<radiobutton "$echo3_quiz[4]" 2 autocheck >> Moderately reduced ejection fraction (40-49%) </label>
 <label><<radiobutton "$echo3_quiz[4]" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
 
-Please answer all questions before continuing.// TODO fix this here 
-<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[3] * $echo3_quiz[4] * $echo3_quiz[5] * $diagnostics_3[4])>> [[Continue|Case stare 3]] <<stop>><</if>><</repeat>>
+Please answer all questions before continuing. 
+<<repeat 0.2s>><<if ($echo3_quiz[0] * $echo3_quiz[1] * $echo3_quiz[2] * $echo3_quiz[4] * $echo3_quiz[5])>> [[Continue|Case stare 3]] <<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
@@ -141,20 +142,13 @@ The mitral valve showed thickened cusps with commissural fusion and reduced open
   <<set $inotropes_3 to false>>
   <<set $fluids_3 to false>>
 <</silently>>
-Choose from the following medications those that you think would be part of the appropriate treatment.
-<<checkbox "$diuretics_3" false true>> Diuretics
-<<checkbox "$inotropes_3" false true>> Inotropes
-<<checkbox "$penicillin_3" false true>> Penicillin
-<<checkbox "$beta_blocker_3" false true>> Beta-blockers
-<<checkbox "$fluids_3" false true>> Fluids
 
-Choose all that apply TODO 
-diuretics /* correct */
-consult physician /* correct */
-refer to uganda heart institute /* correct */
-give fluids /* wrong */
-penicillin /* correct */
-
+Choose from the following options those that you think would be part of the appropriate treatment.
+<<checkbox "$diuretics_3" false true>> Diuretics /* Correct */
+<<checkbox "$inotropes_3" false true>> Consult physician /* Correct */
+<<checkbox "$penicillin_3" false true>> Refer to Uganda Heart Institute /* Correct */
+<<checkbox "$beta_blocker_3" false true>> Give fluids /* Wrong */
+<<checkbox "$fluids_3" false true>> Give Penicillin /* Correct */
 
 [[Continue|Guideline treatment 3]]
 
@@ -169,10 +163,10 @@ penicillin /* correct */
 <img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn">
 After consulting with the attending physician, Kasozi is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
 
-[[Continue|Further management 3]]
+[[Continue|Mitral valve intervention 3]]
 
-:: Further management 3 // TODO remove 
-<img src="https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn"> 
+:: Further management 3 
+<img src="https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn"> /* skipped here */
 The MDS asks you what you believe should be the next step in managing this patient.
 [[Discharge Home on Oral Diuretics|Discharge home 3]]
 [[Keep in Hospital for Further Management|Mitral valve intervention 3]]
