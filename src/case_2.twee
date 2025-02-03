@@ -1,22 +1,13 @@
 :: Case 2 introduction
+Mulindwa, a 39-year-old businessman, presents to the emergency room with severe shortness of breath. He says he has had these symptoms for two months, but they have significantly worsened recently. 
 
-// TODO make man 
-// TODO make businessman who has hypertension and overweight.
-// TODO remove diabetes medications, just say diabetic 
-// TODO leave family history of hypertension. 
-// TODO remove nausea 
+When asked about his history, Mulindwa recalls that during his adolescence, he was once told that his blood pressure was slightly elevated, but no follow-up was done. He is overweight. 
 
-Mulindwa, a 39-year-old woman, presents to the emergency room with severe shortness of breath and nausea. She says she has had these symptoms for two months, but they have significantly worsened recently.
-
-When asked about her history, Mulindwa recalls that during her adolescence, she was once told that her blood pressure was slightly elevated, but no follow-up was done.
-
-She is on oral contraceptive therapy, as well as metformin and insulin for her diabetes. Her BMI is 29.3.
-
-Both her father and mother suffer from hypertension that manifested in their fifties. There are no other cardiac problems in the family.
+Both his father and mother suffer from hypertension that manifested in their fifties. There are no other cardiac problems in the family.
 
 <img src="https://th.bing.com/th/id/OIG.crb5tn2O9NJw_0yRun8t?pid=ImgGn">
 
-At triage, Mulindwa's blood pressure is 180/95 mmHg in her right arm with a regular pulse of 90 bpm. Her respiratory rate was 21 breaths/min with a SpO₂ of 93% on room air. Her temperature was 36.2 degrees Celsius.
+At triage, Mulindwa's blood pressure is 180/95 mmHg in his right arm with a regular pulse of 90 bpm. His respiratory rate was 21 breaths/min with a SpO₂ of 93% on room air. His temperature was 36.2 degrees Celsius.
 
 What is your first step in the evaluation?
 [[Physical Exam|Physical Exam 2]]
@@ -43,45 +34,9 @@ What is your next step?
 [[Echo|Echo 2]]
 <<if hasVisited("Labs 2", "Echo 2", "Physical Exam 2")>> [[Continue Treatment|Treatment 2]] <<else>> [[Continue Treatment|Not done Dx yet 2]] <</if>>
 
-Notes: A 39-year-old diabetic woman complains of dyspnea and nausea for 2 months, recently worsened. History of hypertension without follow-up. Oral contraceptive therapy. Family history of hypertension but otherwise clean.
-
 /* This is where the diagnosis starts. */
 :: Physical Exam 2
-Cardiac auscultation revealed a grade 2/6 systolic heart murmur best heard at the second left intercostal space and mild crackles at both bases. No peripheral edema, no hepatomegaly.
-
-// TODO keep crackles at bases 
-// TODO add JVD 
-// TODO add peripheral edema 
-// TODO remove murmur
-// TODO remove fundoscopy 
-// TODO remove postural hyperetsnsion 
-
-/* Set physical exam variables. */
-<<silently>>
-    <<set $case_2_fundoscopy to false>> 
-    <<set $case_2_orthostatics to false>> 
-    <<set $case_2_dix_hallpike to false>> 
-    <<set $case_2_kernig_brudzinsky to false>> 
-
-    /* Did the physical exam. */
-    <<set $diagnostics_2[0] to 1>> 
-<</silently>>
-
-<<checkbox "$case_2_fundoscopy" false true>> Fundoscopy  
-<<checkbox "$case_2_orthostatics" false true>> Orthostatic Hypotension Test
-<<checkbox "$case_2_dix_hallpike" false true>> Dix-Hallpike Maneuver
-<<checkbox "$case_2_kernig_brudzinsky" false true>> Search for Kernig and Brudzinski Signs 
-[[Continue| Consults results 2]]
-
-:: Consults results 2
-<<if not $case_2_fundoscopy>> Mulindwa needs a fundoscopy to check for signs of hypertensive retinopathy.<</if>>
-
-<img src="https://th.bing.com/th/id/OIG.oKcvm6lVAv4vfuFNpf9d?pid=ImgGn">
-
-<<if $case_2_orthostatics or $case_2_dix_hallpike or $case_2_kernig_brudzinsky>> Aside from fundoscopy, the other tests are not necessary at this time. <</if>>
-
-A fundoscopy revealed arteriovenous nicking, cotton-wool spots, exudates, hemorrhages, and papilledema. Based on these findings, Mulindwa's condition can be classified as grade 4 hypertensive retinopathy in her left eye and grade 3 in her right eye.
-
+Cardiac auscultation revealed mild crackles at both lung bases. There is no peripheral edema or hepatomegaly, but you notice that his neck veins are distended. He also has pitting edema in the legs. 
 [[Continue|Case stare 2]]
 
 :: CXR 2 
@@ -108,7 +63,7 @@ Serum sodium: 140 mEq/L
 RBC: 6,700/ml
 WBC: 7,540/ml
 Platelets: 225,000/ml
-NT pro-BNP: 1600 // TODO units 
+NT pro-BNP: 1600 pg/mL
 
 [[Continue|Case stare 2]]
 
@@ -157,7 +112,7 @@ What do you think about the LV Ejection Fraction?
 
 /* Echo diagnosis choices. */
 <<silently>>
-    <<set $ddx_2_CAD to false>>
+    <<set $ddx_2_opinion to false>>
     <<set $ddx_2_HTeCM to false>>
     <<set $ddx_2_PICM to false>>
     <<set $ddx_2_AST to false>>
@@ -188,20 +143,18 @@ The consulting cardiologist tells you that you need a few more diagnostic steps 
 :: Diagnosis 2 
 /% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 
-According to you, what is the correct diagnosis? //TODO make radiobutton
-<<checkbox "$ddx_2_CAD" false true>> Coronary artery disease
-<<checkbox "$ddx_2_HTeCM" false true>> Heart failure with preserved ejection fraction 
-// TODO heart failure with reduced ejection fraction 
-// TODO rheumatic heart disease  
+To your opinion, what is the correct diagnosis? 
+<label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Coronary artery disease </label>
+<label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Heart failure with preserved ejection fraction  </label>
+<label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Heart failure with reduced ejection fraction  </label>  /* */
+<label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Rheumatic heart disease </label>
 
-
-TODO: Add question:  
-what is the main risk factor for this patient's diagnosis? 
-Hypertension 
-Obesity 
-Diabetic 
-Occupation
-
+<<set $biggest_risk_2 to false>>
+What is the biggest risk factor for this patient's diagnosis? 
+<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Hypertension </label>
+<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Obesity </label>
+<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Diabetic </label>
+<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Occupation </label>
 
 [[Continue|Case stare 2]]
 
@@ -211,44 +164,42 @@ Occupation
 A transthoracic echocardiogram (TTE) showed concentric left ventricular enlargement with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial hypertrophy was observed.
 
 <<silently>>
-    <<set $inotropes_2 to false>>
+    <<set $bp_control_2 to false>>
     <<set $diuretics_2 to false>>
-    <<set $metoprolol_2 to false>>
-    <<set $digoxin_2 to false>>
+    <<set $arbs_2 to false>>
+    <<set $sglt_2 to false>>
     <<set $ace_arb_2 to false>>
-    <<set $amlodipine_2 to false>>
+    <<set $weight_control_2 to false>>
 <</silently>>
+
 Choose from the following medications those that you think would be part of the appropriate treatment.
 
-<img src="https://th.bing.com/th/id/OIG.W9iaLRJkSOWUwe2Wgsfa?pid=ImgGn">
-
 <<checkbox "$diuretics_2" false true>> Furosemide 
-<<checkbox "$ace_arb_2" false true>> Angiotensin-converting enzyme inhibitor or angiotensin receptor blocker (i.e. lysinopril TODO, valsartan)
-//TODO (what class is this) mra (i.e. spironolactone )
-//TODO sglt-2 inhibitor (empagliflozin or dapagliflozin (TODO verify names))
-//TODO Pressure control 
-//TODO Weight reduction 
+<<checkbox "$ace_arb_2" false true>> Angiotensin-converting enzyme inhibitor or angiotensin receptor blocker (i.e. lisinopril, valsartan)
+<<checkbox "$arbs_2" false true>> aldosterone receptor antagonist (i.e. spironolactone )
+<<checkbox "$sglt_2" to false true>> SGLT-2 inhibitor (empagliflozin or dapagliflozin)
+<<checkbox "$bp_control_2" to false true>> Blood pressure control 
+<<checkbox "$weight_control_2" to false true>> Weight reduction 
 
-
-//TODO He is still hypertensive > medications to treat hypertension will treat with HEfPef. 
-hfpef management literally relies on management of the underlying issues like hypertension, obesity, abnormal rhythms like atrial fibrillation, management of congestion. 
-But there are also other medications that have benefits. 
+Heart failure with preserved ejection fraction management relies on the management of the underlying issues like hypertension, obesity, abnormal rhythms like atrial fibrillation along with the management of patient symptoms.  
 
 [[Continue|Guideline treatment 2]]
 
 :: Guideline treatment 2 
 <img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn"> 
 <<silently>>
-    <<if $inotropes_2>>  <<set $case_2_Tx_score -= 4>> <</if>>
+    <<if $bp_control_2>>  <<set $case_2_Tx_score -= 4>> <</if>>
     <<if $diuretics_2>>  <<set $case_2_Tx_score += 2>> <</if>>
-    <<if $metoprolol_2>>  <<set $case_2_Tx_score += 1>> <</if>>
-    <<if $digoxin_2>>  <<set $case_2_Tx_score -= 2>> <</if>>
+    <<if $arbs_2>>  <<set $case_2_Tx_score += 1>> <</if>>
+    <<if $sglt_2>>  <<set $case_2_Tx_score -= 2>> <</if>>
     <<if $ace_arb_2>>  <<set $case_2_Tx_score += 4>> <</if>>
-    <<if $amlodipine_2>>  <<set $case_2_Tx_score +=2>> <</if>>
+    <<if $weight_control_2>>  <<set $case_2_Tx_score +=2>> <</if>>
 <</silently>>
 Thiazide diuretics, particularly chlorthalidone, are first-line for hypertension - diuretics are necessary for patients with resistant hypertensive disease
 Angiotensin-converting enzyme inhibitors, ARBs are first-line in patients with diabetes or chronic kidney disease.
-Calcium channel blockers 
+    
+Calcium channel blockers TODO 
+
 Beta-blockers are not recommended except in cases of heart failure, ischemic heart disease, or atrial fibrillation.
 Vasodilators such as hydralazine should only be added as a fourth agent
 Diuretics, calcium channel blockers, and renin-angiotensin inhibitors have synergistic effects allowing for better blood pressure control.
@@ -256,27 +207,17 @@ Diuretics, calcium channel blockers, and renin-angiotensin inhibitors have syner
 Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for her. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
 [[Continue|Outcome 2]]
 
-:: Outcome 2 //TODO remove hypertension management 
+:: Outcome 2 
 <img src="https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&w=1024&h=1024&rs=1">
 
-Two weeks later, Mulindwa comes to the clinic to renew her prescription. She tells you that her dyspnea has improved and that she has no problems with the medications.
+Two weeks later, Mulindwa comes to the clinic to renew his prescription. He tells you that his dyspnea has improved and that he has no problems with the medications.
 Congratulations, you have completed the third case!
 
-Hypertensive cardiomyopathy refers to changes in the heart muscle due to hypertension.
- Blood pressure classification:
-   * Normal: <120/80
-   * Elevated: >120/80 <130/90
-   * Stage 1 Hypertension: >130/90 <139/90
-   * Stage 2 Hypertension: >140/90
 
-Patients with stage 2 hypertension should start with two different classes of medications and be re-evaluated in 30 days. Additionally, other risk factors, including hyperlipidemia, alcohol consumption, smoking, and comorbidities such as chronic kidney disease and lung diseases, should be assessed when screening for sleep apnea, alcohol-related disorders, and metabolic syndrome. The evaluation should include HbA1c measurement.
-Patients with hypertensive cardiomyopathy are generally asymptomatic and complications occur late in the disease course. The most common complications are left ventricular hypertrophy (LVH), heart failure, acute coronary syndrome, and sudden cardiac death. LVH, in particular, is associated with increased morbidity and mortality as it can lead to decompensated heart failure, atrial fibrillation, stroke, or sudden cardiac death. 
-ECG is recommended for initial evaluation of HHD, as it can demonstrate ventricular hypertrophy, left axis deviation, or conduction abnormalities. However, its sensitivity for detecting cardiovascular diseases is low, ranging from 25 to 61%.
 Treatment of hypertensive cardiomyopathy focuses on controlling hypertension, as LVH does not directly benefit from pharmacotherapy. Patients with hypertensive cardiomyopathy should follow targeted heart failure treatment and use automatic blood pressure cuffs for home monitoring.
 ''A hypertensive medication exerts 75% of its maximum effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains significantly elevated after starting an antihypertensive medication, adding another class of medications rather than increasing the dose may be more effective.''
-
-Hypertension treatment algorithm:
-<img style='width: 100%' src="https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg">
+ 
+/* Hypertension treatment algorithm: <img style='width: 100%' src="https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg"> */
 
 [[AHA recommendations on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart diseases|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
