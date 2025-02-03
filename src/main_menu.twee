@@ -137,7 +137,7 @@ Please enter your trainee ID to continue.
 		<</switch>>
     	<<if $has_access>>
 			<<set $id = _answer>>
-     		<<goto "Case 2 introduction">> /* Waiting Room */
+     		<<goto "Waiting Room">> /* Waiting Room */
 		<<else>>
 			/% Send the reader back to the start. %/
 			<<set $wrong_password to true>>
