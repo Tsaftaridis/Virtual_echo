@@ -443,7 +443,7 @@ What is your first step in the evaluation?
 [[Echo|Echo 2]]
 &lt;&lt;if hasVisited(&quot;Labs 2&quot;, &quot;Echo 2&quot;, &quot;Physical Exam 2&quot;)&gt;&gt; [[Continue Treatment|Treatment 2]] &lt;&lt;else&gt;&gt; [[Continue Treatment|Not done Dx yet 2]] &lt;&lt;/if&gt;&gt;
 
-/* This is where the diagnosis starts. */</tw-passagedata><tw-passagedata pid="19" name="Physical Exam 2" tags="" position="1100,225" size="100,100">Cardiac auscultation revealed mild crackles at both lung bases. There is no peripheral edema or hepatomegaly, but you notice that his neck veins are distended. He also has pitting edema in the legs. 
+/* This is where the diagnosis starts. */</tw-passagedata><tw-passagedata pid="19" name="Physical Exam 2" tags="" position="1100,225" size="100,100">Cardiac auscultation revealed mild crackles at both lung bases. There is no hepatomegaly, but you notice that his neck veins are distended. He also has pitting edema in the legs. 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="20" name="CXR 2" tags="" position="1225,225" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg&quot;&gt;
 &lt;&lt;set $diagnostics_2[1] to 1&gt;&gt;
 [[I need to see the radiologist&#39;s report|Radiologist 2]]
@@ -530,6 +530,14 @@ Please answer all questions before continuing.
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="26" name="Diagnosis 2" tags="" position="725,350" size="100,100">/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 
+&lt;&lt;silently&gt;&gt;
+    &lt;&lt;set $ddx_2_opinion to false&gt;&gt;
+    &lt;&lt;set $biggest_risk_2_htn to false&gt;&gt;
+    &lt;&lt;set $biggest_risk_2_obes to false&gt;&gt;
+    &lt;&lt;set $biggest_risk_2_diab to false&gt;&gt;
+    &lt;&lt;set $biggest_risk_2_occ to false&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+
 To your opinion, what is the correct diagnosis? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$ddx_2_opinion&quot; 1 autocheck&gt;&gt; Coronary artery disease &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$ddx_2_opinion&quot; 1 autocheck&gt;&gt; Heart failure with preserved ejection fraction  &lt;/label&gt;
@@ -537,15 +545,15 @@ To your opinion, what is the correct diagnosis?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$ddx_2_opinion&quot; 1 autocheck&gt;&gt; Rheumatic heart disease &lt;/label&gt;
 
 &lt;&lt;set $biggest_risk_2 to false&gt;&gt;
-What is the biggest risk factor for this patient&#39;s diagnosis? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$biggest_risk_2&quot; 1 autocheck&gt;&gt; Hypertension &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$biggest_risk_2&quot; 1 autocheck&gt;&gt; Obesity &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$biggest_risk_2&quot; 1 autocheck&gt;&gt; Diabetic &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$biggest_risk_2&quot; 1 autocheck&gt;&gt; Occupation &lt;/label&gt;
+What is are the risk factors for this patient&#39;s diagnosis? 
+&lt;&lt;checkbox &quot;$biggest_risk_2_htn&quot; false true&gt;&gt; Hypertension 
+&lt;&lt;checkbox &quot;$biggest_risk_2_obes&quot; false true&gt;&gt; Obesity 
+&lt;&lt;checkbox &quot;$biggest_risk_2_diab&quot; false true&gt;&gt; diabetes
+&lt;&lt;checkbox &quot;$biggest_risk_2_occ&quot; false true&gt;&gt; Occupation 
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="27" name="Treatment 2" tags="" position="850,350" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn&quot;&gt;
 
-A transthoracic echocardiogram (TTE) showed concentric left ventricular enlargement with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial hypertrophy was observed.
+A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertrophy with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial enlargement was observed.
 
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;set $bp_control_2 to false&gt;&gt;
@@ -576,23 +584,26 @@ Heart failure with preserved ejection fraction management relies on the manageme
     &lt;&lt;if $ace_arb_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score += 4&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $weight_control_2&gt;&gt;  &lt;&lt;set $case_2_Tx_score +=2&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-Thiazide diuretics, particularly chlorthalidone, are first-line for hypertension - diuretics are necessary for patients with resistant hypertensive disease
+Thiazide diuretics, particularly chlorthalidone, are first-line for hypertension - diuretics are necessary for patients with resistant hypertensive disease. 
 Angiotensin-converting enzyme inhibitors, ARBs are first-line in patients with diabetes or chronic kidney disease.
-    
-Calcium channel blockers TODO 
 
-Beta-blockers are not recommended except in cases of heart failure, ischemic heart disease, or atrial fibrillation.
-Vasodilators such as hydralazine should only be added as a fourth agent
-Diuretics, calcium channel blockers, and renin-angiotensin inhibitors have synergistic effects allowing for better blood pressure control.
+!!!!!Class 1 (Evidence Proves Beneficial)
+# Diuretics (Loop/Thiazide): Provides symptom relief from congestion
+# BP Control (ACEi/ARB): Essential in hypertensive HFpEF
+# Exercise &amp; Weight Loss: Improves function and quality of life
 
-Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for her. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
+!!!!!Class 2a (Strong Evidence Supporting Use)
+# SGLT2 inhibitors (Empagliflozin, Dapagliflozin): Reduce HF hospitalizations and improves quality of life
+# AF Management: Rate control or ablation
+
+Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for him. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
 [[Continue|Outcome 2]]</tw-passagedata><tw-passagedata pid="29" name="Outcome 2" tags="" position="1100,350" size="100,100">&lt;img src=&quot;https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&amp;w=1024&amp;h=1024&amp;rs=1&quot;&gt;
 
 Two weeks later, Mulindwa comes to the clinic to renew his prescription. He tells you that his dyspnea has improved and that he has no problems with the medications.
 Congratulations, you have completed the third case!
 
-
 Treatment of hypertensive cardiomyopathy focuses on controlling hypertension, as LVH does not directly benefit from pharmacotherapy. Patients with hypertensive cardiomyopathy should follow targeted heart failure treatment and use automatic blood pressure cuffs for home monitoring.
+
 &#39;&#39;A hypertensive medication exerts 75% of its maximum effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains significantly elevated after starting an antihypertensive medication, adding another class of medications rather than increasing the dose may be more effective.&#39;&#39;
  
 /* Hypertension treatment algorithm: &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg&quot;&gt; */

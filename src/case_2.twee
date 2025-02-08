@@ -36,7 +36,7 @@ What is your next step?
 
 /* This is where the diagnosis starts. */
 :: Physical Exam 2
-Cardiac auscultation revealed mild crackles at both lung bases. There is no peripheral edema or hepatomegaly, but you notice that his neck veins are distended. He also has pitting edema in the legs. 
+Cardiac auscultation revealed mild crackles at both lung bases. There is no hepatomegaly, but you notice that his neck veins are distended. He also has pitting edema in the legs. 
 [[Continue|Case stare 2]]
 
 :: CXR 2 
@@ -143,6 +143,14 @@ The consulting cardiologist tells you that you need a few more diagnostic steps 
 :: Diagnosis 2 
 /% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
 
+<<silently>>
+    <<set $ddx_2_opinion to false>>
+    <<set $biggest_risk_2_htn to false>>
+    <<set $biggest_risk_2_obes to false>>
+    <<set $biggest_risk_2_diab to false>>
+    <<set $biggest_risk_2_occ to false>>
+<</silently>>
+
 To your opinion, what is the correct diagnosis? 
 <label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Coronary artery disease </label>
 <label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Heart failure with preserved ejection fraction  </label>
@@ -150,18 +158,18 @@ To your opinion, what is the correct diagnosis?
 <label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Rheumatic heart disease </label>
 
 <<set $biggest_risk_2 to false>>
-What is the biggest risk factor for this patient's diagnosis? 
-<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Hypertension </label>
-<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Obesity </label>
-<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Diabetic </label>
-<label><<radiobutton "$biggest_risk_2" 1 autocheck>> Occupation </label>
+What is are the risk factors for this patient's diagnosis? 
+<<checkbox "$biggest_risk_2_htn" false true>> Hypertension 
+<<checkbox "$biggest_risk_2_obes" false true>> Obesity 
+<<checkbox "$biggest_risk_2_diab" false true>> diabetes
+<<checkbox "$biggest_risk_2_occ" false true>> Occupation 
 
 [[Continue|Case stare 2]]
 
 :: Treatment 2
 <img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
 
-A transthoracic echocardiogram (TTE) showed concentric left ventricular enlargement with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial hypertrophy was observed.
+A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertrophy with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial enlargement was observed.
 
 <<silently>>
     <<set $bp_control_2 to false>>
@@ -195,16 +203,19 @@ Heart failure with preserved ejection fraction management relies on the manageme
     <<if $ace_arb_2>>  <<set $case_2_Tx_score += 4>> <</if>>
     <<if $weight_control_2>>  <<set $case_2_Tx_score +=2>> <</if>>
 <</silently>>
-Thiazide diuretics, particularly chlorthalidone, are first-line for hypertension - diuretics are necessary for patients with resistant hypertensive disease
+Thiazide diuretics, particularly chlorthalidone, are first-line for hypertension - diuretics are necessary for patients with resistant hypertensive disease. 
 Angiotensin-converting enzyme inhibitors, ARBs are first-line in patients with diabetes or chronic kidney disease.
-    
-Calcium channel blockers TODO 
 
-Beta-blockers are not recommended except in cases of heart failure, ischemic heart disease, or atrial fibrillation.
-Vasodilators such as hydralazine should only be added as a fourth agent
-Diuretics, calcium channel blockers, and renin-angiotensin inhibitors have synergistic effects allowing for better blood pressure control.
+!!!!!Class 1 (Evidence Proves Beneficial)
+# Diuretics (Loop/Thiazide): Provides symptom relief from congestion
+# BP Control (ACEi/ARB): Essential in hypertensive HFpEF
+# Exercise & Weight Loss: Improves function and quality of life
 
-Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for her. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
+!!!!!Class 2a (Strong Evidence Supporting Use)
+# SGLT2 inhibitors (Empagliflozin, Dapagliflozin): Reduce HF hospitalizations and improves quality of life
+# AF Management: Rate control or ablation
+
+Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibitors (ACE inhibitors) or ARBs are the best choice of medication treatment for him. If the patient were not diabetic, a calcium channel blocker, such as amlodipine, would have been the best choice, as this medication does not require close monitoring of potassium levels, creatinine, and blood pressure, unlike ACE inhibitors and ARBs. 
 [[Continue|Outcome 2]]
 
 :: Outcome 2 
@@ -213,8 +224,8 @@ Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibit
 Two weeks later, Mulindwa comes to the clinic to renew his prescription. He tells you that his dyspnea has improved and that he has no problems with the medications.
 Congratulations, you have completed the third case!
 
-
 Treatment of hypertensive cardiomyopathy focuses on controlling hypertension, as LVH does not directly benefit from pharmacotherapy. Patients with hypertensive cardiomyopathy should follow targeted heart failure treatment and use automatic blood pressure cuffs for home monitoring.
+
 ''A hypertensive medication exerts 75% of its maximum effect at only 50% of the maximum dose. Therefore, in patients whose blood pressure remains significantly elevated after starting an antihypertensive medication, adding another class of medications rather than increasing the dose may be more effective.''
  
 /* Hypertension treatment algorithm: <img style='width: 100%' src="https://images2.imgbox.com/a9/10/9sBtQzqV_o.jpg"> */
