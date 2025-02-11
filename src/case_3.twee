@@ -6,7 +6,7 @@ She has been having fever and pain in her right knee, more than the left, for tw
 
 After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
-<img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
+<img src="https://images2.imgbox.com/81/1c/TOW2S0C6_o.jpeg">
 What is your first step in the evaluation?  
 [[Physical Exam|Physical Exam 3]]
 [[EKG|EKG 3]]
@@ -25,7 +25,7 @@ What is your first step in the evaluation?
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 3
 What is your next step?
-<img src="https://th.bing.com/th/id/OIG.QwKLl4NaIFCqdBcrMA89?pid=ImgGn&w=1024&h=1024&rs=1">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/A_typical_examination_room_and_exam_table_in_a_doctor%27s_office._03.jpg">
 [[Physical Exam|Physical Exam 3]] 
 [[EKG|EKG 3]]
 [[Chest X-Ray|Chest X-Ray 3]]
@@ -45,7 +45,7 @@ Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you
 :: Chest X-Ray 3
 <<set $diagnostics_3[1]>>
 40 minutes later, the nurse hands you the following radiographic film:
-<img style='width: 100%' src="https://commons.wikimedia.org/wiki/File:Chest_XR_of_HAPE.png">
+<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png">
 
 Bilateral patchy long infiltrates consistent with pulmonary edema. 
 
@@ -55,13 +55,13 @@ Bilateral patchy long infiltrates consistent with pulmonary edema.
 :: radiologist 3
 Mild pulmonary edema. Mild atrial enlargement.
 
-<img src="https://th.bing.com/th/id/OIG.DRFK5kCiRpW5p9RzvcLC?pid=ImgGn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png>
 [[Continue|Case stare 3]]
 
 :: Labs 3
 <<set $diagnostics_3[2] to 1>>
 Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
-<img src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
+<img src="https://cdn2.picryl.com/photo/2017/02/06/blood-pumps-into-test-tubes-during-the-armed-services-74731e-1024.jpg">
 
 NT pro-BNP at 1200 pg/mL
 Creatinine 1.0 mg/dL
@@ -127,13 +127,13 @@ Please answer all questions before continuing.
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 3
 The consulting cardiologist tells you that you need a few more diagnostic steps before proceeding to treatment. 
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<img style='width: 100%' src="https://images2.imgbox.com/1b/e7/hP0DDp29_o.jpeg">
 <<set $diagnostics_3[5] += 1>>
 [[Continue|Case stare 3]]
 
 :: Treatment 3
 The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. 
-<img src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Severe_mitral_valve_stenosis%2C_mitral_regurgitation%2C_aortic_regurgitation_E00624_%28CardioNetworks_ECHOpedia%29.jpg">
 
 <<silently>>
   <<set $diuretics_3 to false>>
@@ -160,13 +160,13 @@ Choose from the following options those that you think would be part of the appr
     <<if $inotropes_3>>  <<set $case_3_Tx_score -= 2>> <</if>>
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
-<img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn">
+<img src="https://www.radiocomnetu.org/mamafm/wp-content/uploads/sites/12/2024/08/image-from-rawpixel-id-3372984-jpeg-1024x683.jpg">
 After consulting with the attending physician, Kasozi is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
 
 [[Continue|Mitral valve intervention 3]]
 
 :: Further management 3 
-<img src="https://th.bing.com/th/id/OIG.Y47BDAeDIE_nVqH_c7ne?pid=ImgGn"> /* skipped here */
+<img src="https://images2.imgbox.com/1b/e7/hP0DDp29_o.jpeg"> /* skipped here */
 The MDS asks you what you believe should be the next step in managing this patient.
 [[Discharge Home on Oral Diuretics|Discharge home 3]]
 [[Keep in Hospital for Further Management|Mitral valve intervention 3]]
@@ -179,7 +179,7 @@ According to guidelines, the patient should remain in the hospital until a clear
 :: Mitral valve intervention 3
 Given the discovery of mitral stenosis, a consultation with a cardiologist should be arranged for possible intervention.
 
-<img src="https://th.bing.com/th/id/OIG.nbUfv1DrBpzJQ_JYgHwi?pid=ImgGn">
+<img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMzA1MTU1NjE5MjgtaW1hZ2Uta3Bxb3AybHkuanBn.jpg">
 <<set $case_3_Fu_score += 2 >>
 
 One month later, Kasozi comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!

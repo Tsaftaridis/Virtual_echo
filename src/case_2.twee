@@ -5,7 +5,7 @@ When asked about his history, Mulindwa recalls that during his adolescence, he w
 
 Both his father and mother suffer from hypertension that manifested in their fifties. There are no other cardiac problems in the family.
 
-<img src="https://th.bing.com/th/id/OIG.crb5tn2O9NJw_0yRun8t?pid=ImgGn">
+<img src="https://images2.imgbox.com/30/95/v8vkYeN0_o.jpeg">
 
 At triage, Mulindwa's blood pressure is 180/95 mmHg in his right arm with a regular pulse of 90 bpm. His respiratory rate was 21 breaths/min with a SpO₂ of 93% on room air. His temperature was 36.2 degrees Celsius.
 
@@ -48,14 +48,14 @@ Cardiac auscultation revealed mild crackles at both lung bases. There is no hepa
 :: Radiologist 2
 The X-ray reveals cardiomegaly, signs of vascular redistribution, and pulmonary edema. Clinically correlates well.
 
-<img src="https://th.bing.com/th/id/OIG.kqTDMVNgBItNj5Wjx6_1?pid=ImgGn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Pulmonary_oedema.jpg">
 
 [[Continue|Case stare 2]]
-
+p
 :: Labs 2 
 <<set $diagnostics_2[2] to 1>>
 
-<img src="https://th.bing.com/th/id/OIG.3qMMfG7hebIEwBjWJrgj?pid=ImgGn">
+<img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2ZsNTI2NzIxODE4NTctaW1hZ2UuanBn.jpg">
 
 Laboratory tests showed a hemoglobin level of 11.5 g/dL
 Serum creatinine: 0.9 mg/dL
@@ -136,7 +136,7 @@ Please answer all questions before continuing.
 :: Not done Dx yet 2
 The consulting cardiologist tells you that you need a few more diagnostic steps before proceeding to treatment.
 <<set $diagnostics_2[5] += 1>>
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<img style='width: 100%' src="https://live.staticflickr.com/7137/7556644280_648eaa7dbe_b.jpg">
 
 [[Continue|Case stare 2]]
 
@@ -167,7 +167,7 @@ What is are the risk factors for this patient's diagnosis?
 [[Continue|Case stare 2]]
 
 :: Treatment 2
-<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Morbus_Fabry_LVH_echo_02.jpg">
 
 A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertrophy with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial enlargement was observed.
 
@@ -194,7 +194,7 @@ Heart failure with preserved ejection fraction management relies on the manageme
 [[Continue|Guideline treatment 2]]
 
 :: Guideline treatment 2 
-<img src="https://th.bing.com/th/id/OIG.ns1bZ96mFm4DRTOiqmLp?pid=ImgGn"> 
+<img src="https://live.staticflickr.com/4164/33931804863_8e77bb1483_b.jpg"> 
 <<silently>>
     <<if $bp_control_2>>  <<set $case_2_Tx_score -= 4>> <</if>>
     <<if $diuretics_2>>  <<set $case_2_Tx_score += 2>> <</if>>
@@ -219,7 +219,7 @@ Since Mulindwa is diabetic and overweight, angiotensin-converting enzyme inhibit
 [[Continue|Outcome 2]]
 
 :: Outcome 2 
-<img src="https://th.bing.com/th/id/OIG.eUP5nyGUXPZv3FkgTn7h?pid=ImgGn&w=1024&h=1024&rs=1">
+<img src="https://images2.imgbox.com/93/8c/uSvY9104_o.jpeg">
 
 Two weeks later, Mulindwa comes to the clinic to renew his prescription. He tells you that his dyspnea has improved and that he has no problems with the medications.
 Congratulations, you have completed the third case!

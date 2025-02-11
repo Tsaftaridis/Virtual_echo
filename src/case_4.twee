@@ -1,5 +1,5 @@
 :: Case 4 introduction
-<img src="https://th.bing.com/th/id/OIG.xp7PeYBOUWNsecu6cNJD?pid=ImgGn">
+<img src="https://images2.imgbox.com/1a/3c/Xddhg5NR_o.jpg">
 
 Namatovu, a 34-year-old woman and mother of three children, presents to the hospital. She reports having a cough and several episodes of paroxysmal nocturnal dyspnea (“feeling of choking at night”) that started two weeks after giving birth to her third child. She tried taking some local herbs for the “lung infection” she had a few months ago, but the cough did not go away.
 
@@ -48,7 +48,7 @@ What is your first step in the management of this patient?
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus, it shows only tests not already done yet and some notes for quick review. */
 :: Case stare 4
 What is your next step?
-<img src="https://th.bing.com/th/id/OIG.oBpIEoEeS7hr7kfneZNG?pid=ImgGn"> 
+<img src="https://cdn12.picryl.com/photo/2016/12/31/doctors-office-doctor-office-health-medical-45c528-1024.jpg"> 
 
 [[Physical Exam|Physical Exam 4]]
 [[EKG|EKG 4]] 
@@ -147,14 +147,14 @@ Please answer all questions before continuing.
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 4
 The consulting cardiologist thinks you need a few more diagnostic steps before moving on to treatment.
-<img src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<img src="https://images.pexels.com/photos/5327647/pexels-photo-5327647.jpeg">
 <<set $diagnostics_4_premature_treatment += 1>>
 [[Continue|Case stare 4]]
 
 :: Treatment 4
 The echocardiogram showed severely reduced left ventricular systolic function with a low ejection fraction of 30% and a dilated inferior vena cava. Both ventricles appear dilated and biatrial enlargement was also noted. 
 
-<img src="https://th.bing.com/th/id/OIG.N3UKyzPV4sQQIeer3mwH?pid=ImgGn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/2D_ECHOCARDIOGRAM_MACHINE_WITH_A_TABLE_AND_A_STETHOSCOPE.jpg">
 Remember that the cardiac echo and the NT pro-BNP are necessary to perform for diagnosing this patient. 
 
 Among the following medications, choose those that you believe would be part of appropriate management.
@@ -220,7 +220,7 @@ Which of the following medications have been found to prolong mortality and morb
     <<checkbox "$mortality_meds_4_bb" false true>> Metoprolol (Beta-Blocker)
     <<checkbox "$mortality_meds_4_spiro" false true>> Spironolactone (K+ sparing diuretics)
 
-<img src="https://th.bing.com/th/id/OIG.YW2U3S2Xm2veJCDQLw07?pid=ImgGn&w=1024&h=1024&rs=1">
+<img src="https://pix4free.org/assets/library/2021-10-07/originals/heart-disease.jpg">
 
 [[Continue|Case conclusion 4]]
 
@@ -232,7 +232,7 @@ The repeat echo is shown below:
 [[Continue|Patient Questions 4]]
 
 :: Patient Questions 4
-<img src="https://th.bing.com/th/id/OIG.B6EpiNznYb28xdizq3n4?pid=ImgGn&w=1024&h=1024&rs=1">
+<img src="https://images.pexels.com/photos/161688/medical-tablets-pills-drug-161688.jpeg">
 
 Namatovu returns for her follow-up appointment. She is very happy about her improvement and has a few questions:
 
@@ -263,7 +263,7 @@ Namatovu nods in understanding but seems skeptical. She then asks: “Are you su
     <<if $b_stop_ACE_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
 <</silently>>
 
-<img src="https://th.bing.com/th/id/OIG.0gOcVorZ6fnCkJInRLye?pid=ImgGn&w=1024&h=1024&rs=1">
+<img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTE3MTMzNzczMDMtaW1hZ2UuanBn.jpg">
 
 The attending physician also tests your knowledge: “Let’s say this patient complains of symptoms indicating hypotensive episodes. What would you suggest?”
 
@@ -296,7 +296,7 @@ Namatovu thanks you for your help and promises that at the next appointment, she
 Congratulations! You’ve completed Case 1!
 
 
-<img src="https://th.bing.com/th/id/OIG.lAZOeFLxqw.eix_38xjd?pid=ImgGn">
+<img src="https://images2.imgbox.com/0d/0d/rz4AaRuD_o.jpg">
 <strong>Key Takeaways:</strong>
 <h3>Peripartum Cardiomyopathy (PPCM):</h3>
 <ul>
