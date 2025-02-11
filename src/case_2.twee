@@ -51,7 +51,6 @@ The X-ray reveals cardiomegaly, signs of vascular redistribution, and pulmonary 
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Pulmonary_oedema.jpg">
 
 [[Continue|Case stare 2]]
-p
 :: Labs 2 
 <<set $diagnostics_2[2] to 1>>
 
