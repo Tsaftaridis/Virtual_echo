@@ -13,36 +13,38 @@ What is your first step in the management of this patient?
 [[Echo|Echo 4]]
 
 <<silently>>
-    <<set $diagnostics_4_physical_exam to 0>>
-    <<set $diagnostics_4_cxr to 0 >>
+    <<set $diagnostics_4_physical_exam to 0>> /* on main, verify sheet */
+    <<set $diagnostics_4_cxr to 0 >> 
     <<set $diagnostics_4_labs to 0 >>
-    <<set $diagnostics_4_echo_diagnosis to 0 >>
-    <<set $diagnostics_4_premature_treatment to 0 >>
-    <<set $case_4_Tx_score to 0>>
-    <<set $case_4_Fu_score to 0>>
-    <<set $case_4_Echo to 0>>
-    <<set $echo4_quiz_view to 0>>
-    <<set $echo4_quiz_placement to 0>>
-    <<set $echo4_quiz_view_2 to 0>>
-    <<set $echo4_quiz_view_3 to 0>>
-    <<set $echo4_quiz_lvef to 0>>
-    <<set $diuretics_4 to false>>
-    <<set $antihypertensives_4 to false>>
-    <<set $beta_blocker_4 to false>>
-    <<set $albuterol_4 to false>>
-    <<set $q_stop_beta_4 to false>>
-    <<set $q_stop_ACE_4 to false>>
-    <<set $p_stop_beta_4 to false>>
-    <<set $p_stop_ACE_4 to false>>
-    <<set $stop_beta_4 to false>>
-    <<set $stop_ACE_4 to false>>
-    <<set $b_stop_beta_4 to false>>
-    <<set $b_stop_ACE_4 to false>>
-    <<set $mortality_meds_4_arb to false>>
-    <<set $mortality_meds_4_ccb to false>>
-    <<set $mortality_meds_4_ace to false>>
-    <<set $mortality_meds_4_bb to false>>
-    <<set $mortality_meds_4_spiro to false>>
+    <<set $diagnostics_4_echo_diagnosis to 0 >> /* on main, verify sheet */
+    <<set $diagnostics_4_premature_treatment to 0 >> /* on main, verify sheet */
+    <<set $case_4_Tx_score to 0>> /* on main, verify sheet */
+    <<set $case_4_Fu_score to 0>> /* on main, verify sheet */
+    <<set $case_4_Echo to 0>> /* on main, verify sheet */
+    <<set $echo4_quiz_view to 0>> /* on main, verify sheet */
+    <<set $echo4_quiz_placement to 0>> /* on main, verify sheet */
+    <<set $echo4_quiz_view_2 to 0>> /* on main, verify sheet */
+    <<set $echo4_quiz_view_3 to 0>> /* on main, verify sheet */
+    <<set $echo4_quiz_lvef to 0>> /* on main, verify sheet */
+    <<set $diuretics_4 to false>> /* on main, verify sheet */
+    <<set $antihypertensives_4 to false>> /* on main, verify sheet */
+    <<set $beta_blocker_4 to false>> /* on main, verify sheet */
+    <<set $albuterol_4 to false>> /* on main, verify sheet */
+    <<set $q_stop_beta_4 to false>> /* on main, verify sheet */
+    <<set $q_stop_ACE_4 to false>> /* on main, verify sheet */
+    <<set $p_stop_beta_4 to false>> /* on main, verify sheet */
+    <<set $p_stop_ACE_4 to false>> /* on main, verify sheet */
+    <<set $stop_beta_4 to false>> /* on main, verify sheet */
+    <<set $stop_ACE_4 to false>> /* on main, verify sheet */
+    <<set $b_stop_beta_4 to false>>  /* on main, verify sheet */
+    <<set $b_stop_ACE_4 to false>> /* on main, verify sheet */
+    <<set $mortality_meds_4_arb to false>> /* on main, verify sheet */
+    <<set $mortality_meds_4_ccb to false>> /* on main, verify sheet */
+    <<set $mortality_meds_4_ace to false>> /* on main, verify sheet */
+    <<set $mortality_meds_4_bb to false>> /* on main, verify sheet */
+    <<set $mortality_meds_4_spiro to false>> /* on main, verify sheet */
+    <<set $q_stop_none_4 to false>> /* on main, verify sheet */
+    <<set $p_stop_none_4 to false>> /* on main, verify sheet */
 <</silently>>
 
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus, it shows only tests not already done yet and some notes for quick review. */
@@ -281,10 +283,13 @@ Leave blank if she should continue both medications.
 <<silently>>
     <<if $q_stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
     <<if $q_stop_ACE_4>>  <<set $case_4_Fu_score += 2>> <</if>>
-    <<if $q_stop_none_4>> <<set $case_4_Fu_score -= 4>> <</if>>
+    <<if ((not $q_stop_beta_4) and (not $q_stop_beta_4))>> <<set $case_4_Fu_score -= 4>> <</if>>
+    <<if ((not $q_stop_beta_4) and (not $q_stop_beta_4))>> <<set $q_stop_none to true>> <</if>>
     <<if $p_stop_beta_4>> <<set $case_4_Fu_score -= 2>> <</if>>
     <<if $p_stop_ACE_4>>  <<set $case_4_Fu_score += 4>> <</if>>
-    <<if $p_stop_none_4>> <<set $case_4_Fu_score -= 4>> <</if>>
+    <<if ((not $p_stop_beta_4) and (not $p_stop_ACE_4))>> <<set $case_4_Fu_score -= 4>> <</if>>
+    <<if ((not $p_stop_beta_4) and (not $p_stop_ACE_4))>> <<set $p_stop_none_4 to true>> <</if>>
+
 <</silently>>
 
 [[Continue|Case conclusion 4]]
