@@ -18,9 +18,18 @@ What is your first step in the evaluation?
 <<silently>>
     <<set $case_2_Tx_score to 0>> 
     <<set $case_2_Fu_score to 0>> 
-    <<set $echo2_quiz to [0, 0, 0, 0, 0]>>
+    <<set $echo2_quiz_view to 0>>
+    <<set $echo2_quiz_view_2 to 0>>
+    <<set $echo2_quiz_view_3 to 0>>
+    <<set $echo2_quiz_ef to 0>>
+    <<set $echo2_quiz_placement to 0>>
     /* Diagnostic scoring array: [0] for physical, [1] for EKG, [2] for CXR, [3] for Labs, [4] for Echo, [5] for reprimand. */
-    <<set $diagnostics_2 to [0, 0, 0, 0, 0, 0]>>
+    <<set $diagnostics_2_physical_exam to 0>>
+    <<set $diagnostics_2_cxr to 0>>
+    <<set $diagnostics_2_lab to 0>>
+    <<set $diagnostics_2_ekg to 0>>
+    <<set $diagnostics_2_echo_impression to 0>>
+    <<set $diagnostics_2_reprimand to 0>>
     /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows only tests not already done yet and some notes for quick review. */
 <</silently>>
 
@@ -37,11 +46,12 @@ What is your next step?
 /* This is where the diagnosis starts. */
 :: Physical Exam 2
 Cardiac auscultation revealed mild crackles at both lung bases. There is no hepatomegaly, but you notice that his neck veins are distended. He also has pitting edema in the legs. 
+<<set $diagnostics_2_physical_exam to 1>>
 [[Continue|Case stare 2]]
 
 :: CXR 2 
 <img style='width: 100%' src="https://img.medscapestatic.com/pi/meds/ckb/89/34989tn.jpg">
-<<set $diagnostics_2[1] to 1>>
+<<set $diagnostics_2_cxr to 1>>
 [[I need to see the radiologist's report|Radiologist 2]]
 [[Continue|Case stare 2]]
 
@@ -52,7 +62,7 @@ The X-ray reveals cardiomegaly, signs of vascular redistribution, and pulmonary 
 
 [[Continue|Case stare 2]]
 :: Labs 2 
-<<set $diagnostics_2[2] to 1>>
+<<set $diagnostics_2_lab to 1>>
 
 <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2ZsNTI2NzIxODE4NTctaW1hZ2UuanBn.jpg">
 
@@ -67,7 +77,7 @@ NT pro-BNP: 1600 pg/mL
 [[Continue|Case stare 2]]
 
 :: EKG 2
-<<set $diagnostics_2[3] to 1>>
+<<set $diagnostics_2_ekg to 1>>
 <img style='width: 100%' src="https://www.wikidoc.org/images/f/f8/LVH_6.jpg">
 [[Continue|Case stare 2]]
 
@@ -75,39 +85,39 @@ NT pro-BNP: 1600 pg/mL
 The cardiac echo is illustrated below and the septum measures 1.4 cm.
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01c.mp4" frameborder="0" allowfullscreen></video>
 What is the echocardiographic view? 
-<label><<radiobutton "$echo2_quiz[0]" 1 autocheck>> Parasternal long axis </label> /*correct */
-<label><<radiobutton "$echo2_quiz[0]" 2 autocheck>> Parasternal short axis </label>
-<label><<radiobutton "$echo2_quiz[0]" 3 autocheck>> Apical 4-chamber </label>
-<label><<radiobutton "$echo2_quiz[0]" 4 autocheck>> Apical 2-chamber </label>
-<label><<radiobutton "$echo2_quiz[0]" 5 autocheck>> Subxiphoid </label>
+<label><<radiobutton "$echo2_quiz_view" 1 autocheck>> Parasternal long axis </label> /*correct */
+<label><<radiobutton "$echo2_quiz_view" 2 autocheck>> Parasternal short axis </label>
+<label><<radiobutton "$echo2_quiz_view" 3 autocheck>> Apical 4-chamber </label>
+<label><<radiobutton "$echo2_quiz_view" 4 autocheck>> Apical 2-chamber </label>
+<label><<radiobutton "$echo2_quiz_view" 5 autocheck>> Subxiphoid </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01a.mp4" frameborder="0" allowfullscreen></video>
 What is the echocardiographic view? 
-<label><<radiobutton "$echo2_quiz[1]" 1 autocheck>> Parasternal long axis </label>
-<label><<radiobutton "$echo2_quiz[1]" 2 autocheck>> Parasternal short axis </label>
-<label><<radiobutton "$echo2_quiz[1]" 3 autocheck>> Apical 4-chamber </label> /* correct */
-<label><<radiobutton "$echo2_quiz[1]" 4 autocheck>> Apical 2-chamber </label>
-<label><<radiobutton "$echo2_quiz[1]" 5 autocheck>> Subxiphoid </label>
+<label><<radiobutton "$echo2_quiz_view_2" 1 autocheck>> Parasternal long axis </label>
+<label><<radiobutton "$echo2_quiz_view_2" 2 autocheck>> Parasternal short axis </label>
+<label><<radiobutton "$echo2_quiz_view_2" 3 autocheck>> Apical 4-chamber </label> /* correct */
+<label><<radiobutton "$echo2_quiz_view_2" 4 autocheck>> Apical 2-chamber </label>
+<label><<radiobutton "$echo2_quiz_view_2" 5 autocheck>> Subxiphoid </label>
 
 How is this view obtained in ultrasound?
-<label><<radiobutton "$echo2_quiz[4]" 1 autocheck>> Place the transducer in the parasternal window with the transducer's index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
-<label><<radiobutton "$echo2_quiz[4]" 2 autocheck>> Place the transducer in the left parasternal fourth or fifth intercostal space along a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the long parasternal view. </label>
-<label><<radiobutton "$echo2_quiz[4]" 3 autocheck>> Place the transducer on the area of maximal pulse palpation with the indicator pointing toward the patient's left side. </label> /*correct */
-<label><<radiobutton "$echo2_quiz[4]" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer's index mark is oriented toward the patient's left, in the 3 o'clock position. </label>
-<label><<radiobutton "$echo2_quiz[4]" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly tilted to the patient's right </label>
+<label><<radiobutton "$echo2_quiz_placement" 1 autocheck>> Place the transducer in the parasternal window with the transducer's index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
+<label><<radiobutton "$echo2_quiz_placement" 2 autocheck>> Place the transducer in the left parasternal fourth or fifth intercostal space along a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the long parasternal view. </label>
+<label><<radiobutton "$echo2_quiz_placement" 3 autocheck>> Place the transducer on the area of maximal pulse palpation with the indicator pointing toward the patient's left side. </label> /*correct */
+<label><<radiobutton "$echo2_quiz_placement" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer's index mark is oriented toward the patient's left, in the 3 o'clock position. </label>
+<label><<radiobutton "$echo2_quiz_placement" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly tilted to the patient's right </label>
 
 <video controls autoplay src="https://mhp-assets.s3.amazonaws.com/echoatlas/videos/7_01f.mp4" frameborder="0" allowfullscreen></video>
 What is the echocardiographic view? 
-<label><<radiobutton "$echo2_quiz[2]" 1 autocheck>> Parasternal long axis </label>
-<label><<radiobutton "$echo2_quiz[2]" 2 autocheck>> Parasternal short axis </label> /*correct */
-<label><<radiobutton "$echo2_quiz[2]" 3 autocheck>> Apical 4-chamber </label>
-<label><<radiobutton "$echo2_quiz[2]" 4 autocheck>> Apical 2-chamber </label>
-<label><<radiobutton "$echo2_quiz[2]" 5 autocheck>> Subxiphoid </label>
+<label><<radiobutton "$echo2_quiz_view_3" 1 autocheck>> Parasternal long axis </label>
+<label><<radiobutton "$echo2_quiz_view_3" 2 autocheck>> Parasternal short axis </label> /*correct */
+<label><<radiobutton "$echo2_quiz_view_3" 3 autocheck>> Apical 4-chamber </label>
+<label><<radiobutton "$echo2_quiz_view_3" 4 autocheck>> Apical 2-chamber </label>
+<label><<radiobutton "$echo2_quiz_view_3" 5 autocheck>> Subxiphoid </label>
 
 What do you think about the LV Ejection Fraction?
-<label><<radiobutton "$echo2_quiz[3]" 1 autocheck>> Reduced ejection fraction (<40%) </label>
-<label><<radiobutton "$echo2_quiz[3]" 2 autocheck>> Moderately reduced ejection fraction (40-49%) </label>
-<label><<radiobutton "$echo2_quiz[3]" 3 autocheck>> Preserved ejection fraction (≥50%) </label> /* correct */
+<label><<radiobutton "$echo2_quiz_ef" 1 autocheck>> Reduced ejection fraction (<40%) </label>
+<label><<radiobutton "$echo2_quiz_ef" 2 autocheck>> Moderately reduced ejection fraction (40-49%) </label>
+<label><<radiobutton "$echo2_quiz_ef" 3 autocheck>> Preserved ejection fraction (≥50%) </label> /* correct */
 
 /* Echo diagnosis choices. */
 <<silently>>
@@ -123,18 +133,18 @@ What do you think about the LV Ejection Fraction?
 The cardiac echo is illustrated below and the septum measures 1.4 cm.
 How would you describe the echo?
 
-<label><<radiobutton "$diagnostics_2[4]" 1 autocheck>> Dilated cardiomyopathy </label>
-<label><<radiobutton "$diagnostics_2[4]" 2 autocheck>> Aortic stenosis </label> 
-<label><<radiobutton "$diagnostics_2[4]" 3 autocheck>> Left ventricular hypertrophy </label>
-<label><<radiobutton "$diagnostics_2[4]" 4 autocheck>> Rheumatic heart disease </label>
+<label><<radiobutton "$diagnostics_2_echo_impression" 1 autocheck>> Dilated cardiomyopathy </label>
+<label><<radiobutton "$diagnostics_2_echo_impression" 2 autocheck>> Aortic stenosis </label> 
+<label><<radiobutton "$diagnostics_2_echo_impression" 3 autocheck>> Left ventricular hypertrophy </label>
+<label><<radiobutton "$diagnostics_2_echo_impression" 4 autocheck>> Rheumatic heart disease </label>
 
 Please answer all questions before continuing.
-<<repeat 0.2s>><<if ($echo2_quiz[0] * $echo2_quiz[1] * $echo2_quiz[2] * $echo2_quiz[3] * $echo2_quiz[4] * $diagnostics_2[4])>> [[Continue|Diagnosis 2]]<<stop>><</if>><</repeat>>
+<<repeat 0.2s>><<if ($echo2_quiz_view * $echo2_quiz_view_2 * $echo2_quiz_view_3 * $echo2_quiz_ef * $echo2_quiz_placement * $diagnostics_2_echo_impression)>> [[Continue|Diagnosis 2]]<<stop>><</if>><</repeat>>
 
 /* Reprimand and return to diagnostic evaluation. */
 :: Not done Dx yet 2
 The consulting cardiologist tells you that you need a few more diagnostic steps before proceeding to treatment.
-<<set $diagnostics_2[5] += 1>>
+<<set $diagnostics_2_reprimand += 1>>
 <img style='width: 100%' src="https://live.staticflickr.com/7137/7556644280_648eaa7dbe_b.jpg">
 
 [[Continue|Case stare 2]]
