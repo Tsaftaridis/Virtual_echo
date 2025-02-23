@@ -283,12 +283,16 @@ Leave blank if she should continue both medications.
 <<silently>>
     <<if $q_stop_beta_4>>  <<set $case_4_Fu_score -= 2>> <</if>>
     <<if $q_stop_ACE_4>>  <<set $case_4_Fu_score += 2>> <</if>>
-    <<if ((not $q_stop_beta_4) and (not $q_stop_beta_4))>> <<set $case_4_Fu_score -= 4>> <</if>>
-    <<if ((not $q_stop_beta_4) and (not $q_stop_beta_4))>> <<set $q_stop_none to true>> <</if>>
+    <<if !$p_stop_beta_4 && !$p_stop_ACE_4>>
+        <<set $case_4_Fu_score -= 4>>
+        <<set $p_stop_none_4 to true>>
+    <</if>>
     <<if $p_stop_beta_4>> <<set $case_4_Fu_score -= 2>> <</if>>
     <<if $p_stop_ACE_4>>  <<set $case_4_Fu_score += 4>> <</if>>
-    <<if ((not $p_stop_beta_4) and (not $p_stop_ACE_4))>> <<set $case_4_Fu_score -= 4>> <</if>>
-    <<if ((not $p_stop_beta_4) and (not $p_stop_ACE_4))>> <<set $p_stop_none_4 to true>> <</if>>
+    <<if !$q_stop_beta_4 && !$q_stop_ACE_4>>
+        <<set $case_4_Fu_score -= 4>>
+        <<set $q_stop_none_4 to true>> <!-- Fixed variable name consistency -->
+    <</if>>
 
 <</silently>>
 
