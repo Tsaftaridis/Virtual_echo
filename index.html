@@ -1026,12 +1026,16 @@ Leave blank if she should continue both medications.
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;if $q_stop_beta_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $q_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score += 2&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if ((not $q_stop_beta_4) and (not $q_stop_beta_4))&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if ((not $q_stop_beta_4) and (not $q_stop_beta_4))&gt;&gt; &lt;&lt;set $q_stop_none to true&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if !$p_stop_beta_4 &amp;&amp; !$p_stop_ACE_4&gt;&gt;
+        &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt;
+        &lt;&lt;set $p_stop_none_4 to true&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $p_stop_beta_4&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 2&gt;&gt; &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $p_stop_ACE_4&gt;&gt;  &lt;&lt;set $case_4_Fu_score += 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if ((not $p_stop_beta_4) and (not $p_stop_ACE_4))&gt;&gt; &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if ((not $p_stop_beta_4) and (not $p_stop_ACE_4))&gt;&gt; &lt;&lt;set $p_stop_none_4 to true&gt;&gt; &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if !$q_stop_beta_4 &amp;&amp; !$q_stop_ACE_4&gt;&gt;
+        &lt;&lt;set $case_4_Fu_score -= 4&gt;&gt;
+        &lt;&lt;set $q_stop_none_4 to true&gt;&gt; &lt;!-- Fixed variable name consistency --&gt;
+    &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/silently&gt;&gt;
 
