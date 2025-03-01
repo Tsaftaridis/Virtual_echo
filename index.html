@@ -538,7 +538,6 @@ Please answer all questions before continuing.
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://live.staticflickr.com/7137/7556644280_648eaa7dbe_b.jpg&quot;&gt;
 
 [[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="28" name="Diagnosis 2" tags="" position="975,350" size="100,100">/% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
-
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;set $ddx_2_opinion to false&gt;&gt;
     &lt;&lt;set $biggest_risk_2_htn to false&gt;&gt;
@@ -546,7 +545,6 @@ Please answer all questions before continuing.
     &lt;&lt;set $biggest_risk_2_diab to false&gt;&gt;
     &lt;&lt;set $biggest_risk_2_occ to false&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-
 To your opinion, what is the correct diagnosis? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$ddx_2_opinion&quot; 1 autocheck&gt;&gt; Coronary artery disease &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$ddx_2_opinion&quot; 1 autocheck&gt;&gt; Heart failure with preserved ejection fraction  &lt;/label&gt;
@@ -560,7 +558,8 @@ What is are the risk factors for this patient&#39;s diagnosis?
 &lt;&lt;checkbox &quot;$biggest_risk_2_diab&quot; false true&gt;&gt; diabetes
 &lt;&lt;checkbox &quot;$biggest_risk_2_occ&quot; false true&gt;&gt; Occupation 
 
-[[Continue|Case stare 2]]</tw-passagedata><tw-passagedata pid="29" name="Treatment 2" tags="" position="1100,350" size="100,100">&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/1d/Morbus_Fabry_LVH_echo_02.jpg&quot;&gt;
+Please answer both questions before continuing. 
+&lt;&lt;repeat 0.2s&gt;&gt;&lt;&lt;if ($ddx_2_opinion and ($biggest_risk_2_htn or $biggest_risk_2_obes or $biggest_risk_2_diab or $biggest_risk_2_occ))&gt;&gt; [[Continue|Case stare 2]]&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/repeat&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Treatment 2" tags="" position="1100,350" size="100,100">&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/1d/Morbus_Fabry_LVH_echo_02.jpg&quot;&gt;
 
 A transthoracic echocardiogram (TTE) showed concentric left ventricular hypertrophy with preserved ejection fraction. The interventricular septum and posterior wall thickness was 14 mm. There were no signs of outflow tract obstruction. No significant valvular dysfunction was noted. Slight left atrial enlargement was observed.
 
@@ -639,7 +638,7 @@ What is your first step in the evaluation?
 &lt;&lt;set $labs_most_suggestive_3 to 0&gt;&gt;
 &lt;&lt;set $echo3_quiz_view to 0&gt;&gt;
 &lt;&lt;set $echo3_quiz_view_2 to 0&gt;&gt;
-&lt;&lt;set $echo3_quiz_features to 0&gt;&gt;
+&lt;&lt;set $echo3_quiz_features to false&gt;&gt;
 &lt;&lt;set $echo3_quiz_ef to 0&gt;&gt;
 &lt;&lt;set $echo3_quiz_placement to 0&gt;&gt;
 
@@ -849,7 +848,7 @@ What is your first step in the management of this patient?
 
 /* Diagnostic choices start. */</tw-passagedata><tw-passagedata pid="48" name="Physical Exam 4" tags="" position="975,600" size="100,100">You begin a physical exam on Namatovu.
 &lt;&lt;set $diagnostics_4_physical_exam to 1&gt;&gt;
-You notice distended neck veins and swelling of her feet. She says her “belly is heavy, like she’s still pregnant.” Her abdomen appears distended, and on palpation, you can clearly appreciate free fluid (ascites).
+You notice distended neck veins and swelling of her feet. She says her “belly is heavy, like she&#39;s still pregnant.” Her abdomen appears distended, and on palpation, you can clearly appreciate free fluid (ascites).
 
 On lung auscultation, you hear crackles.
 [[Continue| Case stare 4]]</tw-passagedata><tw-passagedata pid="49" name="Chest X-Ray 4" tags="" position="1100,600" size="100,100">Some time later, the nurse hands you the following chest X-ray:
@@ -880,7 +879,7 @@ Which echographic view is this?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz_view&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
 
 How is this echographic view obtained?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz_placement&quot; 1 autocheck&gt;&gt; Place the transducer in the parasternal window with the transducer index mark oriented toward the patient’s right shoulder (10 o’clock) in the third or fourth intercostal space. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz_placement&quot; 1 autocheck&gt;&gt; Place the transducer in the parasternal window with the transducer index mark oriented toward the patient&#39;s right shoulder (10 o&#39;clock) in the third or fourth intercostal space. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz_placement&quot; 2 autocheck&gt;&gt; Place the transducer in the left parasternal fourth or fifth intercostal space in a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the parasternal long-axis view. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz_placement&quot; 3 autocheck&gt;&gt; Place the transducer at the point of maximal impulse with the indicator pointing to the patient’s left side. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo4_quiz_placement&quot; 4 autocheck&gt;&gt; Place the transducer on the patient’s abdomen in the subcostal region, slightly to the right of midline. The index mark is oriented to the patient’s left (3 o’clock). &lt;/label&gt;
@@ -1042,64 +1041,45 @@ Congratulations! You’ve completed Case 1!
 
 
 &lt;img src=&quot;https://images2.imgbox.com/0d/0d/rz4AaRuD_o.jpg&quot;&gt;
-&lt;strong&gt;Key Takeaways:&lt;/strong&gt;
-&lt;h3&gt;Peripartum Cardiomyopathy (PPCM):&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;Suspect PPCM&lt;/strong&gt; in postpartum patients with heart failure symptoms (e.g., dyspnea, edema, fatigue).&lt;/li&gt;
-    &lt;li&gt;
-        &lt;strong&gt;Diagnosis:&lt;/strong&gt;
-        &lt;ul&gt;
-            &lt;li&gt;Echocardiography is critical to confirm reduced LV ejection fraction (&lt;45%),&lt;/li&gt;
-            &lt;li&gt;Ventricular dilation, and&lt;/li&gt;
-            &lt;li&gt;Exclusion of other causes.&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
+&#39;&#39;Key Takeaways:&#39;&#39;
 
-&lt;h3&gt;Medications in PPCM:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Acute Management:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Diuretics (e.g., furosemide) for pulmonary edema.&lt;/li&gt;
-    &lt;li&gt;Inotropes (e.g., dobutamine) for cardiogenic shock.&lt;/li&gt;
-&lt;/ul&gt;
+!!! Peripartum Cardiomyopathy (PPCM):
+* &#39;&#39;Suspect PPCM&#39;&#39; in postpartum patients with heart failure symptoms (e.g., dyspnea, edema, fatigue).
+* &#39;&#39;Diagnosis:&#39;&#39;
+    * Echocardiography is critical to confirm reduced LV ejection fraction (&lt;45%),
+    * Ventricular dilation, and
+    * Exclusion of other causes.
 
-&lt;p&gt;&lt;strong&gt;Long-Term Therapy:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Beta-blockers (e.g., metoprolol): Improve survival and LV function.&lt;/li&gt;
-    &lt;li&gt;ACE inhibitors (e.g., enalapril, captopril) or ARBs: Start postpartum (safe in breastfeeding).&lt;/li&gt;
-    &lt;li&gt;Sacubitril/valsartan: Consider in stable patients if ACEi/ARB is insufficient.&lt;/li&gt;
-    &lt;li&gt;Spironolactone: For persistent symptoms (avoid in pregnancy).&lt;/li&gt;
-&lt;/ul&gt;
+!!! Medications in PPCM:
+&#39;&#39;Acute Management:&#39;&#39;
+* Diuretics (e.g., furosemide) for pulmonary edema.
+* Inotropes (e.g., dobutamine) for cardiogenic shock.
 
-&lt;h3&gt;Safety in Pregnancy/Breastfeeding:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Pregnancy:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Contraindicated: ACE inhibitors, ARBs, spironolactone, ARNIs.&lt;/li&gt;
-    &lt;li&gt;Alternatives: Hydralazine + ISDN for afterload reduction.&lt;/li&gt;
-&lt;/ul&gt;
+&#39;&#39;Long-Term Therapy:&#39;&#39;
+* Beta-blockers (e.g., metoprolol): Improve survival and LV function.
+* ACE inhibitors (e.g., enalapril, captopril) or ARBs: Start postpartum (safe in breastfeeding).
+* Sacubitril/valsartan: Consider in stable patients if ACEi/ARB is insufficient.
+* Spironolactone: For persistent symptoms (avoid in pregnancy).
 
-&lt;p&gt;&lt;strong&gt;Breastfeeding:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Safe: Enalapril, captopril, benazepril (ACEi); metoprolol (beta-blocker).&lt;/li&gt;
-    &lt;li&gt;Avoid: Lisinopril, ARBs (e.g., losartan).&lt;/li&gt;
-&lt;/ul&gt;
+!!! Safety in Pregnancy/Breastfeeding:
+&#39;&#39;Pregnancy:&#39;&#39;
+* Contraindicated: ACE inhibitors, ARBs, spironolactone, ARNIs.
+* Alternatives: Hydralazine + ISDN for afterload reduction.
 
-&lt;h3&gt;Adjunctive Therapies:&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;Thromboprophylaxis: LMWH or warfarin (if LVEF &lt;35%) due to high thromboembolism risk.&lt;/li&gt;
-    &lt;li&gt;Iron Supplementation: If anemia is present (common in PPCM).&lt;/li&gt;
-&lt;/ul&gt;
+&#39;&#39;Breastfeeding:&#39;&#39;
+* Safe: Enalapril, captopril, benazepril (ACEi); metoprolol (beta-blocker).
+* Avoid: Lisinopril, ARBs (e.g., losartan).
 
-&lt;h3&gt;Monitoring:&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;Serial echocardiograms and BNP levels to track recovery.&lt;/li&gt;
-&lt;/ul&gt;
+!!! Adjunctive Therapies:
+* Thromboprophylaxis: LMWH or warfarin (if LVEF &lt;35%) due to high thromboembolism risk.
+* Iron Supplementation: If anemia is present (common in PPCM).
 
-&lt;h3&gt;Patient Counseling:&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;Do NOT&lt;/strong&gt; stop medications (beta-blockers/ACEi) even if symptoms resolve — sudden discontinuation risks relapse.&lt;/li&gt;
-    &lt;li&gt;Future pregnancies require careful preconception counseling (high recurrence risk).&lt;/li&gt;
-&lt;/ul&gt;
+!!! Monitoring:
+* Serial echocardiograms and BNP levels to track recovery.
+
+!!! Patient Counseling:
+* &#39;&#39;Do NOT&#39;&#39; stop medications (beta-blockers/ACEi) even if symptoms resolve — sudden discontinuation risks relapse.
+* Future pregnancies require careful preconception counseling (high recurrence risk).
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 

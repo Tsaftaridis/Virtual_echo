@@ -20,7 +20,7 @@ What is your first step in the evaluation?
 <<set $labs_most_suggestive_3 to 0>>
 <<set $echo3_quiz_view to 0>>
 <<set $echo3_quiz_view_2 to 0>>
-<<set $echo3_quiz_features to 0>>
+<<set $echo3_quiz_features to false>>
 <<set $echo3_quiz_ef to 0>>
 <<set $echo3_quiz_placement to 0>>
 
