@@ -151,7 +151,6 @@ The consulting cardiologist tells you that you need a few more diagnostic steps 
 
 :: Diagnosis 2 
 /% Coronary artery disease, Hypertrophic cardiomyopathy, Pharmacogenic/Infective cardiomyopathy, aortic stenosis, sleep apnea, Hypertensive Cardiomyopathy. %/
-
 <<silently>>
     <<set $ddx_2_opinion to false>>
     <<set $biggest_risk_2_htn to false>>
@@ -159,7 +158,6 @@ The consulting cardiologist tells you that you need a few more diagnostic steps 
     <<set $biggest_risk_2_diab to false>>
     <<set $biggest_risk_2_occ to false>>
 <</silently>>
-
 To your opinion, what is the correct diagnosis? 
 <label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Coronary artery disease </label>
 <label><<radiobutton "$ddx_2_opinion" 1 autocheck>> Heart failure with preserved ejection fraction  </label>
@@ -173,7 +171,8 @@ What is are the risk factors for this patient's diagnosis?
 <<checkbox "$biggest_risk_2_diab" false true>> diabetes
 <<checkbox "$biggest_risk_2_occ" false true>> Occupation 
 
-[[Continue|Case stare 2]]
+Please answer both questions before continuing. 
+<<repeat 0.2s>><<if ($ddx_2_opinion and ($biggest_risk_2_htn or $biggest_risk_2_obes or $biggest_risk_2_diab or $biggest_risk_2_occ))>> [[Continue|Case stare 2]]<<stop>><</if>><</repeat>>
 
 :: Treatment 2
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Morbus_Fabry_LVH_echo_02.jpg">

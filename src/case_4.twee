@@ -64,7 +64,7 @@ What is your next step?
 :: Physical Exam 4 
 You begin a physical exam on Namatovu.
 <<set $diagnostics_4_physical_exam to 1>>
-You notice distended neck veins and swelling of her feet. She says her “belly is heavy, like she’s still pregnant.” Her abdomen appears distended, and on palpation, you can clearly appreciate free fluid (ascites).
+You notice distended neck veins and swelling of her feet. She says her “belly is heavy, like she's still pregnant.” Her abdomen appears distended, and on palpation, you can clearly appreciate free fluid (ascites).
 
 On lung auscultation, you hear crackles.
 [[Continue| Case stare 4]]
@@ -110,7 +110,7 @@ Which echographic view is this?
 <label><<radiobutton "$echo4_quiz_view" 5 autocheck >> Subxiphoid </label>
 
 How is this echographic view obtained?
-<label><<radiobutton "$echo4_quiz_placement" 1 autocheck>> Place the transducer in the parasternal window with the transducer index mark oriented toward the patient’s right shoulder (10 o’clock) in the third or fourth intercostal space. </label>
+<label><<radiobutton "$echo4_quiz_placement" 1 autocheck>> Place the transducer in the parasternal window with the transducer index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
 <label><<radiobutton "$echo4_quiz_placement" 2 autocheck>> Place the transducer in the left parasternal fourth or fifth intercostal space in a line connecting the left clavicle/shoulder and the right hip, with the transducer rotated 90 degrees clockwise relative to the parasternal long-axis view. </label>
 <label><<radiobutton "$echo4_quiz_placement" 3 autocheck>> Place the transducer at the point of maximal impulse with the indicator pointing to the patient’s left side. </label>
 <label><<radiobutton "$echo4_quiz_placement" 4 autocheck>> Place the transducer on the patient’s abdomen in the subcostal region, slightly to the right of midline. The index mark is oriented to the patient’s left (3 o’clock). </label>
@@ -306,64 +306,45 @@ Congratulations! You’ve completed Case 1!
 
 
 <img src="https://images2.imgbox.com/0d/0d/rz4AaRuD_o.jpg">
-<strong>Key Takeaways:</strong>
-<h3>Peripartum Cardiomyopathy (PPCM):</h3>
-<ul>
-    <li><strong>Suspect PPCM</strong> in postpartum patients with heart failure symptoms (e.g., dyspnea, edema, fatigue).</li>
-    <li>
-        <strong>Diagnosis:</strong>
-        <ul>
-            <li>Echocardiography is critical to confirm reduced LV ejection fraction (<45%),</li>
-            <li>Ventricular dilation, and</li>
-            <li>Exclusion of other causes.</li>
-        </ul>
-    </li>
-</ul>
+''Key Takeaways:''
 
-<h3>Medications in PPCM:</h3>
-<p><strong>Acute Management:</strong></p>
-<ul>
-    <li>Diuretics (e.g., furosemide) for pulmonary edema.</li>
-    <li>Inotropes (e.g., dobutamine) for cardiogenic shock.</li>
-</ul>
+!!! Peripartum Cardiomyopathy (PPCM):
+* ''Suspect PPCM'' in postpartum patients with heart failure symptoms (e.g., dyspnea, edema, fatigue).
+* ''Diagnosis:''
+    * Echocardiography is critical to confirm reduced LV ejection fraction (<45%),
+    * Ventricular dilation, and
+    * Exclusion of other causes.
 
-<p><strong>Long-Term Therapy:</strong></p>
-<ul>
-    <li>Beta-blockers (e.g., metoprolol): Improve survival and LV function.</li>
-    <li>ACE inhibitors (e.g., enalapril, captopril) or ARBs: Start postpartum (safe in breastfeeding).</li>
-    <li>Sacubitril/valsartan: Consider in stable patients if ACEi/ARB is insufficient.</li>
-    <li>Spironolactone: For persistent symptoms (avoid in pregnancy).</li>
-</ul>
+!!! Medications in PPCM:
+''Acute Management:''
+* Diuretics (e.g., furosemide) for pulmonary edema.
+* Inotropes (e.g., dobutamine) for cardiogenic shock.
 
-<h3>Safety in Pregnancy/Breastfeeding:</h3>
-<p><strong>Pregnancy:</strong></p>
-<ul>
-    <li>Contraindicated: ACE inhibitors, ARBs, spironolactone, ARNIs.</li>
-    <li>Alternatives: Hydralazine + ISDN for afterload reduction.</li>
-</ul>
+''Long-Term Therapy:''
+* Beta-blockers (e.g., metoprolol): Improve survival and LV function.
+* ACE inhibitors (e.g., enalapril, captopril) or ARBs: Start postpartum (safe in breastfeeding).
+* Sacubitril/valsartan: Consider in stable patients if ACEi/ARB is insufficient.
+* Spironolactone: For persistent symptoms (avoid in pregnancy).
 
-<p><strong>Breastfeeding:</strong></p>
-<ul>
-    <li>Safe: Enalapril, captopril, benazepril (ACEi); metoprolol (beta-blocker).</li>
-    <li>Avoid: Lisinopril, ARBs (e.g., losartan).</li>
-</ul>
+!!! Safety in Pregnancy/Breastfeeding:
+''Pregnancy:''
+* Contraindicated: ACE inhibitors, ARBs, spironolactone, ARNIs.
+* Alternatives: Hydralazine + ISDN for afterload reduction.
 
-<h3>Adjunctive Therapies:</h3>
-<ul>
-    <li>Thromboprophylaxis: LMWH or warfarin (if LVEF <35%) due to high thromboembolism risk.</li>
-    <li>Iron Supplementation: If anemia is present (common in PPCM).</li>
-</ul>
+''Breastfeeding:''
+* Safe: Enalapril, captopril, benazepril (ACEi); metoprolol (beta-blocker).
+* Avoid: Lisinopril, ARBs (e.g., losartan).
 
-<h3>Monitoring:</h3>
-<ul>
-    <li>Serial echocardiograms and BNP levels to track recovery.</li>
-</ul>
+!!! Adjunctive Therapies:
+* Thromboprophylaxis: LMWH or warfarin (if LVEF <35%) due to high thromboembolism risk.
+* Iron Supplementation: If anemia is present (common in PPCM).
 
-<h3>Patient Counseling:</h3>
-<ul>
-    <li><strong>Do NOT</strong> stop medications (beta-blockers/ACEi) even if symptoms resolve — sudden discontinuation risks relapse.</li>
-    <li>Future pregnancies require careful preconception counseling (high recurrence risk).</li>
-</ul>
+!!! Monitoring:
+* Serial echocardiograms and BNP levels to track recovery.
+
+!!! Patient Counseling:
+* ''Do NOT'' stop medications (beta-blockers/ACEi) even if symptoms resolve — sudden discontinuation risks relapse.
+* Future pregnancies require careful preconception counseling (high recurrence risk).
 
 You can review guidelines on cardiovascular medications for pregnant, postpartum, and breastfeeding patients here: [[Cardiovascular disease medication during pregnancy|https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/01/28/18/53/use-of-medication-for-cvd-during-pregnancy]]
 
