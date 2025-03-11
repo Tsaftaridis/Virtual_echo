@@ -3,7 +3,7 @@ Mr. Joseph is a 65-year-old man from the village of Boucan Ferdinand who was bro
 
 Mr. Joseph says that his symptoms are caused by "evil spirits" and doesn't seek medical care unless it's a life-or-death situation. He also says that yesterday he was coughing during the night and couldn't sleep.
 
-<img style='width: 100%' src="https://images2.imgbox.com/cb/48/6PHqRZKz_o.jpg">
+<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Mulago_Hospital_5.jpg">
 /* Diagnostic choices booleans. */
 <<silently>> <<set $physical_exam_1 to false>> <<set $EKG_1 to false>> <<set $CXR_1 to false>> <<set $Labs_1 to false>> <<set $Echo_1 to false>> <<set $reprimand_1 to 0>> <</silently>>
 /* First part is displayed, second part is the passage name. */
@@ -13,12 +13,18 @@ What is your first step in the assessment?
 [[Chest X-ray|Chest X-Ray 1]]
 [[Laboratory tests|Labs 1]]
 [[Echo|Echo 1]]
+
 <<silently>>
 /* Scoring variables start at 0. One each for Treatment, Follow up and Echo. */
     <<set $case_1_Tx_score to 0>>
     <<set $case_1_Fu_score to 0>>
     <<set $case_1_Echo to 0>>
-    <<set $echo1_quiz to [0, 0, 0, 0, 0, 0]>>
+    <<set $echo1_quiz_echo_view to 0>>
+    <<set $echo1_quiz_echo_view_second to 0>>
+    <<set $echo1_quiz_echo_view_third to 0>>
+    <<set $echo1_quiz_echo_view_fourth to 0>>
+    <<set $echo1_quiz_ejection_fraction to 0>>
+    <<set $echo1_quiz_placement to 0>>
 <</silently>>
 /* Case stare is the intermediate step after each diagnosis choice, instead of showing the original case presentation. Plus it shows  some notes for quick review. */
 :: Case stare 1
@@ -30,14 +36,15 @@ What is your next step?
 [[Laboratory tests|Labs 1]]
 [[Echo|Echo 1]]
 /* If the correct workup has been done, move on to treatment. Otherwise reprimand. */
-<<if hasVisited("EKG 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
+<<if hasVisited("Labs 1", "Echo 1", "Physical Exam 1")>> [[Continue to treatment|Treatment 1]] <<else>> [[Continue to treatment|Not done Dx yet 1]] <</if>>
 
 Notes: 65-year-old man with worsening dyspnea. History of hypertension, hyperlipidemia, smoking, suspected ACS 5 years ago. Clinical assessment: BP 110/70, HR 120 bpm, RR 24 rpm, O2 sat 94% on room air
 
 /* Start of the workup choices code.*/
 :: Physical Exam 1 
+/*https://imgbox.com/y4Puv7sd Delete here: */
 You begin a physical examination of the patient. You notice jugular venous distention, a third heart sound, pulmonary crackles, and hepatojugular reflux.
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.0cQhitmVDNPrEFUpfOiG?pid=ImgGn">
+<img style='width: 100%' src="https://images2.imgbox.com/34/a5/y4Puv7sd_o.jpg">
 
 /* Keep track for scoring purposes later. */
 <<set $physical_exam_1 to true>>
@@ -66,7 +73,7 @@ CXR reveals bilateral pulmonary edema - diffuse opacification of both lung field
 
 :: Labs 1 
 Laboratory tests showed a Hg level of 10.3 mg/dL. Renal function, liver function, and blood glucose values returned normal.
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.XplZfSqT4XtsyDX61Woz?pid=ImgGn">
+<img style='width: 100%' src="https://images2.imgbox.com/9e/e3/4E6chqUP_o.png">
 <<set $Labs_1 to true>>
 
 [[Continue|Case stare 1]]
@@ -76,48 +83,48 @@ The echocardiogram is illustrated below:
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w">
 What is the echocardiographic view? 
-<label><<radiobutton "$echo1_quiz[0]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo1_quiz[0]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo1_quiz[0]" 3 autocheck >> Apical 4-chamber </label>
-<label><<radiobutton "$echo1_quiz[0]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo1_quiz[0]" 5 autocheck >> Subxiphoid </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 3 autocheck >> Apical 4-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 5 autocheck >> Subxiphoid </label>
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
 What is the echocardiographic view? 
-<label><<radiobutton "$echo1_quiz[1]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo1_quiz[1]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo1_quiz[1]" 3 autocheck >> Apical 4-chamber </label>
-<label><<radiobutton "$echo1_quiz[1]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo1_quiz[1]" 5 autocheck >> Subcostal inferior vena cava view </label>
+<label><<radiobutton "$echo1_quiz_echo_view_second" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_second" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_second" 3 autocheck >> Apical 4-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_second" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_second" 5 autocheck >> Subcostal inferior vena cava view </label>
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
 
 What is the echocardiographic view? 
-<label><<radiobutton "$echo1_quiz[2]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo1_quiz[2]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo1_quiz[2]" 3 autocheck >> Apical 4-chamber </label>
-<label><<radiobutton "$echo1_quiz[2]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo1_quiz[2]" 5 autocheck >> Subxiphoid </label> 
+<label><<radiobutton "$echo1_quiz_echo_view_third" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_third" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_third" 3 autocheck >> Apical 4-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_third" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_third" 5 autocheck >> Subxiphoid </label> 
 
 How is this view obtained in echocardiography?
-<label><<radiobutton "$echo1_quiz[5]" 1 autocheck>> Place the transducer in the parasternal window with the transducer index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
-<label><<radiobutton "$echo1_quiz[5]" 2 autocheck>> Place the transducer in the fourth or fifth left parasternal intercostal space in a line connecting the left clavicle/shoulder and right hip, with the transducer rotated 90 degrees clockwise from the parasternal long axis view. </label>
-<label><<radiobutton "$echo1_quiz[5]" 3 autocheck>> Place the transducer at the point of maximal impulse with the indicator pointing to the patient's left side. </label>
-<label><<radiobutton "$echo1_quiz[5]" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer index mark is oriented toward the patient's left, at the 3 o'clock position. </label>
-<label><<radiobutton "$echo1_quiz[5]" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly angled toward the patient's right. </label>
+<label><<radiobutton "$echo1_quiz_placement" 1 autocheck>> Place the transducer in the parasternal window with the transducer index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
+<label><<radiobutton "$echo1_quiz_placement" 2 autocheck>> Place the transducer in the fourth or fifth left parasternal intercostal space in a line connecting the left clavicle/shoulder and right hip, with the transducer rotated 90 degrees clockwise from the parasternal long axis view. </label>
+<label><<radiobutton "$echo1_quiz_placement" 3 autocheck>> Place the transducer at the point of maximal impulse with the indicator pointing to the patient's left side. </label>
+<label><<radiobutton "$echo1_quiz_placement" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer index mark is oriented toward the patient's left, at the 3 o'clock position. </label>
+<label><<radiobutton "$echo1_quiz_placement" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly angled toward the patient's right. </label>
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
 What is the echocardiographic view? 
-<label><<radiobutton "$echo1_quiz[3]" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo1_quiz[3]" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo1_quiz[3]" 3 autocheck >> Apical 4-chamber </label>
-<label><<radiobutton "$echo1_quiz[3]" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo1_quiz[3]" 5 autocheck >> Subcostal inferior vena cava view </label>
+<label><<radiobutton "$echo1_quiz_echo_view_fourth" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_fourth" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_fourth" 3 autocheck >> Apical 4-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_fourth" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_fourth" 5 autocheck >> Subcostal inferior vena cava view </label>
 
 What do you think of the LV Ejection Fraction?
-<label><<radiobutton "$echo1_quiz[4]" 1 autocheck >> Reduced ejection fraction (<40%) </label>
-<label><<radiobutton "$echo1_quiz[4]" 2 autocheck >> Mildly reduced ejection fraction (40-49%) </label>
-<label><<radiobutton "$echo1_quiz[4]" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
+<label><<radiobutton "$echo1_quiz_ejection_fraction" 1 autocheck >> Reduced ejection fraction (<40%) </label>
+<label><<radiobutton "$echo1_quiz_ejection_fraction" 2 autocheck >> Mildly reduced ejection fraction (40-49%) </label>
+<label><<radiobutton "$echo1_quiz_ejection_fraction" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
 
 What do you think the echo shows?
 <label><<radiobutton "$case_1_Echo" 1 autocheck>> Dilated inferior vena cava and severely reduced ejection fraction </label>
@@ -125,55 +132,46 @@ What do you think the echo shows?
 <label><<radiobutton "$case_1_Echo" 3 autocheck>> Mitral valve prolapse and left atrial dilation </label>
 
 Please answer all questions before continuing.
-<<repeat 0.2s>><<if ($echo1_quiz[0] * $echo1_quiz[1] * $echo1_quiz[2] * $echo1_quiz[3] * $echo1_quiz[4] * $echo1_quiz[5] * $case_1_Echo)>> [[Continue|Case stare 1]]<<stop>><</if>><</repeat>>
+<<repeat 0.2s>><<if ($echo1_quiz_echo_view * $echo1_quiz_echo_view_second * $echo1_quiz_echo_view_third * $echo1_quiz_echo_view_fourth * $echo1_quiz_ejection_fraction * $echo1_quiz_placement * $case_1_Echo)>> [[Continue|Case stare 1]]<<stop>><</if>><</repeat>>
 
 
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
 :: Not done Dx yet 1 
 The consulting cardiologist tells you that you need some additional diagnostic steps before moving on to treatment.
 <<set $reprimand_2 += 1>>
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.GT2Nb_vjvLKVbfInIsT4?pid=ImgGn&rs=1">
+<img style='width: 100%' src="https://images.pexels.com/photos/5327647/pexels-photo-5327647.jpeg">
 [[Continue|Case stare 1]]
 
 :: Treatment 1 
 The echo report reads: "Left ventricular ejection fraction of 20%. Signs of moderate pulmonary hypertension and dilated inferior vena cava."
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.SkbRZFTP9J47INQByGlT?pid=ImgGn">
+<img style='width: 100%' src="https://euroweeklynews.com/wp-content/uploads/2024/04/Ultrasound-1024x683.jpg">
 
 Remember that a physical examination is important when first approaching a patient. After that, an echocardiogram and an ECG are necessary diagnostic steps before moving on to treatment in this patient.
 
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.frL6vSaxNaetRJfhLhQt?pid=ImgGn">
+<<set $case_1_treat_choice>>
 
 The head nurse asks you which of the following would be the best initial treatment option for this patient:
 
-[[IV Furosemide|Furosemide IV 1]]
-[[Oral loop diuretic|Bad outcome 1]]
-[[1.5 L of Lactated Ringer's (no NaCl) and 10 mg of IV metoprolol|Very bad outcome 1]]
+<label><<radiobutton "$case_1_treat_choice" 1 autocheck>> Furosemide IV </label>
+<label><<radiobutton "$case_1_treat_choice" 2 autocheck>> Oral Loop Diuretic </label>
+<label><<radiobutton "$case_1_treat_choice" 3 autocheck>> 1.5L of Lactated Ringer's and 10mg IV metoprolol </label>
 
-:: Furosemide IV 1
+[[Continue| Treatment outcome 1]]
+
+:: Treatment outcome 1
+<<if $case_1_treat_choice = 1>> 
 After starting high-dose IV furosemide, the patient reports improvement in symptoms. He is able to breathe better and lie flat. He thanks you. His blood pressure has normalized.
 
+<<elseif $case_1_treat_choice = 2>> 
 IV furosemide is the correct first choice in the treatment of acute decompensated heart failure, according to international guidelines.
-<<set $case_1_Tx_score += 4 >>
-[[Continue|Further management 1]]
+<<set $case_1_Tx_score += 4 >> 
 
-:: Bad outcome 1
+<<else>> 
+
 Mr. Joseph improves slowly over the following days. During his hospital stay, he still complains of dyspnea for the next five days "souf li wo" when trying to walk to the bathroom, although his peripheral edema seems to be slowly improving.
-On the 6th day, he is finally asymptomatic according to him.
-
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.X6JIXmdBt0K_GY8_8GVG?pid=ImgGn">
-<<set $case_1_Tx_score += 3 >>
-[[Continue|Further management 1]]
-
-:: Very bad outcome 1
-3 hours later, you are called by the nurse because the patient "doesn't seem to be doing well." Mr. Joseph's blood pressure is 90/70 mmHg, his heart rate is 140 bpm, and his extremities are pale and cold to the touch.
-
-Mr. Joseph is admitted to intensive care for further management of heart failure with reduced ejection fraction complicated by cardiogenic shock.
-
-
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.ZCGoOne7gjb9cVeeQ5SV?pid=ImgGn&rs=1">
-
-After 5 days in the intensive care unit, his symptoms and vital signs improve, and he is transferred back to the regular ward.
-<<set $case_1_Tx_score -= 4 >>
+On the 6th day, he is finally asymptomatic according to him. 
+<<set $case_1_Tx_score += 3 >> 
+<</if>> 
 [[Continue|Further management 1]]
 
 :: Further management 1
@@ -199,7 +197,7 @@ Mr. Joseph is put on ACE inhibitor, beta-blocker, spironolactone, and oral furos
 [[Continue|End of case 1]]
 
 :: End of case 1
-<img style='width: 100%' src="https://th.bing.com/th/id/OIG.QMlLg0S0P5J4GJQhjdAU?pid=ImgGn">
+<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Mulago_Hospital_5.jpg">
 
 A month later, Mr. Joseph's son comes to the hospital to ask the nurse to see you.
 
