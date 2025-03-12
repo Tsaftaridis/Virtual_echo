@@ -54,7 +54,7 @@ Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you
 :: Chest X-Ray 3
 <<set $diagnostics_3_CXR>>
 40 minutes later, the nurse hands you the following radiographic film:
-<img style='width: 100%' src="https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png">
+<img style='width: 100%' src="https://imgbox.com/HCZASX45">
 
 Bilateral patchy long infiltrates consistent with pulmonary edema. 
 
@@ -62,9 +62,7 @@ Bilateral patchy long infiltrates consistent with pulmonary edema.
 [[Continue| Case stare 3]]
 
 :: radiologist 3
-Mild pulmonary edema. // TODO FIX IMAGE 
-
-<<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png>>
+Mild pulmonary edema. 
 [[Continue|Case stare 3]]
 
 :: Labs 3
