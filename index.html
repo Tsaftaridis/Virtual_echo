@@ -265,7 +265,7 @@ You begin a physical examination of the patient. You notice jugular venous diste
 /* Keep track for scoring purposes later. */
 &lt;&lt;set $physical_exam_1 to true&gt;&gt;
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="4" name="EKG 1" tags="" position="475,100" size="100,100">His electrocardiogram showed sinus tachycardia and Q waves in the inferior leads.
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png&quot;&gt; //TODO change image 
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/6a/bc/YeK8N2Lv_o.png&quot;&gt; 
 &lt;&lt;set $EKG_1 to true&gt;&gt; 
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="5" name="Chest X-Ray 1" tags="" position="600,100" size="100,100">40 minutes later, the radiologist gives you the following film with a signed note that says:
 
@@ -285,18 +285,18 @@ CXR reveals bilateral pulmonary edema - diffuse opacification of both lung field
 
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="7" name="Echo 1" tags="" position="850,100" size="100,100">The echocardiogram is illustrated below:
 
-&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt; //TODO parasternal long correct
+&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt; //
 What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt; /* Correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt; 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w&quot;&gt;
-What is the echocardiographic view? // TODO parasternal short 
+What is the echocardiographic view? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt; /* correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 5 autocheck &gt;&gt; Subcostal inferior vena cava view &lt;/label&gt;
@@ -304,18 +304,18 @@ What is the echocardiographic view? // TODO parasternal short
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w&quot;&gt;
 
 What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt; // TODO apical four 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt; 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt; /* correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt; 
 
 How is this view obtained in echocardiography?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 1 autocheck&gt;&gt; Place the transducer in the parasternal window with the transducer index mark oriented toward the patient&#39;s right shoulder (10 o&#39;clock) in the third or fourth intercostal space. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 2 autocheck&gt;&gt; Place the transducer in the fourth or fifth left parasternal intercostal space in a line connecting the left clavicle/shoulder and right hip, with the transducer rotated 90 degrees clockwise from the parasternal long axis view. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 3 autocheck&gt;&gt; Place the transducer at the point of maximal impulse with the indicator pointing to the patient&#39;s left side. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 3 autocheck&gt;&gt; Place the transducer at the point of maximal impulse with the indicator pointing to the patient&#39;s left side. &lt;/label&gt; /* correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 4 autocheck&gt;&gt; Place the transducer on the patient&#39;s abdomen in the subcostal region, slightly to the right of the midline. The transducer index mark is oriented toward the patient&#39;s left, at the 3 o&#39;clock position. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient&#39;s head and slightly angled toward the patient&#39;s right. &lt;/label&gt; // TODO correct maximal impulse 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient&#39;s head and slightly angled toward the patient&#39;s right. &lt;/label&gt; 
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w&quot;&gt; 
 What is the echocardiographic view? 
@@ -323,15 +323,15 @@ What is the echocardiographic view?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 5 autocheck &gt;&gt; Subcostal inferior vena cava view &lt;/label&gt; // TODO subcostal inferior vena cava 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 5 autocheck &gt;&gt; Subcostal inferior vena cava view &lt;/label&gt; /* correct */
 
 What do you think of the LV Ejection Fraction?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 1 autocheck &gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt; //TODO correct 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 1 autocheck &gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt; /* correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 2 autocheck &gt;&gt; Mildly reduced ejection fraction (40-49%) &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 3 autocheck &gt;&gt; Preserved ejection fraction (≥50%) &lt;/label&gt;
 
 What do you think the echo shows?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 1 autocheck&gt;&gt; Dilated inferior vena cava and severely reduced ejection fraction &lt;/label&gt; // TODO correct 
+&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 1 autocheck&gt;&gt; Dilated inferior vena cava and severely reduced ejection fraction &lt;/label&gt; /* correct */
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 2 autocheck&gt;&gt; Preserved ejection fraction and dilated but compliant inferior vena cava &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 3 autocheck&gt;&gt; Mitral valve prolapse and left atrial dilation &lt;/label&gt;
 
@@ -666,14 +666,12 @@ You begin a physical examination of the patient.
 Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. 
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="33" name="Chest X-Ray 3" tags="" position="350,475" size="100,100">&lt;&lt;set $diagnostics_3_CXR&gt;&gt;
 40 minutes later, the nurse hands you the following radiographic film:
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png&quot;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://imgbox.com/HCZASX45&quot;&gt;
 
 Bilateral patchy long infiltrates consistent with pulmonary edema. 
 
 [[I need to see the radiologist&#39;s report|radiologist 3]]
-[[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="34" name="radiologist 3" tags="" position="475,475" size="100,100">Mild pulmonary edema. // TODO FIX IMAGE 
-
-&lt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png&gt;&gt;
+[[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="34" name="radiologist 3" tags="" position="475,475" size="100,100">Mild pulmonary edema. 
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="35" name="Labs 3" tags="" position="600,475" size="100,100">&lt;&lt;set $diagnostics_3_labs to 1&gt;&gt;
 &lt;img src=&quot;https://cdn2.picryl.com/photo/2017/02/06/blood-pumps-into-test-tubes-during-the-armed-services-74731e-1024.jpg&quot;&gt;
 

@@ -52,7 +52,7 @@ You begin a physical examination of the patient. You notice jugular venous diste
 
 :: EKG 1 
 His electrocardiogram showed sinus tachycardia and Q waves in the inferior leads.
-<img style='width: 100%' src="https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png"> //TODO change image 
+<img style='width: 100%' src="https://images2.imgbox.com/6a/bc/YeK8N2Lv_o.png"> 
 <<set $EKG_1 to true>> 
 [[Continue|Case stare 1]]
 
@@ -81,18 +81,18 @@ Laboratory tests showed a Hg level of 10.3 mg/dL. Renal function, liver function
 :: Echo 1 
 The echocardiogram is illustrated below:
 
-<img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w"> //TODO parasternal long correct
+<img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w"> //
 What is the echocardiographic view? 
-<label><<radiobutton "$echo1_quiz_echo_view" 1 autocheck >> Parasternal long axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 1 autocheck >> Parasternal long axis </label> /* Correct */
 <label><<radiobutton "$echo1_quiz_echo_view" 2 autocheck >> Parasternal short axis </label>
 <label><<radiobutton "$echo1_quiz_echo_view" 3 autocheck >> Apical 4-chamber </label>
-<label><<radiobutton "$echo1_quiz_echo_view" 4 autocheck >> Apical 2-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view" 4 autocheck >> Apical 2-chamber </label> 
 <label><<radiobutton "$echo1_quiz_echo_view" 5 autocheck >> Subxiphoid </label>
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w">
-What is the echocardiographic view? // TODO parasternal short 
+What is the echocardiographic view? 
 <label><<radiobutton "$echo1_quiz_echo_view_second" 1 autocheck >> Parasternal long axis </label>
-<label><<radiobutton "$echo1_quiz_echo_view_second" 2 autocheck >> Parasternal short axis </label>
+<label><<radiobutton "$echo1_quiz_echo_view_second" 2 autocheck >> Parasternal short axis </label> /* correct */
 <label><<radiobutton "$echo1_quiz_echo_view_second" 3 autocheck >> Apical 4-chamber </label>
 <label><<radiobutton "$echo1_quiz_echo_view_second" 4 autocheck >> Apical 2-chamber </label>
 <label><<radiobutton "$echo1_quiz_echo_view_second" 5 autocheck >> Subcostal inferior vena cava view </label>
@@ -100,18 +100,18 @@ What is the echocardiographic view? // TODO parasternal short
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w">
 
 What is the echocardiographic view? 
-<label><<radiobutton "$echo1_quiz_echo_view_third" 1 autocheck >> Parasternal long axis </label> // TODO apical four 
+<label><<radiobutton "$echo1_quiz_echo_view_third" 1 autocheck >> Parasternal long axis </label> 
 <label><<radiobutton "$echo1_quiz_echo_view_third" 2 autocheck >> Parasternal short axis </label>
-<label><<radiobutton "$echo1_quiz_echo_view_third" 3 autocheck >> Apical 4-chamber </label>
+<label><<radiobutton "$echo1_quiz_echo_view_third" 3 autocheck >> Apical 4-chamber </label> /* correct */
 <label><<radiobutton "$echo1_quiz_echo_view_third" 4 autocheck >> Apical 2-chamber </label>
 <label><<radiobutton "$echo1_quiz_echo_view_third" 5 autocheck >> Subxiphoid </label> 
 
 How is this view obtained in echocardiography?
 <label><<radiobutton "$echo1_quiz_placement" 1 autocheck>> Place the transducer in the parasternal window with the transducer index mark oriented toward the patient's right shoulder (10 o'clock) in the third or fourth intercostal space. </label>
 <label><<radiobutton "$echo1_quiz_placement" 2 autocheck>> Place the transducer in the fourth or fifth left parasternal intercostal space in a line connecting the left clavicle/shoulder and right hip, with the transducer rotated 90 degrees clockwise from the parasternal long axis view. </label>
-<label><<radiobutton "$echo1_quiz_placement" 3 autocheck>> Place the transducer at the point of maximal impulse with the indicator pointing to the patient's left side. </label>
+<label><<radiobutton "$echo1_quiz_placement" 3 autocheck>> Place the transducer at the point of maximal impulse with the indicator pointing to the patient's left side. </label> /* correct */
 <label><<radiobutton "$echo1_quiz_placement" 4 autocheck>> Place the transducer on the patient's abdomen in the subcostal region, slightly to the right of the midline. The transducer index mark is oriented toward the patient's left, at the 3 o'clock position. </label>
-<label><<radiobutton "$echo1_quiz_placement" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly angled toward the patient's right. </label> // TODO correct maximal impulse 
+<label><<radiobutton "$echo1_quiz_placement" 5 autocheck>> Place the transducer in the subxiphoid window with the orientation mark toward the patient's head and slightly angled toward the patient's right. </label> 
 
 <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w"> 
 What is the echocardiographic view? 
@@ -119,15 +119,15 @@ What is the echocardiographic view?
 <label><<radiobutton "$echo1_quiz_echo_view_fourth" 2 autocheck >> Parasternal short axis </label>
 <label><<radiobutton "$echo1_quiz_echo_view_fourth" 3 autocheck >> Apical 4-chamber </label>
 <label><<radiobutton "$echo1_quiz_echo_view_fourth" 4 autocheck >> Apical 2-chamber </label>
-<label><<radiobutton "$echo1_quiz_echo_view_fourth" 5 autocheck >> Subcostal inferior vena cava view </label> // TODO subcostal inferior vena cava 
+<label><<radiobutton "$echo1_quiz_echo_view_fourth" 5 autocheck >> Subcostal inferior vena cava view </label> /* correct */
 
 What do you think of the LV Ejection Fraction?
-<label><<radiobutton "$echo1_quiz_ejection_fraction" 1 autocheck >> Reduced ejection fraction (<40%) </label> //TODO correct 
+<label><<radiobutton "$echo1_quiz_ejection_fraction" 1 autocheck >> Reduced ejection fraction (<40%) </label> /* correct */
 <label><<radiobutton "$echo1_quiz_ejection_fraction" 2 autocheck >> Mildly reduced ejection fraction (40-49%) </label>
 <label><<radiobutton "$echo1_quiz_ejection_fraction" 3 autocheck >> Preserved ejection fraction (≥50%) </label>
 
 What do you think the echo shows?
-<label><<radiobutton "$case_1_Echo" 1 autocheck>> Dilated inferior vena cava and severely reduced ejection fraction </label> // TODO correct 
+<label><<radiobutton "$case_1_Echo" 1 autocheck>> Dilated inferior vena cava and severely reduced ejection fraction </label> /* correct */
 <label><<radiobutton "$case_1_Echo" 2 autocheck>> Preserved ejection fraction and dilated but compliant inferior vena cava </label>
 <label><<radiobutton "$case_1_Echo" 3 autocheck>> Mitral valve prolapse and left atrial dilation </label>
 
