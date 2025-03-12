@@ -219,9 +219,9 @@ function form_submitted() {
 window.form_submitted = form_submitted; 
 /*$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove(); 
-$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");*/</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">Mr. Joseph is a 65-year-old man from the village of Boucan Ferdinand who was brought to the hospital by his son. His son describes that he has been suffering from shortness of breath (&quot;souf kout&quot;) for a few days, but he didn&#39;t want to go to the hospital and tried to treat himself using his old family remedy made of honey, Aloe Vera, and almond leaves.
+$(document.head).append("<link rel='icon' href='https://images2.imgbox.com/a4/f5/gkpZIQ6o_o.png'>");*/</script><tw-passagedata pid="1" name="Case 1 introduction" tags="" position="100,100" size="100,100">Mr. Kato is a 65-year-old man from the suburb of Kireka, who was brought to the hospital by his son. His son describes that he has been suffering from shortness of breath for a few days, but he didn&#39;t want to go to the hospital and tried to treat himself using covidex.
 
-Mr. Joseph says that his symptoms are caused by &quot;evil spirits&quot; and doesn&#39;t seek medical care unless it&#39;s a life-or-death situation. He also says that yesterday he was coughing during the night and couldn&#39;t sleep.
+Mr. Kato says that his symptoms are caused by pneumonia and doesn&#39;t usually seek medical care unless it&#39;s a life-or-death situation. He also says that yesterday he was coughing during the night and couldn&#39;t sleep.
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/9a/Mulago_Hospital_5.jpg&quot;&gt;
 /* Diagnostic choices booleans. */
@@ -229,7 +229,7 @@ Mr. Joseph says that his symptoms are caused by &quot;evil spirits&quot; and doe
 /* First part is displayed, second part is the passage name. */
 What is your first step in the assessment? 
 [[Physical examination|Physical Exam 1]]
-[[EKG|EKG 1]]
+[[EKG|EKG 1]] 
 [[Chest X-ray|Chest X-Ray 1]]
 [[Laboratory tests|Labs 1]]
 [[Echo|Echo 1]]
@@ -259,14 +259,14 @@ What is your first step in the assessment?
 Notes: 65-year-old man with worsening dyspnea. History of hypertension, hyperlipidemia, smoking, suspected ACS 5 years ago. Clinical assessment: BP 110/70, HR 120 bpm, RR 24 rpm, O2 sat 94% on room air
 
 /* Start of the workup choices code.*/</tw-passagedata><tw-passagedata pid="3" name="Physical Exam 1" tags="" position="350,100" size="100,100">/*https://imgbox.com/y4Puv7sd Delete here: */
-You begin a physical examination of the patient. You notice jugular venous distention, a third heart sound, pulmonary crackles, and hepatojugular reflux.
+You begin a physical examination of the patient. You notice jugular venous distention, a third heart sound, pulmonary crackles, and hepatojugular reflux. His temperature is normal. You notice the patient has swollen feet. 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/34/a5/y4Puv7sd_o.jpg&quot;&gt;
 
 /* Keep track for scoring purposes later. */
 &lt;&lt;set $physical_exam_1 to true&gt;&gt;
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="4" name="EKG 1" tags="" position="475,100" size="100,100">His electrocardiogram showed sinus tachycardia and Q waves in the inferior leads.
-&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png&quot;&gt;
-&lt;&lt;set $EKG_1 to true&gt;&gt;
+&lt;img style=&#39;width: 100%&#39; src=&quot;https://www.researchgate.net/publication/270131476/figure/fig1/AS:406690156564480@1473973897767/Electrocardiogram-showing-sinus-rhythm-normal-axis-Q-waves-in-lead-3-and-AvF-diagnostic.png&quot;&gt; //TODO change image 
+&lt;&lt;set $EKG_1 to true&gt;&gt; 
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="5" name="Chest X-Ray 1" tags="" position="600,100" size="100,100">40 minutes later, the radiologist gives you the following film with a signed note that says:
 
 Name: H. F.
@@ -279,13 +279,13 @@ CXR reveals bilateral pulmonary edema - diffuse opacification of both lung field
 &lt;&lt;set $CXR_1 to true&gt;&gt;
 &lt;img style=&#39;width:100&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pulmonary_oedema.jpg/220px-Pulmonary_oedema.jpg&quot;&gt;
 
-[[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="6" name="Labs 1" tags="" position="725,100" size="100,100">Laboratory tests showed a Hg level of 10.3 mg/dL. Renal function, liver function, and blood glucose values returned normal.
+[[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="6" name="Labs 1" tags="" position="725,100" size="100,100">Laboratory tests showed a Hg level of 10.3 mg/dL. Renal function, liver function, and blood glucose values returned normal. Serum NT pro-BNP was 800 pg/mL. White Blood Cell Count: 5000/mL 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/9e/e3/4E6chqUP_o.png&quot;&gt;
 &lt;&lt;set $Labs_1 to true&gt;&gt;
 
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="7" name="Echo 1" tags="" position="850,100" size="100,100">The echocardiogram is illustrated below:
 
-&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt;
+&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584852856-Z6Q0VS5GJDF97ZWY648R/PSL.ezgif.gif?format=1500w&quot;&gt; //TODO parasternal long correct
 What is the echocardiographic view? 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
@@ -294,7 +294,7 @@ What is the echocardiographic view?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view&quot; 5 autocheck &gt;&gt; Subxiphoid &lt;/label&gt;
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584918045-SSY2ASB8VE4X1CCB4SH7/PSS.ezgif.gif?format=1500w&quot;&gt;
-What is the echocardiographic view? 
+What is the echocardiographic view? // TODO parasternal short 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_second&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
@@ -304,7 +304,7 @@ What is the echocardiographic view?
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594584995311-FAYVYD8C966A4DV43DJW/A4C.ezgif.gif?format=1500w&quot;&gt;
 
 What is the echocardiographic view? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 1 autocheck &gt;&gt; Parasternal long axis &lt;/label&gt; // TODO apical four 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_third&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
@@ -315,7 +315,7 @@ How is this view obtained in echocardiography?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 2 autocheck&gt;&gt; Place the transducer in the fourth or fifth left parasternal intercostal space in a line connecting the left clavicle/shoulder and right hip, with the transducer rotated 90 degrees clockwise from the parasternal long axis view. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 3 autocheck&gt;&gt; Place the transducer at the point of maximal impulse with the indicator pointing to the patient&#39;s left side. &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 4 autocheck&gt;&gt; Place the transducer on the patient&#39;s abdomen in the subcostal region, slightly to the right of the midline. The transducer index mark is oriented toward the patient&#39;s left, at the 3 o&#39;clock position. &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient&#39;s head and slightly angled toward the patient&#39;s right. &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_placement&quot; 5 autocheck&gt;&gt; Place the transducer in the subxiphoid window with the orientation mark toward the patient&#39;s head and slightly angled toward the patient&#39;s right. &lt;/label&gt; // TODO correct maximal impulse 
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/1594585189558-U9GYSKSZZ9NQ74QGG6M5/IVC.ezgif.gif?format=1500w&quot;&gt; 
 What is the echocardiographic view? 
@@ -323,15 +323,15 @@ What is the echocardiographic view?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 2 autocheck &gt;&gt; Parasternal short axis &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 3 autocheck &gt;&gt; Apical 4-chamber &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 4 autocheck &gt;&gt; Apical 2-chamber &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 5 autocheck &gt;&gt; Subcostal inferior vena cava view &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_echo_view_fourth&quot; 5 autocheck &gt;&gt; Subcostal inferior vena cava view &lt;/label&gt; // TODO subcostal inferior vena cava 
 
 What do you think of the LV Ejection Fraction?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 1 autocheck &gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 1 autocheck &gt;&gt; Reduced ejection fraction (&lt;40%) &lt;/label&gt; //TODO correct 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 2 autocheck &gt;&gt; Mildly reduced ejection fraction (40-49%) &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$echo1_quiz_ejection_fraction&quot; 3 autocheck &gt;&gt; Preserved ejection fraction (≥50%) &lt;/label&gt;
 
 What do you think the echo shows?
-&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 1 autocheck&gt;&gt; Dilated inferior vena cava and severely reduced ejection fraction &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 1 autocheck&gt;&gt; Dilated inferior vena cava and severely reduced ejection fraction &lt;/label&gt; // TODO correct 
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 2 autocheck&gt;&gt; Preserved ejection fraction and dilated but compliant inferior vena cava &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_Echo&quot; 3 autocheck&gt;&gt; Mitral valve prolapse and left atrial dilation &lt;/label&gt;
 
@@ -345,59 +345,57 @@ Please answer all questions before continuing.
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="9" name="Treatment 1" tags="" position="1100,100" size="100,100">The echo report reads: &quot;Left ventricular ejection fraction of 20%. Signs of moderate pulmonary hypertension and dilated inferior vena cava.&quot;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://euroweeklynews.com/wp-content/uploads/2024/04/Ultrasound-1024x683.jpg&quot;&gt;
 
-Remember that a physical examination is important when first approaching a patient. After that, an echocardiogram and an ECG are necessary diagnostic steps before moving on to treatment in this patient.
+Remember that a physical examination is important when first approaching a patient. After that, an echocardiogram and a pro-BNP measurement are necessary diagnostic steps before moving on to treatment in this patient.
 
 &lt;&lt;set $case_1_treat_choice&gt;&gt;
 
 The head nurse asks you which of the following would be the best initial treatment option for this patient:
 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_treat_choice&quot; 1 autocheck&gt;&gt; Furosemide IV &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_treat_choice&quot; 2 autocheck&gt;&gt; Oral Loop Diuretic &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_treat_choice&quot; 1 autocheck&gt;&gt; Diuretics &lt;/label&gt;
+&lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_treat_choice&quot; 2 autocheck&gt;&gt; Antibiotics &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$case_1_treat_choice&quot; 3 autocheck&gt;&gt; 1.5L of Lactated Ringer&#39;s and 10mg IV metoprolol &lt;/label&gt;
 
-[[Continue| Treatment outcome 1]]</tw-passagedata><tw-passagedata pid="10" name="Treatment outcome 1" tags="" position="1225,100" size="100,100">&lt;&lt;if $case_1_treat_choice = 1&gt;&gt; 
-After starting high-dose IV furosemide, the patient reports improvement in symptoms. He is able to breathe better and lie flat. He thanks you. His blood pressure has normalized.
+[[Continue| Treatment outcome 1]]</tw-passagedata><tw-passagedata pid="10" name="Treatment outcome 1" tags="" position="1225,100" size="100,100">&lt;&lt;if $case_1_treat_choice == 1&gt;&gt; 
+After starting high-dose diuretics, e.g. furosemide, the patient reports improvement in symptoms. He is able to breathe better and lie flat. He thanks you. His blood pressure has normalized.
 
-&lt;&lt;elseif $case_1_treat_choice = 2&gt;&gt; 
-IV furosemide is the correct first choice in the treatment of acute decompensated heart failure, according to international guidelines.
-&lt;&lt;set $case_1_Tx_score += 4 &gt;&gt; 
+&lt;&lt;elseif $case_1_treat_choice == 2&gt;&gt; 
+The antibiotics will not help  mr. Keto&#39;s symptoms, because he does not have signs of infection. He is afebrile and is probably suffering from heart failure, not pneumonia. &lt;&lt;set $case_1_Tx_score += 4 &gt;&gt; 
 
 &lt;&lt;else&gt;&gt; 
-
-Mr. Joseph improves slowly over the following days. During his hospital stay, he still complains of dyspnea for the next five days &quot;souf li wo&quot; when trying to walk to the bathroom, although his peripheral edema seems to be slowly improving.
+Mr. Kato improves slowly over the following days. During his hospital stay, he still complains of dyspnea for the next five days &quot;souf li wo&quot; when trying to walk to the bathroom, although his peripheral edema seems to be slowly improving.
 On the 6th day, he is finally asymptomatic according to him. 
 &lt;&lt;set $case_1_Tx_score += 3 &gt;&gt; 
 &lt;&lt;/if&gt;&gt; 
-[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="11" name="Further management 1" tags="" position="100,225" size="100,100">You examine Mr. Joseph and discuss his symptoms with him. He reports that he feels better and no longer has &quot;Pye anfle&quot; (swollen feet). During the examination, you confirm that the edema has disappeared and lung sounds are normal.
+[[Continue|Further management 1]]</tw-passagedata><tw-passagedata pid="11" name="Further management 1" tags="" position="100,225" size="100,100">You examine Mr. Kato and discuss his symptoms with him. He reports that he feels better and no longer has swollen feet. During the examination, you confirm that the edema has disappeared and lung sounds are normal.
 
-The attending physician comes to ask you what would be the next step in the management of Mr. Joseph.
+The consultant physician comes to ask you what would be the next step in the management of Mr. Kato.
 
-[[Discharge home on oral diuretics|Discharge home 1]]
-[[Keep in hospital for further management|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="12" name="Discharge home 1" tags="" position="225,225" size="100,100">According to guidelines, it is advised to hospitalize and monitor patients with acute decompensated heart failure. Oral diuretic treatment may not be sufficient to control their heart failure. Additionally, since this patient traveled a long way to the hospital, he may be lost to follow-up and needs to be put on heart failure treatment before leaving.
+[[Send mr. Keto home only on oral diuretics|Discharge home 1]]
+[[The patient needs further medical management|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="12" name="Discharge home 1" tags="" position="225,225" size="100,100">According to guidelines, it is advised to hospitalize and monitor patients with acute decompensated heart failure. Oral diuretic treatment may not be sufficient to control their heart failure. Additionally, since this patient traveled a long way to the hospital, he may be lost to follow-up and needs to be put on heart failure treatment before leaving.
 
 &lt;&lt;set $case_1_Fu_score -= 5 &gt;&gt;
-[[Continue|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="13" name="Hospitalization and monitoring 1" tags="" position="350,225" size="100,100">Mr. Joseph stays in the hospital for more optimal management. You review and discuss with the medical team about chronic heart failure management.
+[[Continue|Hospitalization and monitoring 1]]</tw-passagedata><tw-passagedata pid="13" name="Hospitalization and monitoring 1" tags="" position="350,225" size="100,100">Mr. Kato stays in the hospital for more optimal management. You review and discuss with the medical team about chronic heart failure management.
 
-Mr. Joseph is put on ACE inhibitor, beta-blocker, spironolactone, and oral furosemide. Mr. Joseph also receives medical education sessions on how to take medications at home and help finding a primary care physician for long-term follow-up.
+Mr. Kato is put on ACE inhibitor, beta-blocker, spironolactone, and oral furosemide. Mr. Kato also receives medical education sessions on how to take medications at home and help finding a primary care physician for long-term follow-up.
 &lt;&lt;set $case_1_Fu_score += 3 &gt;&gt;
 [[Continue|End of case 1]]</tw-passagedata><tw-passagedata pid="14" name="End of case 1" tags="" position="475,225" size="100,100">&lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/9a/Mulago_Hospital_5.jpg&quot;&gt;
 
-A month later, Mr. Joseph&#39;s son comes to the hospital to ask the nurse to see you.
+A month later, Mr. Kato&#39;s son comes to the hospital to ask the nurse to see you.
 
-He holds in his hand a wooden sculpture representing a stethoscope and tells you: &quot;My father is doing much better with the new medication. He told me to give you this as a gift to eliminate the evil spirits that were harming him, he made it for you. Thank you for helping him!&quot;
+He holds a sack of matooke and thanks you for taking care of his father. 
 
 Congratulations! You have completed the first case!
 
 The main points of heart failure management are:
 
-After a physical examination, an ECG and an echocardiogram are necessary for the complete evaluation of suspected heart failure. A chest X-ray is less relevant if echocardiography is performed coupled with BNP testing. In the absence of these paraclinical examinations, it will help to check the condition of the lung parenchyma - detect cardiomegaly but does not rule out heart disease.
+After a physical examination a chest X-ray can be helpful in diagnosing volume overload in the absence of an echocardiogram an NT pro-BNP value. However, the last two are necessary for the complete evaluation of suspected heart failure. A chest X-ray is less relevant if echocardiography is performed coupled with BNP testing. In the absence of these paraclinical examinations, it will help to check the condition of the lung parenchyma - detect cardiomegaly but does not rule out heart disease.
 
 The best first step in management is to administer intravenous furosemide. Oral furosemide should be considered if IV form is not available, but the expected response may be delayed.
-&#39;&#39;However, beta-blockers and IV fluids should be avoided in acute decompensated heart failure, as they can worsen the patient&#39;s condition and increase ICU admissions.&#39;&#39;
+&#39;&#39;However, calcium channel blockers, beta-blockers and IV fluids should be avoided in acute decompensated heart failure, as they can worsen the patient&#39;s condition.&#39;&#39;
 
 After initial stabilization, patients should be put on long-term treatment for heart failure before leaving the hospital. This ensures they are adequately managed, given the risk they may be lost to follow-up due to difficulties accessing care. Early discharge or inadequate treatment (e.g., oral diuretics only) could lead to poorer outcomes.
 
-You can learn more about heart failure management by reading the 2021 European Society of Cardiology guidelines. [[2021 European Society of Cardiology guidelines|https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Acute-and-Chronic-Heart-Failure]]. 
+You can learn more about heart failure management by reading the Ugandan Ministry of Health Treatment Guidelines. 
 [[Continue|Finish]]</tw-passagedata><tw-passagedata pid="15" name="Finish" tags="" position="600,225" size="100,100">Congratulations! You have completed all the cases!
 
 Please complete a short survey about this application and submit your results.
@@ -405,7 +403,6 @@ Please complete a short survey about this application and submit your results.
 [[Continue|Usability Survey]]</tw-passagedata><tw-passagedata pid="16" name="Extras" tags="" position="725,225" size="100,100">You might need headphones for an optimal experience. There is a diastolic murmur 
 &lt;audio controls&gt;
   &lt;source src=&quot;https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/professional/sounds/aortic_stenosis_murmur.mp3&quot; type=&quot;audio/mpeg&quot;&gt; Your browser does not support the audio element. &lt;/audio controls&gt; 
-
 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/dd/3f/fjpRaEYw_o.png&quot;&gt;
 What is the echocardiographic view? 
@@ -622,9 +619,9 @@ Treatment of hypertensive cardiomyopathy focuses on controlling hypertension, as
 
 [[AHA recommendations on hypertension treatment|https://academic.oup.com/view-large/186438663]]
 [[Statpearls book chapter on hypertensive heart diseases|https://www.ncbi.nlm.nih.gov/books/NBK539800/]]
-[[Move on to the final case|Case 1 introduction ]]</tw-passagedata><tw-passagedata pid="30" name="Case 3 introduction" tags="" position="1225,350" size="100,100">Kasozi is a 15-year-old teenage girl who lives in Kampala and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
+[[Move on to the final case|Case 1 introduction ]]</tw-passagedata><tw-passagedata pid="30" name="Case 3 introduction" tags="" position="1225,350" size="100,100">Achan is a 15-year-old teenage girl who lives in Kampala and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
 
-She has been having fever and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
+Ms. Achan remembers that five years ago she had a throat infection. Her mother treated her with home remedies and she improved without going to the hospital. 
 
 After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
@@ -661,12 +658,12 @@ What is your first step in the evaluation?
 [[Labs|Labs 3]]
 [[Echo|Echo 3]]
 &lt;&lt;if hasVisited(&quot;Labs 3&quot;, &quot;Echo 3&quot;, &quot;Physical Exam 3&quot;)&gt;&gt; [[Continue Treatment|Treatment 3]] &lt;&lt;else&gt;&gt; [[Continue Treatment|Not done Dx yet 3]] &lt;&lt;/if&gt;&gt;
-Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP 140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
+Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively, chest pain and a prior history of untreated throat infection. BP 140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air. Chest X-ray is showing pulmonary edema and BNP is elevated. 
+
 /* Start of the workup choices. Trainee must pick &quot;EKG&quot; and &quot;Echo&quot; before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/</tw-passagedata><tw-passagedata pid="32" name="Physical Exam 3" tags="" position="225,475" size="100,100">&lt;&lt;set $diagnostics_3_physical_exam to 1&gt;&gt; 
 You begin a physical examination of the patient.
 
-Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
-
+Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. 
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="33" name="Chest X-Ray 3" tags="" position="350,475" size="100,100">&lt;&lt;set $diagnostics_3_CXR&gt;&gt;
 40 minutes later, the nurse hands you the following radiographic film:
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png&quot;&gt;
@@ -674,11 +671,10 @@ Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you
 Bilateral patchy long infiltrates consistent with pulmonary edema. 
 
 [[I need to see the radiologist&#39;s report|radiologist 3]]
-[[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="34" name="radiologist 3" tags="" position="475,475" size="100,100">Mild pulmonary edema. Mild atrial enlargement.
+[[Continue| Case stare 3]]</tw-passagedata><tw-passagedata pid="34" name="radiologist 3" tags="" position="475,475" size="100,100">Mild pulmonary edema. // TODO FIX IMAGE 
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png&gt;
+&lt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png&gt;&gt;
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="35" name="Labs 3" tags="" position="600,475" size="100,100">&lt;&lt;set $diagnostics_3_labs to 1&gt;&gt;
-Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
 &lt;img src=&quot;https://cdn2.picryl.com/photo/2017/02/06/blood-pumps-into-test-tubes-during-the-armed-services-74731e-1024.jpg&quot;&gt;
 
 NT pro-BNP at 1200 pg/mL
@@ -692,7 +688,7 @@ Which of the patient&#39;s lab findings is most suggestive of the diagnosis?
 &lt;label&gt;&lt;&lt;radiobutton &quot;$labs_most_suggestive_3&quot; 3 autocheck &gt;&gt; Hemoglobin &lt;/label&gt;
 &lt;label&gt;&lt;&lt;radiobutton &quot;$labs_most_suggestive_3&quot; 4 autocheck &gt;&gt; White Blood Cells &lt;/label&gt;
 
-[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="36" name="EKG 3" tags="" position="725,475" size="100,100">The ekg is notable for left atrial enlargement
+[[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="36" name="EKG 3" tags="" position="725,475" size="100,100">The EKG is notable for left atrial enlargement. 
 Note the deeply inverted P wave in V1 and wide P wave in II, greater than 120ms.
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://www.ecgstampede.com/wp-content/uploads/2022/11/150-HCM_LAE-1-scaled.jpg&quot;&gt;
 &lt;&lt;set $diagnostics_3_ekg&gt;&gt;
@@ -740,7 +736,6 @@ Please answer all questions before continuing.
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images2.imgbox.com/1b/e7/hP0DDp29_o.jpeg&quot;&gt;
 &lt;&lt;set $diagnostics_3_reprimand += 1&gt;&gt;
 [[Continue|Case stare 3]]</tw-passagedata><tw-passagedata pid="39" name="Treatment 3" tags="" position="1100,475" size="100,100">The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/86/Severe_mitral_valve_stenosis%2C_mitral_regurgitation%2C_aortic_regurgitation_E00624_%28CardioNetworks_ECHOpedia%29.jpg&quot;&gt;
 
 &lt;&lt;silently&gt;&gt;
   &lt;&lt;set $diuretics_3 to false&gt;&gt;
@@ -765,7 +760,7 @@ Choose from the following options those that you think would be part of the appr
     &lt;&lt;if $fluids_3&gt;&gt; &lt;&lt;set $case_3_Tx_score -= 3&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;img src=&quot;https://www.radiocomnetu.org/mamafm/wp-content/uploads/sites/12/2024/08/image-from-rawpixel-id-3372984-jpeg-1024x683.jpg&quot;&gt;
-After consulting with the attending physician, Kasozi is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
+After consulting with the attending physician, Achan is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
 
 [[Continue|Mitral valve intervention 3]]</tw-passagedata><tw-passagedata pid="41" name="Further management 3" tags="" position="100,600" size="100,100">&lt;img src=&quot;https://images2.imgbox.com/1b/e7/hP0DDp29_o.jpeg&quot;&gt; /* skipped here */
 The MDS asks you what you believe should be the next step in managing this patient.
@@ -777,7 +772,7 @@ The MDS asks you what you believe should be the next step in managing this patie
 &lt;img src=&quot;https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMzA1MTU1NjE5MjgtaW1hZ2Uta3Bxb3AybHkuanBn.jpg&quot;&gt;
 &lt;&lt;set $case_3_Fu_score += 2 &gt;&gt;
 
-One month later, Kasozi comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
+One month later, Achan comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
 
 Congratulations! You have just completed the second case!
 
