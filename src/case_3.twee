@@ -1,8 +1,8 @@
 :: Case 3 introduction 
 
-Kasozi is a 15-year-old teenage girl who lives in Kampala and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
+Achan is a 15-year-old teenage girl who lives in Kampala and comes to the hospital saying that she felt like she was suffocating during the night because of coughing and cannot sleep without 2 pillows for at least two weeks. She also has chest pain. 
 
-She has been having fever and pain in her right knee, more than the left, for two days. After being asked, she remembers she had pain in her arm joints (elbows and shoulders) but she felt better with diclofenac, as well as having a recent throat cold. 
+Ms. Achan remembers that five years ago she had a throat infection. Her mother treated her with home remedies and she improved without going to the hospital. 
 
 After trying everything she could, her best friend convinced her to come to the hospital in case there were medications that could help her.
 
@@ -41,14 +41,14 @@ What is your next step?
 [[Labs|Labs 3]]
 [[Echo|Echo 3]]
 <<if hasVisited("Labs 3", "Echo 3", "Physical Exam 3")>> [[Continue Treatment|Treatment 3]] <<else>> [[Continue Treatment|Not done Dx yet 3]] <</if>>
-Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively and chest pain, along with joint pains. BP 140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air.
+Notes: 15-year-old girl with dyspnea on minimal exertion worsening progressively, chest pain and a prior history of untreated throat infection. BP 140/90mmHg, HR 92 bpm, temperature 37.7°C, SpO₂ 94% on room air. Chest X-ray is showing pulmonary edema and BNP is elevated. 
+
 /* Start of the workup choices. Trainee must pick "EKG" and "Echo" before the choice to move to treatment is actually open. If trainee chooses to move to treatment before that, he is reprimanded by the attending and loses one point in the score. Each choice either helps or hurts the trainee. Correct choices and incorrect choices are weighted so that picking all of them leads to a cancelling-out effect and the score is close to zero.*/
 :: Physical Exam 3
 <<set $diagnostics_3_physical_exam to 1>> 
 You begin a physical examination of the patient.
 
-Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. There is right knee tenderness, with no significant swelling. There are small, tough nodules on the arms. Neurological examination is normal. She does not have a fever. 
-
+Physical Exam: There is a diastolic heart murmur. On pulmonary auscultation, you hear significant crackles at both bases; the abdominal exam is normal; there is slight edema of the lower limbs, and the pulse is normal. 
 [[Continue|Case stare 3]]
 
 :: Chest X-Ray 3
@@ -62,14 +62,13 @@ Bilateral patchy long infiltrates consistent with pulmonary edema.
 [[Continue| Case stare 3]]
 
 :: radiologist 3
-Mild pulmonary edema. Mild atrial enlargement.
+Mild pulmonary edema. // TODO FIX IMAGE 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png>
+<<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/16-01-Lungenoedem.png>>
 [[Continue|Case stare 3]]
 
 :: Labs 3
 <<set $diagnostics_3_labs to 1>>
-Hb level of 12 mg/dL. Otherwise, the rest of the available tests are normal, including CXR, Malaria (smear and rapid test), HSAg, CBC, RFP, UA, HIV, Syphilis, G/C, Typhoid. 
 <img src="https://cdn2.picryl.com/photo/2017/02/06/blood-pumps-into-test-tubes-during-the-armed-services-74731e-1024.jpg">
 
 NT pro-BNP at 1200 pg/mL
@@ -86,7 +85,7 @@ Which of the patient's lab findings is most suggestive of the diagnosis?
 [[Continue|Case stare 3]]
 
 :: EKG 3
-The ekg is notable for left atrial enlargement
+The EKG is notable for left atrial enlargement. 
 Note the deeply inverted P wave in V1 and wide P wave in II, greater than 120ms.
 <img style='width: 100%' src="https://www.ecgstampede.com/wp-content/uploads/2022/11/150-HCM_LAE-1-scaled.jpg">
 <<set $diagnostics_3_ekg>>
@@ -142,7 +141,6 @@ The consulting cardiologist tells you that you need a few more diagnostic steps 
 
 :: Treatment 3
 The mitral valve showed thickened cusps with commissural fusion and reduced opening, compatible with mitral stenosis due to severe rheumatic heart disease. 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Severe_mitral_valve_stenosis%2C_mitral_regurgitation%2C_aortic_regurgitation_E00624_%28CardioNetworks_ECHOpedia%29.jpg">
 
 <<silently>>
   <<set $diuretics_3 to false>>
@@ -170,7 +168,7 @@ Choose from the following options those that you think would be part of the appr
     <<if $fluids_3>> <<set $case_3_Tx_score -= 3>> <</if>>
 <</silently>>
 <img src="https://www.radiocomnetu.org/mamafm/wp-content/uploads/sites/12/2024/08/image-from-rawpixel-id-3372984-jpeg-1024x683.jpg">
-After consulting with the attending physician, Kasozi is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
+After consulting with the attending physician, Achan is started on diuretics, penicillin and is referred to the Uganda heart institute for further management. 
 
 [[Continue|Mitral valve intervention 3]]
 
@@ -191,7 +189,7 @@ Given the discovery of mitral stenosis, a consultation with a cardiologist shoul
 <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMzA1MTU1NjE5MjgtaW1hZ2Uta3Bxb3AybHkuanBn.jpg">
 <<set $case_3_Fu_score += 2 >>
 
-One month later, Kasozi comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
+One month later, Achan comes for a follow-up visit to renew her medication prescriptions. She tells you that the swelling in her legs has improved significantly and that she sleeps better at night. She thanks you for your help!
 
 Congratulations! You have just completed the second case!
 
