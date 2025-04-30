@@ -5,7 +5,6 @@ Echo Cases
 <<set $history to []>>
 <<set $started to 0>>
 <<set $wrong_password to false>>
-<<set $case_1_dx_score to 0>>
 <<set $case_1_Tx_score to 0>>
 <<set $submitted to 0>>
 
@@ -25,7 +24,7 @@ Echo Cases
 <<set $case_1_Tx_score to 0>>
 <<set $case_1_Fu_score to 0>>
 <<set $case_1_Echo to 0>>
-<<set $echo1_quiz to [0,0,0,0,0]>>
+<<set $case_1_treat_choice to 0>>
 
 /* Case 2 Variables */
 <<set $diagnostics_2 to [0,0,0,0,0,0]>>
@@ -340,6 +339,21 @@ const sendData = JSON.stringify({
 	"sglt_2": State.variables.sglt_2, 
 	"ace_arb_2": State.variables.ace_arb_2, 
 	"weight_control_2": State.variables.weight_control_2,
+    "physical_exam_1": State.variables.physical_exam_1,
+    "EKG_1": State.variables.EKG_1,
+    "CXR_1": State.variables.CXR_1,
+    "Labs_1": State.variables.Labs_1,
+    "reprimand_1": State.variables.reprimand_1, // Ensure 'Not done Dx yet 1' uses $reprimand_1
+    "case_1_Tx_score": State.variables.case_1_Tx_score,
+    "case_1_Fu_score": State.variables.case_1_Fu_score,
+    "case_1_Echo": State.variables.case_1_Echo, // Final Echo interpretation choice
+    "echo1_quiz_echo_view": State.variables.echo1_quiz_echo_view,
+    "echo1_quiz_echo_view_second": State.variables.echo1_quiz_echo_view_second,
+    "echo1_quiz_echo_view_third": State.variables.echo1_quiz_echo_view_third,
+    "echo1_quiz_placement": State.variables.echo1_quiz_placement,
+    "echo1_quiz_echo_view_fourth": State.variables.echo1_quiz_echo_view_fourth,
+    "echo1_quiz_ejection_fraction": State.variables.echo1_quiz_ejection_fraction,
+    "case_1_treat_choice": State.variables.case_1_treat_choice, // Treatment choice
 	"passage_history": JSON.stringify(passageHistoryWithDuration)
 });
 
