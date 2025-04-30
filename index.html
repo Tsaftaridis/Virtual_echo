@@ -340,7 +340,7 @@ Please answer all questions before continuing.
 
 
 /* Reprimand and return to diagnostic evaluation. Don&#39;t need to remove points here, you can see if they got here through the history later. */</tw-passagedata><tw-passagedata pid="8" name="Not done Dx yet 1" tags="" position="975,100" size="100,100">The consulting cardiologist tells you that you need some additional diagnostic steps before moving on to treatment.
-&lt;&lt;set $reprimand_2 += 1&gt;&gt;
+&lt;&lt;set $reprimand_1+= 1&gt;&gt;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://images.pexels.com/photos/5327647/pexels-photo-5327647.jpeg&quot;&gt;
 [[Continue|Case stare 1]]</tw-passagedata><tw-passagedata pid="9" name="Treatment 1" tags="" position="1100,100" size="100,100">The echo report reads: &quot;Left ventricular ejection fraction of 20%. Signs of moderate pulmonary hypertension and dilated inferior vena cava.&quot;
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://euroweeklynews.com/wp-content/uploads/2024/04/Ultrasound-1024x683.jpg&quot;&gt;
@@ -1083,7 +1083,6 @@ You can review guidelines on cardiovascular medications for pregnant, postpartum
 [[Continue|Case 3 introduction]]</tw-passagedata><tw-passagedata pid="63" name="StoryInit" tags="" position="350,850" size="100,100">&lt;&lt;set $history to []&gt;&gt;
 &lt;&lt;set $started to 0&gt;&gt;
 &lt;&lt;set $wrong_password to false&gt;&gt;
-&lt;&lt;set $case_1_dx_score to 0&gt;&gt;
 &lt;&lt;set $case_1_Tx_score to 0&gt;&gt;
 &lt;&lt;set $submitted to 0&gt;&gt;
 
@@ -1103,7 +1102,7 @@ You can review guidelines on cardiovascular medications for pregnant, postpartum
 &lt;&lt;set $case_1_Tx_score to 0&gt;&gt;
 &lt;&lt;set $case_1_Fu_score to 0&gt;&gt;
 &lt;&lt;set $case_1_Echo to 0&gt;&gt;
-&lt;&lt;set $echo1_quiz to [0,0,0,0,0]&gt;&gt;
+&lt;&lt;set $case_1_treat_choice to 0&gt;&gt;
 
 /* Case 2 Variables */
 &lt;&lt;set $diagnostics_2 to [0,0,0,0,0,0]&gt;&gt;
@@ -1390,6 +1389,21 @@ const sendData = JSON.stringify({
 	&quot;sglt_2&quot;: State.variables.sglt_2, 
 	&quot;ace_arb_2&quot;: State.variables.ace_arb_2, 
 	&quot;weight_control_2&quot;: State.variables.weight_control_2,
+    &quot;physical_exam_1&quot;: State.variables.physical_exam_1,
+    &quot;EKG_1&quot;: State.variables.EKG_1,
+    &quot;CXR_1&quot;: State.variables.CXR_1,
+    &quot;Labs_1&quot;: State.variables.Labs_1,
+    &quot;reprimand_1&quot;: State.variables.reprimand_1, // Ensure &#39;Not done Dx yet 1&#39; uses $reprimand_1
+    &quot;case_1_Tx_score&quot;: State.variables.case_1_Tx_score,
+    &quot;case_1_Fu_score&quot;: State.variables.case_1_Fu_score,
+    &quot;case_1_Echo&quot;: State.variables.case_1_Echo, // Final Echo interpretation choice
+    &quot;echo1_quiz_echo_view&quot;: State.variables.echo1_quiz_echo_view,
+    &quot;echo1_quiz_echo_view_second&quot;: State.variables.echo1_quiz_echo_view_second,
+    &quot;echo1_quiz_echo_view_third&quot;: State.variables.echo1_quiz_echo_view_third,
+    &quot;echo1_quiz_placement&quot;: State.variables.echo1_quiz_placement,
+    &quot;echo1_quiz_echo_view_fourth&quot;: State.variables.echo1_quiz_echo_view_fourth,
+    &quot;echo1_quiz_ejection_fraction&quot;: State.variables.echo1_quiz_ejection_fraction,
+    &quot;case_1_treat_choice&quot;: State.variables.case_1_treat_choice, // Treatment choice
 	&quot;passage_history&quot;: JSON.stringify(passageHistoryWithDuration)
 });
 

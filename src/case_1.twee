@@ -138,7 +138,7 @@ Please answer all questions before continuing.
 /* Reprimand and return to diagnostic evaluation. Don't need to remove points here, you can see if they got here through the history later. */
 :: Not done Dx yet 1 
 The consulting cardiologist tells you that you need some additional diagnostic steps before moving on to treatment.
-<<set $reprimand_2 += 1>>
+<<set $reprimand_1+= 1>>
 <img style='width: 100%' src="https://images.pexels.com/photos/5327647/pexels-photo-5327647.jpeg">
 [[Continue|Case stare 1]]
 
