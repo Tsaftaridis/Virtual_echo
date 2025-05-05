@@ -130,9 +130,7 @@ What do you think about the LV Ejection Fraction?
     <<set $ddx_2_score = 0>>
 <</silently>>
 
-The cardiac echo is illustrated below and the septum measures 1.4 cm.
 How would you describe the echo?
-
 <label><<radiobutton "$diagnostics_2_echo_impression" 1 autocheck>> Dilated cardiomyopathy </label>
 <label><<radiobutton "$diagnostics_2_echo_impression" 2 autocheck>> Aortic stenosis </label> 
 <label><<radiobutton "$diagnostics_2_echo_impression" 3 autocheck>> Left ventricular hypertrophy </label>
