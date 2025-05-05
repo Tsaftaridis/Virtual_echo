@@ -106,11 +106,13 @@ Echo Cases
 
 :: Guard
 <<silently>>
+	<<set _name to "">>
 	<<set _answer to "">>
 	<<set $has_access = 0>>
 	<<if $wrong_password>> Wrong password! <</if>>
 <</silently>>
-Please enter your trainee ID to continue.
+Please enter your name and password to continue.
+<<textbox "_name" "">>
 <<textbox "_answer" "">>
 <<button "Verify password">>
 	<<if _answer is "">>
@@ -127,15 +129,13 @@ Please enter your trainee ID to continue.
 			otherwise send them back to the Start passage.
 		%/
 		<<switch _answer>>
-			<<case "password">>
-				<<set $has_access = 1>>
-			<<case "password2">>
+			<<case "uganda2025">>
 				<<set $has_access = 1>>
 			<<default>>
 				<<set $has_access = 0>>
 		<</switch>>
     	<<if $has_access>>
-			<<set $id = _answer>>
+			<<set $id = _name>>
      		<<goto "Waiting Room">> /* Waiting Room */
 		<<else>>
 			/% Send the reader back to the start. %/
