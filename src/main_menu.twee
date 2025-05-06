@@ -112,8 +112,8 @@ Echo Cases
 	<<if $wrong_password>> Wrong password! <</if>>
 <</silently>>
 Please enter your name and password to continue.
-<<textbox "_name" "">>
-<<textbox "_answer" "">>
+<<textbox "_name" "name">>
+<<textbox "_answer" "password">>
 <<button "Verify password">>
 	<<if _answer is "">>
 		/% They have not supplied an answer. %/

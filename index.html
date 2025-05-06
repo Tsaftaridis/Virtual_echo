@@ -860,7 +860,7 @@ Creatinine: 2.1 mg/dL
 NT pro-BNP: 956 pg/mL **HIGH** (upper normal limit 125 pg/mL)
 
 [[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="50" name="EKG 4" tags="" position="1225,600" size="100,100">/* Diffuse T wave inversion. */
- Here is the EKG. 
+ Here is the EKG, showing sinus tachycardia. 
 &lt;img style=&#39;width: 100%&#39; src=&quot;https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg&quot;&gt;
 
 [[Continue|Case stare 4]]</tw-passagedata><tw-passagedata pid="51" name="Echo 4" tags="" position="100,725" size="100,100">The cardiac echo is shown below:
@@ -935,15 +935,7 @@ Among the following medications, choose those that you believe would be part of 
     &lt;&lt;if $albuterol_4&gt;&gt;  &lt;&lt;set $case_4_Tx_score -= 4&gt;&gt; &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 
-Despite your best efforts, the patient deteriorates.The next day, a colleague calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
-
-You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%.
-
-What is your next step? 
-&lt;label&gt;&lt;&lt;radiobutton &quot;$deterioration_4&quot; 1 autocheck &gt;&gt; Consult cardiologist &lt;/label&gt;
-&lt;label&gt;&lt;&lt;radiobutton &quot;$deterioration_4&quot; 0 autocheck &gt;&gt; Continue managing patient with escalated medication regimen &lt;/label&gt;
-
-[[Continue|Improvement 4]]</tw-passagedata><tw-passagedata pid="55" name="ICU 4" tags="" position="600,725" size="100,100">Namatovu’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
+[[Continue|Case conclusion 4]]</tw-passagedata><tw-passagedata pid="55" name="ICU 4" tags="" position="600,725" size="100,100">Namatovu’s labs after ICU admission show: Lactate = 5.4 mg/dL, ALT = 123 mg/dL, AST = 140 mg/dL. Her thyroid function tests came back normal.
 
 In your opinion, what is the best medical therapy?
 
@@ -955,9 +947,9 @@ In your opinion, what is the best medical therapy?
 
 Continued monitoring of her symptoms, BNP levels, and echocardiographic findings will be important to guide further management.
 
-Guideline-Directed Medical Therapy (GDMT): Medications such as ACE inhibitors (e.g., lisinopril), ARBs (e.g., losartan), or beta-blockers (e.g., metoprolol) are essential for improving morbidity and mortality in heart failure patients. Diuretics, while not shown to improve long-term outcomes, are crucial for symptom management and patient comfort.
+Guideline-Directed Medical Therapy (GDMT): Medications such as ACE inhibitors (e.g., lisinopril), ARBs (e.g., losartan), or beta-blockers (e.g., metoprolol) are essential for reducing morbidity and mortality in heart failure patients. Diuretics, while not shown to improve long-term outcomes, are crucial for symptom management and patient comfort.
 
-[[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="58" name="Further management 4" tags="" position="975,725" size="100,100">Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
+[[Continue|Further management 4]]</tw-passagedata><tw-passagedata pid="58" name="Further management 4" tags="" position="975,725" size="100,100">Which of the following medications have been found to reduce mortality and morbidity in heart failure patients? Choose all that apply. 
 
     &lt;&lt;checkbox &quot;$mortality_meds_4_arb&quot; false true&gt;&gt; Losartan (ARB)
     &lt;&lt;checkbox &quot;$mortality_meds_4_ccb&quot; false true&gt;&gt; Amlodipine (calcium Channel Blockers)
@@ -1169,8 +1161,8 @@ You can review guidelines on cardiovascular medications for pregnant, postpartum
 	&lt;&lt;if $wrong_password&gt;&gt; Wrong password! &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 Please enter your name and password to continue.
-&lt;&lt;textbox &quot;_name&quot; &quot;&quot;&gt;&gt;
-&lt;&lt;textbox &quot;_answer&quot; &quot;&quot;&gt;&gt;
+&lt;&lt;textbox &quot;_name&quot; &quot;name&quot;&gt;&gt;
+&lt;&lt;textbox &quot;_answer&quot; &quot;password&quot;&gt;&gt;
 &lt;&lt;button &quot;Verify password&quot;&gt;&gt;
 	&lt;&lt;if _answer is &quot;&quot;&gt;&gt;
 		/% They have not supplied an answer. %/
