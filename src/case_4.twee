@@ -93,7 +93,7 @@ NT pro-BNP: 956 pg/mL **HIGH** (upper normal limit 125 pg/mL)
 
 :: EKG 4
 /* Diffuse T wave inversion. */
- Here is the EKG. 
+ Here is the EKG, showing sinus tachycardia. 
 <img style='width: 100%' src="https://www.aafp.org/content/dam/brand/aafp/pubs/afp/issues/2014/0815/p257-uf1.jpg">
 
 [[Continue|Case stare 4]]
@@ -179,15 +179,7 @@ Among the following medications, choose those that you believe would be part of 
     <<if $albuterol_4>>  <<set $case_4_Tx_score -= 4>> <</if>>
 <</silently>>
 
-Despite your best efforts, the patient deteriorates.The next day, a colleague calls you because Namatovu complains of worsening shortness of breath. She also notes that the patient has had minimal urine output and very low blood pressure.
-
-You go to Namatovu’s room to check on her and see she has produced about 309 ml of urine in the last 24 hours. She is clearly in distress, breathing rapidly, and the pulse oximeter reads 87%.
-
-What is your next step? 
-<label><<radiobutton "$deterioration_4" 1 autocheck >> Consult cardiologist </label>
-<label><<radiobutton "$deterioration_4" 0 autocheck >> Continue managing patient with escalated medication regimen </label>
-
-[[Continue|Improvement 4]]
+[[Continue|Case conclusion 4]]
 
 :: ICU 4 
 
@@ -209,12 +201,12 @@ Namatovu’s condition has significantly improved. On physical examination, ther
 
 Continued monitoring of her symptoms, BNP levels, and echocardiographic findings will be important to guide further management.
 
-Guideline-Directed Medical Therapy (GDMT): Medications such as ACE inhibitors (e.g., lisinopril), ARBs (e.g., losartan), or beta-blockers (e.g., metoprolol) are essential for improving morbidity and mortality in heart failure patients. Diuretics, while not shown to improve long-term outcomes, are crucial for symptom management and patient comfort.
+Guideline-Directed Medical Therapy (GDMT): Medications such as ACE inhibitors (e.g., lisinopril), ARBs (e.g., losartan), or beta-blockers (e.g., metoprolol) are essential for reducing morbidity and mortality in heart failure patients. Diuretics, while not shown to improve long-term outcomes, are crucial for symptom management and patient comfort.
 
 [[Continue|Further management 4]]
 
 :: Further management 4
-Which of the following medications have been found to prolong mortality and morbidity in heart failure patients? Choose all that apply. 
+Which of the following medications have been found to reduce mortality and morbidity in heart failure patients? Choose all that apply. 
 
     <<checkbox "$mortality_meds_4_arb" false true>> Losartan (ARB)
     <<checkbox "$mortality_meds_4_ccb" false true>> Amlodipine (calcium Channel Blockers)
