@@ -354,7 +354,7 @@ const sendData = JSON.stringify({
     "echo1_quiz_echo_view_fourth": State.variables.echo1_quiz_echo_view_fourth,
     "echo1_quiz_ejection_fraction": State.variables.echo1_quiz_ejection_fraction,
     "case_1_treat_choice": State.variables.case_1_treat_choice, // Treatment choice
-	"usability": State.variables.usability, // Add this line before the passage_history
+	"usability": JSON.stringify(State.variables.usability), // Add this line before the passage_history
 	"passage_history": JSON.stringify(passageHistoryWithDuration)
 });
 
