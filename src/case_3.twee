@@ -92,7 +92,7 @@ Note the deeply inverted P wave in V1 and wide P wave in II, greater than 120ms.
 
 :: Echo 3
 The cardiac echo is illustrated below:
-<img src="https://imgbox.com/84u95VfL">
+<img src="https://images2.imgbox.com/ed/1d/84u95VfL_o.png">
 What is the echocardiographic view? /* Apical 4-chamber and doppler ultrasound */
 <label><<radiobutton "$echo3_quiz_view" 1 autocheck >> Parasternal long axis </label> 
 <label><<radiobutton "$echo3_quiz_view" 2 autocheck >> Parasternal short axis </label> 
@@ -100,7 +100,7 @@ What is the echocardiographic view? /* Apical 4-chamber and doppler ultrasound *
 <label><<radiobutton "$echo3_quiz_view" 4 autocheck >> Apical 2-chamber </label> 
 <label><<radiobutton "$echo3_quiz_view" 5 autocheck >> Subxiphoid </label> 
 
-<video controls autoplay src="https://youtu.be/NZMafSK5MBg" frameborder="0" allowfullscreen></video>
+<video controls autoplay src="https://www.youtube.com/embed/NZMafSK5MBg?si=4Sd6JUj1B8i4oC_k" frameborder="0" allowfullscreen></video>
 
 What is the echocardiographic view? /* Parasternal long axis */
 <label><<radiobutton "$echo3_quiz_view_2" 1 autocheck >> Parasternal long axis </label>
