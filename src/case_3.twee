@@ -100,7 +100,7 @@ What is the echocardiographic view? /* Apical 4-chamber and doppler ultrasound *
 <label><<radiobutton "$echo3_quiz_view" 4 autocheck >> Apical 2-chamber </label> 
 <label><<radiobutton "$echo3_quiz_view" 5 autocheck >> Subxiphoid </label> 
 
-<video controls autoplay src="https://www.youtube.com/embed/NZMafSK5MBg?si=4Sd6JUj1B8i4oC_k" frameborder="0" allowfullscreen></video>
+<video controls autoplay src="vids/replace.mov" frameborder="0" allowfullscreen></video>
 
 What is the echocardiographic view? /* Parasternal long axis */
 <label><<radiobutton "$echo3_quiz_view_2" 1 autocheck >> Parasternal long axis </label>
